@@ -33,7 +33,7 @@ export const RemotionRoot: React.FC = () => {
         id="ModelSheet"
         component={ModelSheet}
         width={2400}
-        height={4460}
+        height={5380}
       />
     </Folder>
   );

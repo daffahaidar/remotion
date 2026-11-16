@@ -49,6 +49,13 @@ const ACTIONS: readonly [string, CharacterProps][] = [
 	['Hold on / Stop', {pose: 'stop', expression: 'scared'}],
 	['Welcome', {pose: 'welcome', expression: 'proud'}],
 	['Dance', {pose: 'dance', expression: 'excited'}],
+	['Idea / Aha!', {pose: 'idea', expression: 'eureka'}],
+	['Thumbs down', {pose: 'thumbsDown', expression: 'skeptical'}],
+	['Thank you / Pray', {pose: 'pray', expression: 'relief'}],
+	['Listen', {pose: 'listen', expression: 'surprised'}],
+	['Clap / Applause', {pose: 'clap', expression: 'happy'}],
+	['Typing / Work', {pose: 'typing', expression: 'focused'}],
+	['Sit', {pose: 'sit', expression: 'happy'}],
 ];
 
 const SWATCHES: readonly [string, string][] = [
@@ -163,26 +170,26 @@ export const ModelSheet: React.FC = () => {
 				);
 			})}
 
-			<Section y={2300}>Lip sync mouth chart</Section>
+			<Section y={2670}>Lip sync mouth chart</Section>
 			{MOUTH_CHART.map(([shape, label], i) => (
 				<React.Fragment key={shape}>
 					<Cell
 						x={col(i, 9)}
-						y={2380}
+						y={2750}
 						w={232}
 						h={232}
 						props={{mouth: shape, framing: 'head', autoBlink: false}}
 					/>
-					<Label x={col(i, 9)} y={2620}>
+					<Label x={col(i, 9)} y={2990}>
 						{label}
 					</Label>
 				</React.Fragment>
 			))}
 
-			<Section y={2710}>Poses and actions</Section>
+			<Section y={3080}>Poses and actions</Section>
 			{ACTIONS.map(([label, props], i) => {
 				const x = col(i % 7, 7);
-				const y = 2780 + Math.floor(i / 7) * 550;
+				const y = 3150 + Math.floor(i / 7) * 550;
 				return (
 					<React.Fragment key={label}>
 						<Cell x={x} y={y} w={470} h={504} props={{...props, autoBlink: false}} />

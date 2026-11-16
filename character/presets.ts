@@ -197,6 +197,63 @@ export const EXPRESSIONS = {
 		mouth: 'grin',
 		blush: 0.45,
 	}),
+	eureka: face({
+		...both(eye({open: 1.18, pupil: 1.1})),
+		...brows(brow({raise: 0.8, curve: 0.7})),
+		mouth: 'oh',
+		blush: 0.5,
+	}),
+	skeptical: face({
+		eyeL: eye({open: 0.95}),
+		eyeR: eye({open: 0.52, lower: 0.28}),
+		browL: brow({raise: 0.7, curve: 0.55}),
+		browR: brow({raise: -0.35, tilt: -14, curve: 0.1}),
+		lookX: 0.25,
+		mouth: 'flat',
+		mouthX: -0.25,
+	}),
+	nervousLaugh: face({
+		...both(eye({open: 1.08, lower: 0.25, pupil: 0.82})),
+		...brows(brow({raise: 0.4, tilt: 22, curve: 0.1})),
+		mouth: 'clench',
+		blush: 0.45,
+		sweat: 1,
+	}),
+	pleading: face({
+		...both(eye({open: 1.22, pupil: 1.32, tilt: -10})),
+		...brows(brow({raise: 0.45, tilt: 22, curve: 0.2})),
+		mouth: 'wavy',
+		blush: 0.65,
+		tears: 0.85,
+	}),
+	relief: face({
+		...both(eye({shape: 'closed'})),
+		...brows(brow({raise: 0.2, tilt: 10, curve: 0.35})),
+		mouth: 'smile',
+		blush: 0.35,
+		sweat: 1,
+	}),
+	disgusted: face({
+		eyeL: eye({open: 0.5, lower: 0.35, tilt: 10}),
+		eyeR: eye({open: 0.65, lower: 0.3, tilt: -8}),
+		browL: brow({raise: -0.35, tilt: -18}),
+		browR: brow({raise: 0.1, tilt: 14}),
+		mouth: 'wavy',
+		mouthX: -0.2,
+		blush: 0,
+	}),
+	furious: face({
+		...both(eye({open: 1.15, lower: 0.2, tilt: 26, pupil: 0.68})),
+		...brows(brow({raise: -0.55, tilt: -34, curve: 0})),
+		mouth: 'shout',
+		blush: 0.7,
+	}),
+	focused: face({
+		...both(eye({open: 0.88, lower: 0.18, tilt: 6, pupil: 0.95})),
+		...brows(brow({raise: -0.3, tilt: -12, curve: 0.1})),
+		mouth: 'neutral',
+		blush: 0,
+	}),
 } satisfies Record<string, FaceSpec>;
 
 export type ExpressionName = keyof typeof EXPRESSIONS;
@@ -322,6 +379,49 @@ export const POSES = {
 		lean: 7,
 		crouch: 12,
 		headTilt: 8,
+	}),
+	idea: pose({
+		armL: {lift: 62, swing: 15, bend: 108, twist: 90, hand: 'point', handRoll: 12, layer: 'front'},
+		headTilt: -5,
+		headNod: -4,
+	}),
+	thumbsDown: pose({
+		armL: {lift: 55, swing: 22, bend: 52, twist: 90, hand: 'thumbsUp', handRoll: 80, handFlip: true, layer: 'front'},
+		headTilt: 4,
+		headNod: 4,
+	}),
+	pray: pose({
+		armL: {target: [18, -340, 85], pole: [1, 0.7, -0.2], hand: 'open', handRoll: -20, layer: 'front'},
+		armR: {target: [18, -340, 85], pole: [1, 0.7, -0.2], hand: 'open', handRoll: -20, layer: 'front'},
+		headNod: 8,
+		crouch: 4,
+	}),
+	listen: pose({
+		armL: {target: [142, -525, 30], pole: [1, 0.5, -0.3], hand: 'open', handRoll: 15, layer: 'front'},
+		lean: 6,
+		headTilt: 10,
+		headYaw: -10,
+	}),
+	clap: pose({
+		armL: {target: [38, -360, 85], pole: [1, 0.5, -0.2], hand: 'open', handRoll: -12, layer: 'front'},
+		armR: {target: [18, -352, 85], pole: [1, 0.6, -0.2], hand: 'open', handRoll: -12, layer: 'front'},
+		wave: {arm: 'L', amount: 14, rate: 4.5},
+		headTilt: -5,
+		shrug: 6,
+	}),
+	typing: pose({
+		armL: {target: [52, -285, 85], pole: [1, 0.3, -0.5], hand: 'open', handRoll: -55, layer: 'front'},
+		armR: {target: [52, -285, 85], pole: [1, 0.3, -0.5], hand: 'open', handRoll: -55, layer: 'front'},
+		headNod: 8,
+		crouch: 4,
+		wave: {arm: 'L', amount: 8, rate: 6},
+	}),
+	sit: pose({
+		armL: {target: [48, -235, 75], pole: [1, 0.3, -0.4], hand: 'relaxed', layer: 'front'},
+		armR: {target: [48, -235, 75], pole: [1, 0.3, -0.4], hand: 'relaxed', layer: 'front'},
+		legL: {x: 38, h: 15, z: 75, pitch: 8},
+		legR: {x: 38, h: 15, z: 75, pitch: 8},
+		crouch: 68,
 	}),
 } satisfies Record<string, PoseSpec>;
 
