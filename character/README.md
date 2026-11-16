@@ -57,15 +57,15 @@ import {Character} from '../character';
 | `framing` | `'full'` | `full` (seluruh badan), `bust` (kepala + dada), `head` (kepala saja). |
 | `seed` | `'mascot'` | Ubah jika ada 2 karakter dalam satu frame, supaya kedip/bicaranya tidak kembar. |
 
-## Ekspresi (16)
+## Ekspresi (24)
 
-`neutral` · `happy` · `laugh` · `smirk` · `sideEye` · `eyeRoll` · `surprised` · `jawDrop` · `angry` · `sad` · `worried` · `thinking` · `confused` · `wink` · `embarrassed` · `determined`
+`neutral` · `happy` · `laugh` · `smirk` · `sideEye` · `eyeRoll` · `surprised` · `jawDrop` · `angry` · `sad` · `worried` · `thinking` · `confused` · `wink` · `embarrassed` · `determined` · `excited` · `love` · `crying` · `sleepy` · `dizzy` · `cheeky` · `scared` · `proud`
 
-## Pose (14) dan gerak
+## Pose (21) dan gerak
 
-`idle` · `wave` (melambai otomatis) · `point` (menunjuk ke kiri layar) · `pointRight` · `pointUp` · `think` · `surprised` · `cheer` · `shrug` · `handsOnHips` · `armsCrossed` · `present` · `thumbsUp` · `jump`
+`idle` · `wave` (melambai otomatis) · `point` (menunjuk ke kiri layar) · `pointRight` · `pointUp` · `think` · `surprised` · `cheer` · `shrug` · `handsOnHips` · `armsCrossed` · `present` · `thumbsUp` · `jump` · `peace` · `facepalm` · `fistPump` · `bashful` · `stop` · `welcome` · `dance`
 
-Ditambah `motion="walk"` dan `motion="run"`.
+Ditambah `motion="walk"`, `motion="run"`, dan `motion="dance"`.
 
 ## Bentuk mulut (lip sync)
 

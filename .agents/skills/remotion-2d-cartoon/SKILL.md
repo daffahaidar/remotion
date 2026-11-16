@@ -71,17 +71,18 @@ export const CartoonScene: React.FC = () => {
 - Available `framing` options: `'full'` (full body), `'bust'` (head + chest), `'head'` (head only).
 - **Important CLI note on Windows**: Never name a `<Composition id="Character" />` as it conflicts with the `character/` directory on Windows CLI renders.
 
-### Available Expressions (16 Presets)
-`neutral` · `happy` · `laugh` · `smirk` · `sideEye` · `eyeRoll` · `surprised` · `jawDrop` · `angry` · `sad` · `worried` · `thinking` · `confused` · `wink` · `embarrassed` · `determined`
+### Available Expressions (24 Presets)
+`neutral` · `happy` · `laugh` · `smirk` · `sideEye` · `eyeRoll` · `surprised` · `jawDrop` · `angry` · `sad` · `worried` · `thinking` · `confused` · `wink` · `embarrassed` · `determined` · `excited` · `love` · `crying` · `sleepy` · `dizzy` · `cheeky` · `scared` · `proud`
 
-### Available Poses (14 Presets) & Locomotion
+### Available Poses (21 Presets) & Locomotion
 - **Static / Action Poses (`pose` / `poseTo`)**:
-  `idle` · `wave` · `point` (points left) · `pointRight` · `pointUp` · `think` · `surprised` · `cheer` · `shrug` · `handsOnHips` · `armsCrossed` · `present` · `thumbsUp` · `jump`
+  `idle` · `wave` · `point` (points left) · `pointRight` · `pointUp` · `think` · `surprised` · `cheer` · `shrug` · `handsOnHips` · `armsCrossed` · `present` · `thumbsUp` · `jump` · `peace` · `facepalm` · `fistPump` · `bashful` · `stop` · `welcome` · `dance`
 - **Locomotion (`motion`)**:
   - `'idle'` (gentle breathing)
   - `'still'` (completely frozen)
   - `'walk'` (walk cycle in place)
   - `'run'` (run cycle in place)
+  - `'dance'` (rhythmic dance cycle)
 
 ### Smooth Pose & Expression Transitions
 Blend smoothly between two poses or expressions using `poseTo` + `poseBlend` and `expressionTo` + `expressionBlend` (`0` to `1`):

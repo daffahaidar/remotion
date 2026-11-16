@@ -108,6 +108,7 @@ type MouthDef = {
 	readonly teethBottom?: number;
 	readonly tongue?: readonly [number, number, number, number];
 	readonly width?: number;
+	readonly blep?: boolean;
 };
 
 const MOUTHS: Record<MouthShape, MouthDef> = {
@@ -176,6 +177,19 @@ const MOUTHS: Record<MouthShape, MouthDef> = {
 		open: true,
 		teethTop: 2,
 		teethBottom: 14,
+	},
+	clench: {
+		d: 'M -28 -5 Q 0 -8 28 -5 L 25 15 Q 0 18 -25 15 Z',
+		open: true,
+		teethTop: 6,
+		teethBottom: 6,
+	},
+	tongueOut: {
+		d: 'M -28 -3 Q 0 14 28 -3',
+		blep: true,
+	},
+	kiss: {
+		d: 'M -5 -9 C 7 -9 9 -1 -1 1 C 9 3 7 12 -5 11',
 	},
 };
 
@@ -432,6 +446,55 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 				</g>
 			);
 		}
+		if (spec.shape === 'star') {
+			const sr = rx * 1.08;
+			const ir = sr * 0.42;
+			const starPts: P2[] = [];
+			for (let i = 0; i < 10; i++) {
+				const ang = -Math.PI / 2 + (i * Math.PI) / 5;
+				const rad = i % 2 === 0 ? sr : ir;
+				starPts.push([Math.cos(ang) * rad, Math.sin(ang) * rad]);
+			}
+			return (
+				<g key={`eye${s}`} transform={tr}>
+					<path
+						d={polyPath(starPts)}
+						fill="#ffd447"
+						stroke={K.outline}
+						strokeWidth={5}
+						strokeLinejoin="round"
+					/>
+				</g>
+			);
+		}
+		if (spec.shape === 'heart') {
+			const hr = rx * 0.95;
+			return (
+				<g key={`eye${s}`} transform={tr}>
+					<path
+						d={`M 0 ${hr * 0.85} C ${-hr * 1.25} ${hr * 0.15} ${-hr * 1.1} ${-hr * 0.95} 0 ${-hr * 0.35} C ${hr * 1.1} ${-hr * 0.95} ${hr * 1.25} ${hr * 0.15} 0 ${hr * 0.85} Z`}
+						fill="#f25774"
+						stroke={K.outline}
+						strokeWidth={5}
+						strokeLinejoin="round"
+					/>
+				</g>
+			);
+		}
+		if (spec.shape === 'dead') {
+			const dr = rx * 0.72;
+			return (
+				<g key={`eye${s}`} transform={tr}>
+					<path
+						d={`M ${-dr} ${-dr} L ${dr} ${dr} M ${dr} ${-dr} L ${-dr} ${dr}`}
+						fill="none"
+						stroke={K.outline}
+						strokeWidth={8}
+						strokeLinecap="round"
+					/>
+				</g>
+			);
+		}
 		const open = clamp(spec.open, 0, 1) * blink;
 		const yMeet = ry * 0.2;
 		const yU = lerp(-ry - 4, yMeet, 1 - open);
@@ -608,14 +671,28 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 						<path d={def.d} fill="none" stroke={K.outline} strokeWidth={5} strokeLinejoin="round" />
 					</>
 				) : (
-					<path
-						d={def.d}
-						fill="none"
-						stroke={K.outline}
-						strokeWidth={def.width ?? 5.5}
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					/>
+					<>
+						{def.blep ? (
+							<>
+								<path
+									d="M -13 3 L -13 18 A 13 14 0 0 0 13 18 L 13 3 Z"
+									fill={K.tongue}
+									stroke={K.outline}
+									strokeWidth={4.5}
+									strokeLinejoin="round"
+								/>
+								<line x1={0} y1={5} x2={0} y2={19} stroke={K.outline} strokeWidth={3.5} strokeLinecap="round" />
+							</>
+						) : null}
+						<path
+							d={def.d}
+							fill="none"
+							stroke={K.outline}
+							strokeWidth={def.width ?? 5.5}
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						/>
+					</>
 				)}
 			</g>
 		);
@@ -637,6 +714,27 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 				ry={0.06 * R}
 				fill={K.blush}
 				opacity={face.blush * 0.55}
+			/>
+		);
+	});
+
+	const tears = ([1, -1] as const).map((s) => {
+		const tearAmt = face.tears ?? 0;
+		const a = s * (EYE_A + 10);
+		const f = facing(a);
+		if (tearAmt <= 0.01 || f < 0.1) {
+			return null;
+		}
+		const c = P(sph(a, EYE_Y + 0.19, 1.02));
+		return (
+			<path
+				key={`tear${s}`}
+				transform={`translate(${c.x} ${c.y}) rotate(${s * -14}) scale(${Math.max(f, 0.45)} 1)`}
+				d="M 0 -14 C 5 -4 10 3 10 9 C 10 15 5 19 0 19 C -5 19 -10 15 -10 9 C -10 3 -5 -4 0 -14 Z"
+				fill={K.sweat}
+				stroke={K.outline}
+				strokeWidth={3.8}
+				opacity={tearAmt}
 			/>
 		);
 	});
@@ -720,6 +818,7 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 				{blushes}
 				{eye(1)}
 				{eye(-1)}
+				{tears}
 				{mouth()}
 			</g>
 			{nose()}

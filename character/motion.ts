@@ -51,8 +51,8 @@ export const talkAt = (frame: number, fps: number, seed: string): MouthShape => 
 	return VISEMES[Math.floor(random(`${seed}-viseme-${k}`) * VISEMES.length)];
 };
 
-export type Motion = 'idle' | 'still' | 'walk' | 'run';
-export const MOTIONS: readonly Motion[] = ['idle', 'still', 'walk', 'run'];
+export type Motion = 'idle' | 'still' | 'walk' | 'run' | 'dance';
+export const MOTIONS: readonly Motion[] = ['idle', 'still', 'walk', 'run', 'dance'];
 
 const swings = (a: ArmPose) => !a.target && (a.lift ?? 0) < 40;
 
@@ -102,6 +102,45 @@ const cycle = (
 			lift: (pose.lift ?? 0) + b * 1.6,
 			shrug: (pose.shrug ?? 0) + b * 1.2,
 			headNod: (pose.headNod ?? 0) - b * 0.8,
+		};
+	}
+	if (motion === 'dance') {
+		const beat = (frame / fps) * Math.PI * 2 * speed * 1.6;
+		const sway = Math.sin(beat);
+		const bounce = Math.abs(Math.cos(beat));
+		return {
+			...pose,
+			armL: {
+				hand: 'open',
+				lift: 95 + 32 * sway,
+				swing: 18,
+				bend: 65 - 20 * sway,
+				twist: 80,
+			},
+			armR: {
+				hand: 'open',
+				lift: 95 - 32 * sway,
+				swing: 18,
+				bend: 65 + 20 * sway,
+				twist: 80,
+			},
+			legL: {
+				x: 38 + 10 * sway,
+				h: 24 * Math.max(0, sway),
+				z: 10 * sway,
+				pitch: -12 * Math.max(0, sway),
+			},
+			legR: {
+				x: 38 - 10 * sway,
+				h: 24 * Math.max(0, -sway),
+				z: -10 * sway,
+				pitch: -12 * Math.max(0, -sway),
+			},
+			crouch: (pose.crouch ?? 0) + 18 * (1 - bounce),
+			lean: (pose.lean ?? 0) + 8 * sway,
+			shrug: (pose.shrug ?? 0) + 8 * bounce,
+			headTilt: (pose.headTilt ?? 0) + 10 * sway,
+			headNod: (pose.headNod ?? 0) + 5 * (1 - bounce),
 		};
 	}
 	const run = motion === 'run';

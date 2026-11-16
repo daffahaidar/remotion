@@ -143,6 +143,60 @@ export const EXPRESSIONS = {
 		mouth: 'smirk',
 		mouthX: 0.15,
 	}),
+	excited: face({
+		...both(eye({shape: 'star'})),
+		...brows(brow({raise: 0.65, curve: 0.65})),
+		mouth: 'laugh',
+		blush: 0.85,
+	}),
+	love: face({
+		...both(eye({shape: 'heart'})),
+		...brows(brow({raise: 0.4, curve: 0.55})),
+		mouth: 'kiss',
+		blush: 1,
+	}),
+	crying: face({
+		...both(eye({open: 0.72, lower: 0.25, tilt: -18})),
+		...brows(brow({raise: 0.35, tilt: 28, curve: 0})),
+		mouth: 'shout',
+		blush: 0.4,
+		tears: 1,
+	}),
+	sleepy: face({
+		...both(eye({open: 0.32, tilt: -6})),
+		...brows(brow({raise: -0.2, curve: 0.2})),
+		lookY: 0.25,
+		mouth: 'oh',
+		blush: 0.2,
+	}),
+	dizzy: face({
+		...both(eye({shape: 'dead'})),
+		browL: brow({raise: 0.3, tilt: 16}),
+		browR: brow({raise: -0.1, tilt: -12}),
+		mouth: 'wavy',
+		sweat: 1,
+	}),
+	cheeky: face({
+		eyeL: eye({shape: 'happy'}),
+		eyeR: eye({open: 1.05, lower: 0.15}),
+		browL: brow({raise: -0.05}),
+		browR: brow({raise: 0.4}),
+		lookX: -0.25,
+		mouth: 'tongueOut',
+		blush: 0.65,
+	}),
+	scared: face({
+		...both(eye({open: 1.28, pupil: 0.5})),
+		...brows(brow({raise: 0.85, tilt: 24, curve: 0.1})),
+		mouth: 'clench',
+		sweat: 1,
+	}),
+	proud: face({
+		...both(eye({shape: 'happy'})),
+		...brows(brow({raise: 0.3, tilt: -8, curve: 0.4})),
+		mouth: 'grin',
+		blush: 0.45,
+	}),
 } satisfies Record<string, FaceSpec>;
 
 export type ExpressionName = keyof typeof EXPRESSIONS;
@@ -226,6 +280,49 @@ export const POSES = {
 		legR: {x: 36, h: 115, z: 20, pitch: -10},
 		lift: 110,
 	}),
+	peace: pose({
+		armL: {lift: 102, swing: 18, bend: 78, twist: 85, hand: 'peace', layer: 'front'},
+		headTilt: -6,
+	}),
+	facepalm: pose({
+		armR: {target: [5, -545, 95], pole: [1, 0.6, -0.2], hand: 'open', handRoll: -20, layer: 'front'},
+		headNod: 10,
+		crouch: 6,
+	}),
+	fistPump: pose({
+		armL: {target: [135, -620, 25], pole: [1, 0.3, -0.4], hand: 'fist'},
+		armR: {lift: 35, swing: -20, bend: 85, twist: 70, hand: 'fist'},
+		legL: {x: 36, h: 48, z: 18, pitch: -15},
+		headTilt: -5,
+	}),
+	bashful: pose({
+		armL: {target: [-8, -335, 80], pole: [1, 0.6, -0.2], hand: 'fist', layer: 'front'},
+		armR: {target: [-8, -335, 80], pole: [1, 0.6, -0.2], hand: 'fist', layer: 'front'},
+		lean: -4,
+		headTilt: 8,
+		headNod: 6,
+	}),
+	stop: pose({
+		...mirrorArms({lift: 78, swing: 42, bend: 48, twist: 80, hand: 'open', layer: 'front'}),
+		lean: -3,
+		headNod: -4,
+	}),
+	welcome: pose({
+		armR: {target: [-10, -330, 78], pole: [1, 0.5, -0.2], hand: 'open', layer: 'front'},
+		armL: {lift: 58, swing: 24, bend: 28, twist: 65, hand: 'open'},
+		crouch: 6,
+		headTilt: 5,
+		headNod: 6,
+	}),
+	dance: pose({
+		armL: {lift: 118, swing: 16, bend: 50, twist: 80, hand: 'peace'},
+		armR: {lift: 68, swing: 20, bend: 82, twist: 80, hand: 'open'},
+		legL: {x: 46, h: 22, z: 12, pitch: -12},
+		legR: {x: 30, h: 0, z: -8},
+		lean: 7,
+		crouch: 12,
+		headTilt: 8,
+	}),
 } satisfies Record<string, PoseSpec>;
 
 export type PoseName = keyof typeof POSES;
@@ -267,4 +364,5 @@ export const mixFace = (a: FaceSpec, b: FaceSpec, t: number): FaceSpec => ({
 	mouthX: lerp(a.mouthX, b.mouthX, t),
 	blush: lerp(a.blush, b.blush, t),
 	sweat: lerp(a.sweat, b.sweat, t),
+	tears: lerp(a.tears ?? 0, b.tears ?? 0, t),
 });

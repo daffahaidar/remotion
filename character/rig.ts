@@ -57,7 +57,7 @@ export const RIG = {
 // Pose & face types
 // ---------------------------------------------------------------------------
 
-export type HandShape = 'relaxed' | 'fist' | 'point' | 'open' | 'thumbsUp';
+export type HandShape = 'relaxed' | 'fist' | 'point' | 'open' | 'thumbsUp' | 'peace';
 export type ArmLayer = 'back' | 'mid' | 'front';
 
 /**
@@ -138,10 +138,13 @@ export const MOUTH_SHAPES = [
 	'surprised',
 	'jawDrop',
 	'shout',
+	'clench',
+	'tongueOut',
+	'kiss',
 ] as const;
 export type MouthShape = (typeof MOUTH_SHAPES)[number];
 
-export type EyeShape = 'normal' | 'happy' | 'closed';
+export type EyeShape = 'normal' | 'happy' | 'closed' | 'star' | 'heart' | 'dead';
 
 export type EyeSpec = {
 	/** 0 = closed, 1 = normal, >1 = wide open. */
@@ -177,6 +180,7 @@ export type FaceSpec = {
 	readonly mouthX: number;
 	readonly blush: number;
 	readonly sweat: number;
+	readonly tears?: number;
 };
 
 // ---------------------------------------------------------------------------
