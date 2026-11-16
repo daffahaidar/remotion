@@ -22,6 +22,28 @@ If no Remotion project currently exists, load [Create a new Remotion project](./
 
 If you are writing Remotion React Markup, load [Remotion Markup Best Practices](./remotion-markup/REFERENCE.md)
 
+## 2D Cartoon & Mascot Character Animation
+
+If you are creating or animating a 2D cartoon video, mascot character scene, expressions, lip-sync, or walk cycles, load the [Remotion 2D Cartoon skill](../remotion-2d-cartoon/SKILL.md) and reference the master character rig in [character/README.md](../../../character/README.md).
+
+## UI/UX Design, Icons (`react-icons`), Image Assets (`Unsplash`), GSAP & Content Folder (`src/content/*`)
+
+Whenever creating or styling a video composition that requires icons, UI cards, diagrams, dashboards, complex animations, or image assets, load the [UI/UX Pro Max skill](../ui-ux-pro-max/SKILL.md) and the installed **GSAP skills** (`greensock/gsap-skills`):
+- **Content Folder (`src/content/*`)**: Always save all video content code, scenes, illustrations, and raw content inside `src/content/*` (e.g., `src/content/MyTopic.tsx` or `src/content/my-topic/*`) and import them into `src/Root.tsx`.
+- **Icons**: Always use [`react-icons`](https://github.com/react-icons/react-icons) (`npm install react-icons`) instead of raw text emojis.
+- **UI/UX Reference**: Follow [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) principles (Bento Grid, Neo-Brutalism / Cartoon Pop, Glassmorphism, Claymorphism, semantic color tokens, and strong typographic hierarchy).
+- **Image Assets**: Source photographic or background images from **Unsplash** (`https://images.unsplash.com/photo-...`) and render them via `<Img>` or `<CanvasImage>` from `remotion`.
+- **Complex Animations (`GSAP` / `greensock/gsap-skills`)**: When a scene requires complex multi-step choreography, advanced staggers, SVG path/morph animations, or physics/elastic eases, load the installed GSAP skills:
+  - [GSAP Core](../../.agents/skills/gsap-core/SKILL.md) (`gsap-core`)
+  - [GSAP Timeline](../../.agents/skills/gsap-timeline/SKILL.md) (`gsap-timeline`)
+  - [GSAP React](../../.agents/skills/gsap-react/SKILL.md) (`gsap-react`)
+  - [GSAP Plugins](../../.agents/skills/gsap-plugins/SKILL.md) (`gsap-plugins`)
+  - [GSAP Utils](../../.agents/skills/gsap-utils/SKILL.md) (`gsap-utils`)
+  - [GSAP Performance](../../.agents/skills/gsap-performance/SKILL.md) (`gsap-performance`)
+  - [GSAP Frameworks](../../.agents/skills/gsap-frameworks/SKILL.md) (`gsap-frameworks`)
+  - [GSAP ScrollTrigger](../../.agents/skills/gsap-scrolltrigger/SKILL.md) (`gsap-scrolltrigger`)
+  In Remotion, always keep GSAP timelines paused (`gsap.timeline({ paused: true })`) and drive them deterministically from `useCurrentFrame()` via `tl.seek(frame / fps)` so frame rendering stays 100% deterministic.
+
 ## Maps
 
 For static maps, animated routes and markers, geographic explainers, Mapbox, MapLibre, MapTiler, GeoJSON, or 3D geographic flyovers, load [Remotion Maps](./remotion-maps/REFERENCE.md).

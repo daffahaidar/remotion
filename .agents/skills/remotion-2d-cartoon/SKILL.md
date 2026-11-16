@@ -167,22 +167,37 @@ Because `motion="walk"` and `motion="run"` animate steps in place, animate `styl
 
 ---
 
-## 3. Cartoon Speech Bubbles, Callouts & Props
+## 3. Cartoon Speech Bubbles, Callouts, UI Design & Asset Rules
 
-Style callout cards, speech bubbles, and titles to match the 2D cartoon aesthetic:
-- Font: `@remotion/google-fonts/Fredoka` (`fontWeight: 600`)
-- Cartoon stroke: `border: '8px solid #1f1a1f'`, rounded corners (`borderRadius: 40` to `80`), crisp white or pastel fill.
-- Pop-in animation: inline `scale: interpolate(..., [0, 1], {easing: Easing.spring({damping: 12}), output: 'perceptual-scale', extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})`.
+Always combine this skill with [`ui-ux-pro-max`](../ui-ux-pro-max/SKILL.md) when designing scene cards, diagrams, callouts, icons, and image assets:
+
+1. **Vector Icons (`react-icons`)**:
+   - Whenever a scene, diagram, badge, or callout needs icons, use SVG icon components from [`react-icons`](https://github.com/react-icons/react-icons) (e.g., `react-icons/fa6`, `react-icons/lu`, `react-icons/tb`, `react-icons/hi2`, `react-icons/md`) instead of raw text emojis.
+   - Install `react-icons` if not present (`npm install react-icons`).
+2. **UI/UX Design Reference (`ui-ux-pro-max-skill`)**:
+   - Follow [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) principles (`../ui-ux-pro-max/SKILL.md`) for visual cards, infographics, and dashboards:
+     - Use **Neo-Brutalism / Cartoon Pop** (`border: '6px–8px solid #1f1a1f'`, hard offset shadows `0 8px 0 #1f1a1f`, high-contrast semantic palettes) and **Bento Grid** layouts for multi-item summaries.
+     - Font pairing: `@remotion/google-fonts/Fredoka` (`fontWeight: 600–700`) for headers/callouts + monospace (`JetBrains Mono` / `Fira Code`) for technical labels, URLs, and IP addresses.
+     - Pop-in animation: inline `scale: interpolate(..., [0, 1], {easing: Easing.spring({damping: 12}), output: 'perceptual-scale', extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})`.
+3. **Image Assets (`Unsplash`)**:
+   - When real-world photos, backgrounds, or visual reference images are needed, source high-resolution images from **Unsplash** (`https://images.unsplash.com/photo-<id>?auto=format&fit=crop&w=1200&q=80`) and render them using Remotion's `<Img>` or `<CanvasImage>` so frames wait for image loading.
+4. **Complex Animations (`GSAP` — `greensock/gsap-skills`)**:
+   - When a scene requires complex choreography, multi-element staggered sequences, intricate SVG animations, or custom elastic/bounce eases, load the installed **GSAP skills** from [`greensock/gsap-skills`](https://github.com/greensock/gsap-skills).
+   - Inside Remotion components, always create paused timelines (`gsap.timeline({ paused: true })`) and scrub them deterministically with `tl.seek(frame / fps)` inside `useLayoutEffect` / `useEffect` tied to `useCurrentFrame()`.
 
 ---
 
 ## 4. Workflow Checklist for Creating a New 2D Cartoon Video
 
-1. **Read `remotion-best-practices` and `remotion-interactivity`** to ensure Studio-editable markup.
-2. **Design the Scene Timeline**:
+1. **Read `remotion-best-practices`, `remotion-interactivity`, and `ui-ux-pro-max`** to ensure Studio-editable markup and pro-grade UI/UX design.
+2. **Store Video Content Code in `src/content/*`**:
+   - Save all video content compositions, scenes, illustrations, and raw content files inside `src/content/*` (for example, `src/content/HowInternetWorks.tsx` or `src/content/<topic>/...`).
+   - When importing the character rigs from inside `src/content/*`, import from `../../character` (or `../../../character` if nested in a subfolder).
+3. **Ensure `react-icons` is installed** (`npm install react-icons`) when building icon-rich scenes or diagrams, and use **Unsplash** (`<Img src="https://images.unsplash.com/..." />`) when photographic assets are needed.
+4. **Design the Scene Timeline**:
    - Break the story into clear beats (`<Track name="Background">`, `<Track name="Mascot">`, `<Track name="Props">`, `<Track name="Callouts">`, `<Track name="Audio">`).
-3. **Register in `src/Root.tsx`**:
-   - Keep `id`, `width`, `height`, `fps`, `durationInFrames`, and `defaultProps` inline on `<Composition>`.
-4. **Preview in Remotion Studio**:
+5. **Register in `src/Root.tsx`**:
+   - Import the composition from `./content/...` and keep `id`, `width`, `height`, `fps`, `durationInFrames`, and `defaultProps` inline on `<Composition>`.
+6. **Preview in Remotion Studio**:
    - Start Studio (`npx remotion studio`) or render verification stills (`npx remotion still <CompId> out/check.png --frame=<N>`) and run `npm run lint` (`eslint src character && tsc`) to verify zero TypeScript or Remotion ESLint errors.
 

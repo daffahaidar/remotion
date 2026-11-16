@@ -97,10 +97,12 @@ style={{
 }}
 ```
 
-## Assets
+## Assets, Icons (`react-icons`), UI Reference (`ui-ux-pro-max`) & Unsplash Images
 
-Place assets in the `public/` folder at your project root.
-Use `staticFile()` to reference files from the `public/` folder.
+- **Local Assets**: Place local assets in the `public/` folder at your project root and use `staticFile()` to reference them.
+- **Vector Icons**: When a composition needs icons, use [`react-icons`](https://github.com/react-icons/react-icons) (`npm install react-icons`) instead of raw emojis.
+- **UI/UX Design System**: When designing UI cards, infographics, callouts, or layouts, follow the [UI/UX Pro Max skill](../../ui-ux-pro-max/SKILL.md) based on [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill).
+- **Image Assets from Unsplash**: When photographic or background image assets are needed, use high-resolution URLs from **Unsplash** (`https://images.unsplash.com/photo-<id>?auto=format&fit=crop&w=1200&q=80`) rendered via `<Img>` or `<CanvasImage>` from `remotion`.
 
 ## Media components
 

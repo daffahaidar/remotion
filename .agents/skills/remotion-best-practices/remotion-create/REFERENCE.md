@@ -44,7 +44,11 @@ As soon as the project can run, open [Remotion Studio](../remotion-studio/REFERE
 ## Designing a video
 
 Keep the scaffold and add React Markup.
-Follow [Remotion React Markup Best Practices](../remotion-markup/REFERENCE.md) and [Video Layout Rules](video-layout.md) for video-first layout and text sizing guidance.
+- **Content Folder Structure (`src/content/*`)**: Always store all new video content compositions, scenes, illustrations, and raw content code inside `src/content/*` (e.g. `src/content/<VideoName>.tsx` or `src/content/<topic-folder>/*`), then import and register them in `src/Root.tsx`. Keep `src/` root clean.
+- Follow [Remotion React Markup Best Practices](../remotion-markup/REFERENCE.md), [Video Layout Rules](video-layout.md), and the [UI/UX Pro Max skill](../../ui-ux-pro-max/SKILL.md) for video-first layout, UI design, icons, and image assets:
+  - **Icons**: If the video needs icons, use [`react-icons`](https://github.com/react-icons/react-icons) (`npm install react-icons`) rather than plain emojis.
+  - **UI Reference**: Use [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) design systems (Bento Grid, Neo-Brutalism, Glassmorphism, Claymorphism, cohesive color tokens, and clean typography).
+  - **Image Assets**: If the video needs photographic or visual image assets, fetch high-resolution photos from **Unsplash** (`https://images.unsplash.com/photo-...`) and render them with `<Img>` or `<CanvasImage>`.
 
 Before writing the root that registers `<Composition>` or `<Still>` elements,
 follow [Compositions and stills](../remotion-markup/compositions.md).
