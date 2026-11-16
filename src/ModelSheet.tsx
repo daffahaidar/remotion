@@ -1,7 +1,15 @@
 import {loadFont} from '@remotion/google-fonts/Fredoka';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {COLORS, Character, EXPRESSION_NAMES, type CharacterProps, type MouthShape} from '../character';
+import {
+	COLORS as MAN_COLORS,
+	Character as ManCharacter,
+	EXPRESSION_NAMES,
+	WOMAN_COLORS,
+	WomanCharacter,
+	type CharacterProps,
+	type MouthShape,
+} from '../character';
 
 loadFont('normal', {weights: ['500', '700'], subsets: ['latin']});
 
@@ -58,18 +66,31 @@ const ACTIONS: readonly [string, CharacterProps][] = [
 	['Sit', {pose: 'sit', expression: 'happy'}],
 ];
 
-const SWATCHES: readonly [string, string][] = [
-	['Skin', COLORS.skin],
-	['Hair', COLORS.hair],
-	['Glasses', COLORS.frame],
-	['T-shirt', COLORS.shirt],
-	['Jeans', COLORS.pants],
-	['Sneakers', COLORS.shoe],
+const MAN_SWATCHES: readonly [string, string][] = [
+	['Skin', MAN_COLORS.skin],
+	['Hair', MAN_COLORS.hair],
+	['Glasses', MAN_COLORS.frame],
+	['T-shirt', MAN_COLORS.shirt],
+	['Jeans', MAN_COLORS.pants],
+	['Sneakers', MAN_COLORS.shoe],
+];
+
+const WOMAN_SWATCHES: readonly [string, string][] = [
+	['Skin', WOMAN_COLORS.skin],
+	['Hijab', WOMAN_COLORS.hijab],
+	['Ciput', WOMAN_COLORS.hijabInner],
+	['Tunic', WOMAN_COLORS.shirt],
+	['Pants', WOMAN_COLORS.pants],
+	['Sneakers', WOMAN_COLORS.shoe],
 ];
 
 const INK = '#2a2530';
 
-const Section: React.FC<{readonly y: number; readonly children: React.ReactNode}> = ({y, children}) => (
+const Section: React.FC<{
+	readonly y: number;
+	readonly accent: string;
+	readonly children: React.ReactNode;
+}> = ({y, accent, children}) => (
 	<div
 		style={{
 			position: 'absolute',
@@ -80,7 +101,7 @@ const Section: React.FC<{readonly y: number; readonly children: React.ReactNode}
 			paddingTop: 18,
 			fontSize: 56,
 			fontWeight: 700,
-			color: COLORS.shirtShade,
+			color: accent,
 		}}
 	>
 		{children}
@@ -108,28 +129,33 @@ const Label: React.FC<{
 	</div>
 );
 
-/** Places a character so that its viewBox is scaled to `w` x `h` at (x, y). */
-const Cell: React.FC<{
-	readonly x: number;
-	readonly y: number;
-	readonly w: number;
-	readonly h: number;
-	readonly props: CharacterProps;
-}> = ({x, y, w, h, props}) => (
-	<Character {...props} style={{position: 'absolute', left: x - w / 2, top: y, width: w, height: h}} />
-);
-
-export const ModelSheet: React.FC = () => {
+const SheetLayout: React.FC<{
+	readonly title: string;
+	readonly subtitle: string;
+	readonly accent: string;
+	readonly swatches: readonly [string, string][];
+	readonly Rig: typeof ManCharacter;
+}> = ({title, subtitle, accent, swatches, Rig}) => {
 	const col = (i: number, n: number) => 100 + (2200 / n) * (i + 0.5);
+	const Cell: React.FC<{
+		readonly x: number;
+		readonly y: number;
+		readonly w: number;
+		readonly h: number;
+		readonly props: CharacterProps;
+	}> = ({x, y, w, h, props}) => (
+		<Rig {...props} style={{position: 'absolute', left: x - w / 2, top: y, width: w, height: h}} />
+	);
+
 	return (
 		<AbsoluteFill style={{backgroundColor: '#f6f3ee', fontFamily: 'Fredoka', color: INK}}>
 			<div style={{position: 'absolute', left: 100, top: 80, fontSize: 96, fontWeight: 700}}>
-				Mascot · Master Character Rig
+				{title}
 			</div>
 			<div style={{position: 'absolute', left: 104, top: 200, fontSize: 44, fontWeight: 500, color: '#6b6474'}}>
-				Model sheet: turnaround, expressions, lip sync and poses
+				{subtitle}
 			</div>
-			{SWATCHES.map(([name, color], i) => (
+			{swatches.map(([name, color], i) => (
 				<div key={name} style={{position: 'absolute', left: 1430 + i * 135, top: 92, width: 120, textAlign: 'center'}}>
 					<div
 						style={{
@@ -138,7 +164,7 @@ export const ModelSheet: React.FC = () => {
 							margin: '0 auto',
 							borderRadius: 42,
 							backgroundColor: color,
-							border: `5px solid ${COLORS.outline}`,
+							border: `5px solid ${MAN_COLORS.outline}`,
 						}}
 					/>
 					<div style={{fontSize: 26, fontWeight: 500, marginTop: 8}}>{name}</div>
@@ -146,7 +172,9 @@ export const ModelSheet: React.FC = () => {
 				</div>
 			))}
 
-			<Section y={300}>Turnaround</Section>
+			<Section y={300} accent={accent}>
+				Turnaround
+			</Section>
 			{TURNAROUND.map(([yaw, label], i) => (
 				<React.Fragment key={label}>
 					<Cell x={col(i, 5)} y={380} w={588} h={630} props={{yaw}} />
@@ -156,7 +184,9 @@ export const ModelSheet: React.FC = () => {
 				</React.Fragment>
 			))}
 
-			<Section y={1080}>Expressions</Section>
+			<Section y={1080} accent={accent}>
+				Expressions
+			</Section>
 			{EXPRESSION_NAMES.map((name, i) => {
 				const x = col(i % 8, 8);
 				const y = 1170 + Math.floor(i / 8) * 370;
@@ -170,7 +200,9 @@ export const ModelSheet: React.FC = () => {
 				);
 			})}
 
-			<Section y={2670}>Lip sync mouth chart</Section>
+			<Section y={2670} accent={accent}>
+				Lip sync mouth chart
+			</Section>
 			{MOUTH_CHART.map(([shape, label], i) => (
 				<React.Fragment key={shape}>
 					<Cell
@@ -186,7 +218,9 @@ export const ModelSheet: React.FC = () => {
 				</React.Fragment>
 			))}
 
-			<Section y={3080}>Poses and actions</Section>
+			<Section y={3080} accent={accent}>
+				Poses and actions
+			</Section>
 			{ACTIONS.map(([label, props], i) => {
 				const x = col(i % 7, 7);
 				const y = 3150 + Math.floor(i / 7) * 550;
@@ -202,3 +236,23 @@ export const ModelSheet: React.FC = () => {
 		</AbsoluteFill>
 	);
 };
+
+export const ModelSheet: React.FC = () => (
+	<SheetLayout
+		title="Man · Master Character Rig"
+		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
+		accent={MAN_COLORS.shirtShade}
+		swatches={MAN_SWATCHES}
+		Rig={ManCharacter}
+	/>
+);
+
+export const WomanModelSheet: React.FC = () => (
+	<SheetLayout
+		title="Woman · Hijabi Character Rig"
+		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
+		accent={WOMAN_COLORS.hijabShade}
+		swatches={WOMAN_SWATCHES}
+		Rig={WomanCharacter}
+	/>
+);

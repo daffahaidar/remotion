@@ -32,17 +32,21 @@ Use this skill alongside `remotion-best-practices`, `remotion-markup`, and `remo
 
 ---
 
-## 2. Using the Project's Master 2D Character Rig (`character/`)
+## 2. Using the Project's Master 2D Character Rigs (`character/man` & `character/woman`)
 
-This workspace includes a complete, Studio-interactive 2.5D/2D SVG Mascot Rig in [`character/`](../../character/README.md). Always prefer importing `<Character>` from `../character` rather than drawing throwaway characters from scratch unless asked for a new character.
+This workspace includes two complete, Studio-interactive 2.5D/2D SVG Mascot Rigs in [`character/`](../../character/README.md):
+- **Male Character (`character/man`)**: [`character/man/README.md`](../../character/man/README.md) (`ManCharacter` / `Character`)
+- **Female Hijabi Character (`character/woman`)**: [`character/woman/README.md`](../../character/woman/README.md) (`WomanCharacter` / `Character`)
+
+Both characters share the exact same props interface (`expression`, `pose`, `talking`, `mouth`, `motion`, `yaw`, etc.). Always prefer importing `<ManCharacter>` and `<WomanCharacter>` from `../character` (or `../character/man` and `../character/woman`).
 
 ### Basic Usage inside `<Track>`
 
-`<Character>` is already wrapped with `Interactive.create` and acts as a timeline sequence item (accepting `name`, `from`, `durationInFrames`, and `style`).
+Both `<ManCharacter>` and `<WomanCharacter>` are wrapped with `Interactive.create` and act as timeline sequence items (accepting `name`, `from`, `durationInFrames`, and `style`).
 
 ```tsx
 import {AbsoluteFill, Easing, Interactive, Track, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Character} from '../character';
+import {ManCharacter, WomanCharacter} from '../character';
 
 export const CartoonScene: React.FC = () => {
 	const frame = useCurrentFrame();
@@ -51,14 +55,22 @@ export const CartoonScene: React.FC = () => {
 	return (
 		<AbsoluteFill style={{background: 'linear-gradient(#cfe8ff, #f4faff)'}}>
 			<Track name="Mascot">
-				<Character
-					name="Greeting"
+				<ManCharacter
+					name="Host Man"
 					from={0}
 					durationInFrames={3 * fps}
 					pose="wave"
 					expression="happy"
 					talking
-					style={{translate: '540px 120px', scale: 0.9}}
+					style={{translate: '360px 120px', scale: 0.9}}
+				/>
+				<WomanCharacter
+					name="Host Woman"
+					from={0}
+					durationInFrames={3 * fps}
+					pose="welcome"
+					expression="happy"
+					style={{translate: '880px 120px', scale: 0.9}}
 				/>
 			</Track>
 		</AbsoluteFill>
