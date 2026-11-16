@@ -191,7 +191,7 @@ export const POSES = {
 		headYaw: 8,
 	}),
 	surprised: pose({
-		...mirrorArms({target: [150, -465, 75], pole: [1, 0.9, -0.3], hand: 'open', layer: 'front'}),
+		...mirrorArms({target: [138, -465, 75], pole: [1, 0.9, -0.3], hand: 'open', layer: 'front'}),
 		headNod: -5,
 	}),
 	cheer: pose({

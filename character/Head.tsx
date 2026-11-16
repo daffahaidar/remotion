@@ -188,13 +188,16 @@ const JAW: Partial<Record<MouthShape, number>> = {
 	surprised: 0.04,
 };
 
-const EYE_A = 23;
+const SX = 0.86;
+const SZ = 0.94;
+const EYE_A = 24;
 const EYE_Y = 0.06;
-const ERX = 0.19 * R;
-const ERY = 0.235 * R;
-const LENS = 0.3 * R;
-/** Lens center distance from the nose, head units. */
-const LENS_X = 0.4;
+const ERX = 0.18 * R;
+const ERY = 0.225 * R;
+const LENS = 0.282 * R;
+/** Lens center distance from the nose, head units (before SX). */
+const LENS_X = 0.425;
+const LENS_RX = LENS / (R * SX);
 
 const tuftPath = (b: Pt, t: Pt, w: number, bend: number) => {
 	const dx = t.x - b.x;
@@ -222,7 +225,7 @@ export type HeadProps = {
 /** The head, drawn around its center (0, 0). */
 export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 	const P = (p: V3): Pt => {
-		const q = rotX(rotY(p, yaw), -nod);
+		const q = rotX(rotY(v3(p.x * SX, p.y, p.z * SZ), yaw), -nod);
 		return {x: q.x * R, y: q.y * R, z: q.z};
 	};
 	const sph = (aDeg: number, y: number, r = 1): V3 => {
@@ -232,20 +235,39 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 	const facing = (aDeg: number) => Math.cos((aDeg + yaw) * D2R);
 	const sinYaw = Math.sin(yaw * D2R);
 	const cosYaw = Math.cos(yaw * D2R);
+	const crx = Math.hypot(SX * cosYaw, SZ * sinYaw) * R;
 	const id = (n: string) => `${uid}-${n}`;
 	const url = (n: string) => `url(#${id(n)})`;
 
-	// --- skull + jaw -----------------------------------------------------
+	// --- skull + jaw (smooth oval contour) -------------------------------
 	const jaw = JAW[face.mouth] ?? 0;
-	const jc = P(v3(0, 0.3 + jaw / 2, 0.12));
-	const jrx = Math.sqrt((0.9 * cosYaw) ** 2 + (0.78 * sinYaw) ** 2) * R;
-	const jry = (0.75 + jaw / 2) * R;
-	const skull = (grow: number) => (
-		<>
-			<circle cx={0} cy={0} r={R + grow} />
-			<ellipse cx={jc.x} cy={jc.y} rx={jrx + grow} ry={jry + grow} />
-		</>
-	);
+	const skullPath = (grow: number) => {
+		const n = 48;
+		const pts: P2[] = [];
+		const nodShift = Math.sin(-nod * D2R) * 0.12 * R;
+		const yReach = lerp(0.86, 1.01 + jaw * 0.9, (cosYaw + 1) / 2);
+		for (let i = 0; i < n; i++) {
+			const th = (i / n) * Math.PI * 2;
+			const s = Math.sin(th);
+			const c = -Math.cos(th);
+			if (c <= 0) {
+				pts.push([s * (crx + grow), c * (R + grow)]);
+			} else {
+				const taperX = 1 - 0.12 * c * c;
+				const taperZ = 1 - 0.1 * c * c;
+				const rx = SX * taperX;
+				const rz = SZ * taperZ;
+				const hw = Math.hypot(rx * cosYaw, rz * sinYaw) * R + grow;
+				const cz = 0.11 * c * (2 - c) * SZ * sinYaw * R;
+				const sideSlope = s * sinYaw * 0.05 * c * R;
+				const y = c * yReach * R + sideSlope + c * nodShift + grow * c;
+				pts.push([cz + s * hw, y]);
+			}
+		}
+		return smoothPath(pts);
+	};
+	const skullD = skullPath(0);
+	const skull = (grow: number) => <path d={grow === 0 ? skullD : skullPath(grow)} />;
 
 	// --- hair cap: scalp area above the hairline, seen from this angle ----
 	const capPath = (rCap: number) => {
@@ -265,7 +287,7 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 		if (entry === -1) {
 			return pts[0].z >= 0
 				? smoothPath(pts.map((p): P2 => [p.x, p.y]))
-				: ell(0, 0, rCap * R, rCap * R);
+				: ell(0, 0, rCap * crx, rCap * R);
 		}
 		const edge = (p: Pt, q: Pt): P2 => {
 			const t = p.z / (p.z - q.z);
@@ -280,8 +302,8 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 		run.push(edge(pts[(i - 1) % n], pts[i % n]));
 		const first = run[0];
 		const last = run[run.length - 1];
-		const a0 = Math.atan2(last[1], last[0]);
-		const a1 = Math.atan2(first[1], first[0]);
+		const a0 = Math.atan2(last[1] / R, last[0] / crx);
+		const a1 = Math.atan2(first[1] / R, first[0] / crx);
 		const tau = Math.PI * 2;
 		const mod = (x: number) => ((x % tau) + tau) % tau;
 		const ccw = mod(a1 - a0);
@@ -289,7 +311,7 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 		const steps = Math.max(2, Math.ceil(Math.abs(sweep) / (6 * D2R)));
 		for (let k = 0; k <= steps; k++) {
 			const ang = a0 + (sweep * k) / steps;
-			run.push([Math.cos(ang) * rCap * R, Math.sin(ang) * rCap * R]);
+			run.push([Math.cos(ang) * rCap * crx, Math.sin(ang) * rCap * R]);
 		}
 		return polyPath(run);
 	};
@@ -361,7 +383,7 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 		.map((s) => ({s, c: P(v3(s * LENS_X, EYE_Y, 1.02))}))
 		.filter((l) => l.c.z > -0.05);
 	const temples = ([1, -1] as const).map((s) => {
-		const h = P(v3(s * (LENS_X + 0.29), -0.02, 0.92));
+		const h = P(v3(s * (LENS_X + LENS_RX * 0.96), -0.02, 0.92));
 		const e = P(v3(s * 0.97, 0.03, -0.12));
 		return {
 			back: e.z < 0,
@@ -380,8 +402,8 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 			),
 		};
 	});
-	const bridgeA = P(v3(LENS_X - 0.3, 0, 1.02));
-	const bridgeB = P(v3(0.3 - LENS_X, 0, 1.02));
+	const bridgeA = P(v3(LENS_X - LENS_RX, 0, 1.02));
+	const bridgeB = P(v3(LENS_RX - LENS_X, 0, 1.02));
 	const bridgeC = P(v3(0, -0.06, 1.06));
 
 	// --- eyes --------------------------------------------------------------
