@@ -1,7 +1,7 @@
 {
   "name": "mascot-series",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "2D cartoon motion graphic series with a reusable mascot rig",
   "repository": {},
   "license": "UNLICENSED",
   "engines": {
@@ -10,6 +10,7 @@
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.543",
+    "@remotion/google-fonts": "4.0.543",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "remotion": "4.0.543"
@@ -26,7 +27,7 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src character && tsc"
   },
   "allowScripts": {
     "esbuild": false
