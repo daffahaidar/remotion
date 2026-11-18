@@ -27,11 +27,13 @@ import {
 	TechLeadModelSheet,
 	WomanModelSheet,
 } from './ModelSheet';
+import {PropertySheet} from './PropertySheet';
 import {RigDemo} from './RigDemo';
 
 export const RemotionRoot: React.FC = () => {
 	return (
-		<Folder name="Mascot">
+		<>
+			<Folder name="Mascot">
 			<Composition
 				id="MascotRig"
 				component={Character}
@@ -280,6 +282,10 @@ export const RemotionRoot: React.FC = () => {
 				height={5380}
 			/>
 			<Still id="HackerModelSheet" component={HackerModelSheet} width={2400} height={5380} />
-		</Folder>
+			</Folder>
+			<Folder name="Props">
+				<Still id="PropertySheet" component={PropertySheet} width={2400} height={2820} />
+			</Folder>
+		</>
 	);
 };

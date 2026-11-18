@@ -14,6 +14,11 @@ If you detect a surprising change made in the meanwhile, don't overwrite it, ass
 
 If the user asks to make, create, or build a new video or composition, load [Create a new Remotion video](./remotion-create/REFERENCE.md), whether or not a Remotion project already exists.
 
+> **Project Visual & Animation Standard**:
+> - **Animation & UI Style**: Always design video animations in **Neuromorphism (Soft UI)** style by default (soft extruded/inset dual shadows, tactile spring motion, clean soft palettes) unless explicitly requested otherwise.
+> - **Mandatory UI/UX Skill**: **Always read and follow the [UI/UX Pro Max skill](../ui-ux-pro-max/SKILL.md)** whenever creating any visual display, scene card, diagram, infographic, or layout.
+> - **Reusable Assets**: Use the character rigs in [`character/`](../../../character/README.md) and reusable props in [`property/`](../../../property/README.md) when characters or props are needed.
+
 ## New project setup
 
 If no Remotion project currently exists, load [Create a new Remotion project](./remotion-create/REFERENCE.md)
@@ -28,10 +33,11 @@ If you are creating or animating a 2D cartoon video, mascot character scene, exp
 
 ## UI/UX Design, Icons (`react-icons`), Image Assets (`Unsplash`), GSAP & Content Folder (`src/content/*`)
 
-Whenever creating or styling a video composition that requires icons, UI cards, diagrams, dashboards, complex animations, or image assets, load the [UI/UX Pro Max skill](../ui-ux-pro-max/SKILL.md) and the installed **GSAP skills** (`greensock/gsap-skills`):
+**MANDATORY**: Whenever creating or styling any video composition, layout, or visual display, **always load and follow the [UI/UX Pro Max skill](../ui-ux-pro-max/SKILL.md)** and use **Neuromorphism (Soft UI)** as the default video animation style (together with the installed **GSAP skills** `greensock/gsap-skills` when complex motion is needed):
+- **Default Style — Neuromorphism (Soft UI)**: Use unified matte canvases (`#e8eef5` light / `#1e232c` dark), dual opposing soft shadows (raised extruded cards & pressed inset tracks/wells), tactile spring/bezier shadow elevation animations, and crisp contrast accents.
 - **Content Folder (`src/content/*`)**: Always save all video content code, scenes, illustrations, and raw content inside `src/content/*` (e.g., `src/content/MyTopic.tsx` or `src/content/my-topic/*`) and import them into `src/Root.tsx`.
 - **Icons**: Always use [`react-icons`](https://github.com/react-icons/react-icons) (`npm install react-icons`) instead of raw text emojis.
-- **UI/UX Reference**: Follow [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) principles (Bento Grid, Neo-Brutalism / Cartoon Pop, Glassmorphism, Claymorphism, semantic color tokens, and strong typographic hierarchy).
+- **UI/UX Reference**: Follow [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) principles (`../ui-ux-pro-max/SKILL.md`: **Neuromorphism default**, Bento Grid layouts, semantic color tokens, WCAG contrast, and strong typographic hierarchy).
 - **Image Assets**: Source photographic or background images from **Unsplash** (`https://images.unsplash.com/photo-...`) and render them via `<Img>` or `<CanvasImage>` from `remotion`.
 - **Complex Animations (`GSAP` / `greensock/gsap-skills`)**: When a scene requires complex multi-step choreography, advanced staggers, SVG path/morph animations, or physics/elastic eases, load the installed GSAP skills:
   - [GSAP Core](../gsap-core/SKILL.md) (`gsap-core`)

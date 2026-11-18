@@ -167,21 +167,25 @@ Because `motion="walk"` and `motion="run"` animate steps in place, animate `styl
 
 ---
 
-## 3. Cartoon Speech Bubbles, Callouts, UI Design & Asset Rules
+## 3. UI Design (Neuromorphism Default), Callouts & Asset Rules
 
-Always combine this skill with [`ui-ux-pro-max`](../ui-ux-pro-max/SKILL.md) when designing scene cards, diagrams, callouts, icons, and image assets:
+**MANDATORY**: Always read and follow [`ui-ux-pro-max`](../ui-ux-pro-max/SKILL.md) whenever designing scene cards, speech bubbles, diagrams, callouts, dashboards, or visual layouts:
 
 1. **Vector Icons (`react-icons`)**:
    - Whenever a scene, diagram, badge, or callout needs icons, use SVG icon components from [`react-icons`](https://github.com/react-icons/react-icons) (e.g., `react-icons/fa6`, `react-icons/lu`, `react-icons/tb`, `react-icons/hi2`, `react-icons/md`) instead of raw text emojis.
    - Install `react-icons` if not present (`npm install react-icons`).
-2. **UI/UX Design Reference (`ui-ux-pro-max-skill`)**:
-   - Follow [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) principles (`../ui-ux-pro-max/SKILL.md`) for visual cards, infographics, and dashboards:
-     - Use **Neo-Brutalism / Cartoon Pop** (`border: '6px–8px solid #1f1a1f'`, hard offset shadows `0 8px 0 #1f1a1f`, high-contrast semantic palettes) and **Bento Grid** layouts for multi-item summaries.
-     - Font pairing: `@remotion/google-fonts/Fredoka` (`fontWeight: 600–700`) for headers/callouts + monospace (`JetBrains Mono` / `Fira Code`) for technical labels, URLs, and IP addresses.
-     - Pop-in animation: inline `scale: interpolate(..., [0, 1], {easing: Easing.spring({damping: 12}), output: 'perceptual-scale', extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})`.
-3. **Image Assets (`Unsplash`)**:
+2. **UI/UX Design & Neuromorphism Animation Standard (`ui-ux-pro-max`)**:
+   - **Always follow [`ui-ux-pro-max`](../ui-ux-pro-max/SKILL.md)** (`nextlevelbuilder/ui-ux-pro-max-skill` rules) when building any display/UI element.
+   - **Default Video & UI Style = Neuromorphism (Soft UI)**: Stage characters (`character/*`) and props (`property/*`) inside unified soft-matte canvases (`#e8eef5` light / `#1e232c` dark) with **extruded dual-shadow cards**, **recessed/inset metric wells & icon badges**, soft `borderRadius: 24px–36px`, and tactile spring/bezier shadow elevation animations (`interpolate()` driving depth smoothly).
+   - Use **Bento Grid** layouts for multi-item comparisons and structured explainers.
+   - Font pairing: `@remotion/google-fonts/Fredoka` (`fontWeight: 600–700`) for headers/callouts + monospace (`JetBrains Mono` / `Fira Code`) for technical labels, URLs, and IP addresses.
+   - Pop-in / extrusion animation: inline `scale: interpolate(..., [0, 1], {easing: Easing.spring({damping: 16}), output: 'perceptual-scale', extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})` alongside animated dual-shadow depth.
+3. **Reusable Character Rigs & Props (`character/` & `property/`)**:
+   - All 12 cartoon characters live in [`character/`](../../character/README.md) (`ManCharacter`, `WomanCharacter`, `FrontendProgrammerCharacter`, `BackendProgrammerCharacter`, `BossCharacter`, `ChefCharacter`, `DoctorCharacter`, `ProjectManagerCharacter`, `TechLeadCharacter`, `FullstackProgrammerCharacter`, `QualityAssuranceCharacter`, `HackerCharacter`).
+   - All 12 reusable SVG props live in [`property/`](../../property/README.md) (`Laptop`, `DesktopComputer`, `Smartphone`, `ServerRack`, `DatabaseCylinder`, `OfficeDesk`, `Whiteboard`, `CoffeeMug`, `Clipboard`, `Briefcase`, `ServingCloche`, `MedicalKit`).
+4. **Image Assets (`Unsplash`)**:
    - When real-world photos, backgrounds, or visual reference images are needed, source high-resolution images from **Unsplash** (`https://images.unsplash.com/photo-<id>?auto=format&fit=crop&w=1200&q=80`) and render them using Remotion's `<Img>` or `<CanvasImage>` so frames wait for image loading.
-4. **Complex Animations (`GSAP` — `greensock/gsap-skills`)**:
+5. **Complex Animations (`GSAP` — `greensock/gsap-skills`)**:
    - When a scene requires complex choreography, multi-element staggered sequences, intricate SVG animations, or custom elastic/bounce eases, load the installed **GSAP skills** from [`greensock/gsap-skills`](https://github.com/greensock/gsap-skills).
    - Inside Remotion components, always create paused timelines (`gsap.timeline({ paused: true })`) and scrub them deterministically with `tl.seek(frame / fps)` inside `useLayoutEffect` / `useEffect` tied to `useCurrentFrame()`.
 
@@ -189,15 +193,15 @@ Always combine this skill with [`ui-ux-pro-max`](../ui-ux-pro-max/SKILL.md) when
 
 ## 4. Workflow Checklist for Creating a New 2D Cartoon Video
 
-1. **Read `remotion-best-practices`, `remotion-interactivity`, and `ui-ux-pro-max`** to ensure Studio-editable markup and pro-grade UI/UX design.
+1. **Read `remotion-best-practices`, `remotion-interactivity`, and `ui-ux-pro-max`** to ensure Studio-editable markup and pro-grade UI/UX design in **Neuromorphism** style.
 2. **Store Video Content Code in `src/content/*`**:
    - Save all video content compositions, scenes, illustrations, and raw content files inside `src/content/*` (for example, `src/content/HowInternetWorks.tsx` or `src/content/<topic>/...`).
-   - When importing the character rigs from inside `src/content/*`, import from `../../character` (or `../../../character` if nested in a subfolder).
+   - When importing the character rigs or props from inside `src/content/*`, import from `../../character` / `../../property` (or `../../../character` / `../../../property` if nested in a subfolder).
 3. **Ensure `react-icons` is installed** (`npm install react-icons`) when building icon-rich scenes or diagrams, and use **Unsplash** (`<Img src="https://images.unsplash.com/..." />`) when photographic assets are needed.
 4. **Design the Scene Timeline**:
    - Break the story into clear beats (`<Track name="Background">`, `<Track name="Mascot">`, `<Track name="Props">`, `<Track name="Callouts">`, `<Track name="Audio">`).
 5. **Register in `src/Root.tsx`**:
    - Import the composition from `./content/...` and keep `id`, `width`, `height`, `fps`, `durationInFrames`, and `defaultProps` inline on `<Composition>`.
 6. **Preview in Remotion Studio**:
-   - Start Studio (`npx remotion studio`) or render verification stills (`npx remotion still <CompId> out/check.png --frame=<N>`) and run `npm run lint` (`eslint src character && tsc`) to verify zero TypeScript or Remotion ESLint errors.
+   - Start Studio (`npx remotion studio`) or render verification stills (`npx remotion still <CompId> out/check.png --frame=<N>`) and run `npm run lint` (`eslint src character property && tsc`) to verify zero TypeScript or Remotion ESLint errors.
 
