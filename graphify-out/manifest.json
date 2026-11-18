@@ -862,5 +862,11 @@
     "seen": 1795020036.0373728,
     "ast_hash": "d57f3987d62fd1f6a6c788840c857734",
     "semantic_hash": "d57f3987d62fd1f6a6c788840c857734"
+  },
+  "package-lock.json": {
+    "mtime": 1794835349.8810413,
+    "seen": 1795020147.1052449,
+    "ast_hash": "5d9a60ce602156f85f09bf94933d59e5",
+    "semantic_hash": ""
   }
 }
