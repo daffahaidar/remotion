@@ -1,158 +1,285 @@
 import {Composition, Folder, Still} from 'remotion';
-import {Character, WomanCharacter} from '../character';
-import {ModelSheet, WomanModelSheet} from './ModelSheet';
-import {RigDemo} from './RigDemo';
 import {
-	Scene01Hook,
-	Scene02RestaurantIntro,
-	Scene03SsrAnalogy,
-	Scene04SsrTech,
-	Scene05CsrAnalogy,
-	Scene06CsrTech,
-	Scene07Comparison,
-	Scene08NextJsTwist,
-	Scene09Closing,
-	SsrVsCsrVideo,
-} from './content/ssr-vs-csr';
+	BackendProgrammerCharacter,
+	BossCharacter,
+	Character,
+	ChefCharacter,
+	DoctorCharacter,
+	FrontendProgrammerCharacter,
+	FullstackProgrammerCharacter,
+	HackerCharacter,
+	ProjectManagerCharacter,
+	QualityAssuranceCharacter,
+	TechLeadCharacter,
+	WomanCharacter,
+} from '../character';
+import {
+	BackendProgrammerModelSheet,
+	BossModelSheet,
+	ChefModelSheet,
+	DoctorModelSheet,
+	FrontendProgrammerModelSheet,
+	FullstackProgrammerModelSheet,
+	HackerModelSheet,
+	ModelSheet,
+	ProjectManagerModelSheet,
+	QualityAssuranceModelSheet,
+	TechLeadModelSheet,
+	WomanModelSheet,
+} from './ModelSheet';
+import {RigDemo} from './RigDemo';
 
 export const RemotionRoot: React.FC = () => {
 	return (
-		<>
+		<Folder name="Mascot">
 			<Composition
-				id="SsrVsCsrNextJs"
-				component={SsrVsCsrVideo}
+				id="MascotRig"
+				component={Character}
 				width={1080}
-				height={1920}
+				height={1080}
 				fps={30}
-				durationInFrames={4350}
+				durationInFrames={150}
 				defaultProps={{
-					showSubtitles: true,
-					channelHandle: '@BelajarCoding',
-					voiceoverFile: 'audio/voiceover-placeholder.wav',
-					enableSfx: true,
+					expression: 'neutral',
+					pose: 'idle',
+					yaw: 0,
+					talking: false,
+					style: {translate: '120px 90px'},
 				}}
 			/>
-
-			<Folder name="SsrVsCsrScenes">
-				<Composition
-					id="Scene01Hook"
-					component={Scene01Hook}
-					width={1080}
-					height={1920}
-					fps={30}
-					durationInFrames={360}
-				/>
-				<Composition
-					id="Scene02RestaurantIntro"
-					component={Scene02RestaurantIntro}
-					width={1080}
-					height={1920}
-					fps={30}
-					durationInFrames={450}
-				/>
-				<Composition
-					id="Scene03SsrAnalogy"
-					component={Scene03SsrAnalogy}
-					width={1080}
-					height={1920}
-					fps={30}
-					durationInFrames={600}
-				/>
-				<Composition
-					id="Scene04SsrTech"
-					component={Scene04SsrTech}
-					width={1080}
-					height={1920}
-					fps={30}
-					durationInFrames={450}
-				/>
-				<Composition
-					id="Scene05CsrAnalogy"
-					component={Scene05CsrAnalogy}
-					width={1080}
-					height={1920}
-					fps={30}
-					durationInFrames={540}
-				/>
-				<Composition
-					id="Scene06CsrTech"
-					component={Scene06CsrTech}
-					width={1080}
-					height={1920}
-					fps={30}
-					durationInFrames={450}
-				/>
-				<Composition
-					id="Scene07Comparison"
-					component={Scene07Comparison}
-					width={1080}
-					height={1920}
-					fps={30}
-					durationInFrames={600}
-				/>
-				<Composition
-					id="Scene08NextJsTwist"
-					component={Scene08NextJsTwist}
-					width={1080}
-					height={1920}
-					fps={30}
-					durationInFrames={450}
-				/>
-				<Composition
-					id="Scene09Closing"
-					component={Scene09Closing}
-					width={1080}
-					height={1920}
-					fps={30}
-					durationInFrames={450}
-					defaultProps={{
-						channelHandle: '@BelajarCoding',
-					}}
-				/>
-			</Folder>
-
-			<Folder name="Mascot">
-				<Composition
-					id="MascotRig"
-					component={Character}
-					width={1080}
-					height={1080}
-					fps={30}
-					durationInFrames={150}
-					defaultProps={{
-						expression: 'neutral',
-						pose: 'idle',
-						yaw: 0,
-						talking: false,
-						style: {translate: '120px 90px'},
-					}}
-				/>
-				<Composition
-					id="WomanRig"
-					component={WomanCharacter}
-					width={1080}
-					height={1080}
-					fps={30}
-					durationInFrames={150}
-					defaultProps={{
-						expression: 'neutral',
-						pose: 'idle',
-						yaw: 0,
-						talking: false,
-						style: {translate: '120px 90px'},
-					}}
-				/>
-				<Composition
-					id="RigDemo"
-					component={RigDemo}
-					width={1920}
-					height={1080}
-					fps={30}
-					durationInFrames={540}
-				/>
-				<Still id="ModelSheet" component={ModelSheet} width={2400} height={5380} />
-				<Still id="WomanModelSheet" component={WomanModelSheet} width={2400} height={5380} />
-			</Folder>
-		</>
+			<Composition
+				id="WomanRig"
+				component={WomanCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'neutral',
+					pose: 'idle',
+					yaw: 0,
+					talking: false,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="FrontendProgrammerRig"
+				component={FrontendProgrammerCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'happy',
+					pose: 'idle',
+					yaw: 0,
+					talking: false,
+					showGlasses: true,
+					showBadge: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="BackendProgrammerRig"
+				component={BackendProgrammerCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'focused',
+					pose: 'idle',
+					yaw: 0,
+					talking: false,
+					showGlasses: true,
+					showHeadphones: true,
+					showBadge: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="BossRig"
+				component={BossCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'determined',
+					pose: 'handsOnHips',
+					yaw: 0,
+					talking: false,
+					showGlasses: false,
+					showMustache: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="ChefRig"
+				component={ChefCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'proud',
+					pose: 'present',
+					yaw: 0,
+					talking: false,
+					showHat: true,
+					showMustache: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="DoctorRig"
+				component={DoctorCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'happy',
+					pose: 'present',
+					yaw: 0,
+					talking: false,
+					showGlasses: true,
+					showStethoscope: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="ProjectManagerRig"
+				component={ProjectManagerCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'happy',
+					pose: 'welcome',
+					yaw: 0,
+					talking: false,
+					showGlasses: true,
+					showLanyard: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="TechLeadRig"
+				component={TechLeadCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'thinking',
+					pose: 'think',
+					yaw: 0,
+					talking: false,
+					showGlasses: true,
+					showGoatee: true,
+					showUnderEyeBags: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="FullstackProgrammerRig"
+				component={FullstackProgrammerCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'excited',
+					pose: 'fistPump',
+					yaw: 0,
+					talking: false,
+					showCap: true,
+					showBadge: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="QualityAssuranceRig"
+				component={QualityAssuranceCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'skeptical',
+					pose: 'stop',
+					yaw: 0,
+					talking: false,
+					showGlasses: true,
+					showBadge: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="HackerRig"
+				component={HackerCharacter}
+				width={1080}
+				height={1080}
+				fps={30}
+				durationInFrames={150}
+				defaultProps={{
+					expression: 'smirk',
+					pose: 'armsCrossed',
+					yaw: 0,
+					talking: false,
+					hoodUp: true,
+					showMask: false,
+					showBadge: true,
+					style: {translate: '120px 90px'},
+				}}
+			/>
+			<Composition
+				id="RigDemo"
+				component={RigDemo}
+				width={1920}
+				height={1080}
+				fps={30}
+				durationInFrames={540}
+			/>
+			<Still id="ModelSheet" component={ModelSheet} width={2400} height={5380} />
+			<Still id="WomanModelSheet" component={WomanModelSheet} width={2400} height={5380} />
+			<Still
+				id="FrontendProgrammerModelSheet"
+				component={FrontendProgrammerModelSheet}
+				width={2400}
+				height={5380}
+			/>
+			<Still
+				id="BackendProgrammerModelSheet"
+				component={BackendProgrammerModelSheet}
+				width={2400}
+				height={5380}
+			/>
+			<Still id="BossModelSheet" component={BossModelSheet} width={2400} height={5380} />
+			<Still id="ChefModelSheet" component={ChefModelSheet} width={2400} height={5380} />
+			<Still id="DoctorModelSheet" component={DoctorModelSheet} width={2400} height={5380} />
+			<Still
+				id="ProjectManagerModelSheet"
+				component={ProjectManagerModelSheet}
+				width={2400}
+				height={5380}
+			/>
+			<Still id="TechLeadModelSheet" component={TechLeadModelSheet} width={2400} height={5380} />
+			<Still
+				id="FullstackProgrammerModelSheet"
+				component={FullstackProgrammerModelSheet}
+				width={2400}
+				height={5380}
+			/>
+			<Still
+				id="QualityAssuranceModelSheet"
+				component={QualityAssuranceModelSheet}
+				width={2400}
+				height={5380}
+			/>
+			<Still id="HackerModelSheet" component={HackerModelSheet} width={2400} height={5380} />
+		</Folder>
 	);
 };

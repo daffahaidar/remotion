@@ -6,6 +6,21 @@ Karakter ini **satu komponen React**, bukan kumpulan gambar. Ekspresi, pose, ara
 
 ![Model sheet](model-sheet.png)
 
+## Identitas & Panduan Peran (Reusable di Berbagai Plot)
+
+- **Persona & Ciri Visual**: Pria kasual yang ramah, ekspresif, dan penuh rasa ingin tahu (kaos biru santai, kacamata bulat, jambul rambut rapi, serta postur wajah bulat-oval yang bersahabat).
+- **Cocok digunakan untuk**:
+  - **Host / Pembawa Acara Utama**: Membuka video (*hook*), membawakan **fakta menarik** teknologi, atau merangkum poin penutup agar terasa ringan dan mudah diikuti.
+  - **Perwakilan User Awam / Penanya**: Cocok dalam format **problem solving** atau dialog edukatif—melontarkan pertanyaan polos (*"Kenapa aplikasi ini lemot?"*) agar karakter lain menjelaskan solusinya.
+  - **Presenter Tutorial Pemula**: Mengajarkan konsep dasar coding atau workflow umum dengan gaya santai dan tidak kaku.
+  - **Drama & Sketsa**: Bisa di-casting sebagai rekan kerja santai, pengguna aplikasi yang kebingungan, developer serba bisa, atau penengah suasana kantor.
+- **Kombinasi Pose & Ekspresi Andalan**:
+  - Opening ramah / fakta menarik: `pose="wave"` + `expression="happy"` + `talking`
+  - Bingung / memancing penjelasan: `pose="shrug"` + `expression="confused"`
+  - Baru paham konsep: `pose="idea"` + `expression="eureka"`
+  - Menjelaskan poin ke layar: `pose="present"` + `expression="happy"`
+- **Chemistry Terbaik**: Pasangan duet alami dengan **Woman** (`WomanCharacter`) untuk format dialog host–mentor, atau dengan **Frontend/Backend Programmer** sebagai pihak awam yang bertanya.
+
 ## Isi folder
 
 | File | Isi |
