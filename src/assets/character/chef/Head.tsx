@@ -81,15 +81,7 @@ export type HeadProps = {
 };
 
 /** Chef head: round warm cheeks, curled mustache, and pleated 3D chef toque. */
-export const Head: React.FC<HeadProps> = ({
-	yaw,
-	nod,
-	face,
-	blink,
-	uid,
-	showHat = true,
-	showMustache = true,
-}) => {
+export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid, showHat = true, showMustache = true}) => {
 	const proj = createHeadProjection(yaw, nod, SX, SZ);
 	const jaw = JAW[face.mouth] ?? 0;
 

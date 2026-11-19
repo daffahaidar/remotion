@@ -1,4 +1,4 @@
-# Boss / Executive: Master Character Rig (`character/boss`)
+# Boss / Executive: Master Character Rig (`src/assets/character/boss`)
 
 Rig karakter **Bos / CEO Perusahaan Teknologi** 2D (vektor SVG) untuk Remotion. Memiliki postur wajah **rahang kotak yang tegas dan lebar** (*square jaw*), mata tajam dengan alis tebal, rambut disisir ke belakang dengan uban perak di pelipis, kumis rapi eksekutif, serta setelan jas charcoal-navy lengkap dengan kemeja putih, dasi merah, *pocket square* emas, jam tangan emas, dan sepatu pantofel kulit.
 
@@ -35,7 +35,7 @@ Karakter ini terhubung ke [`../shared`](../shared) dengan antarmuka props yang *
 ## Pemakaian dasar
 
 ```tsx
-import {Character as BossCharacter} from '../character/boss';
+import {Character as BossCharacter} from './assets/character/boss';
 // atau: import {BossCharacter} from '../character';
 
 <BossCharacter
@@ -58,5 +58,5 @@ import {Character as BossCharacter} from '../character/boss';
 
 ## Komposisi di Studio (`npm run dev`)
 
-- **Mascot / BossRig**: playground rig untuk mencoba ekspresi, pose, dan properti Bos di Remotion Studio.
-- **Mascot / BossModelSheet**: sumber `model-sheet.png`.
+- **Rigs / BossRig**: playground rig untuk mencoba ekspresi, pose, dan properti Bos di Remotion Studio.
+- **ModelSheets / BossModelSheet**: sumber `model-sheet.png`.

@@ -73,24 +73,8 @@ const DatabaseCylinderInner: React.FC<DatabaseCylinderProps> = ({
 			})}
 
 			{/* Top cylinder cap */}
-			<ellipse
-				cx={130}
-				cy={70}
-				rx={88}
-				ry={26}
-				fill={pal.top}
-				stroke={PROP_INK}
-				strokeWidth={PROP_OW}
-			/>
-			<text
-				x={130}
-				y={77}
-				textAnchor="middle"
-				fontFamily="monospace"
-				fontSize={22}
-				fontWeight={700}
-				fill={PROP_INK}
-			>
+			<ellipse cx={130} cy={70} rx={88} ry={26} fill={pal.top} stroke={PROP_INK} strokeWidth={PROP_OW} />
+			<text x={130} y={77} textAnchor="middle" fontFamily="monospace" fontSize={22} fontWeight={700} fill={PROP_INK}>
 				{label}
 			</text>
 
@@ -104,7 +88,16 @@ const DatabaseCylinderInner: React.FC<DatabaseCylinderProps> = ({
 						strokeWidth={6}
 						strokeLinecap="round"
 					/>
-					<rect x={-20} y={-6} width={40} height={32} rx={7} fill={PROP_COLORS.gold} stroke={PROP_INK} strokeWidth={5} />
+					<rect
+						x={-20}
+						y={-6}
+						width={40}
+						height={32}
+						rx={7}
+						fill={PROP_COLORS.gold}
+						stroke={PROP_INK}
+						strokeWidth={5}
+					/>
 					<circle cx={0} cy={10} r={4.5} fill={PROP_INK} />
 				</g>
 			) : variant === 'error' ? (

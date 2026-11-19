@@ -28,9 +28,7 @@ const CharacterInner: React.FC<FullstackProgrammerProps> = (props) => (
 			),
 			renderArm: (armProps) => <Arm {...armProps} />,
 			renderLeg: (legProps) => <Leg {...legProps} />,
-			renderHead: (headProps, extra) => (
-				<Head {...headProps} showCap={extra.showCap ?? true} />
-			),
+			renderHead: (headProps, extra) => <Head {...headProps} showCap={extra.showCap ?? true} />,
 		}}
 	/>
 );

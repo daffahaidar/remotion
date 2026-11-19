@@ -59,8 +59,7 @@ export const Arm: React.FC<{
 	} Z`;
 	const fx = w[0] - e[0];
 	const fy = w[1] - e[1];
-	const angle =
-		(Math.hypot(fx, fy) > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
+	const angle = (Math.hypot(fx, fy) > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
 	const handEl = (
 		<Hand at={w} angle={angle} mirror={mirror} shape={hand} skin={K.skin} outline={K.outline} scale={1.4} />
 	);

@@ -41,7 +41,7 @@ export const ACCENTS = {
 export type AccentColor = keyof typeof ACCENTS;
 export const ACCENT_NAMES = Object.keys(ACCENTS) as readonly AccentColor[];
 
-export type ScreenMode ='code' | 'terminal' | 'browser' | 'dashboard' | 'error' | 'loading' | 'off';
+export type ScreenMode = 'code' | 'terminal' | 'browser' | 'dashboard' | 'error' | 'loading' | 'off';
 
 /** Soft ground contact shadow under standing props. */
 export const PropShadow: React.FC<{
@@ -49,9 +49,7 @@ export const PropShadow: React.FC<{
 	readonly cy: number;
 	readonly rx: number;
 	readonly ry?: number;
-}> = ({cx, cy, rx, ry = 14}) => (
-	<ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill={PROP_COLORS.shadow} />
-);
+}> = ({cx, cy, rx, ry = 14}) => <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill={PROP_COLORS.shadow} />;
 
 /** Reusable deterministic animated SVG screen content for Laptop, DesktopComputer, and Smartphone. */
 export const ScreenContent: React.FC<{
@@ -116,13 +114,7 @@ export const ScreenContent: React.FC<{
 							const indent = i === 1 || i === 2 || i === 3 ? innerW * 0.12 : 0;
 							const segW = innerW * (0.45 + ((i * 19) % 35) / 100);
 							const lineColor =
-								i === 0
-									? PROP_COLORS.rose
-									: i === 2
-										? accent
-										: i === 3
-											? PROP_COLORS.amber
-											: PROP_COLORS.emerald;
+								i === 0 ? PROP_COLORS.rose : i === 2 ? accent : i === 3 ? PROP_COLORS.amber : PROP_COLORS.emerald;
 							return (
 								<rect
 									key={i}
@@ -183,36 +175,15 @@ export const ScreenContent: React.FC<{
 							fill={PROP_COLORS.slateMid}
 						/>
 						{cursorOn ? (
-							<rect
-								x={padX}
-								y={padY + height * 0.66}
-								width={10}
-								height={6}
-								rx={1.5}
-								fill={PROP_COLORS.green}
-							/>
+							<rect x={padX} y={padY + height * 0.66} width={10} height={6} rx={1.5} fill={PROP_COLORS.green} />
 						) : null}
 					</g>
 				) : null}
 
 				{mode === 'browser' ? (
 					<g>
-						<rect
-							x={padX}
-							y={padY + height * 0.08}
-							width={innerW}
-							height={height * 0.24}
-							rx={5}
-							fill={accent}
-						/>
-						<rect
-							x={padX}
-							y={padY + height * 0.4}
-							width={innerW * 0.46}
-							height={height * 0.36}
-							rx={5}
-							fill="#cbd5e1"
-						/>
+						<rect x={padX} y={padY + height * 0.08} width={innerW} height={height * 0.24} rx={5} fill={accent} />
+						<rect x={padX} y={padY + height * 0.4} width={innerW * 0.46} height={height * 0.36} rx={5} fill="#cbd5e1" />
 						<rect
 							x={padX + innerW * 0.54}
 							y={padY + height * 0.4}

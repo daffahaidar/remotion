@@ -1,4 +1,4 @@
-# Hacker: Cybersecurity & Stealth Character Rig (`character/hacker`)
+# Hacker: Cybersecurity & Stealth Character Rig (`src/assets/character/hacker`)
 
 Rig karakter **Hacker** 2D (vektor SVG) untuk Remotion. Memiliki **postur wajah tirus runcing (*V-shape*) yang misterius**, tudung hoodie gelap dinaikkan 3D beraksen *matrix-green* (`hoodUp`), rambut poni gelap di bawah bayangan tudung, opsi masker siber (`showMask`), tali hoodie hijau neon, serta lencana biner `01` di dada.
 

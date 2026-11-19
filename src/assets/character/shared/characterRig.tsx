@@ -195,13 +195,7 @@ export const CharacterRigCanvas = <Extra extends object>({
 			let limb = solveArm(a, side, pa.shrug ?? 0);
 			let ap = a;
 			if (pb) {
-				limb = blendLimb(
-					limb,
-					solveArm(pb[key], side, pb.shrug ?? 0),
-					pt,
-					config.rig.upperArm,
-					config.rig.forearm,
-				);
+				limb = blendLimb(limb, solveArm(pb[key], side, pb.shrug ?? 0), pt, config.rig.upperArm, config.rig.forearm);
 				ap = pt < 0.5 ? a : pb[key];
 			}
 			const zs = depth(limb.a);

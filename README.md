@@ -1,54 +1,41 @@
-# Remotion video
+# Mascot Series
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Template Remotion untuk seri video kartun 2D, dengan 12 rig karakter SVG dan 22 properti yang bisa dipakai ulang.
 
-Welcome to your Remotion project!
+## Struktur
 
-## Commands
-
-**Install Dependencies**
-
-```console
-npm i --loglevel=error
+```
+src/
+├── index.ts            # registerRoot
+├── Root.tsx            # semua komposisi (folder Studio: Rigs, Demo, ModelSheets, Props)
+├── RigDemo.tsx         # contoh video 18 detik
+├── ModelSheet.tsx      # model sheet per karakter (prop `character`)
+├── PropertySheet.tsx   # katalog properti
+├── content/            # taruh komposisi video/episode baru di sini
+└── assets/
+    ├── character/      # 12 rig karakter, lihat character/README.md
+    └── property/       # 22 properti SVG, lihat property/README.md
+public/audio/sfx/       # efek suara (staticFile('audio/sfx/pop.wav'))
 ```
 
-**Start Preview**
+Import karakter dan properti dari `src/`:
 
-```console
-npm run dev
+```tsx
+import {BossCharacter} from './assets/character';
+import {Laptop} from './assets/property';
 ```
 
-**Render video**
+## Perintah
 
 ```console
-npx remotion render
-```
-
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
+npm i                                   # install
+npm run dev                             # Remotion Studio
+npm run lint                            # eslint + tsc
+npx remotion render RigDemo out/rig-demo.mp4
+npx remotion still BossModelSheet out/boss.png
 ```
 
 ## Docs
 
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+- [Rig karakter](src/assets/character/README.md) · [Properti](src/assets/property/README.md)
+- [Remotion fundamentals](https://www.remotion.dev/docs/the-fundamentals) · [Lisensi Remotion](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md)

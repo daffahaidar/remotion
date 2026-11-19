@@ -1,6 +1,15 @@
 import React from 'react';
 import {Interactive, useCurrentFrame, useVideoConfig} from 'remotion';
-import {ACCENTS, ACCENT_NAMES, PROP_COLORS, PROP_INK, PROP_OW, PropShadow, propVariants, type AccentColor} from './shared';
+import {
+	ACCENTS,
+	ACCENT_NAMES,
+	PROP_COLORS,
+	PROP_INK,
+	PROP_OW,
+	PropShadow,
+	propVariants,
+	type AccentColor,
+} from './shared';
 
 export type ClockVariant = 'wall' | 'alarm';
 
@@ -16,13 +25,24 @@ export type WallClockProps = {
 
 const VARIANTS: readonly ClockVariant[] = ['wall', 'alarm'];
 
-const Hand: React.FC<{readonly angle: number; readonly length: number; readonly width: number; readonly cx: number; readonly cy: number}> = ({
-	angle,
-	length,
-	width,
-	cx,
-	cy,
-}) => <line x1={cx} y1={cy} x2={cx} y2={cy - length} transform={`rotate(${angle} ${cx} ${cy})`} stroke={PROP_INK} strokeWidth={width} strokeLinecap="round" />;
+const Hand: React.FC<{
+	readonly angle: number;
+	readonly length: number;
+	readonly width: number;
+	readonly cx: number;
+	readonly cy: number;
+}> = ({angle, length, width, cx, cy}) => (
+	<line
+		x1={cx}
+		y1={cy}
+		x2={cx}
+		y2={cy - length}
+		transform={`rotate(${angle} ${cx} ${cy})`}
+		stroke={PROP_INK}
+		strokeWidth={width}
+		strokeLinecap="round"
+	/>
+);
 
 const WallClockInner: React.FC<WallClockProps> = ({
 	variant = 'wall',
@@ -50,7 +70,12 @@ const WallClockInner: React.FC<WallClockProps> = ({
 	const lines = ringing && Math.floor(t * 8) % 2 === 0;
 
 	return (
-		<svg viewBox="0 0 200 220" width={200} height={220} style={{overflow: 'visible', transformOrigin: alarm ? '50% 92%' : '50% 50%', ...style}}>
+		<svg
+			viewBox="0 0 200 220"
+			width={200}
+			height={220}
+			style={{overflow: 'visible', transformOrigin: alarm ? '50% 92%' : '50% 50%', ...style}}
+		>
 			{alarm ? <PropShadow cx={100} cy={204} rx={68} ry={10} /> : null}
 
 			{lines ? (
@@ -83,7 +108,13 @@ const WallClockInner: React.FC<WallClockProps> = ({
 
 				{/* Case + face */}
 				<circle cx={cx} cy={cy} r={r} fill={pal.main} stroke={PROP_INK} strokeWidth={PROP_OW} />
-				<path d={`M ${cx + r * 0.5} ${cy - r * 0.84} A ${r - 3} ${r - 3} 0 0 1 ${cx + r * 0.5} ${cy + r * 0.84}`} fill="none" stroke={pal.shade} strokeWidth={8} opacity={0.6} />
+				<path
+					d={`M ${cx + r * 0.5} ${cy - r * 0.84} A ${r - 3} ${r - 3} 0 0 1 ${cx + r * 0.5} ${cy + r * 0.84}`}
+					fill="none"
+					stroke={pal.shade}
+					strokeWidth={8}
+					opacity={0.6}
+				/>
 				<circle cx={cx} cy={cy} r={face} fill={PROP_COLORS.paper} stroke={PROP_INK} strokeWidth={4.5} />
 
 				{/* Ticks */}
@@ -116,7 +147,14 @@ const WallClockInner: React.FC<WallClockProps> = ({
 					/>
 				)}
 				<circle cx={cx} cy={cy} r={7} fill={PROP_COLORS.gold} stroke={PROP_INK} strokeWidth={3.5} />
-				<path d={`M ${cx - face + 14} ${cy - 22} A ${face - 10} ${face - 10} 0 0 1 ${cx - 20} ${cy - face + 12}`} fill="none" stroke={PROP_COLORS.white} strokeWidth={5} strokeLinecap="round" opacity={0.9} />
+				<path
+					d={`M ${cx - face + 14} ${cy - 22} A ${face - 10} ${face - 10} 0 0 1 ${cx - 20} ${cy - face + 12}`}
+					fill="none"
+					stroke={PROP_COLORS.white}
+					strokeWidth={5}
+					strokeLinecap="round"
+					opacity={0.9}
+				/>
 			</g>
 		</svg>
 	);
@@ -128,8 +166,20 @@ export const WallClock = Interactive.create({
 	layout: 'none',
 	componentName: 'WallClockProp',
 	schema: {
-		variant: {type: 'enum', default: 'wall', description: 'Clock type', variants: propVariants(VARIANTS), keyframable: false},
-		color: {type: 'enum', default: 'indigo', description: 'Case color', variants: propVariants(ACCENT_NAMES), keyframable: false},
+		variant: {
+			type: 'enum',
+			default: 'wall',
+			description: 'Clock type',
+			variants: propVariants(VARIANTS),
+			keyframable: false,
+		},
+		color: {
+			type: 'enum',
+			default: 'indigo',
+			description: 'Case color',
+			variants: propVariants(ACCENT_NAMES),
+			keyframable: false,
+		},
 		hours: {type: 'number', default: 10, min: 0, max: 12, step: 1, description: 'Hour', hiddenFromList: false},
 		minutes: {type: 'number', default: 10, min: 0, max: 59, step: 1, description: 'Minute', hiddenFromList: false},
 		fastForward: {type: 'boolean', default: false, description: 'Spin hands (time passing)'},

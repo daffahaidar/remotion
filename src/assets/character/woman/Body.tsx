@@ -59,8 +59,7 @@ export const Arm: React.FC<{
 	const sleeveEnd: P2 = [w[0] - fux * 6, w[1] - fuy * 6];
 	const cuffStart: P2 = [w[0] - fux * 18, w[1] - fuy * 18];
 	const cw = RIG.armW / 2 + 2;
-	const angle =
-		(fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
+	const angle = (fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
 	const handEl = (
 		<Hand at={w} angle={angle} mirror={mirror} shape={hand} skin={K.skin} outline={K.outline} scale={1.32} />
 	);
@@ -144,13 +143,7 @@ export const Torso: React.FC<{
 			<clipPath id={drapeClip}>
 				<path d={drapeD} />
 			</clipPath>
-			<path
-				d={drapeD}
-				fill={K.hijabShade}
-				stroke={K.outline}
-				strokeWidth={OW * 2}
-				strokeLinejoin="round"
-			/>
+			<path d={drapeD} fill={K.hijabShade} stroke={K.outline} strokeWidth={OW * 2} strokeLinejoin="round" />
 			<g clipPath={`url(#${drapeClip})`}>
 				<path d={drapeD} fill={K.hijab} transform="translate(-12 -8)" />
 				<path
@@ -168,14 +161,7 @@ export const Torso: React.FC<{
 					strokeLinecap="round"
 				/>
 				{c > 0.15 ? (
-					<circle
-						cx={dcx + 42 * c}
-						cy={dyMid + 8}
-						r={8}
-						fill={K.brooch}
-						stroke={K.outline}
-						strokeWidth={3.5}
-					/>
+					<circle cx={dcx + 42 * c} cy={dyMid + 8} r={8} fill={K.brooch} stroke={K.outline} strokeWidth={3.5} />
 				) : null}
 			</g>
 		</g>

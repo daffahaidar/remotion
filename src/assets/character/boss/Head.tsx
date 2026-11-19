@@ -104,15 +104,7 @@ export type HeadProps = {
 };
 
 /** Boss head: broad square-jawed face posture, slicked-back silver-streaked hair, and executive mustache. */
-export const Head: React.FC<HeadProps> = ({
-	yaw,
-	nod,
-	face,
-	blink,
-	uid,
-	showGlasses = false,
-	showMustache = true,
-}) => {
+export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid, showGlasses = false, showMustache = true}) => {
 	const proj = createHeadProjection(yaw, nod, SX, SZ);
 	const jaw = JAW[face.mouth] ?? 0;
 	const id = (n: string) => `${uid}-${n}`;
@@ -182,13 +174,7 @@ export const Head: React.FC<HeadProps> = ({
 		}
 		const b = proj.P(proj.sph(s * 82, -0.36, 1.02));
 		const t = proj.P(proj.sph(s * 84, -0.02, 1.02));
-		return (
-			<path
-				key={`silver${s}`}
-				d={buildTuftPath(b, t, 0.14 * R, s * 0.1)}
-				fill={K.hairSilver}
-			/>
-		);
+		return <path key={`silver${s}`} d={buildTuftPath(b, t, 0.14 * R, s * 0.1)} fill={K.hairSilver} />;
 	});
 
 	// Executive mustache positioned cleanly between nose and mouth

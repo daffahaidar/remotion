@@ -172,8 +172,7 @@ export const add = (a: V3, b: V3): V3 => v3(a.x + b.x, a.y + b.y, a.z + b.z);
 export const sub = (a: V3, b: V3): V3 => v3(a.x - b.x, a.y - b.y, a.z - b.z);
 export const mul = (a: V3, k: number): V3 => v3(a.x * k, a.y * k, a.z * k);
 export const dot = (a: V3, b: V3) => a.x * b.x + a.y * b.y + a.z * b.z;
-export const cross = (a: V3, b: V3): V3 =>
-	v3(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
+export const cross = (a: V3, b: V3): V3 => v3(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
 export const len = (a: V3) => Math.sqrt(dot(a, a));
 export const norm = (a: V3): V3 => {
 	const l = len(a);
@@ -290,11 +289,7 @@ export const createLimbSolvers = (rig: RigDimensions) => {
 		}
 		const lift = (pose.lift ?? 0) * D2R;
 		const swing = (pose.swing ?? 0) * D2R;
-		const u = v3(
-			side * Math.sin(lift) * Math.cos(swing),
-			Math.cos(lift),
-			Math.sin(lift) * Math.sin(swing),
-		);
+		const u = v3(side * Math.sin(lift) * Math.cos(swing), Math.cos(lift), Math.sin(lift) * Math.sin(swing));
 		let n = sub(v3(0, 0, 1), mul(u, u.z));
 		if (len(n) < 0.15) {
 			n = sub(v3(0, -1, 0), mul(u, -u.y));

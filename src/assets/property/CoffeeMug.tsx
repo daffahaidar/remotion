@@ -159,7 +159,16 @@ const CoffeeMugInner: React.FC<CoffeeMugProps> = ({
 						stroke={PROP_INK}
 						strokeWidth={4.5}
 					/>
-					<rect x={82} y={42} width={12} height={7} rx={3} fill={PROP_COLORS.white} stroke={PROP_INK} strokeWidth={3.5} />
+					<rect
+						x={82}
+						y={42}
+						width={12}
+						height={7}
+						rx={3}
+						fill={PROP_COLORS.white}
+						stroke={PROP_INK}
+						strokeWidth={3.5}
+					/>
 
 					{label ? (
 						<text

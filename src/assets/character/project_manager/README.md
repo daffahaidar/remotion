@@ -1,4 +1,4 @@
-# Project Manager: Agile Coordinator Character Rig (`character/project_manager`)
+# Project Manager: Agile Coordinator Character Rig (`src/assets/character/project_manager`)
 
 Rig karakter **Project Manager (PM)** 2D (vektor SVG) untuk Remotion. Memiliki **postur wajah diamond dengan dagu V (*V-chin*) yang energik**, mata cerah berkarakter, kacamata *cat-eye*, kuncir kuda tinggi dengan ikat rambut emas, cardigan blazer terracotta di atas turtleneck krem, *lanyard* ID kantor, dan *smartwatch*.
 

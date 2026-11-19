@@ -31,11 +31,7 @@ const CharacterInner: React.FC<HackerProps> = (props) => (
 			renderArm: (armProps) => <Arm {...armProps} />,
 			renderLeg: (legProps) => <Leg {...legProps} />,
 			renderHead: (headProps, extra) => (
-				<Head
-					{...headProps}
-					hoodUp={extra.hoodUp ?? true}
-					showMask={extra.showMask ?? false}
-				/>
+				<Head {...headProps} hoodUp={extra.hoodUp ?? true} showMask={extra.showMask ?? false} />
 			),
 		}}
 	/>

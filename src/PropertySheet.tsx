@@ -1,11 +1,7 @@
 import {loadFont} from '@remotion/google-fonts/Fredoka';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {
-	ChefCharacter,
-	DoctorCharacter,
-	FrontendProgrammerCharacter,
-} from '../character';
+import {ChefCharacter, DoctorCharacter, FrontendProgrammerCharacter} from './assets/character';
 import {
 	Briefcase,
 	Bug,
@@ -31,7 +27,7 @@ import {
 	Trophy,
 	WallClock,
 	Whiteboard,
-} from '../property';
+} from './assets/property';
 
 loadFont('normal', {weights: ['400', '600', '700'], subsets: ['latin']});
 
@@ -159,9 +155,7 @@ export const PropertySheet: React.FC = () => {
 					<div style={{fontSize: 18, fontWeight: 700, letterSpacing: '0.12em', color: PROP_COLORS.indigo}}>
 						PROPERTY LIBRARY • REMOTION 2D CARTOON
 					</div>
-					<div style={{fontSize: 54, fontWeight: 700, lineHeight: 1.08, marginTop: 4}}>
-						REUSABLE CHARACTER PROPS
-					</div>
+					<div style={{fontSize: 54, fontWeight: 700, lineHeight: 1.08, marginTop: 4}}>REUSABLE CHARACTER PROPS</div>
 				</div>
 				<div style={{display: 'flex', gap: 10, alignItems: 'center', paddingBottom: 8}}>
 					{swatches.map((hex) => (
@@ -188,7 +182,7 @@ export const PropertySheet: React.FC = () => {
 				<PropCard name="Laptop" variantText='screen="error" | spaceGray' scale={0.78}>
 					<Laptop screen="error" color="spaceGray" badge="bug" />
 				</PropCard>
-				<PropCard name="Laptop" variantText='open={false} | indigo' scale={0.78}>
+				<PropCard name="Laptop" variantText="open={false} | indigo" scale={0.78}>
 					<Laptop open={false} color="indigo" badge="none" />
 				</PropCard>
 				<PropCard name="DesktopComputer" variantText='dashboard | tower="right"' scale={0.58}>
@@ -225,7 +219,7 @@ export const PropertySheet: React.FC = () => {
 					<DatabaseCylinder variant="cache" label="CACHE" />
 					<DatabaseCylinder variant="locked" label="AUTH" />
 				</PropCard>
-				<PropCard name="DatabaseCylinder" variantText='cloud & error' height={275} scale={0.66}>
+				<PropCard name="DatabaseCylinder" variantText="cloud & error" height={275} scale={0.66}>
 					<DatabaseCylinder variant="cloud" label="CLOUD" />
 					<DatabaseCylinder variant="error" label="500" />
 				</PropCard>
@@ -345,7 +339,10 @@ export const PropertySheet: React.FC = () => {
 			</div>
 
 			{/* Section 6: Character Pairing Demos (floor-anchored coordinates) */}
-			<SectionTitle title="6. CHARACTER + PROP PAIRINGS" subtitle="Floor-aligned scale & layering check (Frontend, Chef & Doctor)" />
+			<SectionTitle
+				title="6. CHARACTER + PROP PAIRINGS"
+				subtitle="Floor-aligned scale & layering check (Frontend, Chef & Doctor)"
+			/>
 			<div style={{display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 24}}>
 				{/* Pairing 1: Typing behind desk (floor y = 496px) */}
 				<div
@@ -359,7 +356,17 @@ export const PropertySheet: React.FC = () => {
 					}}
 				>
 					{/* Subtle floor line */}
-					<div style={{position: 'absolute', left: 36, right: 36, top: 496, height: 3, backgroundColor: '#e9e3d8', borderRadius: 2}} />
+					<div
+						style={{
+							position: 'absolute',
+							left: 36,
+							right: 36,
+							top: 496,
+							height: 3,
+							backgroundColor: '#e9e3d8',
+							borderRadius: 2,
+						}}
+					/>
 					{/* Character floor anchor at (420, 860) -> left = centerX - 420, top = 496 - 860 */}
 					<FrontendProgrammerCharacter
 						pose="typing"
@@ -428,7 +435,17 @@ export const PropertySheet: React.FC = () => {
 						overflow: 'hidden',
 					}}
 				>
-					<div style={{position: 'absolute', left: 36, right: 36, top: 496, height: 3, backgroundColor: '#e9e3d8', borderRadius: 2}} />
+					<div
+						style={{
+							position: 'absolute',
+							left: 36,
+							right: 36,
+							top: 496,
+							height: 3,
+							backgroundColor: '#e9e3d8',
+							borderRadius: 2,
+						}}
+					/>
 					<ChefCharacter
 						pose="present"
 						expression="happy"
@@ -485,7 +502,17 @@ export const PropertySheet: React.FC = () => {
 						overflow: 'hidden',
 					}}
 				>
-					<div style={{position: 'absolute', left: 36, right: 36, top: 496, height: 3, backgroundColor: '#e9e3d8', borderRadius: 2}} />
+					<div
+						style={{
+							position: 'absolute',
+							left: 36,
+							right: 36,
+							top: 496,
+							height: 3,
+							backgroundColor: '#e9e3d8',
+							borderRadius: 2,
+						}}
+					/>
 					<div
 						style={{
 							position: 'absolute',

@@ -1,4 +1,4 @@
-# Backend Programmer: Master Character Rig (`character/backend_programmer`)
+# Backend Programmer: Master Character Rig (`src/assets/character/backend_programmer`)
 
 Rig karakter **Programmer Backend** 2D (vektor SVG) untuk Remotion. Didesain dengan nuansa *dark-mode* dan arsitektur sistem: rambut bertekstur kasual, *over-ear studio headphones* 3D dengan aksen LED *terminal emerald* (`#10b981`), kacamata persegi panjang, hoodie slate-navy lengkap dengan tudung belakang, tali hoodie, kantong kanguru, serta lencana terminal `>_` di dada, celana kargo jogger charcoal, dan *sneakers* beraksen emerald.
 
@@ -36,7 +36,7 @@ Karakter ini memiliki antarmuka props yang **100% kompatibel** dengan [`../man`]
 ## Pemakaian dasar
 
 ```tsx
-import {Character as BackendProgrammerCharacter} from '../character/backend_programmer';
+import {Character as BackendProgrammerCharacter} from './assets/character/backend_programmer';
 // atau: import {BackendProgrammerCharacter} from '../character';
 
 <BackendProgrammerCharacter
@@ -62,5 +62,5 @@ Selain seluruh props standar (`expression`, `pose`, `talking`, `mouth`, `motion`
 
 ## Komposisi di Studio (`npm run dev`)
 
-- **Mascot / BackendProgrammerRig**: playground rig untuk mengatur ekspresi, pose, arah hadap, dan properti lainnya di Remotion Studio.
-- **Mascot / BackendProgrammerModelSheet**: sumber `model-sheet.png`.
+- **Rigs / BackendProgrammerRig**: playground rig untuk mengatur ekspresi, pose, arah hadap, dan properti lainnya di Remotion Studio.
+- **ModelSheets / BackendProgrammerModelSheet**: sumber `model-sheet.png`.

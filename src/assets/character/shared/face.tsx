@@ -194,12 +194,7 @@ export type HeadProjection = {
 };
 
 /** Builds spherical projection helpers for a 3D head turned by `yaw` and `nod`. */
-export const createHeadProjection = (
-	yaw: number,
-	nod: number,
-	sx: number,
-	sz: number,
-): HeadProjection => {
+export const createHeadProjection = (yaw: number, nod: number, sx: number, sz: number): HeadProjection => {
 	const P = (p: V3): Pt => {
 		const q = rotX(rotY(v3(p.x * sx, p.y, p.z * sz), yaw), -nod);
 		return {x: q.x * R, y: q.y * R, z: q.z};
@@ -273,11 +268,7 @@ export const evalHairline = (curve: readonly P2[], aDeg: number): number => {
 };
 
 /** Projects the scalp hair cap boundary seen from the current head yaw. */
-export const buildHairCapPath = (
-	proj: HeadProjection,
-	hairlineCurve: readonly P2[],
-	rCap: number,
-): string => {
+export const buildHairCapPath = (proj: HeadProjection, hairlineCurve: readonly P2[], rCap: number): string => {
 	const n = 120;
 	const pts: Pt[] = [];
 	for (let i = 0; i < n; i++) {
@@ -292,9 +283,7 @@ export const buildHairCapPath = (
 		}
 	}
 	if (entry === -1) {
-		return pts[0].z >= 0
-			? smoothPath(pts.map((p): P2 => [p.x, p.y]))
-			: ell(0, 0, rCap * proj.crx, rCap * R);
+		return pts[0].z >= 0 ? smoothPath(pts.map((p): P2 => [p.x, p.y])) : ell(0, 0, rCap * proj.crx, rCap * R);
 	}
 	const edge = (p: Pt, q: Pt): P2 => {
 		const t = p.z / (p.z - q.z);
@@ -438,13 +427,7 @@ export const FaceInnerFeatures: React.FC<{
 			}
 			return (
 				<g key={`eye${s}`} transform={tr}>
-					<path
-						d={polyPath(starPts)}
-						fill="#ffd447"
-						stroke={k.outline}
-						strokeWidth={5}
-						strokeLinejoin="round"
-					/>
+					<path d={polyPath(starPts)} fill="#ffd447" stroke={k.outline} strokeWidth={5} strokeLinejoin="round" />
 				</g>
 			);
 		}
@@ -528,22 +511,12 @@ export const FaceInnerFeatures: React.FC<{
 								d={`M ${-w} ${-ry - 40} L ${w} ${-ry - 40} L ${w} ${yU + tiltSlope * w} L ${-w} ${yU - tiltSlope * w} Z`}
 								fill={k.skin}
 							/>
-							<line
-								x1={-w}
-								y1={yU - tiltSlope * w}
-								x2={w}
-								y2={yU + tiltSlope * w}
-								stroke={k.outline}
-								strokeWidth={6}
-							/>
+							<line x1={-w} y1={yU - tiltSlope * w} x2={w} y2={yU + tiltSlope * w} stroke={k.outline} strokeWidth={6} />
 						</>
 					) : null}
 					{spec.lower > 0.01 ? (
 						<>
-							<path
-								d={`M ${-w} ${ry + 40} L ${w} ${ry + 40} L ${w} ${yL} L ${-w} ${yL} Z`}
-								fill={k.skin}
-							/>
+							<path d={`M ${-w} ${ry + 40} L ${w} ${ry + 40} L ${w} ${yL} L ${-w} ${yL} Z`} fill={k.skin} />
 							<line x1={-w} y1={yL} x2={w} y2={yL} stroke={k.outline} strokeWidth={4} />
 						</>
 					) : null}
@@ -608,13 +581,7 @@ export const FaceInnerFeatures: React.FC<{
 						<path d={def.d} fill={k.mouth} />
 						<g clipPath={url('mouth')}>
 							{def.tongue ? (
-								<ellipse
-									cx={def.tongue[0]}
-									cy={def.tongue[1]}
-									rx={def.tongue[2]}
-									ry={def.tongue[3]}
-									fill={k.tongue}
-								/>
+								<ellipse cx={def.tongue[0]} cy={def.tongue[1]} rx={def.tongue[2]} ry={def.tongue[3]} fill={k.tongue} />
 							) : null}
 							{def.teethTop === undefined ? null : (
 								<rect x={-60} y={-60} width={120} height={60 + def.teethTop} fill={k.teeth} />
@@ -845,22 +812,14 @@ export const FaceBrowsAndSweat: React.FC<{
 );
 
 /** Computes 3D projected glasses components (lens tint, temple arms, front rims). */
-export const buildGlassesParts = (
-	proj: HeadProjection,
-	spec: GlassesSpec,
-	sx: number,
-) => {
+export const buildGlassesParts = (proj: HeadProjection, spec: GlassesSpec, sx: number) => {
 	const lensScale = Math.max(Math.abs(proj.cosYaw), 0.12);
 	const rx = spec.lensW * R;
 	const ry = spec.lensH * R;
 	const lensRx = spec.lensW / sx;
 	const frameW = spec.frameWidth ?? 0.052 * R;
 	const cornerR =
-		spec.shape === 'round' || spec.shape === 'oval'
-			? rx
-			: spec.shape === 'roundedSquare'
-				? rx * 0.42
-				: rx * 0.22;
+		spec.shape === 'round' || spec.shape === 'oval' ? rx : spec.shape === 'roundedSquare' ? rx * 0.42 : rx * 0.22;
 	const catPath = `M ${-rx} ${-ry * 0.55} Q 0 ${-ry * 0.92} ${rx * 1.12} ${-ry * 1.05} Q ${rx * 1.06} ${ry * 0.72} 0 ${ry * 0.95} Q ${-rx * 0.96} ${ry * 0.85} ${-rx} ${-ry * 0.55} Z`;
 
 	const lenses = ([1, -1] as const)
@@ -952,13 +911,7 @@ export const buildGlassesParts = (
 								strokeLinecap="round"
 								opacity={0.68}
 							/>
-							<path
-								d={catPath}
-								fill="none"
-								stroke={spec.frameColor}
-								strokeWidth={frameW}
-								strokeLinejoin="round"
-							/>
+							<path d={catPath} fill="none" stroke={spec.frameColor} strokeWidth={frameW} strokeLinejoin="round" />
 						</g>
 					) : (
 						<>

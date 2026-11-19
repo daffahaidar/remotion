@@ -1,4 +1,4 @@
-# Frontend Programmer: Master Character Rig (`character/frontend_programmer`)
+# Frontend Programmer: Master Character Rig (`src/assets/character/frontend_programmer`)
 
 Rig karakter **Programmer Frontend** 2D (vektor SVG) untuk Remotion. Didesain dengan tampilan modern kreatif: rambut medium berlayer dengan *highlight* electric-cyan, kacamata *rounded-square*, sweater indigo berlapis kaos putih dengan lencana `</>` di dada, jam tangan pintar (*smartwatch*) cyan di pergelangan kiri, celana chino slate, serta *sneakers* cyan beraksen coral.
 
@@ -36,7 +36,7 @@ Karakter ini memiliki antarmuka props yang **100% kompatibel** dengan [`../man`]
 ## Pemakaian dasar
 
 ```tsx
-import {Character as FrontendProgrammerCharacter} from '../character/frontend_programmer';
+import {Character as FrontendProgrammerCharacter} from './assets/character/frontend_programmer';
 // atau: import {FrontendProgrammerCharacter} from '../character';
 
 <FrontendProgrammerCharacter
@@ -61,5 +61,5 @@ Selain seluruh props standar (`expression`, `pose`, `talking`, `mouth`, `motion`
 
 ## Komposisi di Studio (`npm run dev`)
 
-- **Mascot / FrontendProgrammerRig**: playground rig untuk mengatur ekspresi, pose, arah hadap, dan properti lainnya di Remotion Studio.
-- **Mascot / FrontendProgrammerModelSheet**: sumber `model-sheet.png`.
+- **Rigs / FrontendProgrammerRig**: playground rig untuk mengatur ekspresi, pose, arah hadap, dan properti lainnya di Remotion Studio.
+- **ModelSheets / FrontendProgrammerModelSheet**: sumber `model-sheet.png`.

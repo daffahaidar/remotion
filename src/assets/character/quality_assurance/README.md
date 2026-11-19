@@ -1,4 +1,4 @@
-# Quality Assurance (QA): Bug-Hunter Character Rig (`character/quality_assurance`)
+# Quality Assurance (QA): Bug-Hunter Character Rig (`src/assets/character/quality_assurance`)
 
 Rig karakter **Quality Assurance (QA)** 2D (vektor SVG) untuk Remotion. Memiliki **postur wajah persegi-ramping yang tajam & observan**, rambut bob rapi berjepit merah, kacamata *cat-eye* crimson, rompi rajut mustard di atas kemeja putih berkerah, serta lencana ikon bug & tanda centang hijau di dada.
 

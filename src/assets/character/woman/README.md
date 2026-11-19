@@ -1,4 +1,4 @@
-# Woman: Hijabi Master Character Rig (`character/woman`)
+# Woman: Hijabi Master Character Rig (`src/assets/character/woman`)
 
 Rig karakter wanita berhijab 2D (vektor SVG) untuk Remotion. Mengenakan hijab *dusty rose* dengan ciput (*inner underscarf*), bros emas, tunik lengan panjang *teal/sage*, celana panjang *navy*, dan *sneakers* senada.
 
@@ -23,7 +23,7 @@ Karakter ini memiliki antarmuka props yang **100% identik** dengan karakter lain
 ## Pemakaian dasar
 
 ```tsx
-import {Character as WomanCharacter} from '../character/woman';
+import {Character as WomanCharacter} from './assets/character/woman';
 // atau: import {WomanCharacter} from '../character';
 
 <WomanCharacter

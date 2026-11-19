@@ -1,6 +1,15 @@
 import React from 'react';
 import {Interactive, useCurrentFrame, useVideoConfig} from 'remotion';
-import {ACCENTS, ACCENT_NAMES, PROP_COLORS, PROP_INK, PROP_OW, PropShadow, propVariants, type AccentColor} from './shared';
+import {
+	ACCENTS,
+	ACCENT_NAMES,
+	PROP_COLORS,
+	PROP_INK,
+	PROP_OW,
+	PropShadow,
+	propVariants,
+	type AccentColor,
+} from './shared';
 
 export type BugState = 'alive' | 'squashed';
 
@@ -27,21 +36,47 @@ const BugInner: React.FC<BugProps> = ({color = 'red', state = 'alive', animated 
 
 	if (state === 'squashed') {
 		return (
-			<svg viewBox="0 0 200 160" width={200} height={160} style={{overflow: 'visible', transformOrigin: '50% 90%', ...style}}>
+			<svg
+				viewBox="0 0 200 160"
+				width={200}
+				height={160}
+				style={{overflow: 'visible', transformOrigin: '50% 90%', ...style}}
+			>
 				<ellipse cx={100} cy={146} rx={92} ry={12} fill={pal.main} opacity={0.25} />
 				{[
 					[64, 138, 40, 152],
 					[98, 140, 94, 156],
 					[130, 138, 154, 152],
 				].map(([x1, y1, x2, y2]) => (
-					<line key={x1} x1={x1} y1={y1} x2={x2} y2={y2} stroke={PROP_INK} strokeWidth={PROP_OW} strokeLinecap="round" />
+					<line
+						key={x1}
+						x1={x1}
+						y1={y1}
+						x2={x2}
+						y2={y2}
+						stroke={PROP_INK}
+						strokeWidth={PROP_OW}
+						strokeLinecap="round"
+					/>
 				))}
-				<path d="M 36 142 C 42 116, 150 114, 160 142 Q 98 152 36 142 Z" fill={pal.main} stroke={PROP_INK} strokeWidth={PROP_OW} strokeLinejoin="round" />
+				<path
+					d="M 36 142 C 42 116, 150 114, 160 142 Q 98 152 36 142 Z"
+					fill={pal.main}
+					stroke={PROP_INK}
+					strokeWidth={PROP_OW}
+					strokeLinejoin="round"
+				/>
 				<ellipse cx={72} cy={132} rx={8} ry={4} fill={PROP_INK} opacity={0.8} />
 				<ellipse cx={120} cy={130} rx={7} ry={3.5} fill={PROP_INK} opacity={0.8} />
 				<ellipse cx={174} cy={142} rx={18} ry={9} fill={PROP_COLORS.slateDark} stroke={PROP_INK} strokeWidth={5} />
 				{[168, 180].map((ex) => (
-					<path key={ex} d={`M ${ex - 3} 139 L ${ex + 3} 145 M ${ex + 3} 139 L ${ex - 3} 145`} stroke={PROP_COLORS.white} strokeWidth={2.5} strokeLinecap="round" />
+					<path
+						key={ex}
+						d={`M ${ex - 3} 139 L ${ex + 3} 145 M ${ex + 3} 139 L ${ex - 3} 145`}
+						stroke={PROP_COLORS.white}
+						strokeWidth={2.5}
+						strokeLinecap="round"
+					/>
 				))}
 				{/* Impact lines */}
 				{['M 70 110 L 64 96', 'M 100 106 L 100 90', 'M 130 110 L 136 96'].map((d) => (
@@ -55,7 +90,12 @@ const BugInner: React.FC<BugProps> = ({color = 'red', state = 'alive', animated 
 	const antenna = Math.sin(t * 6) * 3;
 
 	return (
-		<svg viewBox="0 0 200 160" width={200} height={160} style={{overflow: 'visible', transformOrigin: '50% 90%', ...style}}>
+		<svg
+			viewBox="0 0 200 160"
+			width={200}
+			height={160}
+			style={{overflow: 'visible', transformOrigin: '50% 90%', ...style}}
+		>
 			<PropShadow cx={104} cy={148} rx={72} ry={8} />
 
 			{/* Wiggling legs */}
@@ -79,7 +119,13 @@ const BugInner: React.FC<BugProps> = ({color = 'red', state = 'alive', animated 
 					[174, 74, 188 - antenna, 44],
 				].map(([x1, y1, x2, y2]) => (
 					<g key={x1}>
-						<path d={`M ${x1} ${y1} Q ${(x1 + x2) / 2} ${y1 - 22} ${x2} ${y2}`} fill="none" stroke={PROP_INK} strokeWidth={5} strokeLinecap="round" />
+						<path
+							d={`M ${x1} ${y1} Q ${(x1 + x2) / 2} ${y1 - 22} ${x2} ${y2}`}
+							fill="none"
+							stroke={PROP_INK}
+							strokeWidth={5}
+							strokeLinecap="round"
+						/>
 						<circle cx={x2} cy={y2} r={6} fill={pal.main} stroke={PROP_INK} strokeWidth={3.5} />
 					</g>
 				))}
@@ -95,7 +141,13 @@ const BugInner: React.FC<BugProps> = ({color = 'red', state = 'alive', animated 
 						<circle cx={cx + 3} cy={cy + 1} r={3.8} fill={PROP_INK} />
 					</g>
 				))}
-				<path d="M 164 106 Q 174 114 184 103" fill="none" stroke={PROP_COLORS.paper} strokeWidth={3} strokeLinecap="round" />
+				<path
+					d="M 164 106 Q 174 114 184 103"
+					fill="none"
+					stroke={PROP_COLORS.paper}
+					strokeWidth={3}
+					strokeLinecap="round"
+				/>
 
 				{/* Shell */}
 				<path
@@ -105,12 +157,23 @@ const BugInner: React.FC<BugProps> = ({color = 'red', state = 'alive', animated 
 					strokeWidth={PROP_OW}
 					strokeLinejoin="round"
 				/>
-				<path d="M 128 52 C 148 64, 156 84, 155 106 Q 140 110 124 111 C 140 92, 138 70, 128 52 Z" fill={pal.shade} opacity={0.55} />
+				<path
+					d="M 128 52 C 148 64, 156 84, 155 106 Q 140 110 124 111 C 140 92, 138 70, 128 52 Z"
+					fill={pal.shade}
+					opacity={0.55}
+				/>
 				<path d="M 98 46 Q 92 80 94 114" fill="none" stroke={PROP_INK} strokeWidth={4} strokeLinecap="round" />
 				{SPOTS.map(([cx, cy, r]) => (
 					<circle key={cx} cx={cx} cy={cy} r={r} fill={PROP_INK} opacity={0.82} />
 				))}
-				<path d="M 50 76 Q 60 58 82 52" fill="none" stroke={PROP_COLORS.white} strokeWidth={6} strokeLinecap="round" opacity={0.5} />
+				<path
+					d="M 50 76 Q 60 58 82 52"
+					fill="none"
+					stroke={PROP_COLORS.white}
+					strokeWidth={6}
+					strokeLinecap="round"
+					opacity={0.5}
+				/>
 			</g>
 		</svg>
 	);
@@ -122,8 +185,20 @@ export const Bug = Interactive.create({
 	layout: 'none',
 	componentName: 'BugProp',
 	schema: {
-		color: {type: 'enum', default: 'red', description: 'Shell color', variants: propVariants(ACCENT_NAMES), keyframable: false},
-		state: {type: 'enum', default: 'alive', description: 'Alive or squashed', variants: propVariants(STATES), keyframable: false},
+		color: {
+			type: 'enum',
+			default: 'red',
+			description: 'Shell color',
+			variants: propVariants(ACCENT_NAMES),
+			keyframable: false,
+		},
+		state: {
+			type: 'enum',
+			default: 'alive',
+			description: 'Alive or squashed',
+			variants: propVariants(STATES),
+			keyframable: false,
+		},
 		animated: {type: 'boolean', default: true, description: 'Wiggle legs'},
 	},
 });

@@ -1,6 +1,6 @@
-# Reusable Character Properties (`property/`)
+# Reusable Character Properties (`src/assets/property/`)
 
-Koleksi **22 properti kartun vektor 2D** bergaya Remotion (`#1f1a1f` bold outline, cel shading, interaktif di Remotion Studio melalui `Interactive.create`, dan animasi deterministik berbasis `useCurrentFrame()`) yang dirancang agar bisa dipasangkan dengan **karakter apa pun** di folder `character/`.
+Koleksi **22 properti kartun vektor 2D** bergaya Remotion (`#1f1a1f` bold outline, cel shading, interaktif di Remotion Studio melalui `Interactive.create`, dan animasi deterministik berbasis `useCurrentFrame()`) yang dirancang agar bisa dipasangkan dengan **karakter apa pun** di folder `src/assets/character/`.
 
 ![Preview Sheet Properti](./sheet.png)
 
@@ -58,7 +58,7 @@ import {
 
 ### 1. Karakter Mengetik di Meja Kerja (`pose="typing"`)
 
-Karakter di `character/` memakai `transformOrigin: '420px 860px'` (titik lantai tepat di bawah sepatu) dan posisi tangan `typing` di `y = -285` dari lantai. Agar tinggi lantai karakter dan kaki meja sejajar sempurna di posisi `Y_LANTAI` berapa pun skalanya:
+Karakter di `src/assets/character/` memakai `transformOrigin: '420px 860px'` (titik lantai tepat di bawah sepatu) dan posisi tangan `typing` di `y = -285` dari lantai. Agar tinggi lantai karakter dan kaki meja sejajar sempurna di posisi `Y_LANTAI` berapa pun skalanya:
 - Posisikan karakter dengan `left = centerX - 420` dan `top = Y_LANTAI - 860`.
 - Posisikan `<OfficeDesk showChair={false} />` di depan karakter dengan `transformOrigin: '280px 340px'`, `left = centerX - 280`, dan `top = Y_LANTAI - 340`.
 - Letakkan `<Laptop />` dan `<CoffeeMug />` di atas permukaan meja (`Y_LANTAI - 202 * deskScale`).

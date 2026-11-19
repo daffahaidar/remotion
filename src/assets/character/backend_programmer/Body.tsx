@@ -49,12 +49,9 @@ export const Arm: React.FC<{
 	const sleeveEnd: P2 = [w[0] - fux * 8, w[1] - fuy * 8];
 	const cuffStart: P2 = [w[0] - fux * 20, w[1] - fuy * 20];
 	const cw = RIG.armW / 2 + 4;
-	const angle =
-		(fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
+	const angle = (fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
 
-	const handEl = (
-		<Hand at={w} angle={angle} mirror={mirror} shape={hand} skin={K.skin} outline={K.outline} />
-	);
+	const handEl = <Hand at={w} angle={angle} mirror={mirror} shape={hand} skin={K.skin} outline={K.outline} />;
 
 	return (
 		<g>
@@ -221,16 +218,7 @@ export const Torso: React.FC<{
 			{/* Backend `>_` terminal badge */}
 			{showBadge && c > 0.2 ? (
 				<g transform={`translate(${chestFrontX} ${-304 - shrug * 0.35}) scale(${c} 1)`}>
-					<rect
-						x={-38}
-						y={-19}
-						width={76}
-						height={38}
-						rx={11}
-						fill={K.badgeBg}
-						stroke={K.outline}
-						strokeWidth={4.5}
-					/>
+					<rect x={-38} y={-19} width={76} height={38} rx={11} fill={K.badgeBg} stroke={K.outline} strokeWidth={4.5} />
 					<circle cx={-26} cy={-9} r={2.8} fill={K.badgeAmber} />
 					<path
 						d="M -17 -7 L -5 1 L -17 9"
@@ -240,15 +228,7 @@ export const Torso: React.FC<{
 						strokeLinecap="round"
 						strokeLinejoin="round"
 					/>
-					<line
-						x1={4}
-						y1={8}
-						x2={21}
-						y2={8}
-						stroke={K.badgeAccent}
-						strokeWidth={5.5}
-						strokeLinecap="round"
-					/>
+					<line x1={4} y1={8} x2={21} y2={8} stroke={K.badgeAccent} strokeWidth={5.5} strokeLinecap="round" />
 				</g>
 			) : null}
 		</g>

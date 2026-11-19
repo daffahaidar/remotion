@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-	D2R,
-	OW,
-	capsulePath,
-	rotY,
-	smoothPath,
-	v3,
-	type HandShape,
-	type P2,
-	type RigDimensions,
-} from './rig';
+import {D2R, OW, capsulePath, rotY, smoothPath, v3, type HandShape, type P2, type RigDimensions} from './rig';
 
 export type BodyPalette = {
 	readonly outline: string;
@@ -42,14 +32,7 @@ export const Tube: React.FC<{
 			strokeLinecap="round"
 			strokeLinejoin="round"
 		/>
-		<polyline
-			points={pts(p)}
-			fill="none"
-			stroke={color}
-			strokeWidth={w}
-			strokeLinecap="round"
-			strokeLinejoin="round"
-		/>
+		<polyline points={pts(p)} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" />
 	</>
 );
 
@@ -122,13 +105,7 @@ const HANDS: Record<HandShape, HandDef> = {
 	},
 };
 
-const renderHandPart = (
-	p: HandPart,
-	key: string,
-	color: string,
-	outline: string | null,
-	handOw: number,
-) =>
+const renderHandPart = (p: HandPart, key: string, color: string, outline: string | null, handOw: number) =>
 	'd' in p ? (
 		<path
 			key={key}
@@ -174,14 +151,7 @@ export const Hand: React.FC<{
 				</g>
 			))}
 			{(def.lines ?? []).map((d, i) => (
-				<path
-					key={`line${i}`}
-					d={d}
-					fill="none"
-					stroke={outline}
-					strokeWidth={2.6}
-					strokeLinecap="round"
-				/>
+				<path key={`line${i}`} d={d} fill="none" stroke={outline} strokeWidth={2.6} strokeLinecap="round" />
 			))}
 		</g>
 	);
@@ -236,22 +206,13 @@ export const Shoe: React.FC<{
 				{dressShoe ? (
 					<>
 						{fwd.z > -0.35 && k.shoeAccent ? (
-							<ellipse
-								cx={toe[0] - fwd.x * 6}
-								cy={toe[1] - 4}
-								rx={12}
-								ry={6}
-								fill={k.shoeAccent}
-								opacity={0.75}
-							/>
+							<ellipse cx={toe[0] - fwd.x * 6} cy={toe[1] - 4} rx={12} ry={6} fill={k.shoeAccent} opacity={0.75} />
 						) : null}
 						<rect x={mid[0] - 140} y={bottom - 9} width={280} height={24} fill={k.sole} />
 					</>
 				) : (
 					<>
-						{k.shoeAccent ? (
-							<rect x={mid[0] - 140} y={bottom - 20} width={280} height={8} fill={k.shoeAccent} />
-						) : null}
+						{k.shoeAccent ? <rect x={mid[0] - 140} y={bottom - 20} width={280} height={8} fill={k.shoeAccent} /> : null}
 						{fwd.z > -0.35 ? (
 							<ellipse
 								cx={toe[0] + fwd.x * 5}
@@ -353,11 +314,7 @@ export const Leg: React.FC<{
 export type TorsoSection = readonly [number, number, number, number];
 
 /** Computes 3D-turned torso silhouette path and chest center coordinates. */
-export const computeTorsoGeometry = (
-	sections: readonly TorsoSection[],
-	yaw: number,
-	shrug: number,
-) => {
+export const computeTorsoGeometry = (sections: readonly TorsoSection[], yaw: number, shrug: number) => {
 	const c = Math.cos(yaw * D2R);
 	const sn = Math.sin(yaw * D2R);
 	const rows = sections.map(([y, w, d, zc], i) => ({
@@ -465,22 +422,13 @@ export const SleeveArm: React.FC<{
 		? sleeveEnd
 		: [w[0] - fux * (underCuffColor ? 22 : 20), w[1] - fuy * (underCuffColor ? 22 : 20)];
 	const cw = rig.armW / 2 + 4;
-	const angle =
-		(fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
+	const angle = (fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
 
 	const watchPos: P2 = [w[0] - fux * 14, w[1] - fuy * 14];
 	const watchHalfW = rig.armW / 2 + 2;
 
 	const handEl = (
-		<Hand
-			at={w}
-			angle={angle}
-			mirror={mirror}
-			shape={hand}
-			skin={skin}
-			outline={outline}
-			scale={handScale}
-		/>
+		<Hand at={w} angle={angle} mirror={mirror} shape={hand} skin={skin} outline={outline} scale={handScale} />
 	);
 
 	return (

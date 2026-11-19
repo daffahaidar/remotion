@@ -52,16 +52,13 @@ export const Arm: React.FC<{
 	// Pushed-up sweater sleeve stops at 42% down the forearm with a ribbed cuff.
 	const sleeveEnd: P2 = [lerp(e[0], w[0], 0.42), lerp(e[1], w[1], 0.42)];
 	const cuffW = (RIG.armW + 8) / 2;
-	const angle =
-		(fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
+	const angle = (fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
 
 	// Sleek cyan smartwatch on the character's left wrist.
 	const watchPos: P2 = [w[0] - fux * 16, w[1] - fuy * 16];
 	const watchHalfW = RIG.armW / 2 + 2;
 
-	const handEl = (
-		<Hand at={w} angle={angle} mirror={mirror} shape={hand} skin={K.skin} outline={K.outline} />
-	);
+	const handEl = <Hand at={w} angle={angle} mirror={mirror} shape={hand} skin={K.skin} outline={K.outline} />;
 
 	return (
 		<g>
@@ -86,14 +83,7 @@ export const Arm: React.FC<{
 						strokeWidth={7}
 						strokeLinecap="round"
 					/>
-					<circle
-						cx={watchPos[0]}
-						cy={watchPos[1]}
-						r={8}
-						fill={K.watchFace}
-						stroke={K.outline}
-						strokeWidth={3.5}
-					/>
+					<circle cx={watchPos[0]} cy={watchPos[1]} r={8} fill={K.watchFace} stroke={K.outline} strokeWidth={3.5} />
 					<circle cx={watchPos[0]} cy={watchPos[1]} r={2.5} fill={K.badgeAccent} />
 				</g>
 			) : null}
@@ -206,16 +196,7 @@ export const Torso: React.FC<{
 			{/* Frontend `</>` chest emblem */}
 			{showBadge && c > 0.2 ? (
 				<g transform={`translate(${chestFrontX} ${-314 - shrug * 0.35}) scale(${c} 1)`}>
-					<rect
-						x={-38}
-						y={-19}
-						width={76}
-						height={38}
-						rx={12}
-						fill={K.badgeBg}
-						stroke={K.outline}
-						strokeWidth={4.5}
-					/>
+					<rect x={-38} y={-19} width={76} height={38} rx={12} fill={K.badgeBg} stroke={K.outline} strokeWidth={4.5} />
 					<path
 						d="M -13 -8 L -25 0 L -13 8"
 						fill="none"
@@ -224,13 +205,7 @@ export const Torso: React.FC<{
 						strokeLinecap="round"
 						strokeLinejoin="round"
 					/>
-					<path
-						d="M 4 -10 L -4 10"
-						fill="none"
-						stroke={K.badgeCoral}
-						strokeWidth={5}
-						strokeLinecap="round"
-					/>
+					<path d="M 4 -10 L -4 10" fill="none" stroke={K.badgeCoral} strokeWidth={5} strokeLinecap="round" />
 					<path
 						d="M 13 -8 L 25 0 L 13 8"
 						fill="none"

@@ -34,7 +34,12 @@ const TrophyInner: React.FC<TrophyProps> = ({variant = 'gold', label = '#1', spa
 	const pal = PALETTES[variant];
 
 	return (
-		<svg viewBox="0 0 200 250" width={200} height={250} style={{overflow: 'visible', transformOrigin: '50% 94%', ...style}}>
+		<svg
+			viewBox="0 0 200 250"
+			width={200}
+			height={250}
+			style={{overflow: 'visible', transformOrigin: '50% 94%', ...style}}
+		>
 			<PropShadow cx={100} cy={236} rx={78} ry={10} />
 
 			{/* Handles */}
@@ -46,18 +51,47 @@ const TrophyInner: React.FC<TrophyProps> = ({variant = 'gold', label = '#1', spa
 			))}
 
 			{/* Stem + bases */}
-			<path d="M 88 144 L 112 144 L 118 178 L 82 178 Z" fill={pal.shade} stroke={PROP_INK} strokeWidth={PROP_OW} strokeLinejoin="round" />
+			<path
+				d="M 88 144 L 112 144 L 118 178 L 82 178 Z"
+				fill={pal.shade}
+				stroke={PROP_INK}
+				strokeWidth={PROP_OW}
+				strokeLinejoin="round"
+			/>
 			<rect x={58} y={174} width={84} height={20} rx={6} fill={pal.main} stroke={PROP_INK} strokeWidth={PROP_OW} />
-			<rect x={46} y={192} width={108} height={40} rx={8} fill={PROP_COLORS.slateDark} stroke={PROP_INK} strokeWidth={PROP_OW} />
+			<rect
+				x={46}
+				y={192}
+				width={108}
+				height={40}
+				rx={8}
+				fill={PROP_COLORS.slateDark}
+				stroke={PROP_INK}
+				strokeWidth={PROP_OW}
+			/>
 			<rect x={70} y={201} width={60} height={22} rx={4} fill={pal.light} stroke={PROP_INK} strokeWidth={3} />
 			{label ? (
-				<text x={100} y={217} textAnchor="middle" fill={PROP_INK} fontFamily="ui-monospace, monospace" fontWeight={800} fontSize={14}>
+				<text
+					x={100}
+					y={217}
+					textAnchor="middle"
+					fill={PROP_INK}
+					fontFamily="ui-monospace, monospace"
+					fontWeight={800}
+					fontSize={14}
+				>
 					{label}
 				</text>
 			) : null}
 
 			{/* Cup */}
-			<path d="M 46 34 L 154 34 L 150 92 Q 144 140 100 146 Q 56 140 50 92 Z" fill={pal.main} stroke={PROP_INK} strokeWidth={PROP_OW} strokeLinejoin="round" />
+			<path
+				d="M 46 34 L 154 34 L 150 92 Q 144 140 100 146 Q 56 140 50 92 Z"
+				fill={pal.main}
+				stroke={PROP_INK}
+				strokeWidth={PROP_OW}
+				strokeLinejoin="round"
+			/>
 			<path d="M 126 40 L 150 40 L 147 92 Q 142 132 108 142 Q 130 120 128 90 Z" fill={pal.shade} opacity={0.55} />
 			<path d="M 66 50 L 68 100" stroke={PROP_COLORS.white} strokeWidth={7} strokeLinecap="round" opacity={0.55} />
 			<path d={star(100, 84, 20)} fill={pal.light} stroke={PROP_INK} strokeWidth={3.5} strokeLinejoin="round" />
@@ -89,7 +123,13 @@ export const Trophy = Interactive.create({
 	layout: 'none',
 	componentName: 'TrophyProp',
 	schema: {
-		variant: {type: 'enum', default: 'gold', description: 'Medal finish', variants: propVariants(VARIANTS), keyframable: false},
+		variant: {
+			type: 'enum',
+			default: 'gold',
+			description: 'Medal finish',
+			variants: propVariants(VARIANTS),
+			keyframable: false,
+		},
 		label: {type: 'string', default: '#1', description: 'Plaque text'},
 		sparkle: {type: 'boolean', default: true, description: 'Sparkles'},
 	},

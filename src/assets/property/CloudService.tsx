@@ -20,12 +20,29 @@ const ARROW = 'M 0 -26 L 22 -2 L 9 -2 L 9 24 L -9 24 L -9 -2 L -22 -2 Z';
 const SyncArrow: React.FC = () => (
 	<g>
 		<path d="M -24 0 A 24 24 0 0 1 12 -20.8" fill="none" stroke={PROP_INK} strokeWidth={13} strokeLinecap="round" />
-		<path d="M -24 0 A 24 24 0 0 1 12 -20.8" fill="none" stroke={PROP_COLORS.cyan} strokeWidth={6} strokeLinecap="round" />
-		<path d="M 22 -15 L 16 -31 L 5 -12 Z" fill={PROP_COLORS.cyan} stroke={PROP_INK} strokeWidth={3} strokeLinejoin="round" />
+		<path
+			d="M -24 0 A 24 24 0 0 1 12 -20.8"
+			fill="none"
+			stroke={PROP_COLORS.cyan}
+			strokeWidth={6}
+			strokeLinecap="round"
+		/>
+		<path
+			d="M 22 -15 L 16 -31 L 5 -12 Z"
+			fill={PROP_COLORS.cyan}
+			stroke={PROP_INK}
+			strokeWidth={3}
+			strokeLinejoin="round"
+		/>
 	</g>
 );
 
-const CloudServiceInner: React.FC<CloudServiceProps> = ({status = 'upload', label = 'CLOUD', animated = true, style}) => {
+const CloudServiceInner: React.FC<CloudServiceProps> = ({
+	status = 'upload',
+	label = 'CLOUD',
+	animated = true,
+	style,
+}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = animated ? frame / fps : 0;
@@ -34,18 +51,46 @@ const CloudServiceInner: React.FC<CloudServiceProps> = ({status = 'upload', labe
 	const iy = label ? 100 : 108;
 
 	return (
-		<svg viewBox="0 0 280 200" width={280} height={200} style={{overflow: 'visible', transformOrigin: '50% 50%', ...style}}>
+		<svg
+			viewBox="0 0 280 200"
+			width={280}
+			height={200}
+			style={{overflow: 'visible', transformOrigin: '50% 50%', ...style}}
+		>
 			<g transform={`translate(0 ${bob})`}>
 				<path d={CLOUD} fill={PROP_COLORS.white} stroke={PROP_INK} strokeWidth={PROP_OW} strokeLinejoin="round" />
-				<path d="M 40 136 Q 60 150 100 150 L 220 150 Q 240 148 246 132 Q 248 156 218 157 L 70 157 Q 40 156 40 136 Z" fill={PROP_COLORS.slateLight} />
-				<path d="M 82 76 Q 92 56 116 54" fill="none" stroke={PROP_COLORS.slateLight} strokeWidth={6} strokeLinecap="round" />
+				<path
+					d="M 40 136 Q 60 150 100 150 L 220 150 Q 240 148 246 132 Q 248 156 218 157 L 70 157 Q 40 156 40 136 Z"
+					fill={PROP_COLORS.slateLight}
+				/>
+				<path
+					d="M 82 76 Q 92 56 116 54"
+					fill="none"
+					stroke={PROP_COLORS.slateLight}
+					strokeWidth={6}
+					strokeLinecap="round"
+				/>
 
 				<g transform={`translate(140 ${iy})`}>
 					{status === 'upload' ? (
-						<path d={ARROW} transform={`translate(0 ${-hop}) scale(0.9)`} fill={PROP_COLORS.indigo} stroke={PROP_INK} strokeWidth={5} strokeLinejoin="round" />
+						<path
+							d={ARROW}
+							transform={`translate(0 ${-hop}) scale(0.9)`}
+							fill={PROP_COLORS.indigo}
+							stroke={PROP_INK}
+							strokeWidth={5}
+							strokeLinejoin="round"
+						/>
 					) : null}
 					{status === 'download' ? (
-						<path d={ARROW} transform={`translate(0 ${hop}) rotate(180) scale(0.9)`} fill={PROP_COLORS.emerald} stroke={PROP_INK} strokeWidth={5} strokeLinejoin="round" />
+						<path
+							d={ARROW}
+							transform={`translate(0 ${hop}) rotate(180) scale(0.9)`}
+							fill={PROP_COLORS.emerald}
+							stroke={PROP_INK}
+							strokeWidth={5}
+							strokeLinejoin="round"
+						/>
 					) : null}
 					{status === 'sync' ? (
 						<g transform={`rotate(${t * 140}) scale(0.9)`}>
@@ -58,7 +103,14 @@ const CloudServiceInner: React.FC<CloudServiceProps> = ({status = 'upload', labe
 					{status === 'online' ? (
 						<g>
 							<circle r={24} fill={PROP_COLORS.green} stroke={PROP_INK} strokeWidth={5} />
-							<path d="M -11 0 L -3 8 L 12 -9" fill="none" stroke={PROP_COLORS.white} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" />
+							<path
+								d="M -11 0 L -3 8 L 12 -9"
+								fill="none"
+								stroke={PROP_COLORS.white}
+								strokeWidth={6}
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
 						</g>
 					) : null}
 					{status === 'error' ? (
@@ -70,7 +122,15 @@ const CloudServiceInner: React.FC<CloudServiceProps> = ({status = 'upload', labe
 				</g>
 
 				{label ? (
-					<text x={140} y={146} textAnchor="middle" fill={PROP_INK} fontFamily="ui-monospace, monospace" fontWeight={800} fontSize={15}>
+					<text
+						x={140}
+						y={146}
+						textAnchor="middle"
+						fill={PROP_INK}
+						fontFamily="ui-monospace, monospace"
+						fontWeight={800}
+						fontSize={15}
+					>
 						{label}
 					</text>
 				) : null}
@@ -85,7 +145,13 @@ export const CloudService = Interactive.create({
 	layout: 'none',
 	componentName: 'CloudServiceProp',
 	schema: {
-		status: {type: 'enum', default: 'upload', description: 'Cloud status icon', variants: propVariants(STATUSES), keyframable: false},
+		status: {
+			type: 'enum',
+			default: 'upload',
+			description: 'Cloud status icon',
+			variants: propVariants(STATUSES),
+			keyframable: false,
+		},
 		label: {type: 'string', default: 'CLOUD', description: 'Bottom label'},
 		animated: {type: 'boolean', default: true, description: 'Float & animate icon'},
 	},

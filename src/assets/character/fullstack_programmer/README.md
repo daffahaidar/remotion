@@ -1,4 +1,4 @@
-# Fullstack Programmer: Dual-Stack Character Rig (`character/fullstack_programmer`)
+# Fullstack Programmer: Dual-Stack Character Rig (`src/assets/character/fullstack_programmer`)
 
 Rig karakter **Fullstack Programmer** 2D (vektor SVG) untuk Remotion. Memiliki **postur wajah oval lebih lebar dan enerjik**, topi *baseball* 3D yang dipakai terbalik (*backwards cap*) warna cyan & emerald, serta jaket raglan *dual-tone* (lengan cyan ala Frontend + lengan emerald ala Backend) dengan emblem `{</>}` di dada.
 

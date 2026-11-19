@@ -21,12 +21,7 @@ const PALETTES: Record<SmartphoneFrameColor, {readonly body: string; readonly sh
 const SCREENS: readonly SmartphoneScreen[] = ['app', 'chat', 'alert', 'loading', 'off'];
 const FRAME_COLORS: readonly SmartphoneFrameColor[] = ['dark', 'silver', 'cyan'];
 
-const SmartphoneInner: React.FC<SmartphoneProps> = ({
-	screen = 'app',
-	frameColor = 'dark',
-	animated = true,
-	style,
-}) => {
+const SmartphoneInner: React.FC<SmartphoneProps> = ({screen = 'app', frameColor = 'dark', animated = true, style}) => {
 	const uid = `sp${useId().replace(/[^a-zA-Z0-9]/g, '')}`;
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
@@ -52,16 +47,7 @@ const SmartphoneInner: React.FC<SmartphoneProps> = ({
 			<rect x={144} y={78} width={8} height={36} rx={3} fill={pal.shade} stroke={PROP_INK} strokeWidth={4} />
 
 			{/* Outer chassis */}
-			<rect
-				x={34}
-				y={18}
-				width={112}
-				height={234}
-				rx={24}
-				fill={pal.body}
-				stroke={PROP_INK}
-				strokeWidth={PROP_OW}
-			/>
+			<rect x={34} y={18} width={112} height={234} rx={24} fill={pal.body} stroke={PROP_INK} strokeWidth={PROP_OW} />
 			{/* Side cel highlight */}
 			<rect x={40} y={24} width={10} height={222} rx={6} fill={PROP_COLORS.white} opacity={0.18} />
 
@@ -111,7 +97,16 @@ const SmartphoneInner: React.FC<SmartphoneProps> = ({
 						<rect x={93} y={145} width={34} height={38} rx={8} fill="#1e293b" />
 						<rect x={101} y={156} width={18} height={16} rx={4} fill={PROP_COLORS.indigo} />
 
-						<rect x={53} y={194} width={74} height={26} rx={11} fill={PROP_COLORS.emerald} stroke={PROP_INK} strokeWidth={2.5} />
+						<rect
+							x={53}
+							y={194}
+							width={74}
+							height={26}
+							rx={11}
+							fill={PROP_COLORS.emerald}
+							stroke={PROP_INK}
+							strokeWidth={2.5}
+						/>
 						<rect x={71} y={204} width={38} height={6} rx={3} fill={PROP_COLORS.white} />
 					</g>
 				) : null}
@@ -175,7 +170,16 @@ const SmartphoneInner: React.FC<SmartphoneProps> = ({
 							<rect x={64} y={128} width={52} height={7} rx={3.5} fill={PROP_COLORS.white} />
 							<rect x={70} y={140} width={40} height={6} rx={3} fill="#fecdd3" />
 						</g>
-						<rect x={58} y={178} width={64} height={24} rx={10} fill={PROP_COLORS.amber} stroke={PROP_INK} strokeWidth={2.5} />
+						<rect
+							x={58}
+							y={178}
+							width={64}
+							height={24}
+							rx={10}
+							fill={PROP_COLORS.amber}
+							stroke={PROP_INK}
+							strokeWidth={2.5}
+						/>
 					</g>
 				) : null}
 

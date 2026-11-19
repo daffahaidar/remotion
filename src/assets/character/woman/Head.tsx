@@ -174,13 +174,7 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid}) => {
 							/>
 						) : null}
 
-						<path
-							d={faceD}
-							fill="none"
-							stroke={K.skinShade}
-							strokeWidth={14}
-							transform="translate(0 6)"
-						/>
+						<path d={faceD} fill="none" stroke={K.skinShade} strokeWidth={14} transform="translate(0 6)" />
 
 						<FaceInnerFeatures proj={proj} face={face} blink={blink} jaw={jaw} cfg={FACE_CFG} k={K} uid={uid} />
 						<FaceBrows

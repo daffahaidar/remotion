@@ -88,15 +88,7 @@ export type HeadProps = {
 };
 
 /** Backend Programmer head: messy textured hair + 3D studio headphones + rectangular glasses. */
-export const Head: React.FC<HeadProps> = ({
-	yaw,
-	nod,
-	face,
-	blink,
-	uid,
-	showGlasses = true,
-	showHeadphones = true,
-}) => {
+export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid, showGlasses = true, showHeadphones = true}) => {
 	const proj = createHeadProjection(yaw, nod, SX, SZ);
 	const jaw = JAW[face.mouth] ?? 0;
 	const id = (n: string) => `${uid}-${n}`;
@@ -193,15 +185,7 @@ export const Head: React.FC<HeadProps> = ({
 						strokeWidth={OW}
 					/>
 					{/* Outer graphite shell */}
-					<ellipse
-						cx={0}
-						cy={0}
-						rx={cupRx}
-						ry={cupRy}
-						fill={K.headphone}
-						stroke={K.outline}
-						strokeWidth={OW}
-					/>
+					<ellipse cx={0} cy={0} rx={cupRx} ry={cupRy} fill={K.headphone} stroke={K.outline} strokeWidth={OW} />
 					{/* Inner shade & glowing terminal emerald LED ring */}
 					<ellipse
 						cx={out * 3}
@@ -284,28 +268,9 @@ export const Head: React.FC<HeadProps> = ({
 			{ears.map((e) => (e && e.front ? e.el : null))}
 			{showHeadphones ? (
 				<>
-					<path
-						d={bandD}
-						fill="none"
-						stroke={K.outline}
-						strokeWidth={28}
-						strokeLinecap="round"
-					/>
-					<path
-						d={bandD}
-						fill="none"
-						stroke={K.headphone}
-						strokeWidth={15}
-						strokeLinecap="round"
-					/>
-					<path
-						d={bandD}
-						fill="none"
-						stroke={K.hairShine}
-						strokeWidth={4}
-						strokeLinecap="round"
-						opacity={0.7}
-					/>
+					<path d={bandD} fill="none" stroke={K.outline} strokeWidth={28} strokeLinecap="round" />
+					<path d={bandD} fill="none" stroke={K.headphone} strokeWidth={15} strokeLinecap="round" />
+					<path d={bandD} fill="none" stroke={K.hairShine} strokeWidth={4} strokeLinecap="round" opacity={0.7} />
 				</>
 			) : null}
 			{earcups.map((e) => (e && e.front ? e.el : null))}

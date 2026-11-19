@@ -49,16 +49,7 @@ const BriefcaseInner: React.FC<BriefcaseProps> = ({variant = 'leather', withGold
 			/>
 
 			{/* Main briefcase body */}
-			<rect
-				x={24}
-				y={56}
-				width={192}
-				height={120}
-				rx={18}
-				fill={pal.body}
-				stroke={PROP_INK}
-				strokeWidth={PROP_OW}
-			/>
+			<rect x={24} y={56} width={192} height={120} rx={18} fill={pal.body} stroke={PROP_INK} strokeWidth={PROP_OW} />
 			{/* Bottom cel shade */}
 			<path
 				d="M 27 148 L 213 148 L 213 158 Q 213 173 196 173 L 44 173 Q 27 173 27 158 Z"
@@ -78,16 +69,7 @@ const BriefcaseInner: React.FC<BriefcaseProps> = ({variant = 'leather', withGold
 			{/* Brass buckle straps */}
 			{[66, 158].map((lx) => (
 				<g key={lx}>
-					<rect
-						x={lx}
-						y={86}
-						width={16}
-						height={44}
-						rx={5}
-						fill={pal.shade}
-						stroke={PROP_INK}
-						strokeWidth={4}
-					/>
+					<rect x={lx} y={86} width={16} height={44} rx={5} fill={pal.shade} stroke={PROP_INK} strokeWidth={4} />
 					<rect
 						x={lx - 2}
 						y={98}

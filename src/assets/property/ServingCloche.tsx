@@ -13,12 +13,7 @@ export type ServingClocheProps = {
 
 const DISHES: readonly ClocheDish[] = ['burger', 'html', 'json'];
 
-const ServingClocheInner: React.FC<ServingClocheProps> = ({
-	open = true,
-	dish = 'burger',
-	animated = true,
-	style,
-}) => {
+const ServingClocheInner: React.FC<ServingClocheProps> = ({open = true, dish = 'burger', animated = true, style}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = animated ? frame / fps : 0;
@@ -34,15 +29,7 @@ const ServingClocheInner: React.FC<ServingClocheProps> = ({
 			<PropShadow cx={130} cy={202} rx={98} ry={11} />
 
 			{/* Platter dish */}
-			<ellipse
-				cx={130}
-				cy={186}
-				rx={106}
-				ry={18}
-				fill={PROP_COLORS.slateMid}
-				stroke={PROP_INK}
-				strokeWidth={PROP_OW}
-			/>
+			<ellipse cx={130} cy={186} rx={106} ry={18} fill={PROP_COLORS.slateMid} stroke={PROP_INK} strokeWidth={PROP_OW} />
 			<ellipse cx={130} cy={180} rx={98} ry={15} fill={PROP_COLORS.slateLight} stroke={PROP_INK} strokeWidth={4} />
 			<ellipse cx={130} cy={180} rx={78} ry={10} fill={PROP_COLORS.white} opacity={0.65} />
 
@@ -146,7 +133,11 @@ const ServingClocheInner: React.FC<ServingClocheProps> = ({
 					strokeLinejoin="round"
 				/>
 				{/* Inner shade + glossy reflection */}
-				<path d="M 155 96 A 84 82 0 0 1 213 174 L 182 174 C 186 142 172 114 155 96 Z" fill={PROP_COLORS.slateMid} opacity={0.75} />
+				<path
+					d="M 155 96 A 84 82 0 0 1 213 174 L 182 174 C 186 142 172 114 155 96 Z"
+					fill={PROP_COLORS.slateMid}
+					opacity={0.75}
+				/>
 				<path
 					d="M 66 154 C 72 126, 90 108, 114 103"
 					fill="none"

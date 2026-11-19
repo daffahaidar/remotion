@@ -12,11 +12,7 @@ export type OfficeDeskProps = {
 
 const VARIANTS: readonly DeskVariant[] = ['modern', 'executive', 'minimal'];
 
-const OfficeDeskInner: React.FC<OfficeDeskProps> = ({
-	variant = 'modern',
-	showChair = true,
-	style,
-}) => {
+const OfficeDeskInner: React.FC<OfficeDeskProps> = ({variant = 'modern', showChair = true, style}) => {
 	const topColor = variant === 'executive' ? PROP_COLORS.wood : variant === 'modern' ? '#f1f5f9' : '#e2e8f0';
 	const legColor = variant === 'executive' ? PROP_COLORS.woodDark : PROP_COLORS.slateDeep;
 	const panelColor = variant === 'executive' ? '#78350f' : PROP_COLORS.slateDark;
@@ -60,14 +56,7 @@ const OfficeDeskInner: React.FC<OfficeDeskProps> = ({
 						stroke={PROP_INK}
 						strokeWidth={PROP_OW}
 					/>
-					<rect
-						x={232}
-						y={64}
-						width={96}
-						height={96}
-						rx={16}
-						fill={variant === 'executive' ? '#334155' : '#64748b'}
-					/>
+					<rect x={232} y={64} width={96} height={96} rx={16} fill={variant === 'executive' ? '#334155' : '#64748b'} />
 				</g>
 			) : null}
 
@@ -89,16 +78,7 @@ const OfficeDeskInner: React.FC<OfficeDeskProps> = ({
 			) : null}
 
 			{variant === 'executive' ? (
-				<rect
-					x={116}
-					y={192}
-					width={328}
-					height={92}
-					rx={8}
-					fill="none"
-					stroke={PROP_COLORS.gold}
-					strokeWidth={4}
-				/>
+				<rect x={116} y={192} width={328} height={92} rx={8} fill="none" stroke={PROP_COLORS.gold} strokeWidth={4} />
 			) : null}
 
 			{/* Tabletop */}

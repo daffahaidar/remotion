@@ -102,16 +102,7 @@ export const Torso: React.FC<{
 			{/* Fullstack `{</>}` split emblem */}
 			{showBadge && c > 0.2 ? (
 				<g transform={`translate(${chestFrontX} ${-312 - shrug * 0.35}) scale(${c} 1)`}>
-					<rect
-						x={-40}
-						y={-19}
-						width={80}
-						height={38}
-						rx={12}
-						fill={K.badgeBg}
-						stroke={K.outline}
-						strokeWidth={4.5}
-					/>
+					<rect x={-40} y={-19} width={80} height={38} rx={12} fill={K.badgeBg} stroke={K.outline} strokeWidth={4.5} />
 					<path
 						d="M -22 -8 L -28 -8 L -30 0 L -28 8 L -22 8"
 						fill="none"

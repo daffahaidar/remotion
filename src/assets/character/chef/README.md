@@ -1,4 +1,4 @@
-# Chef: Culinary Analogy Character Rig (`character/chef`)
+# Chef: Culinary Analogy Character Rig (`src/assets/character/chef`)
 
 Rig karakter **Koki / Chef** 2D (vektor SVG) untuk Remotion, dirancang khusus untuk **perumpamaan (*analogy*) dalam video tutorial coding & teknologi** (misalnya menganalogikan server/SSR seperti dapur restoran, *request queue*, *rate limiting*, *caching*, atau *multitasking*) maupun drama/sketsa.
 

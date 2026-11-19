@@ -116,16 +116,7 @@ export const Torso: React.FC<{
 			{/* QA Bug & Checkmark badge */}
 			{showBadge && c > 0.2 ? (
 				<g transform={`translate(${chestFrontX} ${-308 - shrug * 0.35}) scale(${c} 1)`}>
-					<rect
-						x={-38}
-						y={-19}
-						width={76}
-						height={38}
-						rx={12}
-						fill={K.badgeBg}
-						stroke={K.outline}
-						strokeWidth={4.5}
-					/>
+					<rect x={-38} y={-19} width={76} height={38} rx={12} fill={K.badgeBg} stroke={K.outline} strokeWidth={4.5} />
 					{/* Tiny stylized bug */}
 					<circle cx={-16} cy={2} r={8} fill={K.bugRed} />
 					<circle cx={-16} cy={-7} r={4.5} fill={K.bugRed} />

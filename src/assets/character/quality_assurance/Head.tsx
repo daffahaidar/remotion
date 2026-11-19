@@ -126,16 +126,7 @@ export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid, showGlass
 			extraTop={
 				proj.facing(48) > 0.15 ? (
 					<g transform={`translate(${clipC.x} ${clipC.y}) rotate(-28)`}>
-						<rect
-							x={-16}
-							y={-5}
-							width={32}
-							height={10}
-							rx={5}
-							fill={K.hairClip}
-							stroke={K.outline}
-							strokeWidth={3.5}
-						/>
+						<rect x={-16} y={-5} width={32} height={10} rx={5} fill={K.hairClip} stroke={K.outline} strokeWidth={3.5} />
 					</g>
 				) : null
 			}

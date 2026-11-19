@@ -55,9 +55,7 @@ export const Leg: React.FC<{
 	readonly pitch: number;
 	readonly side: 1 | -1;
 	readonly uid: string;
-}> = (props) => (
-	<SharedLeg {...props} rig={RIG} palette={BODY_PALETTE} shoeSize={CLOG_SIZE} dressShoe />
-);
+}> = (props) => <SharedLeg {...props} rig={RIG} palette={BODY_PALETTE} shoeSize={CLOG_SIZE} dressShoe />;
 
 const TORSO: readonly TorsoSection[] = [
 	[-410, 74, 62, 0],
@@ -130,26 +128,8 @@ export const Torso: React.FC<{
 			{/* Wooden spatula peeking out of apron pocket */}
 			{c > 0.2 ? (
 				<g transform={`translate(${chestFrontX + 42 * c} -266) rotate(12) scale(${c} 1)`}>
-					<rect
-						x={-6}
-						y={-28}
-						width={12}
-						height={34}
-						rx={4}
-						fill={K.wood}
-						stroke={K.outline}
-						strokeWidth={3.5}
-					/>
-					<rect
-						x={-11}
-						y={-42}
-						width={22}
-						height={18}
-						rx={5}
-						fill={K.wood}
-						stroke={K.outline}
-						strokeWidth={3.5}
-					/>
+					<rect x={-6} y={-28} width={12} height={34} rx={4} fill={K.wood} stroke={K.outline} strokeWidth={3.5} />
+					<rect x={-11} y={-42} width={22} height={18} rx={5} fill={K.wood} stroke={K.outline} strokeWidth={3.5} />
 				</g>
 			) : null}
 		</g>

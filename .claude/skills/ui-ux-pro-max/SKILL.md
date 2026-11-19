@@ -64,7 +64,7 @@ Reference repository: [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.co
        - Pair smooth floating/staggered reveal choreography with recessed indicator meters, glowing accent pills (`#4f46e5`, `#06b6d4`, `#10b981`, `#f59e0b`), and soft character/prop staging on extruded pedestals.
   2. **Secondary Layout Paradigms (Combine cleanly with Neuromorphism when needed)**:
      - **Bento Grid Layout** (ideal for summaries, multi-step breakdowns, feature showcases): Structured asymmetric or modular neuromorphic grid cells (`borderRadius: 24px–36px`), one hero cell + supporting metric/step cells, consistent `20px–28px` gaps, and extruded/inset icon tiles in each cell header.
-     - **Alternative Styles (Only when explicitly requested by user)**: Glassmorphism, Claymorphism, or Neo-Brutalism / Cartoon Pop (`character/` and `property/` SVG assets naturally keep their clean cartoon ink outlines while scene UI cards, stages, and animations follow Neumorphism).
+     - **Alternative Styles (Only when explicitly requested by user)**: Glassmorphism, Claymorphism, or Neo-Brutalism / Cartoon Pop (`src/assets/character/` and `src/assets/property/` SVG assets naturally keep their clean cartoon ink outlines while scene UI cards, stages, and animations follow Neumorphism).
   3. **Typography & Hierarchy**:
      - Pair a bold expressive display font (e.g., `Fredoka`, `Plus Jakarta Sans`, `Inter`, `Space Grotesk`) with a clean monospace font (`JetBrains Mono` or `Fira Code`) for URLs, IP addresses, code snippets, and terminal metrics.
      - Maintain strict typographic scale for `1920×1080` video canvases:

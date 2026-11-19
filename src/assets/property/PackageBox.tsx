@@ -13,7 +13,10 @@ export type PackageBoxProps = {
 };
 
 const VARIANTS: readonly PackageVariant[] = ['cardboard', 'gift'];
-const PALETTES: Record<PackageVariant, {readonly front: string; readonly side: string; readonly top: string; readonly inside: string; readonly tape: string}> = {
+const PALETTES: Record<
+	PackageVariant,
+	{readonly front: string; readonly side: string; readonly top: string; readonly inside: string; readonly tape: string}
+> = {
 	cardboard: {front: '#e8b273', side: '#c0844f', top: '#f3c98f', inside: '#7c4a24', tape: '#fde68a'},
 	gift: {front: '#6366f1', side: '#4338ca', top: '#818cf8', inside: '#312e81', tape: '#fbbf24'},
 };
@@ -23,7 +26,13 @@ const FRONT = 'M 40 100 L 170 100 L 170 200 L 40 200 Z';
 const SIDE = 'M 170 100 L 206 78 L 206 178 L 170 200 Z';
 const TOP = 'M 40 100 L 76 78 L 206 78 L 170 100 Z';
 
-const PackageBoxInner: React.FC<PackageBoxProps> = ({variant = 'cardboard', open = false, label = 'npm', animated = true, style}) => {
+const PackageBoxInner: React.FC<PackageBoxProps> = ({
+	variant = 'cardboard',
+	open = false,
+	label = 'npm',
+	animated = true,
+	style,
+}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = animated ? frame / fps : 0;
@@ -33,7 +42,12 @@ const PackageBoxInner: React.FC<PackageBoxProps> = ({variant = 'cardboard', open
 	const face = {stroke: PROP_INK, strokeWidth: PROP_OW, strokeLinejoin: 'round'} as const;
 
 	return (
-		<svg viewBox="0 0 240 230" width={240} height={230} style={{overflow: 'visible', transformOrigin: '50% 88%', ...style}}>
+		<svg
+			viewBox="0 0 240 230"
+			width={240}
+			height={230}
+			style={{overflow: 'visible', transformOrigin: '50% 88%', ...style}}
+		>
 			<PropShadow cx={124} cy={202} rx={100} ry={11} />
 
 			<g transform={`rotate(${wobble} 120 200)`}>
@@ -69,18 +83,50 @@ const PackageBoxInner: React.FC<PackageBoxProps> = ({variant = 'cardboard', open
 				{variant === 'gift' ? (
 					<g>
 						<rect x={95} y={100} width={20} height={100} fill={pal.tape} stroke={PROP_INK} strokeWidth={3.5} />
-						<path d="M 170 140 L 206 118 L 206 132 L 170 154 Z" fill={pal.tape} stroke={PROP_INK} strokeWidth={3.5} strokeLinejoin="round" />
+						<path
+							d="M 170 140 L 206 118 L 206 132 L 170 154 Z"
+							fill={pal.tape}
+							stroke={PROP_INK}
+							strokeWidth={3.5}
+							strokeLinejoin="round"
+						/>
 					</g>
 				) : (
 					<rect x={95} y={100} width={20} height={28} fill={pal.tape} stroke={PROP_INK} strokeWidth={3.5} />
 				)}
-				{open ? null : <path d="M 95 100 L 115 100 L 151 78 L 131 78 Z" fill={pal.tape} stroke={PROP_INK} strokeWidth={3.5} strokeLinejoin="round" />}
+				{open ? null : (
+					<path
+						d="M 95 100 L 115 100 L 151 78 L 131 78 Z"
+						fill={pal.tape}
+						stroke={PROP_INK}
+						strokeWidth={3.5}
+						strokeLinejoin="round"
+					/>
+				)}
 
 				{/* Bow on closed gift */}
 				{variant === 'gift' && !open ? (
 					<g>
-						<ellipse cx={108} cy={76} rx={17} ry={10} transform="rotate(-24 108 76)" fill={pal.tape} stroke={PROP_INK} strokeWidth={4} />
-						<ellipse cx={140} cy={76} rx={17} ry={10} transform="rotate(24 140 76)" fill={pal.tape} stroke={PROP_INK} strokeWidth={4} />
+						<ellipse
+							cx={108}
+							cy={76}
+							rx={17}
+							ry={10}
+							transform="rotate(-24 108 76)"
+							fill={pal.tape}
+							stroke={PROP_INK}
+							strokeWidth={4}
+						/>
+						<ellipse
+							cx={140}
+							cy={76}
+							rx={17}
+							ry={10}
+							transform="rotate(24 140 76)"
+							fill={pal.tape}
+							stroke={PROP_INK}
+							strokeWidth={4}
+						/>
 						<circle cx={124} cy={84} r={8} fill={pal.tape} stroke={PROP_INK} strokeWidth={4} />
 					</g>
 				) : null}
@@ -95,8 +141,25 @@ const PackageBoxInner: React.FC<PackageBoxProps> = ({variant = 'cardboard', open
 
 				{label ? (
 					<g>
-						<rect x={58} y={142} width={72} height={34} rx={6} fill={PROP_COLORS.white} stroke={PROP_INK} strokeWidth={3.5} />
-						<text x={94} y={165} textAnchor="middle" fill={PROP_INK} fontFamily="ui-monospace, monospace" fontWeight={800} fontSize={17}>
+						<rect
+							x={58}
+							y={142}
+							width={72}
+							height={34}
+							rx={6}
+							fill={PROP_COLORS.white}
+							stroke={PROP_INK}
+							strokeWidth={3.5}
+						/>
+						<text
+							x={94}
+							y={165}
+							textAnchor="middle"
+							fill={PROP_INK}
+							fontFamily="ui-monospace, monospace"
+							fontWeight={800}
+							fontSize={17}
+						>
 							{label}
 						</text>
 					</g>
@@ -112,7 +175,13 @@ export const PackageBox = Interactive.create({
 	layout: 'none',
 	componentName: 'PackageBoxProp',
 	schema: {
-		variant: {type: 'enum', default: 'cardboard', description: 'Box style', variants: propVariants(VARIANTS), keyframable: false},
+		variant: {
+			type: 'enum',
+			default: 'cardboard',
+			description: 'Box style',
+			variants: propVariants(VARIANTS),
+			keyframable: false,
+		},
 		open: {type: 'boolean', default: false, description: 'Open with glow'},
 		label: {type: 'string', default: 'npm', description: 'Front label'},
 		animated: {type: 'boolean', default: true, description: 'Wobble / glow pulse'},

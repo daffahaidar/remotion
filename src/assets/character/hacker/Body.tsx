@@ -33,14 +33,7 @@ export const Arm: React.FC<{
 	readonly handFront: boolean;
 	readonly side: 1 | -1;
 }> = (props) => (
-	<SleeveArm
-		{...props}
-		rig={RIG}
-		outline={K.outline}
-		skin={K.skin}
-		sleeveColor={K.shirt}
-		cuffColor={K.matrix}
-	/>
+	<SleeveArm {...props} rig={RIG} outline={K.outline} skin={K.skin} sleeveColor={K.shirt} cuffColor={K.matrix} />
 );
 
 export const Leg: React.FC<{
@@ -142,16 +135,7 @@ export const Torso: React.FC<{
 			{/* Matrix `01` cyber lock/code emblem */}
 			{showBadge && c > 0.2 ? (
 				<g transform={`translate(${chestFrontX} ${-304 - shrug * 0.35}) scale(${c} 1)`}>
-					<rect
-						x={-36}
-						y={-18}
-						width={72}
-						height={36}
-						rx={10}
-						fill={K.hoodShade}
-						stroke={K.matrix}
-						strokeWidth={3.5}
-					/>
+					<rect x={-36} y={-18} width={72} height={36} rx={10} fill={K.hoodShade} stroke={K.matrix} strokeWidth={3.5} />
 					{/* Bold `0` */}
 					<ellipse cx={-12} cy={0} rx={8} ry={10} fill="none" stroke={K.matrixGlow} strokeWidth={4.5} />
 					{/* Bold `1` */}

@@ -1,6 +1,15 @@
 import React from 'react';
 import {Interactive, useCurrentFrame, useVideoConfig} from 'remotion';
-import {ACCENTS, ACCENT_NAMES, PROP_COLORS, PROP_INK, PROP_OW, PropShadow, propVariants, type AccentColor} from './shared';
+import {
+	ACCENTS,
+	ACCENT_NAMES,
+	PROP_COLORS,
+	PROP_INK,
+	PROP_OW,
+	PropShadow,
+	propVariants,
+	type AccentColor,
+} from './shared';
 
 export type RocketProps = {
 	readonly color?: AccentColor;
@@ -10,7 +19,13 @@ export type RocketProps = {
 	readonly style?: React.CSSProperties;
 };
 
-const RocketInner: React.FC<RocketProps> = ({color = 'indigo', label = 'v1.0', launching = false, animated = true, style}) => {
+const RocketInner: React.FC<RocketProps> = ({
+	color = 'indigo',
+	label = 'v1.0',
+	launching = false,
+	animated = true,
+	style,
+}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = animated ? frame / fps : 0;
@@ -20,7 +35,12 @@ const RocketInner: React.FC<RocketProps> = ({color = 'indigo', label = 'v1.0', l
 	const len = 56 + (animated ? 12 * Math.sin(t * 40) : 0);
 
 	return (
-		<svg viewBox="0 0 200 300" width={200} height={300} style={{overflow: 'visible', transformOrigin: '50% 80%', ...style}}>
+		<svg
+			viewBox="0 0 200 300"
+			width={200}
+			height={300}
+			style={{overflow: 'visible', transformOrigin: '50% 80%', ...style}}
+		>
 			{launching ? (
 				<g>
 					{/* Exhaust smoke puffs */}
@@ -47,8 +67,14 @@ const RocketInner: React.FC<RocketProps> = ({color = 'indigo', label = 'v1.0', l
 						strokeWidth={4}
 						strokeLinejoin="round"
 					/>
-					<path d={`M 84 228 Q 80 ${228 + len * 0.4} 100 ${228 + len * 0.72} Q 120 ${228 + len * 0.4} 116 228 Z`} fill={PROP_COLORS.gold} />
-					<path d={`M 92 228 Q 92 ${228 + len * 0.25} 100 ${228 + len * 0.42} Q 108 ${228 + len * 0.25} 108 228 Z`} fill={PROP_COLORS.white} />
+					<path
+						d={`M 84 228 Q 80 ${228 + len * 0.4} 100 ${228 + len * 0.72} Q 120 ${228 + len * 0.4} 116 228 Z`}
+						fill={PROP_COLORS.gold}
+					/>
+					<path
+						d={`M 92 228 Q 92 ${228 + len * 0.25} 100 ${228 + len * 0.42} Q 108 ${228 + len * 0.25} 108 228 Z`}
+						fill={PROP_COLORS.white}
+					/>
 				</g>
 			) : (
 				<PropShadow cx={100} cy={244} rx={74} ry={10} />
@@ -56,12 +82,20 @@ const RocketInner: React.FC<RocketProps> = ({color = 'indigo', label = 'v1.0', l
 
 			<g transform={`translate(${shakeX} ${shakeY})`}>
 				{/* Side fins (behind body) */}
-				{['M 60 160 C 34 176, 26 206, 30 238 L 64 214 Z', 'M 140 160 C 166 176, 174 206, 170 238 L 136 214 Z'].map((d) => (
-					<path key={d} d={d} fill={pal.main} stroke={PROP_INK} strokeWidth={PROP_OW} strokeLinejoin="round" />
-				))}
+				{['M 60 160 C 34 176, 26 206, 30 238 L 64 214 Z', 'M 140 160 C 166 176, 174 206, 170 238 L 136 214 Z'].map(
+					(d) => (
+						<path key={d} d={d} fill={pal.main} stroke={PROP_INK} strokeWidth={PROP_OW} strokeLinejoin="round" />
+					),
+				)}
 
 				{/* Nozzle */}
-				<path d="M 76 208 L 124 208 L 130 230 L 70 230 Z" fill={PROP_COLORS.slateDark} stroke={PROP_INK} strokeWidth={PROP_OW} strokeLinejoin="round" />
+				<path
+					d="M 76 208 L 124 208 L 130 230 L 70 230 Z"
+					fill={PROP_COLORS.slateDark}
+					stroke={PROP_INK}
+					strokeWidth={PROP_OW}
+					strokeLinejoin="round"
+				/>
 
 				{/* Fuselage */}
 				<path
@@ -71,7 +105,10 @@ const RocketInner: React.FC<RocketProps> = ({color = 'indigo', label = 'v1.0', l
 					strokeWidth={PROP_OW}
 					strokeLinejoin="round"
 				/>
-				<path d="M 114 36 C 136 64, 144 122, 139 207 L 122 207 C 127 130, 125 76, 114 36 Z" fill={PROP_COLORS.slateLight} />
+				<path
+					d="M 114 36 C 136 64, 144 122, 139 207 L 122 207 C 127 130, 125 76, 114 36 Z"
+					fill={PROP_COLORS.slateLight}
+				/>
 
 				{/* Nose cone */}
 				<path
@@ -81,7 +118,11 @@ const RocketInner: React.FC<RocketProps> = ({color = 'indigo', label = 'v1.0', l
 					strokeWidth={PROP_OW}
 					strokeLinejoin="round"
 				/>
-				<path d="M 112 32 C 124 44, 132 60, 136 77 L 124 77 C 122 60, 118 46, 112 32 Z" fill={pal.shade} opacity={0.6} />
+				<path
+					d="M 112 32 C 124 44, 132 60, 136 77 L 124 77 C 122 60, 118 46, 112 32 Z"
+					fill={pal.shade}
+					opacity={0.6}
+				/>
 
 				{/* Accent band */}
 				<path d="M 57 176 L 143 176 L 143 194 L 57 194 Z" fill={pal.main} stroke={PROP_INK} strokeWidth={4.5} />
@@ -89,13 +130,34 @@ const RocketInner: React.FC<RocketProps> = ({color = 'indigo', label = 'v1.0', l
 				{/* Porthole window */}
 				<circle cx={100} cy={112} r={24} fill={PROP_COLORS.slateMid} stroke={PROP_INK} strokeWidth={PROP_OW} />
 				<circle cx={100} cy={112} r={15} fill="#bae6fd" stroke={PROP_INK} strokeWidth={3.5} />
-				<path d="M 92 106 Q 95 100 101 99" fill="none" stroke={PROP_COLORS.white} strokeWidth={4} strokeLinecap="round" />
+				<path
+					d="M 92 106 Q 95 100 101 99"
+					fill="none"
+					stroke={PROP_COLORS.white}
+					strokeWidth={4}
+					strokeLinecap="round"
+				/>
 
 				{/* Left highlight */}
-				<path d="M 70 96 Q 68 130 70 166" fill="none" stroke={PROP_COLORS.white} strokeWidth={6} strokeLinecap="round" opacity={0.8} />
+				<path
+					d="M 70 96 Q 68 130 70 166"
+					fill="none"
+					stroke={PROP_COLORS.white}
+					strokeWidth={6}
+					strokeLinecap="round"
+					opacity={0.8}
+				/>
 
 				{label ? (
-					<text x={100} y={160} textAnchor="middle" fill={pal.shade} fontFamily="ui-monospace, monospace" fontWeight={800} fontSize={16}>
+					<text
+						x={100}
+						y={160}
+						textAnchor="middle"
+						fill={pal.shade}
+						fontFamily="ui-monospace, monospace"
+						fontWeight={800}
+						fontSize={16}
+					>
 						{label}
 					</text>
 				) : null}
@@ -113,7 +175,13 @@ export const Rocket = Interactive.create({
 	layout: 'none',
 	componentName: 'RocketProp',
 	schema: {
-		color: {type: 'enum', default: 'indigo', description: 'Accent color', variants: propVariants(ACCENT_NAMES), keyframable: false},
+		color: {
+			type: 'enum',
+			default: 'indigo',
+			description: 'Accent color',
+			variants: propVariants(ACCENT_NAMES),
+			keyframable: false,
+		},
 		label: {type: 'string', default: 'v1.0', description: 'Body text'},
 		launching: {type: 'boolean', default: false, description: 'Flame, smoke & shake'},
 		animated: {type: 'boolean', default: true, description: 'Animate flame'},

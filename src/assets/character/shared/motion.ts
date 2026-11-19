@@ -22,20 +22,7 @@ export const blinkAt = (frame: number, fps: number, seed: string): number => {
 	return interpolate(local, [0, close, close + hold, dur], [1, 0, 0, 1]);
 };
 
-const VISEMES: readonly MouthShape[] = [
-	'aa',
-	'ee',
-	'oh',
-	'etc',
-	'aa',
-	'oo',
-	'ee',
-	'l',
-	'etc',
-	'fv',
-	'aa',
-	'oh',
-];
+const VISEMES: readonly MouthShape[] = ['aa', 'ee', 'oh', 'etc', 'aa', 'oo', 'ee', 'l', 'etc', 'fv', 'aa', 'oh'];
 
 /** Procedural lip flap: a new mouth shape roughly every 0.1 s. */
 export const talkAt = (frame: number, fps: number, seed: string): MouthShape => {

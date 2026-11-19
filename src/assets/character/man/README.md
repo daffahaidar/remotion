@@ -143,15 +143,15 @@ Satuan rig: kepala berjari-jari 160 px, tanah di y = 0, dan y negatif mengarah k
 
 ## Komposisi di Studio (`npm run dev`)
 
-- **Mascot / MascotRig**: playground rig. Pilih karakter, lalu atur ekspresi, pose, arah hadap, dan lainnya dari panel kontrol.
-- **Mascot / RigDemo**: contoh video 18 detik (bicara + melambai, turnaround 360°, berjalan, menunjuk, terkejut, berpikir).
-- **Mascot / ModelSheet**: sumber `model-sheet.png`.
+- **Rigs / MascotRig**: playground rig. Pilih karakter, lalu atur ekspresi, pose, arah hadap, dan lainnya dari panel kontrol.
+- **Demo / RigDemo**: contoh video 18 detik (bicara + melambai, turnaround 360°, berjalan, menunjuk, terkejut, berpikir).
+- **ModelSheets / ModelSheet**: sumber `model-sheet.png`.
 
 ## Render
 
 ```bash
-npx remotion still ModelSheet character/model-sheet.png
+npx remotion still ModelSheet src/assets/character/man/model-sheet.png
 npx remotion render RigDemo out/rig-demo.mp4
 ```
 
-Jangan menamai komposisi `Character`. Di Windows nama itu bentrok dengan folder `character/` saat render lewat CLI.
+Jangan beri id komposisi yang sama dengan nama folder di root project (`src`, `public`, `out`). Di Windows, CLI akan menganggapnya entry point dan render gagal.

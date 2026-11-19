@@ -85,15 +85,7 @@ export type HeadProps = {
 };
 
 /** Hacker head: sharp V-chin face posture, hoodie hood UP with matrix-green trim, and optional cyber mask. */
-export const Head: React.FC<HeadProps> = ({
-	yaw,
-	nod,
-	face,
-	blink,
-	uid,
-	hoodUp = true,
-	showMask = false,
-}) => {
+export const Head: React.FC<HeadProps> = ({yaw, nod, face, blink, uid, hoodUp = true, showMask = false}) => {
 	const proj = createHeadProjection(yaw, nod, SX, SZ);
 	const jaw = JAW[face.mouth] ?? 0;
 

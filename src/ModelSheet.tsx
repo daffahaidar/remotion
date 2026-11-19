@@ -29,7 +29,7 @@ import {
 	WomanCharacter,
 	type CharacterProps,
 	type MouthShape,
-} from '../character';
+} from './assets/character';
 
 loadFont('normal', {weights: ['500', '700'], subsets: ['latin']});
 
@@ -86,114 +86,6 @@ const ACTIONS: readonly [string, CharacterProps][] = [
 	['Sit', {pose: 'sit', expression: 'happy'}],
 ];
 
-const MAN_SWATCHES: readonly [string, string][] = [
-	['Skin', MAN_COLORS.skin],
-	['Hair', MAN_COLORS.hair],
-	['Glasses', MAN_COLORS.frame],
-	['T-shirt', MAN_COLORS.shirt],
-	['Jeans', MAN_COLORS.pants],
-	['Sneakers', MAN_COLORS.shoe],
-];
-
-const WOMAN_SWATCHES: readonly [string, string][] = [
-	['Skin', WOMAN_COLORS.skin],
-	['Hijab', WOMAN_COLORS.hijab],
-	['Ciput', WOMAN_COLORS.hijabInner],
-	['Tunic', WOMAN_COLORS.shirt],
-	['Pants', WOMAN_COLORS.pants],
-	['Sneakers', WOMAN_COLORS.shoe],
-];
-
-const FRONTEND_SWATCHES: readonly [string, string][] = [
-	['Skin', FRONTEND_PROGRAMMER_COLORS.skin],
-	['Hair', FRONTEND_PROGRAMMER_COLORS.hair],
-	['Streak', FRONTEND_PROGRAMMER_COLORS.hairAccent],
-	['Sweater', FRONTEND_PROGRAMMER_COLORS.shirt],
-	['Chinos', FRONTEND_PROGRAMMER_COLORS.pants],
-	['Sneakers', FRONTEND_PROGRAMMER_COLORS.shoe],
-];
-
-const BACKEND_SWATCHES: readonly [string, string][] = [
-	['Skin', BACKEND_PROGRAMMER_COLORS.skin],
-	['Hair', BACKEND_PROGRAMMER_COLORS.hair],
-	['Headset', BACKEND_PROGRAMMER_COLORS.headphoneGlow],
-	['Hoodie', BACKEND_PROGRAMMER_COLORS.shirt],
-	['Joggers', BACKEND_PROGRAMMER_COLORS.pants],
-	['Sneakers', BACKEND_PROGRAMMER_COLORS.shoe],
-];
-
-const BOSS_SWATCHES: readonly [string, string][] = [
-	['Skin', BOSS_COLORS.skin],
-	['Hair', BOSS_COLORS.hair],
-	['Silver', BOSS_COLORS.hairSilver],
-	['Suit', BOSS_COLORS.shirt],
-	['Tie', BOSS_COLORS.tie],
-	['Shoes', BOSS_COLORS.shoe],
-];
-
-const CHEF_SWATCHES: readonly [string, string][] = [
-	['Skin', CHEF_COLORS.skin],
-	['Hair', CHEF_COLORS.hair],
-	['Coat', CHEF_COLORS.shirt],
-	['Scarf', CHEF_COLORS.neckerchief],
-	['Apron', CHEF_COLORS.apron],
-	['Wood', CHEF_COLORS.wood],
-];
-
-const DOCTOR_SWATCHES: readonly [string, string][] = [
-	['Skin', DOCTOR_COLORS.skin],
-	['Hair', DOCTOR_COLORS.hair],
-	['Coat', DOCTOR_COLORS.shirt],
-	['Scrubs', DOCTOR_COLORS.scrubs],
-	['Cross', DOCTOR_COLORS.crossRed],
-	['Shoes', DOCTOR_COLORS.shoe],
-];
-
-const PM_SWATCHES: readonly [string, string][] = [
-	['Skin', PROJECT_MANAGER_COLORS.skin],
-	['Hair', PROJECT_MANAGER_COLORS.hair],
-	['Blazer', PROJECT_MANAGER_COLORS.shirt],
-	['Top', PROJECT_MANAGER_COLORS.innerTop],
-	['Lanyard', PROJECT_MANAGER_COLORS.lanyard],
-	['Shoes', PROJECT_MANAGER_COLORS.shoe],
-];
-
-const TECH_LEAD_SWATCHES: readonly [string, string][] = [
-	['Skin', TECH_LEAD_COLORS.skin],
-	['Hair', TECH_LEAD_COLORS.hair],
-	['Flannel', TECH_LEAD_COLORS.shirt],
-	['Tee', TECH_LEAD_COLORS.innerTee],
-	['Pants', TECH_LEAD_COLORS.pants],
-	['Accent', TECH_LEAD_COLORS.shoeAccent],
-];
-
-const FULLSTACK_SWATCHES: readonly [string, string][] = [
-	['Skin', FULLSTACK_PROGRAMMER_COLORS.skin],
-	['Cap', FULLSTACK_PROGRAMMER_COLORS.capCyan],
-	['Emerald', FULLSTACK_PROGRAMMER_COLORS.sleeveEmerald],
-	['Jacket', FULLSTACK_PROGRAMMER_COLORS.shirt],
-	['Pants', FULLSTACK_PROGRAMMER_COLORS.pants],
-	['Shoes', FULLSTACK_PROGRAMMER_COLORS.shoe],
-];
-
-const QA_SWATCHES: readonly [string, string][] = [
-	['Skin', QUALITY_ASSURANCE_COLORS.skin],
-	['Hair', QUALITY_ASSURANCE_COLORS.hair],
-	['Glasses', QUALITY_ASSURANCE_COLORS.frame],
-	['Vest', QUALITY_ASSURANCE_COLORS.shirt],
-	['Pants', QUALITY_ASSURANCE_COLORS.pants],
-	['Shoes', QUALITY_ASSURANCE_COLORS.shoe],
-];
-
-const HACKER_SWATCHES: readonly [string, string][] = [
-	['Skin', HACKER_COLORS.skin],
-	['Hood', HACKER_COLORS.hood],
-	['Matrix', HACKER_COLORS.matrix],
-	['Mask', HACKER_COLORS.mask],
-	['Pants', HACKER_COLORS.pants],
-	['Shoes', HACKER_COLORS.shoe],
-];
-
 const INK = '#2a2530';
 
 const Section: React.FC<{
@@ -239,13 +131,14 @@ const Label: React.FC<{
 	</div>
 );
 
-const SheetLayout: React.FC<{
+type Sheet = {
 	readonly title: string;
-	readonly subtitle: string;
 	readonly accent: string;
 	readonly swatches: readonly [string, string][];
 	readonly Rig: typeof ManCharacter;
-}> = ({title, subtitle, accent, swatches, Rig}) => {
+};
+
+const SheetLayout: React.FC<Sheet> = ({title, accent, swatches, Rig}) => {
 	const col = (i: number, n: number) => 100 + (2200 / n) * (i + 0.5);
 	const Cell: React.FC<{
 		readonly x: number;
@@ -259,11 +152,9 @@ const SheetLayout: React.FC<{
 
 	return (
 		<AbsoluteFill style={{backgroundColor: '#f6f3ee', fontFamily: 'Fredoka', color: INK}}>
-			<div style={{position: 'absolute', left: 100, top: 80, fontSize: 96, fontWeight: 700}}>
-				{title}
-			</div>
+			<div style={{position: 'absolute', left: 100, top: 80, fontSize: 96, fontWeight: 700}}>{title}</div>
 			<div style={{position: 'absolute', left: 104, top: 200, fontSize: 44, fontWeight: 500, color: '#6b6474'}}>
-				{subtitle}
+				Model sheet: turnaround, expressions, lip sync and poses
 			</div>
 			{swatches.map(([name, color], i) => (
 				<div key={name} style={{position: 'absolute', left: 1430 + i * 135, top: 92, width: 120, textAlign: 'center'}}>
@@ -315,13 +206,7 @@ const SheetLayout: React.FC<{
 			</Section>
 			{MOUTH_CHART.map(([shape, label], i) => (
 				<React.Fragment key={shape}>
-					<Cell
-						x={col(i, 9)}
-						y={2750}
-						w={232}
-						h={232}
-						props={{mouth: shape, framing: 'head', autoBlink: false}}
-					/>
+					<Cell x={col(i, 9)} y={2750} w={232} h={232} props={{mouth: shape, framing: 'head', autoBlink: false}} />
 					<Label x={col(i, 9)} y={2990}>
 						{label}
 					</Label>
@@ -347,122 +232,168 @@ const SheetLayout: React.FC<{
 	);
 };
 
-export const ModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Man · Master Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={MAN_COLORS.shirtShade}
-		swatches={MAN_SWATCHES}
-		Rig={ManCharacter}
-	/>
-);
+const SHEETS = {
+	man: {
+		title: 'Man · Master Character Rig',
+		accent: MAN_COLORS.shirtShade,
+		Rig: ManCharacter,
+		swatches: [
+			['Skin', MAN_COLORS.skin],
+			['Hair', MAN_COLORS.hair],
+			['Glasses', MAN_COLORS.frame],
+			['T-shirt', MAN_COLORS.shirt],
+			['Jeans', MAN_COLORS.pants],
+			['Sneakers', MAN_COLORS.shoe],
+		],
+	},
+	woman: {
+		title: 'Woman · Hijabi Character Rig',
+		accent: WOMAN_COLORS.hijabShade,
+		Rig: WomanCharacter,
+		swatches: [
+			['Skin', WOMAN_COLORS.skin],
+			['Hijab', WOMAN_COLORS.hijab],
+			['Ciput', WOMAN_COLORS.hijabInner],
+			['Tunic', WOMAN_COLORS.shirt],
+			['Pants', WOMAN_COLORS.pants],
+			['Sneakers', WOMAN_COLORS.shoe],
+		],
+	},
+	frontend_programmer: {
+		title: 'Frontend · Character Rig',
+		accent: FRONTEND_PROGRAMMER_COLORS.shirt,
+		Rig: FrontendProgrammerCharacter,
+		swatches: [
+			['Skin', FRONTEND_PROGRAMMER_COLORS.skin],
+			['Hair', FRONTEND_PROGRAMMER_COLORS.hair],
+			['Streak', FRONTEND_PROGRAMMER_COLORS.hairAccent],
+			['Sweater', FRONTEND_PROGRAMMER_COLORS.shirt],
+			['Chinos', FRONTEND_PROGRAMMER_COLORS.pants],
+			['Sneakers', FRONTEND_PROGRAMMER_COLORS.shoe],
+		],
+	},
+	backend_programmer: {
+		title: 'Backend · Character Rig',
+		accent: BACKEND_PROGRAMMER_COLORS.headphoneGlow,
+		Rig: BackendProgrammerCharacter,
+		swatches: [
+			['Skin', BACKEND_PROGRAMMER_COLORS.skin],
+			['Hair', BACKEND_PROGRAMMER_COLORS.hair],
+			['Headset', BACKEND_PROGRAMMER_COLORS.headphoneGlow],
+			['Hoodie', BACKEND_PROGRAMMER_COLORS.shirt],
+			['Joggers', BACKEND_PROGRAMMER_COLORS.pants],
+			['Sneakers', BACKEND_PROGRAMMER_COLORS.shoe],
+		],
+	},
+	boss: {
+		title: 'Boss · Character Rig',
+		accent: BOSS_COLORS.tie,
+		Rig: BossCharacter,
+		swatches: [
+			['Skin', BOSS_COLORS.skin],
+			['Hair', BOSS_COLORS.hair],
+			['Silver', BOSS_COLORS.hairSilver],
+			['Suit', BOSS_COLORS.shirt],
+			['Tie', BOSS_COLORS.tie],
+			['Shoes', BOSS_COLORS.shoe],
+		],
+	},
+	chef: {
+		title: 'Chef · Character Rig',
+		accent: CHEF_COLORS.neckerchief,
+		Rig: ChefCharacter,
+		swatches: [
+			['Skin', CHEF_COLORS.skin],
+			['Hair', CHEF_COLORS.hair],
+			['Coat', CHEF_COLORS.shirt],
+			['Scarf', CHEF_COLORS.neckerchief],
+			['Apron', CHEF_COLORS.apron],
+			['Wood', CHEF_COLORS.wood],
+		],
+	},
+	doctor: {
+		title: 'Doctor · Character Rig',
+		accent: DOCTOR_COLORS.scrubs,
+		Rig: DoctorCharacter,
+		swatches: [
+			['Skin', DOCTOR_COLORS.skin],
+			['Hair', DOCTOR_COLORS.hair],
+			['Coat', DOCTOR_COLORS.shirt],
+			['Scrubs', DOCTOR_COLORS.scrubs],
+			['Cross', DOCTOR_COLORS.crossRed],
+			['Shoes', DOCTOR_COLORS.shoe],
+		],
+	},
+	project_manager: {
+		title: 'PM · Character Rig',
+		accent: PROJECT_MANAGER_COLORS.shirt,
+		Rig: ProjectManagerCharacter,
+		swatches: [
+			['Skin', PROJECT_MANAGER_COLORS.skin],
+			['Hair', PROJECT_MANAGER_COLORS.hair],
+			['Blazer', PROJECT_MANAGER_COLORS.shirt],
+			['Top', PROJECT_MANAGER_COLORS.innerTop],
+			['Lanyard', PROJECT_MANAGER_COLORS.lanyard],
+			['Shoes', PROJECT_MANAGER_COLORS.shoe],
+		],
+	},
+	tech_lead: {
+		title: 'Tech Lead · Character Rig',
+		accent: TECH_LEAD_COLORS.shirt,
+		Rig: TechLeadCharacter,
+		swatches: [
+			['Skin', TECH_LEAD_COLORS.skin],
+			['Hair', TECH_LEAD_COLORS.hair],
+			['Flannel', TECH_LEAD_COLORS.shirt],
+			['Tee', TECH_LEAD_COLORS.innerTee],
+			['Pants', TECH_LEAD_COLORS.pants],
+			['Accent', TECH_LEAD_COLORS.shoeAccent],
+		],
+	},
+	fullstack_programmer: {
+		title: 'Fullstack · Character Rig',
+		accent: FULLSTACK_PROGRAMMER_COLORS.sleeveCyan,
+		Rig: FullstackProgrammerCharacter,
+		swatches: [
+			['Skin', FULLSTACK_PROGRAMMER_COLORS.skin],
+			['Cap', FULLSTACK_PROGRAMMER_COLORS.capCyan],
+			['Emerald', FULLSTACK_PROGRAMMER_COLORS.sleeveEmerald],
+			['Jacket', FULLSTACK_PROGRAMMER_COLORS.shirt],
+			['Pants', FULLSTACK_PROGRAMMER_COLORS.pants],
+			['Shoes', FULLSTACK_PROGRAMMER_COLORS.shoe],
+		],
+	},
+	quality_assurance: {
+		title: 'QA · Character Rig',
+		accent: QUALITY_ASSURANCE_COLORS.frame,
+		Rig: QualityAssuranceCharacter,
+		swatches: [
+			['Skin', QUALITY_ASSURANCE_COLORS.skin],
+			['Hair', QUALITY_ASSURANCE_COLORS.hair],
+			['Glasses', QUALITY_ASSURANCE_COLORS.frame],
+			['Vest', QUALITY_ASSURANCE_COLORS.shirt],
+			['Pants', QUALITY_ASSURANCE_COLORS.pants],
+			['Shoes', QUALITY_ASSURANCE_COLORS.shoe],
+		],
+	},
+	hacker: {
+		title: 'Hacker · Character Rig',
+		accent: HACKER_COLORS.matrix,
+		Rig: HackerCharacter,
+		swatches: [
+			['Skin', HACKER_COLORS.skin],
+			['Hood', HACKER_COLORS.hood],
+			['Matrix', HACKER_COLORS.matrix],
+			['Mask', HACKER_COLORS.mask],
+			['Pants', HACKER_COLORS.pants],
+			['Shoes', HACKER_COLORS.shoe],
+		],
+	},
+} satisfies Record<string, Sheet>;
 
-export const WomanModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Woman · Hijabi Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={WOMAN_COLORS.hijabShade}
-		swatches={WOMAN_SWATCHES}
-		Rig={WomanCharacter}
-	/>
-);
+export type SheetId = keyof typeof SHEETS;
 
-export const FrontendProgrammerModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Frontend · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={FRONTEND_PROGRAMMER_COLORS.shirt}
-		swatches={FRONTEND_SWATCHES}
-		Rig={FrontendProgrammerCharacter}
-	/>
-);
-
-export const BackendProgrammerModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Backend · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={BACKEND_PROGRAMMER_COLORS.headphoneGlow}
-		swatches={BACKEND_SWATCHES}
-		Rig={BackendProgrammerCharacter}
-	/>
-);
-
-export const BossModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Boss · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={BOSS_COLORS.tie}
-		swatches={BOSS_SWATCHES}
-		Rig={BossCharacter}
-	/>
-);
-
-export const ChefModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Chef · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={CHEF_COLORS.neckerchief}
-		swatches={CHEF_SWATCHES}
-		Rig={ChefCharacter}
-	/>
-);
-
-export const DoctorModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Doctor · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={DOCTOR_COLORS.scrubs}
-		swatches={DOCTOR_SWATCHES}
-		Rig={DoctorCharacter}
-	/>
-);
-
-export const ProjectManagerModelSheet: React.FC = () => (
-	<SheetLayout
-		title="PM · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={PROJECT_MANAGER_COLORS.shirt}
-		swatches={PM_SWATCHES}
-		Rig={ProjectManagerCharacter}
-	/>
-);
-
-export const TechLeadModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Tech Lead · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={TECH_LEAD_COLORS.shirt}
-		swatches={TECH_LEAD_SWATCHES}
-		Rig={TechLeadCharacter}
-	/>
-);
-
-export const FullstackProgrammerModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Fullstack · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={FULLSTACK_PROGRAMMER_COLORS.sleeveCyan}
-		swatches={FULLSTACK_SWATCHES}
-		Rig={FullstackProgrammerCharacter}
-	/>
-);
-
-export const QualityAssuranceModelSheet: React.FC = () => (
-	<SheetLayout
-		title="QA · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={QUALITY_ASSURANCE_COLORS.frame}
-		swatches={QA_SWATCHES}
-		Rig={QualityAssuranceCharacter}
-	/>
-);
-
-export const HackerModelSheet: React.FC = () => (
-	<SheetLayout
-		title="Hacker · Character Rig"
-		subtitle="Model sheet: turnaround, expressions, lip sync and poses"
-		accent={HACKER_COLORS.matrix}
-		swatches={HACKER_SWATCHES}
-		Rig={HackerCharacter}
-	/>
+/** One model sheet per rig; pick the rig with the `character` prop. */
+export const ModelSheet: React.FC<{readonly character: SheetId}> = ({character}) => (
+	<SheetLayout {...SHEETS[character]} />
 );

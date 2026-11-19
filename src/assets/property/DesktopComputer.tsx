@@ -49,7 +49,16 @@ const DesktopComputerInner: React.FC<DesktopComputerProps> = ({
 						strokeWidth={PROP_OW}
 						strokeLinejoin="round"
 					/>
-					<rect x={towerX + 12} y={96} width={64} height={84} rx={8} fill="#0f172a" stroke={PROP_INK} strokeWidth={3.5} />
+					<rect
+						x={towerX + 12}
+						y={96}
+						width={64}
+						height={84}
+						rx={8}
+						fill="#0f172a"
+						stroke={PROP_INK}
+						strokeWidth={3.5}
+					/>
 					<line
 						x1={towerX + 24}
 						y1={116}
@@ -156,7 +165,15 @@ const DesktopComputerInner: React.FC<DesktopComputerProps> = ({
 				stroke={PROP_INK}
 				strokeWidth={PROP_OW}
 			/>
-			<line x1={monX + 270} y1={280} x2={monX + 270} y2={288} stroke={PROP_INK} strokeWidth={3.5} strokeLinecap="round" />
+			<line
+				x1={monX + 270}
+				y1={280}
+				x2={monX + 270}
+				y2={288}
+				stroke={PROP_INK}
+				strokeWidth={3.5}
+				strokeLinecap="round"
+			/>
 		</svg>
 	);
 };

@@ -17,7 +17,7 @@ If the user asks to make, create, or build a new video or composition, load [Cre
 > **Project Visual & Animation Standard**:
 > - **Animation & UI Style**: Always design video animations in **Neuromorphism (Soft UI)** style by default (soft extruded/inset dual shadows, tactile spring motion, clean soft palettes) unless explicitly requested otherwise.
 > - **Mandatory UI/UX Skill**: **Always read and follow the [UI/UX Pro Max skill](../ui-ux-pro-max/SKILL.md)** whenever creating any visual display, scene card, diagram, infographic, or layout.
-> - **Reusable Assets**: Use the character rigs in [`character/`](../../../character/README.md) and reusable props in [`property/`](../../../property/README.md) when characters or props are needed.
+> - **Reusable Assets**: Use the character rigs in [`src/assets/character/`](../../../src/assets/character/README.md) and reusable props in [`src/assets/property/`](../../../src/assets/property/README.md) when characters or props are needed.
 
 ## New project setup
 
@@ -29,7 +29,7 @@ If you are writing Remotion React Markup, load [Remotion Markup Best Practices](
 
 ## 2D Cartoon & Mascot Character Animation
 
-If you are creating or animating a 2D cartoon video, mascot character scene, expressions, lip-sync, or walk cycles, load the [Remotion 2D Cartoon skill](../remotion-2d-cartoon/SKILL.md) and reference the master character rig in [character/README.md](../../../character/README.md).
+If you are creating or animating a 2D cartoon video, mascot character scene, expressions, lip-sync, or walk cycles, load the [Remotion 2D Cartoon skill](../remotion-2d-cartoon/SKILL.md) and reference the master character rig in [character/README.md](../../../src/assets/character/README.md).
 
 ## UI/UX Design, Icons (`react-icons`), Image Assets (`Unsplash`), GSAP & Content Folder (`src/content/*`)
 

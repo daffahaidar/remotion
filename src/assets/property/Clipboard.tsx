@@ -13,8 +13,7 @@ export type ClipboardProps = {
 const VARIANTS: readonly ClipboardVariant[] = ['qa', 'pm', 'medical'];
 
 const ClipboardInner: React.FC<ClipboardProps> = ({variant = 'qa', title, style}) => {
-	const boardFill =
-		variant === 'qa' ? PROP_COLORS.wood : variant === 'pm' ? PROP_COLORS.slateDark : '#0ea5e9';
+	const boardFill = variant === 'qa' ? PROP_COLORS.wood : variant === 'pm' ? PROP_COLORS.slateDark : '#0ea5e9';
 	const heading = title ?? (variant === 'qa' ? 'QA TEST' : variant === 'pm' ? 'SPRINT' : 'HEALTH');
 
 	return (
@@ -27,29 +26,11 @@ const ClipboardInner: React.FC<ClipboardProps> = ({variant = 'qa', title, style}
 			<PropShadow cx={100} cy={246} rx={62} ry={9} />
 
 			{/* Backing clipboard */}
-			<rect
-				x={28}
-				y={30}
-				width={144}
-				height={208}
-				rx={16}
-				fill={boardFill}
-				stroke={PROP_INK}
-				strokeWidth={PROP_OW}
-			/>
+			<rect x={28} y={30} width={144} height={208} rx={16} fill={boardFill} stroke={PROP_INK} strokeWidth={PROP_OW} />
 			<rect x={152} y={36} width={14} height={196} rx={6} fill={PROP_INK} opacity={0.14} />
 
 			{/* Crisp white paper */}
-			<rect
-				x={40}
-				y={46}
-				width={120}
-				height={178}
-				rx={8}
-				fill={PROP_COLORS.paper}
-				stroke={PROP_INK}
-				strokeWidth={4}
-			/>
+			<rect x={40} y={46} width={120} height={178} rx={8} fill={PROP_COLORS.paper} stroke={PROP_INK} strokeWidth={4} />
 
 			{/* Metal top clip */}
 			<circle cx={100} cy={20} r={10} fill="none" stroke={PROP_INK} strokeWidth={5} />

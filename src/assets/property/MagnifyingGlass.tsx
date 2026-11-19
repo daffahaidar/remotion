@@ -13,7 +13,12 @@ export type MagnifyingGlassProps = {
 
 const LENSES: readonly MagnifierLens[] = ['empty', 'bug', 'code', 'check'];
 
-const MagnifyingGlassInner: React.FC<MagnifyingGlassProps> = ({lens = 'bug', handleColor = 'indigo', animated = true, style}) => {
+const MagnifyingGlassInner: React.FC<MagnifyingGlassProps> = ({
+	lens = 'bug',
+	handleColor = 'indigo',
+	animated = true,
+	style,
+}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = animated ? frame / fps : 0;
@@ -23,7 +28,12 @@ const MagnifyingGlassInner: React.FC<MagnifyingGlassProps> = ({lens = 'bug', han
 	const crawl = Math.sin(t * 3) * 6;
 
 	return (
-		<svg viewBox="0 0 220 220" width={220} height={220} style={{overflow: 'visible', transformOrigin: '50% 50%', ...style}}>
+		<svg
+			viewBox="0 0 220 220"
+			width={220}
+			height={220}
+			style={{overflow: 'visible', transformOrigin: '50% 50%', ...style}}
+		>
 			<defs>
 				<clipPath id={clipId}>
 					<circle cx={88} cy={88} r={52} />
@@ -33,7 +43,16 @@ const MagnifyingGlassInner: React.FC<MagnifyingGlassProps> = ({lens = 'bug', han
 				{/* Handle */}
 				<line x1={136} y1={136} x2={192} y2={192} stroke={PROP_INK} strokeWidth={32} strokeLinecap="round" />
 				<line x1={136} y1={136} x2={192} y2={192} stroke={pal.main} strokeWidth={20} strokeLinecap="round" />
-				<line x1={150} y1={156} x2={184} y2={190} stroke={pal.shade} strokeWidth={6} strokeLinecap="round" opacity={0.7} />
+				<line
+					x1={150}
+					y1={156}
+					x2={184}
+					y2={190}
+					stroke={pal.shade}
+					strokeWidth={6}
+					strokeLinecap="round"
+					opacity={0.7}
+				/>
 				<line x1={126} y1={126} x2={142} y2={142} stroke={PROP_INK} strokeWidth={34} />
 				<line x1={128} y1={128} x2={140} y2={140} stroke={PROP_COLORS.slateMid} strokeWidth={24} />
 
@@ -43,10 +62,25 @@ const MagnifyingGlassInner: React.FC<MagnifyingGlassProps> = ({lens = 'bug', han
 					{lens === 'bug' ? (
 						<g transform={`translate(${crawl} 0)`}>
 							{[76, 88, 100].map((x) => (
-								<line key={x} x1={x} y1={100} x2={x - 6} y2={114} stroke={PROP_INK} strokeWidth={4} strokeLinecap="round" />
+								<line
+									key={x}
+									x1={x}
+									y1={100}
+									x2={x - 6}
+									y2={114}
+									stroke={PROP_INK}
+									strokeWidth={4}
+									strokeLinecap="round"
+								/>
 							))}
 							<circle cx={110} cy={92} r={9} fill={PROP_COLORS.slateDark} stroke={PROP_INK} strokeWidth={3.5} />
-							<path d="M 64 102 C 64 80, 80 74, 90 74 C 102 74, 106 84, 106 102 Q 86 108 64 102 Z" fill={PROP_COLORS.red} stroke={PROP_INK} strokeWidth={4} strokeLinejoin="round" />
+							<path
+								d="M 64 102 C 64 80, 80 74, 90 74 C 102 74, 106 84, 106 102 Q 86 108 64 102 Z"
+								fill={PROP_COLORS.red}
+								stroke={PROP_INK}
+								strokeWidth={4}
+								strokeLinejoin="round"
+							/>
 							<circle cx={78} cy={88} r={4} fill={PROP_INK} />
 							<circle cx={96} cy={90} r={3.5} fill={PROP_INK} />
 						</g>
@@ -67,16 +101,36 @@ const MagnifyingGlassInner: React.FC<MagnifyingGlassProps> = ({lens = 'bug', han
 					{lens === 'check' ? (
 						<g>
 							<circle cx={88} cy={88} r={26} fill={PROP_COLORS.green} stroke={PROP_INK} strokeWidth={4} />
-							<path d="M 76 88 L 85 97 L 101 78" fill="none" stroke={PROP_COLORS.white} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" />
+							<path
+								d="M 76 88 L 85 97 L 101 78"
+								fill="none"
+								stroke={PROP_COLORS.white}
+								strokeWidth={6}
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
 						</g>
 					) : null}
 				</g>
-				<path d="M 52 76 Q 56 56 76 46" fill="none" stroke={PROP_COLORS.white} strokeWidth={7} strokeLinecap="round" opacity={0.85} />
+				<path
+					d="M 52 76 Q 56 56 76 46"
+					fill="none"
+					stroke={PROP_COLORS.white}
+					strokeWidth={7}
+					strokeLinecap="round"
+					opacity={0.85}
+				/>
 
 				{/* Rim */}
 				<circle cx={88} cy={88} r={60} fill="none" stroke={PROP_INK} strokeWidth={22} />
 				<circle cx={88} cy={88} r={60} fill="none" stroke={PROP_COLORS.slateMid} strokeWidth={10} />
-				<path d="M 40 60 A 56 56 0 0 1 70 34" fill="none" stroke={PROP_COLORS.slateLight} strokeWidth={4} strokeLinecap="round" />
+				<path
+					d="M 40 60 A 56 56 0 0 1 70 34"
+					fill="none"
+					stroke={PROP_COLORS.slateLight}
+					strokeWidth={4}
+					strokeLinecap="round"
+				/>
 			</g>
 		</svg>
 	);
@@ -88,8 +142,20 @@ export const MagnifyingGlass = Interactive.create({
 	layout: 'none',
 	componentName: 'MagnifyingGlassProp',
 	schema: {
-		lens: {type: 'enum', default: 'bug', description: 'What the lens shows', variants: propVariants(LENSES), keyframable: false},
-		handleColor: {type: 'enum', default: 'indigo', description: 'Handle color', variants: propVariants(ACCENT_NAMES), keyframable: false},
+		lens: {
+			type: 'enum',
+			default: 'bug',
+			description: 'What the lens shows',
+			variants: propVariants(LENSES),
+			keyframable: false,
+		},
+		handleColor: {
+			type: 'enum',
+			default: 'indigo',
+			description: 'Handle color',
+			variants: propVariants(ACCENT_NAMES),
+			keyframable: false,
+		},
 		animated: {type: 'boolean', default: true, description: 'Sway & crawl'},
 	},
 });

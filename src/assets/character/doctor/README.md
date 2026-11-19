@@ -1,4 +1,4 @@
-# Doctor: Diagnostic Analogy Character Rig (`character/doctor`)
+# Doctor: Diagnostic Analogy Character Rig (`src/assets/character/doctor`)
 
 Rig karakter **Dokter** 2D (vektor SVG) untuk Remotion, dirancang khusus untuk **perumpamaan (*analogy*) dalam video tutorial & problem solving teknologi** (misalnya *system health check*, diagnosis akar bug, *memory leak checkup*, *antivirus/security*, atau *performance profiling*) maupun sketsa cerita.
 

@@ -55,8 +55,7 @@ export const Arm: React.FC<{
 	const jacketEnd: P2 = [w[0] - fux * 16, w[1] - fuy * 16];
 	const watchPos: P2 = [w[0] - fux * 10, w[1] - fuy * 10];
 	const cuffW = RIG.armW / 2 + 2;
-	const angle =
-		(fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
+	const angle = (fl > 4 ? Math.atan2(fy, fx) : Math.atan2(uy, ux)) / D2R - 90 + handRoll;
 
 	const handEl = (
 		<Hand at={w} angle={angle} mirror={mirror} shape={hand} skin={K.skin} outline={K.outline} scale={1.4} />
@@ -102,9 +101,7 @@ export const Leg: React.FC<{
 	readonly pitch: number;
 	readonly side: 1 | -1;
 	readonly uid: string;
-}> = (props) => (
-	<SharedLeg {...props} rig={RIG} palette={BODY_PALETTE} shoeSize={DRESS_SHOE_SIZE} dressShoe />
-);
+}> = (props) => <SharedLeg {...props} rig={RIG} palette={BODY_PALETTE} shoeSize={DRESS_SHOE_SIZE} dressShoe />;
 
 /** Broad executive shoulders tapering down to tailored suit hem. */
 const TORSO: readonly TorsoSection[] = [
@@ -138,15 +135,7 @@ export const Torso: React.FC<{
 
 				{/* Back blazer vent seam */}
 				{c < -0.2 ? (
-					<line
-						x1={backX}
-						y1={-370}
-						x2={backX}
-						y2={-184}
-						stroke={K.shirtShade}
-						strokeWidth={5}
-						strokeLinecap="round"
-					/>
+					<line x1={backX} y1={-370} x2={backX} y2={-184} stroke={K.shirtShade} strokeWidth={5} strokeLinecap="round" />
 				) : null}
 
 				{/* Front dress shirt V-opening, lapels, power tie, pocket square & buttons */}

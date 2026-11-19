@@ -46,30 +46,9 @@ const ServerRackInner: React.FC<ServerRackProps> = ({
 			{/* Smoke / overheat wisps when server is down */}
 			{status === 'down' ? (
 				<g opacity={0.85}>
-					<circle
-						cx={112}
-						cy={44 - smokeDrift * 0.6}
-						r={20}
-						fill="#cbd5e1"
-						stroke={PROP_INK}
-						strokeWidth={4.5}
-					/>
-					<circle
-						cx={152}
-						cy={24 - smokeDrift * 0.8}
-						r={26}
-						fill="#94a3b8"
-						stroke={PROP_INK}
-						strokeWidth={4.5}
-					/>
-					<circle
-						cx={198}
-						cy={42 - smokeDrift * 0.5}
-						r={18}
-						fill="#cbd5e1"
-						stroke={PROP_INK}
-						strokeWidth={4.5}
-					/>
+					<circle cx={112} cy={44 - smokeDrift * 0.6} r={20} fill="#cbd5e1" stroke={PROP_INK} strokeWidth={4.5} />
+					<circle cx={152} cy={24 - smokeDrift * 0.8} r={26} fill="#94a3b8" stroke={PROP_INK} strokeWidth={4.5} />
+					<circle cx={198} cy={42 - smokeDrift * 0.5} r={18} fill="#cbd5e1" stroke={PROP_INK} strokeWidth={4.5} />
 				</g>
 			) : null}
 
@@ -96,15 +75,7 @@ const ServerRackInner: React.FC<ServerRackProps> = ({
 
 			{/* Header plate */}
 			<rect x={70} y={66} width={160} height={36} rx={8} fill="#0f172a" stroke={PROP_INK} strokeWidth={3.5} />
-			<text
-				x={150}
-				y={91}
-				textAnchor="middle"
-				fontFamily="monospace"
-				fontSize={20}
-				fontWeight={700}
-				fill={ledColor}
-			>
+			<text x={150} y={91} textAnchor="middle" fontFamily="monospace" fontSize={20} fontWeight={700} fill={ledColor}>
 				{label}
 			</text>
 
@@ -139,7 +110,14 @@ const ServerRackInner: React.FC<ServerRackProps> = ({
 							/>
 						))}
 						{/* Status LED lights */}
-						<circle cx={170} cy={uy + 26} r={6.5} fill={blinkA ? ledColor : '#1e293b'} stroke={PROP_INK} strokeWidth={2.5} />
+						<circle
+							cx={170}
+							cy={uy + 26}
+							r={6.5}
+							fill={blinkA ? ledColor : '#1e293b'}
+							stroke={PROP_INK}
+							strokeWidth={2.5}
+						/>
 						<circle
 							cx={192}
 							cy={uy + 26}

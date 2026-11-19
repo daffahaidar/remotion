@@ -1,7 +1,7 @@
 import {loadFont} from '@remotion/google-fonts/Fredoka';
 import React from 'react';
 import {AbsoluteFill, Easing, Interactive, Track, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Character} from '../character';
+import {Character} from './assets/character';
 
 loadFont('normal', {weights: ['600'], subsets: ['latin']});
 
@@ -101,7 +101,15 @@ export const RigDemo: React.FC = () => {
 				<Interactive.Div
 					name="Label talk"
 					durationInFrames={3 * fps}
-					style={{position: 'absolute', left: 150, top: 100, fontFamily: 'Fredoka', fontSize: 78, fontWeight: 600, color: '#24324a'}}
+					style={{
+						position: 'absolute',
+						left: 150,
+						top: 100,
+						fontFamily: 'Fredoka',
+						fontSize: 78,
+						fontWeight: 600,
+						color: '#24324a',
+					}}
 				>
 					Bicara + melambai
 				</Interactive.Div>
@@ -109,7 +117,15 @@ export const RigDemo: React.FC = () => {
 					name="Label turn"
 					from={3 * fps}
 					durationInFrames={3 * fps}
-					style={{position: 'absolute', left: 150, top: 100, fontFamily: 'Fredoka', fontSize: 78, fontWeight: 600, color: '#24324a'}}
+					style={{
+						position: 'absolute',
+						left: 150,
+						top: 100,
+						fontFamily: 'Fredoka',
+						fontSize: 78,
+						fontWeight: 600,
+						color: '#24324a',
+					}}
 				>
 					Turnaround 360°
 				</Interactive.Div>
@@ -117,7 +133,15 @@ export const RigDemo: React.FC = () => {
 					name="Label walk"
 					from={6 * fps}
 					durationInFrames={4 * fps}
-					style={{position: 'absolute', left: 150, top: 100, fontFamily: 'Fredoka', fontSize: 78, fontWeight: 600, color: '#24324a'}}
+					style={{
+						position: 'absolute',
+						left: 150,
+						top: 100,
+						fontFamily: 'Fredoka',
+						fontSize: 78,
+						fontWeight: 600,
+						color: '#24324a',
+					}}
 				>
 					Berjalan
 				</Interactive.Div>
@@ -125,7 +149,15 @@ export const RigDemo: React.FC = () => {
 					name="Label point"
 					from={10 * fps}
 					durationInFrames={3 * fps}
-					style={{position: 'absolute', left: 150, top: 100, fontFamily: 'Fredoka', fontSize: 78, fontWeight: 600, color: '#24324a'}}
+					style={{
+						position: 'absolute',
+						left: 150,
+						top: 100,
+						fontFamily: 'Fredoka',
+						fontSize: 78,
+						fontWeight: 600,
+						color: '#24324a',
+					}}
 				>
 					Menunjuk
 				</Interactive.Div>
@@ -133,7 +165,15 @@ export const RigDemo: React.FC = () => {
 					name="Label surprise"
 					from={13 * fps}
 					durationInFrames={2 * fps}
-					style={{position: 'absolute', left: 150, top: 100, fontFamily: 'Fredoka', fontSize: 78, fontWeight: 600, color: '#24324a'}}
+					style={{
+						position: 'absolute',
+						left: 150,
+						top: 100,
+						fontFamily: 'Fredoka',
+						fontSize: 78,
+						fontWeight: 600,
+						color: '#24324a',
+					}}
 				>
 					Terkejut
 				</Interactive.Div>
@@ -141,7 +181,15 @@ export const RigDemo: React.FC = () => {
 					name="Label think"
 					from={15 * fps}
 					durationInFrames={3 * fps}
-					style={{position: 'absolute', left: 150, top: 100, fontFamily: 'Fredoka', fontSize: 78, fontWeight: 600, color: '#24324a'}}
+					style={{
+						position: 'absolute',
+						left: 150,
+						top: 100,
+						fontFamily: 'Fredoka',
+						fontSize: 78,
+						fontWeight: 600,
+						color: '#24324a',
+					}}
 				>
 					Berpikir
 				</Interactive.Div>

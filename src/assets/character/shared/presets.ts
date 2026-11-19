@@ -1,12 +1,4 @@
-import {
-	lerp,
-	type ArmPose,
-	type BrowSpec,
-	type EyeSpec,
-	type FaceSpec,
-	type LegPose,
-	type PoseSpec,
-} from './rig';
+import {lerp, type ArmPose, type BrowSpec, type EyeSpec, type FaceSpec, type LegPose, type PoseSpec} from './rig';
 
 // ---------------------------------------------------------------------------
 // Expressions (face presets)
@@ -435,8 +427,7 @@ export const POSE_NAMES = Object.keys(POSES) as PoseName[];
 export const resolveFace = (e: ExpressionName | FaceSpec): FaceSpec =>
 	typeof e === 'string' ? (EXPRESSIONS[e] ?? NEUTRAL) : e;
 
-export const resolvePose = (p: PoseName | PoseSpec): PoseSpec =>
-	typeof p === 'string' ? (POSES[p] ?? POSES.idle) : p;
+export const resolvePose = (p: PoseName | PoseSpec): PoseSpec => (typeof p === 'string' ? (POSES[p] ?? POSES.idle) : p);
 
 const mixEye = (a: EyeSpec, b: EyeSpec, t: number): EyeSpec => ({
 	open: lerp(a.open, b.open, t),

@@ -31,11 +31,7 @@ const CharacterInner: React.FC<BackendProgrammerProps> = (props) => (
 			renderArm: (armProps) => <Arm {...armProps} />,
 			renderLeg: (legProps) => <Leg {...legProps} />,
 			renderHead: (headProps, extra) => (
-				<Head
-					{...headProps}
-					showGlasses={extra.showGlasses ?? true}
-					showHeadphones={extra.showHeadphones ?? true}
-				/>
+				<Head {...headProps} showGlasses={extra.showGlasses ?? true} showHeadphones={extra.showHeadphones ?? true} />
 			),
 		}}
 	/>

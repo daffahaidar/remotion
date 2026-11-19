@@ -27,11 +27,7 @@ const CharacterInner: React.FC<ChefProps> = (props) => (
 			renderArm: (armProps) => <Arm {...armProps} />,
 			renderLeg: (legProps) => <Leg {...legProps} />,
 			renderHead: (headProps, extra) => (
-				<Head
-					{...headProps}
-					showHat={extra.showHat ?? true}
-					showMustache={extra.showMustache ?? true}
-				/>
+				<Head {...headProps} showHat={extra.showHat ?? true} showMustache={extra.showMustache ?? true} />
 			),
 		}}
 	/>

@@ -34,7 +34,14 @@ const MONSTERA = [
 const Monstera: React.FC = () => (
 	<g>
 		{MONSTERA.map(([x, y]) => (
-			<path key={`s${x}`} d={`M 100 184 Q ${(100 + x) / 2} ${y + 20} ${x} ${y}`} fill="none" stroke={LEAF_DARK} strokeWidth={6} strokeLinecap="round" />
+			<path
+				key={`s${x}`}
+				d={`M 100 184 Q ${(100 + x) / 2} ${y + 20} ${x} ${y}`}
+				fill="none"
+				stroke={LEAF_DARK}
+				strokeWidth={6}
+				strokeLinecap="round"
+			/>
 		))}
 		{MONSTERA.map(([x, y, a, s]) => (
 			<g key={`l${x}`} transform={`translate(${x} ${y}) rotate(${a})`}>
@@ -83,11 +90,27 @@ const Cactus: React.FC = () => (
 			[58, 116],
 			[142, 98],
 		].map(([x, y]) => (
-			<path key={`${x}${y}`} d={`M ${x - 4} ${y} L ${x + 4} ${y} M ${x} ${y - 4} L ${x} ${y + 4}`} stroke={PROP_INK} strokeWidth={2.5} strokeLinecap="round" />
+			<path
+				key={`${x}${y}`}
+				d={`M ${x - 4} ${y} L ${x + 4} ${y} M ${x} ${y - 4} L ${x} ${y + 4}`}
+				stroke={PROP_INK}
+				strokeWidth={2.5}
+				strokeLinecap="round"
+			/>
 		))}
 		{/* Flower */}
 		{[0, 72, 144, 216, 288].map((a) => (
-			<ellipse key={a} cx={100} cy={50} rx={6} ry={11} transform={`rotate(${a} 100 60)`} fill="#fb7185" stroke={PROP_INK} strokeWidth={3} />
+			<ellipse
+				key={a}
+				cx={100}
+				cy={50}
+				rx={6}
+				ry={11}
+				transform={`rotate(${a} 100 60)`}
+				fill="#fb7185"
+				stroke={PROP_INK}
+				strokeWidth={3}
+			/>
 		))}
 		<circle cx={100} cy={60} r={6} fill="#fbbf24" stroke={PROP_INK} strokeWidth={3} />
 	</g>
@@ -115,21 +138,41 @@ const SnakePlant: React.FC = () => (
 				/>
 				{[0.45, 0.7].map((k) => {
 					const y = top + (186 - top) * k;
-					return <path key={k} d={`M ${x - 6} ${y} Q ${x} ${y - 5} ${x + 6} ${y}`} fill="none" stroke="#86efac" strokeWidth={3} strokeLinecap="round" opacity={0.75} />;
+					return (
+						<path
+							key={k}
+							d={`M ${x - 6} ${y} Q ${x} ${y - 5} ${x + 6} ${y}`}
+							fill="none"
+							stroke="#86efac"
+							strokeWidth={3}
+							strokeLinecap="round"
+							opacity={0.75}
+						/>
+					);
 				})}
 			</g>
 		))}
 	</g>
 );
 
-const PottedPlantInner: React.FC<PottedPlantProps> = ({variant = 'monstera', potColor = 'terracotta', animated = true, style}) => {
+const PottedPlantInner: React.FC<PottedPlantProps> = ({
+	variant = 'monstera',
+	potColor = 'terracotta',
+	animated = true,
+	style,
+}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = animated ? frame / fps : 0;
 	const pot = POTS[potColor];
 
 	return (
-		<svg viewBox="0 0 200 280" width={200} height={280} style={{overflow: 'visible', transformOrigin: '50% 96%', ...style}}>
+		<svg
+			viewBox="0 0 200 280"
+			width={200}
+			height={280}
+			style={{overflow: 'visible', transformOrigin: '50% 96%', ...style}}
+		>
 			<PropShadow cx={100} cy={268} rx={72} ry={10} />
 
 			<g transform={`rotate(${Math.sin(t * 1.5) * 2.5} 100 182)`}>
@@ -137,8 +180,18 @@ const PottedPlantInner: React.FC<PottedPlantProps> = ({variant = 'monstera', pot
 			</g>
 
 			{/* Pot */}
-			<path d="M 52 186 L 148 186 L 138 262 Q 136 268 128 268 L 72 268 Q 64 268 62 262 Z" fill={pot.main} stroke={PROP_INK} strokeWidth={PROP_OW} strokeLinejoin="round" />
-			<path d="M 120 196 L 144 196 L 136 260 Q 134 264 128 264 L 116 264 Q 124 230 120 196 Z" fill={pot.shade} opacity={0.6} />
+			<path
+				d="M 52 186 L 148 186 L 138 262 Q 136 268 128 268 L 72 268 Q 64 268 62 262 Z"
+				fill={pot.main}
+				stroke={PROP_INK}
+				strokeWidth={PROP_OW}
+				strokeLinejoin="round"
+			/>
+			<path
+				d="M 120 196 L 144 196 L 136 260 Q 134 264 128 264 L 116 264 Q 124 230 120 196 Z"
+				fill={pot.shade}
+				opacity={0.6}
+			/>
 			<rect x={44} y={176} width={112} height={22} rx={8} fill={pot.rim} stroke={PROP_INK} strokeWidth={PROP_OW} />
 			<ellipse cx={100} cy={178} rx={46} ry={5} fill="#5b3a1e" stroke={PROP_INK} strokeWidth={3} />
 		</svg>
@@ -151,8 +204,20 @@ export const PottedPlant = Interactive.create({
 	layout: 'none',
 	componentName: 'PottedPlantProp',
 	schema: {
-		variant: {type: 'enum', default: 'monstera', description: 'Plant type', variants: propVariants(VARIANTS), keyframable: false},
-		potColor: {type: 'enum', default: 'terracotta', description: 'Pot color', variants: propVariants(POT_COLORS), keyframable: false},
+		variant: {
+			type: 'enum',
+			default: 'monstera',
+			description: 'Plant type',
+			variants: propVariants(VARIANTS),
+			keyframable: false,
+		},
+		potColor: {
+			type: 'enum',
+			default: 'terracotta',
+			description: 'Pot color',
+			variants: propVariants(POT_COLORS),
+			keyframable: false,
+		},
 		animated: {type: 'boolean', default: true, description: 'Gentle sway'},
 	},
 });

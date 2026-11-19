@@ -1,4 +1,4 @@
-# Tech Lead: Senior Architect Character Rig (`character/tech_lead`)
+# Tech Lead: Senior Architect Character Rig (`src/assets/character/tech_lead`)
 
 Rig karakter **Tech Lead** 2D (vektor SVG) untuk Remotion. Memiliki **postur wajah lebih panjang, tirus, dan angular** dengan garis lelah tipis di bawah mata, janggut kecil (*goatee*), kacamata tipis, serta kemeja flanel olive terbuka di atas kaos hitam.
 

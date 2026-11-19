@@ -32,13 +32,13 @@ Use this skill alongside `remotion-best-practices`, `remotion-markup`, and `remo
 
 ---
 
-## 2. Using the Project's Master 2D Character Rigs (`character/man` & `character/woman`)
+## 2. Using the Project's Master 2D Character Rigs (`src/assets/character/man` & `src/assets/character/woman`)
 
-This workspace includes two complete, Studio-interactive 2.5D/2D SVG Mascot Rigs in [`character/`](../../character/README.md):
-- **Male Character (`character/man`)**: [`character/man/README.md`](../../character/man/README.md) (`ManCharacter` / `Character`)
-- **Female Hijabi Character (`character/woman`)**: [`character/woman/README.md`](../../character/woman/README.md) (`WomanCharacter` / `Character`)
+This workspace includes two complete, Studio-interactive 2.5D/2D SVG Mascot Rigs in [`src/assets/character/`](../../../src/assets/character/README.md):
+- **Male Character (`src/assets/character/man`)**: [`src/assets/character/man/README.md`](../../../src/assets/character/man/README.md) (`ManCharacter` / `Character`)
+- **Female Hijabi Character (`src/assets/character/woman`)**: [`src/assets/character/woman/README.md`](../../../src/assets/character/woman/README.md) (`WomanCharacter` / `Character`)
 
-Both characters share the exact same props interface (`expression`, `pose`, `talking`, `mouth`, `motion`, `yaw`, etc.). Always prefer importing `<ManCharacter>` and `<WomanCharacter>` from `../character` (or `../character/man` and `../character/woman`).
+Both characters share the exact same props interface (`expression`, `pose`, `talking`, `mouth`, `motion`, `yaw`, etc.). Always prefer importing `<ManCharacter>` and `<WomanCharacter>` from `./assets/character` (or `./assets/character/man` and `./assets/character/woman`).
 
 ### Basic Usage inside `<Track>`
 
@@ -81,7 +81,7 @@ export const CartoonScene: React.FC = () => {
 ### Character Framing & Coordinates
 - Native size (`framing="full"`): `840 × 900 px`. Foot contact is at `95.6%` height (default transform origin, so `scale` scales from the feet).
 - Available `framing` options: `'full'` (full body), `'bust'` (head + chest), `'head'` (head only).
-- **Important CLI note on Windows**: Never name a `<Composition id="Character" />` as it conflicts with the `character/` directory on Windows CLI renders.
+- **Important CLI note on Windows**: Never give a composition an id that matches a root folder name (`src`, `public`, `out`); the CLI treats it as the entry point and the render fails.
 
 ### Available Expressions (32 Presets)
 `neutral` · `happy` · `laugh` · `smirk` · `sideEye` · `eyeRoll` · `surprised` · `jawDrop` · `angry` · `sad` · `worried` · `thinking` · `confused` · `wink` · `embarrassed` · `determined` · `excited` · `love` · `crying` · `sleepy` · `dizzy` · `cheeky` · `scared` · `proud` · `eureka` · `skeptical` · `nervousLaugh` · `pleading` · `relief` · `disgusted` · `furious` · `focused`
@@ -162,7 +162,7 @@ Because `motion="walk"` and `motion="run"` animate steps in place, animate `styl
 
 ### Custom FK / IK Poses & Gaze Control
 - Use `lookX` (`-1..1`) and `lookY` (`-1..1`) to direct pupil gaze, and `headYaw`, `headTilt`, `headNod` (degrees) for head orientation.
-- For custom poses, import `EXPRESSIONS` and `POSES` from `../character` and override arm FK angles (`lift`, `swing`, `bend`, `twist`) or 3D IK targets (`target: [x, y, z]`, `hand: 'open' | 'fist' | 'point' | 'thumbsUp' | 'peace'`).
+- For custom poses, import `EXPRESSIONS` and `POSES` from `./assets/character` and override arm FK angles (`lift`, `swing`, `bend`, `twist`) or 3D IK targets (`target: [x, y, z]`, `hand: 'open' | 'fist' | 'point' | 'thumbsUp' | 'peace'`).
 - When placing 2+ characters in the same scene, give each a unique `seed` prop (e.g. `seed="char-a"`, `seed="char-b"`) so their blinks and lip-flaps do not synchronize identically.
 
 ---
@@ -176,13 +176,13 @@ Because `motion="walk"` and `motion="run"` animate steps in place, animate `styl
    - Install `react-icons` if not present (`npm install react-icons`).
 2. **UI/UX Design & Neuromorphism Animation Standard (`ui-ux-pro-max`)**:
    - **Always follow [`ui-ux-pro-max`](../ui-ux-pro-max/SKILL.md)** (`nextlevelbuilder/ui-ux-pro-max-skill` rules) when building any display/UI element.
-   - **Default Video & UI Style = Neuromorphism (Soft UI)**: Stage characters (`character/*`) and props (`property/*`) inside unified soft-matte canvases (`#e8eef5` light / `#1e232c` dark) with **extruded dual-shadow cards**, **recessed/inset metric wells & icon badges**, soft `borderRadius: 24px–36px`, and tactile spring/bezier shadow elevation animations (`interpolate()` driving depth smoothly).
+   - **Default Video & UI Style = Neuromorphism (Soft UI)**: Stage characters (`src/assets/character/*`) and props (`src/assets/property/*`) inside unified soft-matte canvases (`#e8eef5` light / `#1e232c` dark) with **extruded dual-shadow cards**, **recessed/inset metric wells & icon badges**, soft `borderRadius: 24px–36px`, and tactile spring/bezier shadow elevation animations (`interpolate()` driving depth smoothly).
    - Use **Bento Grid** layouts for multi-item comparisons and structured explainers.
    - Font pairing: `@remotion/google-fonts/Fredoka` (`fontWeight: 600–700`) for headers/callouts + monospace (`JetBrains Mono` / `Fira Code`) for technical labels, URLs, and IP addresses.
    - Pop-in / extrusion animation: inline `scale: interpolate(..., [0, 1], {easing: Easing.spring({damping: 16}), output: 'perceptual-scale', extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})` alongside animated dual-shadow depth.
-3. **Reusable Character Rigs & Props (`character/` & `property/`)**:
-   - All 12 cartoon characters live in [`character/`](../../character/README.md) (`ManCharacter`, `WomanCharacter`, `FrontendProgrammerCharacter`, `BackendProgrammerCharacter`, `BossCharacter`, `ChefCharacter`, `DoctorCharacter`, `ProjectManagerCharacter`, `TechLeadCharacter`, `FullstackProgrammerCharacter`, `QualityAssuranceCharacter`, `HackerCharacter`).
-   - All 22 reusable SVG props live in [`property/`](../../property/README.md) (`Laptop`, `DesktopComputer`, `Smartphone`, `ServerRack`, `DatabaseCylinder`, `OfficeDesk`, `Whiteboard`, `CoffeeMug`, `Clipboard`, `Briefcase`, `ServingCloche`, `MedicalKit`, `Rocket`, `Bug`, `MagnifyingGlass`, `Padlock`, `CloudService`, `PackageBox`, `WallClock`, `Lightbulb`, `Trophy`, `PottedPlant`).
+3. **Reusable Character Rigs & Props (`src/assets/character/` & `src/assets/property/`)**:
+   - All 12 cartoon characters live in [`src/assets/character/`](../../../src/assets/character/README.md) (`ManCharacter`, `WomanCharacter`, `FrontendProgrammerCharacter`, `BackendProgrammerCharacter`, `BossCharacter`, `ChefCharacter`, `DoctorCharacter`, `ProjectManagerCharacter`, `TechLeadCharacter`, `FullstackProgrammerCharacter`, `QualityAssuranceCharacter`, `HackerCharacter`).
+   - All 22 reusable SVG props live in [`src/assets/property/`](../../../src/assets/property/README.md) (`Laptop`, `DesktopComputer`, `Smartphone`, `ServerRack`, `DatabaseCylinder`, `OfficeDesk`, `Whiteboard`, `CoffeeMug`, `Clipboard`, `Briefcase`, `ServingCloche`, `MedicalKit`, `Rocket`, `Bug`, `MagnifyingGlass`, `Padlock`, `CloudService`, `PackageBox`, `WallClock`, `Lightbulb`, `Trophy`, `PottedPlant`).
 4. **Image Assets (`Unsplash`)**:
    - When real-world photos, backgrounds, or visual reference images are needed, source high-resolution images from **Unsplash** (`https://images.unsplash.com/photo-<id>?auto=format&fit=crop&w=1200&q=80`) and render them using Remotion's `<Img>` or `<CanvasImage>` so frames wait for image loading.
 5. **Complex Animations (`GSAP` — `greensock/gsap-skills`)**:

@@ -27,11 +27,7 @@ const CharacterInner: React.FC<BossProps> = (props) => (
 			renderArm: (armProps) => <Arm {...armProps} />,
 			renderLeg: (legProps) => <Leg {...legProps} />,
 			renderHead: (headProps, extra) => (
-				<Head
-					{...headProps}
-					showGlasses={extra.showGlasses ?? false}
-					showMustache={extra.showMustache ?? true}
-				/>
+				<Head {...headProps} showGlasses={extra.showGlasses ?? false} showMustache={extra.showMustache ?? true} />
 			),
 		}}
 	/>

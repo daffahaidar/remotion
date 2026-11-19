@@ -13,12 +13,7 @@ export type MedicalKitProps = {
 
 const VARIANTS: readonly MedicalKitVariant[] = ['firstAid', 'monitor'];
 
-const MedicalKitInner: React.FC<MedicalKitProps> = ({
-	variant = 'firstAid',
-	healthy = true,
-	animated = true,
-	style,
-}) => {
+const MedicalKitInner: React.FC<MedicalKitProps> = ({variant = 'firstAid', healthy = true, animated = true, style}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const t = animated ? frame / fps : 0;
@@ -66,12 +61,48 @@ const MedicalKitInner: React.FC<MedicalKitProps> = ({
 					<rect x={34} y={160} width={172} height={20} rx={8} fill={PROP_COLORS.slateLight} />
 
 					{/* Top red latches */}
-					<rect x={54} y={48} width={22} height={14} rx={5} fill={PROP_COLORS.red} stroke={PROP_INK} strokeWidth={3.5} />
-					<rect x={164} y={48} width={22} height={14} rx={5} fill={PROP_COLORS.red} stroke={PROP_INK} strokeWidth={3.5} />
+					<rect
+						x={54}
+						y={48}
+						width={22}
+						height={14}
+						rx={5}
+						fill={PROP_COLORS.red}
+						stroke={PROP_INK}
+						strokeWidth={3.5}
+					/>
+					<rect
+						x={164}
+						y={48}
+						width={22}
+						height={14}
+						rx={5}
+						fill={PROP_COLORS.red}
+						stroke={PROP_INK}
+						strokeWidth={3.5}
+					/>
 
 					{/* Bold centered medical cross */}
-					<rect x={108} y={84} width={24} height={68} rx={5} fill={PROP_COLORS.red} stroke={PROP_INK} strokeWidth={3.5} />
-					<rect x={86} y={106} width={68} height={24} rx={5} fill={PROP_COLORS.red} stroke={PROP_INK} strokeWidth={3.5} />
+					<rect
+						x={108}
+						y={84}
+						width={24}
+						height={68}
+						rx={5}
+						fill={PROP_COLORS.red}
+						stroke={PROP_INK}
+						strokeWidth={3.5}
+					/>
+					<rect
+						x={86}
+						y={106}
+						width={68}
+						height={24}
+						rx={5}
+						fill={PROP_COLORS.red}
+						stroke={PROP_INK}
+						strokeWidth={3.5}
+					/>
 					{/* Cover inner stroke seams inside cross */}
 					<rect x={110} y={88} width={20} height={60} rx={3} fill={PROP_COLORS.red} />
 					<rect x={90} y={108} width={60} height={20} rx={3} fill={PROP_COLORS.red} />
@@ -89,8 +120,26 @@ const MedicalKitInner: React.FC<MedicalKitProps> = ({
 			) : (
 				<g>
 					{/* Monitor feet */}
-					<rect x={56} y={168} width={24} height={20} rx={5} fill={PROP_COLORS.slateDark} stroke={PROP_INK} strokeWidth={4} />
-					<rect x={160} y={168} width={24} height={20} rx={5} fill={PROP_COLORS.slateDark} stroke={PROP_INK} strokeWidth={4} />
+					<rect
+						x={56}
+						y={168}
+						width={24}
+						height={20}
+						rx={5}
+						fill={PROP_COLORS.slateDark}
+						stroke={PROP_INK}
+						strokeWidth={4}
+					/>
+					<rect
+						x={160}
+						y={168}
+						width={24}
+						height={20}
+						rx={5}
+						fill={PROP_COLORS.slateDark}
+						stroke={PROP_INK}
+						strokeWidth={4}
+					/>
 
 					{/* Outer chassis */}
 					<rect
@@ -104,16 +153,7 @@ const MedicalKitInner: React.FC<MedicalKitProps> = ({
 						strokeWidth={PROP_OW}
 					/>
 					{/* Dark ECG screen */}
-					<rect
-						x={38}
-						y={42}
-						width={164}
-						height={102}
-						rx={10}
-						fill="#06141a"
-						stroke={PROP_INK}
-						strokeWidth={4}
-					/>
+					<rect x={38} y={42} width={164} height={102} rx={10} fill="#06141a" stroke={PROP_INK} strokeWidth={4} />
 
 					{/* Subtle grid lines */}
 					<line x1={38} y1={76} x2={202} y2={76} stroke="#0f2933" strokeWidth={1.5} />
