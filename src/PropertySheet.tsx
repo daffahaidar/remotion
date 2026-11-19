@@ -8,18 +8,28 @@ import {
 } from '../character';
 import {
 	Briefcase,
+	Bug,
 	Clipboard,
+	CloudService,
 	CoffeeMug,
 	DatabaseCylinder,
 	DesktopComputer,
 	Laptop,
+	Lightbulb,
+	MagnifyingGlass,
 	MedicalKit,
 	OfficeDesk,
+	PackageBox,
+	Padlock,
+	PottedPlant,
 	PROP_COLORS,
 	PROP_INK,
+	Rocket,
 	ServerRack,
 	ServingCloche,
 	Smartphone,
+	Trophy,
+	WallClock,
 	Whiteboard,
 } from '../property';
 
@@ -119,7 +129,7 @@ const PropCard: React.FC<{
 	</div>
 );
 
-/** Visual reference sheet of all 12 reusable props and sample character pairings. */
+/** Visual reference sheet of all 22 reusable props and sample character pairings. */
 export const PropertySheet: React.FC = () => {
 	const swatches = [
 		PROP_COLORS.ink,
@@ -270,8 +280,72 @@ export const PropertySheet: React.FC = () => {
 				</PropCard>
 			</div>
 
-			{/* Section 4: Character Pairing Demos (floor-anchored coordinates) */}
-			<SectionTitle title="4. CHARACTER + PROP PAIRINGS" subtitle="Floor-aligned scale & layering check (Frontend, Chef & Doctor)" />
+			{/* Section 4: Deploy, Debug & Security */}
+			<SectionTitle
+				title="4. DEPLOY, DEBUG & SECURITY"
+				subtitle="Rocket • Bug • MagnifyingGlass • Padlock • CloudService • PackageBox"
+			/>
+			<div style={{display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 22}}>
+				<PropCard name="Rocket" variantText="idle & launching" height={300} scale={0.6}>
+					<Rocket color="red" label="v0.9" />
+					<Rocket color="indigo" label="v1.0" launching />
+				</PropCard>
+				<PropCard name="Bug" variantText="red / emerald / purple" height={300} scale={0.6}>
+					<Bug color="red" />
+					<Bug color="emerald" />
+					<Bug color="purple" />
+				</PropCard>
+				<PropCard name="Bug + MagnifyingGlass" variantText='squashed & lens="check"' height={300} scale={0.7}>
+					<Bug color="red" state="squashed" />
+					<MagnifyingGlass lens="check" handleColor="emerald" />
+				</PropCard>
+				<PropCard name="MagnifyingGlass" variantText='lens="bug" / "code"' height={300} scale={0.7}>
+					<MagnifyingGlass lens="bug" />
+					<MagnifyingGlass lens="code" handleColor="amber" />
+				</PropCard>
+				<PropCard name="Padlock" variantText="locked & unlocked" height={260} scale={0.72}>
+					<Padlock locked color="gold" />
+					<Padlock locked={false} color="red" />
+				</PropCard>
+				<PropCard name="CloudService" variantText="upload & download" height={260} scale={0.62}>
+					<CloudService status="upload" label="DEPLOY" />
+					<CloudService status="download" label="S3" />
+				</PropCard>
+				<PropCard name="CloudService" variantText="sync & error" height={260} scale={0.62}>
+					<CloudService status="sync" label="SYNC" />
+					<CloudService status="error" label="503" />
+				</PropCard>
+				<PropCard name="PackageBox" variantText="cardboard & gift (open)" height={260} scale={0.7}>
+					<PackageBox variant="cardboard" label="npm" />
+					<PackageBox variant="gift" open label="v2.0" />
+				</PropCard>
+			</div>
+
+			{/* Section 5: Workplace & Storytelling */}
+			<SectionTitle title="5. WORKPLACE & STORYTELLING" subtitle="WallClock • Lightbulb • Trophy • PottedPlant" />
+			<div style={{display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 22}}>
+				<PropCard name="WallClock" variantText="wall & alarm (ringing)" height={280} scale={0.85}>
+					<WallClock variant="wall" hours={10} minutes={10} />
+					<WallClock variant="alarm" color="red" hours={7} minutes={0} ringing />
+				</PropCard>
+				<PropCard name="Lightbulb" variantText="on={false} & on" height={280} scale={0.8}>
+					<Lightbulb on={false} />
+					<Lightbulb on />
+				</PropCard>
+				<PropCard name="Trophy" variantText="gold / silver / bronze" height={280} scale={0.68}>
+					<Trophy variant="gold" label="#1" />
+					<Trophy variant="silver" label="#2" />
+					<Trophy variant="bronze" label="#3" />
+				</PropCard>
+				<PropCard name="PottedPlant" variantText="monstera / cactus / snake" height={280} scale={0.62}>
+					<PottedPlant variant="monstera" />
+					<PottedPlant variant="cactus" potColor="white" />
+					<PottedPlant variant="snake" potColor="indigo" />
+				</PropCard>
+			</div>
+
+			{/* Section 6: Character Pairing Demos (floor-anchored coordinates) */}
+			<SectionTitle title="6. CHARACTER + PROP PAIRINGS" subtitle="Floor-aligned scale & layering check (Frontend, Chef & Doctor)" />
 			<div style={{display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 24}}>
 				{/* Pairing 1: Typing behind desk (floor y = 496px) */}
 				<div

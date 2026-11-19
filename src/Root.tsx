@@ -284,7 +284,7 @@ export const RemotionRoot: React.FC = () => {
 			<Still id="HackerModelSheet" component={HackerModelSheet} width={2400} height={5380} />
 			</Folder>
 			<Folder name="Props">
-				<Still id="PropertySheet" component={PropertySheet} width={2400} height={2820} />
+				<Still id="PropertySheet" component={PropertySheet} width={2400} height={3900} />
 			</Folder>
 		</>
 	);

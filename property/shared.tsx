@@ -29,7 +29,19 @@ export const PROP_COLORS = {
 	woodDark: '#92400e',
 } as const;
 
-export type ScreenMode = 'code' | 'terminal' | 'browser' | 'dashboard' | 'error' | 'loading' | 'off';
+/** Shared accent palettes (main fill + cel shade) used by Rocket, Bug, WallClock, Padlock, etc. */
+export const ACCENTS = {
+	indigo: {main: '#6366f1', shade: '#4338ca'},
+	red: {main: '#ef4444', shade: '#b91c1c'},
+	emerald: {main: '#10b981', shade: '#047857'},
+	amber: {main: '#f59e0b', shade: '#b45309'},
+	purple: {main: '#a855f7', shade: '#7e22ce'},
+	cyan: {main: '#22d3ee', shade: '#0891b2'},
+} as const;
+export type AccentColor = keyof typeof ACCENTS;
+export const ACCENT_NAMES = Object.keys(ACCENTS) as readonly AccentColor[];
+
+export type ScreenMode ='code' | 'terminal' | 'browser' | 'dashboard' | 'error' | 'loading' | 'off';
 
 /** Soft ground contact shadow under standing props. */
 export const PropShadow: React.FC<{

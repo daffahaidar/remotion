@@ -1,14 +1,18 @@
-# Graph Report - remotion  (2026-11-18)
+# Graph Report - remotion  (2026-11-19)
 
 ## Corpus Check
-- 144 files · ~53,311 words
+- 141 files · ~1,235,579 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 5 file(s) not represented in the graph (top: (none) 5)
 
 ## Summary
-- 1827 nodes · 4336 edges · 98 communities (96 shown, 2 thin omitted)
-- Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 604 edges (avg confidence: 0.89)
+- 1867 nodes · 3782 edges · 113 communities (112 shown, 1 thin omitted)
+- Extraction: 84% EXTRACTED · 16% INFERRED · 0% AMBIGUOUS · INFERRED: 615 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `adc14470`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Property Components & Shared Primitives
@@ -109,18 +113,31 @@
 - Woman Bashful & Heart Eyes
 - Backend Bashful & Heart Eyes
 - PM Focused & Typing Poses
+- PropShadow
+- PottedPlant.tsx
+- CoffeeMug.tsx
+- Smartphone.tsx
+- boss/Head.tsx
+- Trophy.tsx
+- Briefcase.tsx
+- PackageBox.tsx
+- Padlock.tsx
+- ServerRack.tsx
+- Expression: surprised (Raised Brows, Wide Eyes, O-Mouth)
+- Expression: wink
+- Expression: excited
 
 ## God Nodes (most connected - your core abstractions)
-1. `react` - 57 edges
-2. `Expressions Grid (32 Facial Expressions)` - 40 edges
-3. `computeTorsoGeometry()` - 38 edges
-4. `CharacterRigCanvas()` - 36 edges
-5. `Expressions Section (32 Facial Expressions)` - 36 edges
-6. `Expressions Section (32 Facial Expression Heads)` - 36 edges
-7. `v3()` - 35 edges
-8. `32 Facial Expressions Grid` - 35 edges
-9. `Expressions Section (32 Facial Expressions)` - 35 edges
-10. `remotion` - 34 edges
+1. `Expressions Grid (32 Facial Expressions)` - 40 edges
+2. `Expressions Section (32 Facial Expressions)` - 36 edges
+3. `Expressions Section (32 Facial Expression Heads)` - 36 edges
+4. `32 Facial Expressions Grid` - 35 edges
+5. `Expressions Section (32 Facial Expressions)` - 35 edges
+6. `Expressions Section (32 Facial Expressions)` - 34 edges
+7. `Expressions Section (32 Facial Expressions)` - 34 edges
+8. `Expressions Section (32 Facial Expressions)` - 34 edges
+9. `Poses and Actions Grid (28 Full-Body Poses)` - 34 edges
+10. `Expressions Section (32 Facial Expression States)` - 34 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Master Character Rigs Catalog` --conceptually_related_to--> `Remotion Video Project`  [INFERRED]
@@ -129,64 +146,64 @@
   property/README.md → README.md
 - `Floor Alignment & Desk Pairing Pattern` --shares_data_with--> `Rig Coordinate & Grounding System`  [EXTRACTED]
   property/README.md → character/man/README.md
-- `PropertySheet()` --calls--> `Briefcase`  [EXTRACTED]
-  src/PropertySheet.tsx → property/Briefcase.tsx
-- `PropertySheet()` --calls--> `Clipboard`  [EXTRACTED]
-  src/PropertySheet.tsx → property/Clipboard.tsx
+- `Head()` --indirect_call--> `pts()`  [INFERRED]
+  character/hacker/Head.tsx → character/shared/body.tsx
+- `Head()` --indirect_call--> `pts()`  [INFERRED]
+  character/woman/Head.tsx → character/shared/body.tsx
 
 ## Import Cycles
 - None detected.
 
 ## Hyperedges (group relationships)
-- **Shared 2D SVG Character Rig Interface & Core Modules** — character_readme_mastercharacterrigcatalog, character_readme_sharedrigmodule, character_shared_rig, character_shared_presets, character_shared_motion, character_shared_face, character_shared_body, character_shared_characterrig, character_man_readme_standardcharacterprops [EXTRACTED 1.00]
 - **Floor-Aligned Typing Workstation Scene Composition** — property_readme_flooralignmentpattern, character_man_readme_rigcoordinatesystem, character_frontend_programmer_readme_frontendcharacter, property_readme_officedesk, property_readme_laptop, property_readme_coffeemug [EXTRACTED 1.00]
+- **Shared 2D SVG Character Rig Interface & Core Modules** — character_readme_mastercharacterrigcatalog, character_readme_sharedrigmodule, character_shared_rig, character_shared_presets, character_shared_motion, character_shared_face, character_shared_body, character_shared_characterrig, character_man_readme_standardcharacterprops [EXTRACTED 1.00]
 - **Software Engineering Team Drama & Release Workflow Ensemble** — character_boss_readme_bosscharacter, character_project_manager_readme_pmcharacter, character_tech_lead_readme_techleadcharacter, character_frontend_programmer_readme_frontendcharacter, character_backend_programmer_readme_backendcharacter, character_fullstack_programmer_readme_fullstackcharacter, character_quality_assurance_readme_qacharacter [INFERRED 0.85]
 
-## Communities (98 total, 2 thin omitted)
+## Communities (113 total, 1 thin omitted)
 
 ### Community 0 - "Property Components & Shared Primitives"
-Cohesion: 0.05
-Nodes (84): Briefcase, BriefcaseInner(), BriefcaseProps, BriefcaseVariant, PALETTES, VARIANTS, Clipboard, ClipboardInner() (+76 more)
+Cohesion: 0.11
+Nodes (14): DesktopComputer, DesktopComputerProps, SCREEN_MODES, TOWER_SIDES, TowerSide, BADGES_LIST, COLORS_LIST, LaptopBadge (+6 more)
 
 ### Community 1 - "Backend Programmer Head Rig"
-Cohesion: 0.08
-Nodes (71): FACE_CFG, HAIRLINE, Head(), HeadProps, PUFFS, SHINES, TUFTS, FACE_CFG (+63 more)
+Cohesion: 0.11
+Nodes (24): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS, ell() (+16 more)
 
 ### Community 2 - "Property Visual Sheet"
 Cohesion: 0.05
 Nodes (58): Web/API Culinary Analogy (Serving HTML </> and JSON { } under ServingCloche), Server Health & Incident Diagnostics Metaphor (ERR 500, DB-FAIL, API-ERR, Vitals Monitor), Briefcase (dark): Dark Slate Executive Briefcase with Dual Latches, Briefcase (leather): Warm Tan Leather Briefcase with Twin Buckles & Sparkle, Chef Character Rig (Toque Hat, Mustache, Chef Jacket & Apron), Doctor Character Rig (Glasses, White Lab Coat, Teal Scrubs, Stethoscope), Frontend Character Rig (Glasses, Dark Ponytail, Purple Hoodie), Clipboard (medical): VITALS Clipboard with Red Cross & ECG Waveform (+50 more)
 
 ### Community 3 - "Character Documentation & Rigs"
-Cohesion: 0.10
-Nodes (48): BackendProgrammerCharacter, Backend Character Props (showGlasses, showHeadphones, showBadge), Mascot/BackendProgrammerRig & ModelSheet, BossCharacter (Executive / Client Rig), Boss Character Props (showMustache, showGlasses), Mascot/BossRig & BossModelSheet, ChefCharacter (Culinary Analogy Rig), Chef Character Props (showHat, showMustache) (+40 more)
+Cohesion: 0.11
+Nodes (55): BackendProgrammerCharacter, Backend Character Props (showGlasses, showHeadphones, showBadge), Mascot/BackendProgrammerRig & ModelSheet, BossCharacter (Executive / Client Rig), Boss Character Props (showMustache, showGlasses), Mascot/BossRig & BossModelSheet, ChefCharacter (Culinary Analogy Rig), Chef Character Props (showHat, showMustache) (+47 more)
 
 ### Community 4 - "Boss & Backend Character Exports"
-Cohesion: 0.14
-Nodes (20): BossProps, Character, ChefProps, Character, Character, CharacterProps, blinkAt(), MOTIONS (+12 more)
+Cohesion: 0.06
+Nodes (42): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS, FACE_CFG (+34 more)
 
 ### Community 5 - "Project Dependencies & Tooling"
-Cohesion: 0.06
-Nodes (37): allowScripts, esbuild, dependencies, react@19.3.1, react-dom@19.3.1, react-icons@^5.7.0, remotion@4.0.543, @remotion/cli@4.0.543 (+29 more)
+Cohesion: 0.05
+Nodes (42): eslint, allowScripts, esbuild, dependencies, react, react-dom, react-icons, remotion (+34 more)
 
 ### Community 6 - "Remotion Compositions & Entry"
-Cohesion: 0.09
-Nodes (35): Character, @remotion/google-fonts@4.0.543, @remotion/google-fonts, ACTIONS, BACKEND_SWATCHES, BackendProgrammerModelSheet(), BOSS_SWATCHES, BossModelSheet() (+27 more)
+Cohesion: 0.08
+Nodes (31): Character, ACTIONS, BACKEND_SWATCHES, BackendProgrammerModelSheet(), BOSS_SWATCHES, BossModelSheet(), CHEF_SWATCHES, ChefModelSheet() (+23 more)
 
 ### Community 7 - "QA Model Sheet & Palette"
 Cohesion: 0.09
 Nodes (37): 2D Flat Vector Cartoon Style (Dark Ink Outlines, Chibi Proportions, Soft Cream Backdrop), Amber Sweater Vest over White Long-Sleeve Collared Shirt, Character Color Palette (6 Swatches), Negative and Distress Expressions (angry, furious, sad, crying, worried, scared, disgusted, pleading, dizzy, embarrassed, nervousLaugh, sleepy), Neutral and Cognitive Expressions (neutral, thinking, confused, eureka, skeptical, focused, determined), Positive Expressions (happy, laugh, smirk, wink, excited, love, proud, relief), Reactive and Playful Expressions (surprised, jawDrop, sideEye, eyeRoll, cheeky), 32 Facial Expressions Grid (4x8) (+29 more)
 
 ### Community 8 - "Backend Programmer Body Rig"
-Cohesion: 0.12
-Nodes (31): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), BackendProgrammerProps (+23 more)
+Cohesion: 0.09
+Nodes (28): DEFAULT_SHOE_SIZE, Hand(), HandDef, HandPart, HANDS, KNUCKLES, Leg(), pts() (+20 more)
 
 ### Community 9 - "Frontend Programmer Model Sheet"
 Cohesion: 0.10
 Nodes (34): Indigo Crewneck Sweater with Cyan </> Code Emblem, Character Six-Swatch Color Palette, Cognitive & Skeptical Expressions (thinking, confused, focused, skeptical, sideEye, eyeRoll, determined), Stylized Comic & Anime-Trope Expressions (excited star-eyes, love heart-eyes, dizzy X-eyes, cheeky tongue, crying tears, embarrassed/nervousLaugh sweat-drops), Positive & Friendly Expressions (neutral, happy, laugh, smirk, wink, proud, relief), Surprise, Anger & Distress Expressions (surprised, jawDrop, eureka, angry, furious, sad, worried, scared, pleading, disgusted, sleepy), 32 Facial Expressions Grid, Thick Dark-Rimmed Rounded-Square Eyeglasses (+26 more)
 
 ### Community 10 - "Frontend & Doctor Body Rigs"
-Cohesion: 0.12
-Nodes (28): BODY_PALETTE, TORSO, Arm(), BODY_PALETTE, GroundShadow(), INNER_HEM, Leg(), Neck() (+20 more)
+Cohesion: 0.20
+Nodes (11): Arm(), BODY_PALETTE, GroundShadow(), INNER_HEM, Leg(), Neck(), TORSO, Character (+3 more)
 
 ### Community 11 - "Backend Positive & Alert Expressions"
 Cohesion: 0.08
@@ -194,23 +211,23 @@ Nodes (30): Expression: confused, Expression: eureka (wide eyes, o-mouth), Expre
 
 ### Community 12 - "PM Positive & Action Expressions"
 Cohesion: 0.10
-Nodes (28): Expression: confused, Expression: determined, Expression: excited, Expression: happy, Expression: laugh, Expression: skeptical, Expression: thinking, Pose: Arms crossed (+20 more)
+Nodes (26): Expression: confused, Expression: determined, Expression: focused, Expression: happy, Expression: laugh, Expression: skeptical, Expression: thinking, Pose: Arms crossed (+18 more)
 
 ### Community 13 - "Chef Body Rig"
-Cohesion: 0.14
-Nodes (22): Arm(), BODY_PALETTE, CLOG_SIZE, GroundShadow(), Leg(), Neck(), TORSO, Torso() (+14 more)
+Cohesion: 0.18
+Nodes (12): Arm(), BODY_PALETTE, CLOG_SIZE, GroundShadow(), Leg(), Neck(), TORSO, Character (+4 more)
 
 ### Community 14 - "Project Manager Body Rig"
-Cohesion: 0.14
-Nodes (22): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), PM_SHOE_SIZE, TORSO, Torso() (+14 more)
+Cohesion: 0.18
+Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), PM_SHOE_SIZE, TORSO, Character (+4 more)
 
 ### Community 15 - "QA Body Rig"
-Cohesion: 0.14
-Nodes (22): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), QA_SHOE_SIZE, TORSO, Torso() (+14 more)
+Cohesion: 0.18
+Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), QA_SHOE_SIZE, TORSO, Character (+4 more)
 
 ### Community 16 - "Tech Lead Body & Shared Face"
-Cohesion: 0.14
-Nodes (22): computeTorsoGeometry(), HairPuff, Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO (+14 more)
+Cohesion: 0.20
+Nodes (11): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Character, TechLeadProps (+3 more)
 
 ### Community 17 - "Backend Negative & Comic Expressions"
 Cohesion: 0.09
@@ -229,8 +246,8 @@ Cohesion: 0.10
 Nodes (25): Expression: angry, Expression: cheeky, Expression: crying, Expression: dizzy, Expression: embarrassed, Expression: eyeRoll, Expression: furious, Expression: love (+17 more)
 
 ### Community 21 - "Hacker Positive & Alert Expressions"
-Cohesion: 0.10
-Nodes (24): Expression: eureka, Expression: excited (Star Eyes), Expression: happy, Expression: laugh, Expression: proud, Expression: smirk, Expression: thinking, Pose: Arms crossed (+16 more)
+Cohesion: 0.11
+Nodes (23): Expression: eureka, Expression: excited (Star Eyes), Expression: happy, Expression: laugh, Expression: love (Heart Eyes and Kiss Mouth), Expression: proud, Pose: Bashful, Pose: Cheer (+15 more)
 
 ### Community 22 - "PM Negative & Distress Expressions"
 Cohesion: 0.12
@@ -238,39 +255,39 @@ Nodes (24): Expression: angry, Expression: cheeky, Expression: crying, Expressio
 
 ### Community 23 - "Woman Negative & Distress Expressions"
 Cohesion: 0.12
-Nodes (24): Expression: angry, Expression: confused, Expression: crying (Streaming Tears), Expression: determined, Expression: disgusted, Expression: dizzy (X Eyes), Expression: eyeRoll, Expression: focused (+16 more)
+Nodes (22): Expression: angry, Expression: cheeky (Wink & Tongue Out), Expression: confused, Expression: crying (Streaming Tears), Expression: determined, Expression: disgusted, Expression: eureka, Expression: eyeRoll (+14 more)
 
 ### Community 24 - "Character Motion & Shared Rig"
-Cohesion: 0.11
-Nodes (15): ArmRenderProps, CharacterRigConfig, FRAMINGS, HeadRenderProps, LegRenderProps, TorsoRenderProps, VIEWBOX, applyMotion() (+7 more)
+Cohesion: 0.06
+Nodes (55): FK/IK & Preset Customization, SkullShapeParams, ArmRenderProps, CharacterRigCanvas(), CharacterRigConfig, FRAMINGS, HeadRenderProps, LegRenderProps (+47 more)
 
 ### Community 25 - "Boss Expressions & Gesture Poses"
-Cohesion: 0.17
-Nodes (23): Expression: excited (Yellow Star-Shaped Eyes, Wide Open Smile), Expression: happy (Open Smile Showing Teeth), Expression: laugh (Closed Curved Eyes, Wide Laughing Mouth), Communication and Presentation Gesture Poses, Locomotion and Dynamic Action Poses, Pose: Cheer (Both Arms Raised High, Laughing), Pose: Clap / Applause (Hands Clapping Together at Chest), Pose: Dance (Tilted Groove Stance with Star Eyes) (+15 more)
+Cohesion: 0.24
+Nodes (10): Expression: determined (Serious Angled Brows, Focused Gaze), Expression: excited (Yellow Star-Shaped Eyes, Wide Open Smile), Expression: focused (Lowered Serious Brows, Tight Flat Mouth), Locomotion and Dynamic Action Poses, Pose: Dance (Tilted Groove Stance with Star Eyes), Pose: Run (Side Profile Forward-Leaning Sprint), Pose: Sit (Seated Posture with Bent Knees and Hands on Lap), Pose: Typing / Work (Focused Expression with Hands Typing) (+2 more)
 
 ### Community 26 - "Chef Positive Expressions & Stances"
 Cohesion: 0.18
 Nodes (23): Expression: happy, Expression: laugh (squinted happy eyes, wide laugh mouth), Expression: proud (happy curved closed eyes, warm smile), Expression: smirk (lopsided confident grin), Pose: Arms crossed (folded arms smirk stance), Pose: Cheer (both arms raised in celebration), Pose: Clap / Applause (hands clapping in front of chest), Pose: Dance (dynamic leaning groove with star eyes) (+15 more)
 
 ### Community 27 - "Doctor Body Parts & Torso"
-Cohesion: 0.13
-Nodes (20): Arm(), GroundShadow(), Leg(), Neck(), Torso(), Character, CharacterInner(), DoctorProps (+12 more)
+Cohesion: 0.18
+Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Character, DoctorProps (+4 more)
 
 ### Community 28 - "Tech Lead Negative Expressions"
-Cohesion: 0.11
-Nodes (23): Expression: angry, Expression: crying (Streaming Blue Tears), Expression: determined, Expression: disgusted, Expression: dizzy (X Eyes and Wavy Mouth), Expression: embarrassed, Expression: eyeRoll, Expression: furious (+15 more)
+Cohesion: 0.12
+Nodes (22): Expression: angry, Expression: cheeky (Wink with Tongue Out), Expression: crying (Streaming Blue Tears), Expression: determined, Expression: disgusted, Expression: dizzy (X Eyes and Wavy Mouth), Expression: embarrassed, Expression: eyeRoll (+14 more)
 
 ### Community 29 - "Woman Positive & Cheeky Expressions"
-Cohesion: 0.12
-Nodes (23): Expression: cheeky (Wink & Tongue Out), Expression: eureka, Expression: happy, Expression: laugh, Expression: smirk, Expression: wink, Pose: Arms crossed, Pose: Cheer (+15 more)
+Cohesion: 0.13
+Nodes (22): Expression: excited (Star Eyes), Expression: happy, Expression: laugh, Expression: smirk, Visual Motif: Yellow Star Eyes, Pose: Arms crossed, Pose: Cheer, Pose: Clap / Applause (+14 more)
 
 ### Community 30 - "Chef Negative & Comic Expressions"
 Cohesion: 0.17
 Nodes (22): Expression: angry (furrowed brows, frown), Expression: cheeky (wink eye, tongue sticking out), Expression: determined (focused brows, firm grin), Expression: disgusted (scrunched brows, grimacing wavy mouth), Expression: dizzy (X-shaped eyes, sweat drop), Expression: eureka (bright wide eyes, open smile), Expression: excited (star-shaped eyes, wide smile), Expression: focused (narrowed brows, resolute flat mouth) (+14 more)
 
 ### Community 31 - "Fullstack Programmer Body Rig"
-Cohesion: 0.16
-Nodes (19): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+11 more)
+Cohesion: 0.18
+Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Character, FullstackProgrammerProps (+4 more)
 
 ### Community 32 - "Fullstack Positive & Excited Expressions"
 Cohesion: 0.11
@@ -278,23 +295,23 @@ Nodes (22): Expression: eureka (wide eyes, open O mouth), Expression: excited (y
 
 ### Community 33 - "Hacker Negative & Cognitive Expressions"
 Cohesion: 0.11
-Nodes (22): Expression: angry, Expression: cheeky (Wink with Tongue Out), Expression: confused, Expression: crying, Expression: determined, Expression: disgusted, Expression: eyeRoll, Expression: furious (+14 more)
+Nodes (22): Expression: angry, Expression: confused, Expression: crying, Expression: determined, Expression: disgusted, Expression: eyeRoll, Expression: furious, Expression: jawDrop (+14 more)
 
 ### Community 34 - "Doctor Positive & Social Expressions"
 Cohesion: 0.13
 Nodes (21): Expression: confused, Expression: focused, Expression: happy, Expression: laugh, Expression: love (heart eyes), Expression: proud, Expression: smirk, Pose: Arms crossed (+13 more)
 
 ### Community 35 - "Shared Rig Geometry & Math"
-Cohesion: 0.26
-Nodes (20): SkullShapeParams, Shoe(), add(), blendLimb(), capsulePath(), createLimbSolvers(), cross(), dot() (+12 more)
+Cohesion: 0.22
+Nodes (22): FACE_CFG, HAIRLINE, Head(), HeadProps, PUFFS, SHINES, TUFTS, Head() (+14 more)
 
 ### Community 36 - "Backend Rig & Character Props"
-Cohesion: 0.13
-Nodes (12): COLORS, Character, Character, FrontendProgrammerProps, FullstackProgrammerProps, HackerProps, ProjectManagerProps, Character (+4 more)
+Cohesion: 0.21
+Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, BackendProgrammerProps, Character (+5 more)
 
 ### Community 37 - "Boss Negative & Distress Expressions"
 Cohesion: 0.14
-Nodes (20): Expression: angry (Furrowed Downward Brows, Tight Frown), Expression: crying (Streaming Blue Tears, Open Sobbing Mouth), Expression: determined (Serious Angled Brows, Focused Gaze), Expression: dizzy (X-Shaped Eyes, Wavy Mouth), Expression: embarrassed (Closed Curved Eyes, Wavy Shy Smile), Expression: eyeRoll (Upward Rolled Pupils, Flat Mouth), Expression: focused (Lowered Serious Brows, Tight Flat Mouth), Expression: furious (Steeply Furrowed Brows, Open Shouting Mouth) (+12 more)
+Nodes (20): Expression: angry (Furrowed Downward Brows, Tight Frown), Expression: cheeky (Winking Eye, Sticking-Out Tongue), Expression: crying (Streaming Blue Tears, Open Sobbing Mouth), Expression: dizzy (X-Shaped Eyes, Wavy Mouth), Expression: embarrassed (Closed Curved Eyes, Wavy Shy Smile), Expression: eyeRoll (Upward Rolled Pupils, Flat Mouth), Expression: furious (Steeply Furrowed Brows, Open Shouting Mouth), Expression: nervousLaugh (Blue Sweat Drop, Open Grimacing Smile) (+12 more)
 
 ### Community 38 - "Man Positive & Excited Expressions"
 Cohesion: 0.17
@@ -305,8 +322,8 @@ Cohesion: 0.16
 Nodes (19): 01 Binary Chest Pocket Badge in Matrix Green, Hood Color Swatch (#161b24 Dark Charcoal), Mask Color Swatch (#111827 Deep Slate), Matrix Color Swatch (#22c55e Neon Green Accent), Hacker Character 6-Swatch Color Palette, Pants Color Swatch (#13171f Near-Black), Shoes Color Swatch (#111827 Dark Slate), Skin Color Swatch (#f2c9ac Warm Peach) (+11 more)
 
 ### Community 40 - "Tech Lead Comic & Social Expressions"
-Cohesion: 0.13
-Nodes (19): Expression: cheeky (Wink with Tongue Out), Expression: excited (Yellow Star Eyes), Expression: focused, Expression: smirk, Expression: wink, Pose: Arms crossed, Pose: Dance, Pose: Fist pump (+11 more)
+Cohesion: 0.12
+Nodes (20): Expression: excited (Yellow Star Eyes), Expression: focused, Expression: love (Pink Heart Eyes), Expression: smirk, Expression: worried, Pose: Arms crossed, Pose: Bashful, Pose: Dance (+12 more)
 
 ### Community 41 - "Backend Programmer Visual Design"
 Cohesion: 0.16
@@ -317,36 +334,36 @@ Cohesion: 0.20
 Nodes (18): Asymmetric Dual-Sleeve Jacket (Slate Vest, Emerald Right & Blue Left Sleeves), Backward Baseball Cap (Blue Crown, Emerald Brim), Fullstack Programmer 2D Cartoon Character Design, Dark Charcoal Pants, Chest Code Tag Emblem (< > / </>), Cap Blue Color (#0284c7), Emerald Green Color (#10b981), Jacket Dark Slate Color (#1e293b) (+10 more)
 
 ### Community 43 - "Man Body Rig"
-Cohesion: 0.23
-Nodes (15): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Tube() (+7 more)
+Cohesion: 0.19
+Nodes (10): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, COLORS, RIG (+2 more)
 
 ### Community 44 - "Project Manager Visual Design"
 Cohesion: 0.16
 Nodes (18): Amber Sneakers with White Midsole, Blue Neck Lanyard with ID Badge, Stylized Chibi Proportions (~3.5-Head Height), PM Character Color Swatch Palette, Corporate Project Manager Visual Identity, Cream Crew-Neck Inner Top, Dark Navy Slim Trousers, Flat Vector Cartoon Style with Crisp Dark Outlines (+10 more)
 
 ### Community 45 - "Shared Expression Presets"
-Cohesion: 0.12
-Nodes (10): BROW, EYE, mixBrow(), mixEye(), mixFace(), NEUTRAL, RELAXED, STAND (+2 more)
+Cohesion: 0.14
+Nodes (18): Bug, BugProps, BugState, SPOTS, STATES, LENSES, MagnifierLens, MagnifyingGlass (+10 more)
 
 ### Community 46 - "Boss Comic & Skeptical Expressions"
-Cohesion: 0.14
-Nodes (17): Expression: cheeky (Winking Eye, Sticking-Out Tongue), Expression: confused (Tilted Asymmetric Brows, Wavy Uncertain Mouth), Expression: disgusted (Squinted Angled Brows, Wavy Disgusted Frown), Expression: love (Red Heart-Shaped Eyes, Puckered Kiss Lips), Expression: smirk (Slight Sideways Confident Smile), Expression: thinking (Asymmetric Brows, Upward Glance, Pursed Mouth), Expression: wink (One Closed Curved Eye, Open Happy Smile), Pose: Arms crossed (Folded Arms Stance) (+9 more)
+Cohesion: 0.15
+Nodes (26): Expression: confused (Tilted Asymmetric Brows, Wavy Uncertain Mouth), Expression: disgusted (Squinted Angled Brows, Wavy Disgusted Frown), Expression: love (Red Heart-Shaped Eyes, Puckered Kiss Lips), Expression: smirk (Slight Sideways Confident Smile), Expression: thinking (Asymmetric Brows, Upward Glance, Pursed Mouth), Communication and Presentation Gesture Poses, Pose: Arms crossed (Folded Arms Stance), Pose: Bashful (Hands Clasped Shyly with Heart Eyes) (+18 more)
 
 ### Community 47 - "Tech Lead Visual Design"
 Cohesion: 0.18
 Nodes (17): 2D Flat Vector Cartoon Style (Clean Dark Outlines, Compact Chibi Proportions), Tech Lead 2D Character Rig, Accent Color (#a3e635 Lime Green), Flannel Color (#4d7c0f Olive Green), Hair Color (#2b2422 Dark Brown), Tech Lead Character Color Palette (6 Swatches), Pants Color (#293548 Dark Navy), Skin Color (#f2c7a5 Warm Peach) (+9 more)
 
 ### Community 48 - "Boss Body Rig"
-Cohesion: 0.25
-Nodes (13): Arm(), BODY_PALETTE, DRESS_SHOE_SIZE, GroundShadow(), Leg(), Neck(), TORSO, Torso() (+5 more)
+Cohesion: 0.18
+Nodes (13): Arm(), BODY_PALETTE, DRESS_SHOE_SIZE, GroundShadow(), Leg(), Neck(), TORSO, BossProps (+5 more)
 
 ### Community 49 - "Chef Visual Design & Palette"
 Cohesion: 0.21
 Nodes (15): Double-Breasted White Chef Coat (Six Dark Buttons), Chef Character Rig (2D Vector Modular Rig), Puffy White Chef Toque Hat (Three-Scallop Crown and Band), Color Swatch: Apron (#334155), Color Swatch: Coat (#ffffff), Color Swatch: Hair (#4f3528), Chef Rig Color Palette (Six Named Swatches), Color Swatch: Scarf (#ef4444) (+7 more)
 
 ### Community 50 - "Hacker Body Rig"
-Cohesion: 0.28
-Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+4 more)
+Cohesion: 0.18
+Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Character, HackerProps (+4 more)
 
 ### Community 51 - "Boss Visual Design & Palette"
 Cohesion: 0.22
@@ -361,12 +378,12 @@ Cohesion: 0.14
 Nodes (14): Expression: eureka, Expression: jawDrop, Expression: surprised, Lip Sync Mouth Chart Section (9 Phoneme Visemes), Pose: Idea / Aha!, Pose: Surprised, Lip Sync Viseme: A I (Wide Open Vowel), Lip Sync Viseme: C D G K S T (Parted Teeth Consonant) (+6 more)
 
 ### Community 54 - "TypeScript Compiler Config"
-Cohesion: 0.14
-Nodes (13): compilerOptions, esModuleInterop, forceConsistentCasingInFileNames, jsx, lib, module, moduleResolution, noEmit (+5 more)
+Cohesion: 0.12
+Nodes (15): es2015, remotion.config.ts, compilerOptions, esModuleInterop, forceConsistentCasingInFileNames, jsx, lib, module (+7 more)
 
 ### Community 55 - "Boss Lip Sync & Surprise"
-Cohesion: 0.15
-Nodes (13): Expression: eureka (Wide Bright Eyes, Open Excited O-Mouth), Expression: jawDrop (Wide Eyes, Tall Dropped Open Mouth), Expression: surprised (Raised Brows, Wide Eyes, O-Mouth), Lip Sync Mouth Chart Section (9 Phoneme Visemes), Pose: Idea / Aha! (Raised Index Finger Epiphany Gesture), Pose: Surprised (Both Hands Raised to Cheeks, Wide Eyes), Lip Sync Viseme: CDGKST (Narrow Clenched Teeth Opening), Lip Sync Viseme: E (Horizontal Open Mouth Showing Teeth) (+5 more)
+Cohesion: 0.18
+Nodes (11): Expression: happy (Open Smile Showing Teeth), Expression: laugh (Closed Curved Eyes, Wide Laughing Mouth), Lip Sync Mouth Chart Section (9 Phoneme Visemes), Pose: Jump (Mid-Air Leap with Arms Up and Bent Knees), Lip Sync Viseme: AI (Wide Open Mouth with Teeth and Tongue), Lip Sync Viseme: CDGKST (Narrow Clenched Teeth Opening), Lip Sync Viseme: E (Horizontal Open Mouth Showing Teeth), Lip Sync Viseme: FV (Upper Teeth on Lower Lip) (+3 more)
 
 ### Community 56 - "Man Master Rig Overview"
 Cohesion: 0.29
@@ -457,8 +474,8 @@ Cohesion: 0.43
 Nodes (8): Pose: Run, Pose: Walk, 5-View Character Turnaround, Turnaround View: Back, Turnaround View: Front, Turnaround View: Side, Turnaround View: 3/4 Back, Turnaround View: 3/4 Front
 
 ### Community 78 - "Fullstack Character Module Exports"
-Cohesion: 0.29
-Nodes (5): Character, COLORS, solveArm, solveLeg, PoseSpec
+Cohesion: 0.09
+Nodes (14): CloudService, DatabaseCylinder, Laptop, Lightbulb, LightbulbProps, DeskVariant, OfficeDesk, OfficeDeskProps (+6 more)
 
 ### Community 79 - "Fullstack Turnaround & Locomotion"
 Cohesion: 0.29
@@ -497,12 +514,12 @@ Cohesion: 0.40
 Nodes (5): Expression: eureka, Expression: jawDrop, Expression: surprised, Pose: Idea / Aha!, Pose: Surprised
 
 ### Community 88 - "Woman Embarrassed & Welcome Poses"
-Cohesion: 0.40
-Nodes (5): Expression: embarrassed, Expression: proud, Visual Motif: Rosy Cheek Blush, Pose: Facepalm, Pose: Welcome
+Cohesion: 0.17
+Nodes (12): Expression: dizzy (X Eyes), Expression: embarrassed, Expression: nervousLaugh, Expression: proud, Expression: relief, Expression: scared, Expression: worried, Visual Motif: Rosy Cheek Blush (+4 more)
 
 ### Community 89 - "Graphify Claude Workflow Docs"
 Cohesion: 0.50
-Nodes (4): graphify-out/graph.json, Graphify Knowledge Graph, graphify-out/GRAPH_REPORT.md, graphify-out/wiki/index.md
+Nodes (5): graphify-out/graph.json, Graphify Knowledge Graph, Graphify Query-First Workflow, graphify-out/GRAPH_REPORT.md, graphify-out/wiki/index.md
 
 ### Community 90 - "Man Thinking & Shrug Poses"
 Cohesion: 0.50
@@ -517,36 +534,92 @@ Cohesion: 0.50
 Nodes (4): Expression: confused, Expression: thinking, Pose: Shrug, Pose: Think
 
 ### Community 93 - "Woman Excited & Dance Poses"
-Cohesion: 0.83
-Nodes (4): Expression: excited (Star Eyes), Visual Motif: Yellow Star Eyes, Pose: Dance, Pose: Fist pump
+Cohesion: 0.11
+Nodes (12): CloudServiceProps, CloudStatus, STATUSES, MedicalKit, MedicalKitProps, MedicalKitVariant, VARIANTS, ClocheDish (+4 more)
 
 ### Community 94 - "Hacker Bashful & Heart Eyes"
-Cohesion: 0.67
-Nodes (3): Expression: love (Heart Eyes and Kiss Mouth), Pose: Bashful, Red Heart-Shaped Eyes Effect
+Cohesion: 0.13
+Nodes (14): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, TUFTS, FACE_CFG, HAIRLINE (+6 more)
 
 ### Community 95 - "Woman Bashful & Heart Eyes"
 Cohesion: 1.00
 Nodes (3): Expression: love (Heart Eyes & Kiss Mouth), Visual Motif: Red Heart Eyes, Pose: Bashful
 
+### Community 97 - "PM Focused & Typing Poses"
+Cohesion: 0.14
+Nodes (14): Head(), Head(), Head(), createHeadProjection(), JAW, rotX(), FACE_CFG, HAIRLINE (+6 more)
+
+### Community 98 - "PropShadow"
+Cohesion: 0.15
+Nodes (9): Clipboard, ClipboardProps, ClipboardVariant, VARIANTS, DatabaseCylinderProps, DatabaseVariant, PALETTE, VARIANTS (+1 more)
+
+### Community 99 - "PottedPlant.tsx"
+Cohesion: 0.15
+Nodes (9): MONSTERA, PlantVariant, POT_COLORS, PotColor, POTS, PottedPlant, PottedPlantProps, SNAKE (+1 more)
+
+### Community 100 - "CoffeeMug.tsx"
+Cohesion: 0.22
+Nodes (7): CoffeeMug, CoffeeMugColor, CoffeeMugProps, CoffeeMugVariant, COLORS_LIST, PALETTES, VARIANTS
+
+### Community 101 - "Smartphone.tsx"
+Cohesion: 0.22
+Nodes (7): FRAME_COLORS, PALETTES, SCREENS, Smartphone, SmartphoneFrameColor, SmartphoneProps, SmartphoneScreen
+
+### Community 102 - "boss/Head.tsx"
+Cohesion: 0.25
+Nodes (7): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS
+
+### Community 103 - "Trophy.tsx"
+Cohesion: 0.29
+Nodes (7): PALETTES, star(), Trophy, TrophyInner(), TrophyProps, TrophyVariant, VARIANTS
+
+### Community 104 - "Briefcase.tsx"
+Cohesion: 0.29
+Nodes (5): Briefcase, BriefcaseProps, BriefcaseVariant, PALETTES, VARIANTS
+
+### Community 105 - "PackageBox.tsx"
+Cohesion: 0.29
+Nodes (5): PackageBox, PackageBoxProps, PackageVariant, PALETTES, VARIANTS
+
+### Community 106 - "Padlock.tsx"
+Cohesion: 0.29
+Nodes (5): COLORS_LIST, Padlock, PadlockColor, PadlockProps, PALETTES
+
+### Community 107 - "ServerRack.tsx"
+Cohesion: 0.29
+Nodes (4): ServerRack, ServerRackProps, ServerStatus, STATUSES
+
+### Community 108 - "Expression: surprised (Raised Brows, Wide Eyes, O-Mouth)"
+Cohesion: 0.33
+Nodes (6): Expression: eureka (Wide Bright Eyes, Open Excited O-Mouth), Expression: jawDrop (Wide Eyes, Tall Dropped Open Mouth), Expression: surprised (Raised Brows, Wide Eyes, O-Mouth), Pose: Idea / Aha! (Raised Index Finger Epiphany Gesture), Pose: Surprised (Both Hands Raised to Cheeks, Wide Eyes), Lip Sync Viseme: O (Rounded Open O-Shaped Mouth)
+
+### Community 109 - "Expression: wink"
+Cohesion: 0.50
+Nodes (4): Expression: cheeky (Wink with Tongue Out), Expression: wink, Pose: Peace sign, Pose: Thumbs up
+
+### Community 110 - "Expression: excited"
+Cohesion: 0.83
+Nodes (4): Expression: excited, Pose: Dance, Pose: Fist pump, Visual Motif: Golden Star-Shaped Eyes
+
 ## Knowledge Gaps
-- **199 isolated node(s):** `graphify-out/wiki/index.md`, `graphify-out/GRAPH_REPORT.md`, `Remotion CLI Workflow`, `Remotion Fundamentals Documentation`, `Remotion Company License` (+194 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 422 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **418 isolated node(s):** `BODY_PALETTE`, `FACE_CFG`, `HAIRLINE`, `PUFFS`, `TUFTS` (+413 more)
+  These have ≤1 connection - possible missing edges or undocumented components.
+- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `Backend Programmer Body Rig` to `Property Components & Shared Primitives`, `Backend Programmer Head Rig`, `Project Dependencies & Tooling`, `Remotion Compositions & Entry`, `Frontend & Doctor Body Rigs`, `Man Body Rig`, `Chef Body Rig`, `Project Manager Body Rig`, `QA Body Rig`, `Boss Body Rig`, `Tech Lead Body & Shared Face`, `Hacker Body Rig`, `Character Motion & Shared Rig`, `Doctor Body Parts & Torso`, `Fullstack Programmer Body Rig`?**
-  _High betweenness centrality (0.044) - this node is a cross-community bridge._
+- **Why does `MagnifyingGlassInner()` connect `Project Dependencies & Tooling` to `Shared Expression Presets`?**
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Are the 6 inferred relationships involving `Expressions Grid (32 Facial Expressions)` (e.g. with `Angry, Disgusted, and Focused Expressions` and `Neutral, Thinking, and Skeptical Expressions`) actually correct?**
   _`Expressions Grid (32 Facial Expressions)` has 6 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `graphify-out/wiki/index.md`, `graphify-out/GRAPH_REPORT.md`, `Remotion CLI Workflow` to the rest of the system?**
-  _199 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Property Components & Shared Primitives` be split into smaller, more focused modules?**
-  _Cohesion score 0.05036630036630037 - nodes in this community are weakly interconnected._
-- **Why does `remotion` connect `Property Components & Shared Primitives` to `Project Dependencies & Tooling`, `Remotion Compositions & Entry`, `Backend Programmer Body Rig`, `Frontend & Doctor Body Rigs`, `Man Body Rig`, `Chef Body Rig`, `Project Manager Body Rig`, `QA Body Rig`, `Boss Body Rig`, `Tech Lead Body & Shared Face`, `Hacker Body Rig`, `Character Motion & Shared Rig`, `Doctor Body Parts & Torso`, `Fullstack Programmer Body Rig`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `Expressions Section (32 Facial Expressions)` (e.g. with `Modular 2D Rig System (Swappable Head Bust, Mouth Visemes, and Body Poses)` and `Lip Sync Mouth Chart (9 Phoneme Visemes)`) actually correct?**
   _`Expressions Section (32 Facial Expressions)` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 2 inferred relationships involving `Expressions Section (32 Facial Expressions)` (e.g. with `Lip Sync Mouth Chart Section (9 Viseme Shapes)` and `Poses and Actions Section (28 Character Poses)`) actually correct?**
+  _`Expressions Section (32 Facial Expressions)` has 2 INFERRED edges - model-reasoned connections that need verification._
+- **What connects `BODY_PALETTE`, `FACE_CFG`, `HAIRLINE` to the rest of the system?**
+  _418 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Property Components & Shared Primitives` be split into smaller, more focused modules?**
+  _Cohesion score 0.11428571428571428 - nodes in this community are weakly interconnected._
 - **Should `Backend Programmer Head Rig` be split into smaller, more focused modules?**
-  _Cohesion score 0.08258408258408259 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11396011396011396 - nodes in this community are weakly interconnected._

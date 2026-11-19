@@ -1,6 +1,6 @@
 # Reusable Character Properties (`property/`)
 
-Koleksi **12 properti kartun vektor 2D** bergaya Remotion (`#1f1a1f` bold outline, cel shading, interaktif di Remotion Studio melalui `Interactive.create`, dan animasi deterministik berbasis `useCurrentFrame()`) yang dirancang agar bisa dipasangkan dengan **karakter apa pun** di folder `character/`.
+Koleksi **22 properti kartun vektor 2D** bergaya Remotion (`#1f1a1f` bold outline, cel shading, interaktif di Remotion Studio melalui `Interactive.create`, dan animasi deterministik berbasis `useCurrentFrame()`) yang dirancang agar bisa dipasangkan dengan **karakter apa pun** di folder `character/`.
 
 ![Preview Sheet Properti](./sheet.png)
 
@@ -20,6 +20,18 @@ Koleksi **12 properti kartun vektor 2D** bergaya Remotion (`#1f1a1f` bold outlin
 | `Briefcase` | Simbol bisnis, KPI, rapat klien/direksi | `variant` (`leather`, `dark`), `withGoldShine` | Boss, Project Manager |
 | `ServingCloche` | Properti analogi dapur saat tutorial coding | `open`, `dish` (`burger`, `html`, `json`), `animated` | Chef (analogi HTML/API payload/restoran) |
 | `MedicalKit` | Properti analogi diagnosa & kesehatan sistem | `variant` (`firstAid`, `monitor`), `healthy`, `animated` | Doctor (analogi debugging & server health check) |
+| `Rocket` | Deploy, rilis versi, launch produk | `color` (accent*), `label`, `launching` (api + asap + getar), `animated` | Fullstack, Tech Lead, PM, Boss |
+| `Bug` | Bug software berbentuk kumbang | `color` (accent*), `state` (`alive`, `squashed`), `animated` (kaki bergerak) | QA, Frontend, Backend, Hacker |
+| `MagnifyingGlass` | Inspeksi, debugging, pencarian | `lens` (`empty`, `bug`, `code`, `check`), `handleColor` (accent*), `animated` | QA, Tech Lead, Doctor |
+| `Padlock` | Keamanan, auth, enkripsi, breach | `locked`, `color` (`gold`, `silver`, accent*), `animated` | Hacker, Backend, Tech Lead |
+| `CloudService` | Cloud upload/download/sync, outage | `status` (`online`, `upload`, `download`, `sync`, `error`), `label`, `animated` (melayang) | Backend, Fullstack, Tech Lead |
+| `PackageBox` | Paket npm, artefak rilis, kiriman, hadiah | `variant` (`cardboard`, `gift`), `open` (flap + sinar), `label`, `animated` | Frontend, Fullstack, PM, Boss |
+| `WallClock` | Deadline, lembur, waktu berlalu | `variant` (`wall`, `alarm`), `color` (accent*), `hours`, `minutes`, `fastForward`, `ringing` | PM, Boss, semua karakter |
+| `Lightbulb` | Momen "aha!" / ide | `on`, `animated` (glow berdenyut) | Semua karakter (taruh di atas kepala) |
+| `Trophy` | Pencapaian, sprint sukses, juara | `variant` (`gold`, `silver`, `bronze`), `label`, `sparkle` | Boss, PM, semua karakter |
+| `PottedPlant` | Dekorasi kantor / rumah | `variant` (`monstera`, `cactus`, `snake`), `potColor` (`terracotta`, `white`, `indigo`), `animated` | Set dressing untuk scene mana pun |
+
+\* accent = `indigo`, `red`, `emerald`, `amber`, `purple`, `cyan` (palet bersama `ACCENTS` di `shared.tsx`).
 
 ---
 
