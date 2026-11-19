@@ -6,62 +6,74 @@
 - Unclassified: 5 file(s) not represented in the graph (top: (none) 5)
 
 ## Summary
-- 838 nodes · 2655 edges · 47 communities
+- 960 nodes · 2573 edges · 61 communities (57 shown, 4 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 47 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0e746862`
+- Built from commit: `47ee48b5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- character/index.ts
-- character/README.md
+- characterRig.tsx
+- Boss / Executive: Master Character Rig (`src/assets/character/boss`)
 - P2
 - Remotion Video Project
 - PropShadow
 - Project Dependencies & Tooling
-- Remotion Compositions & Entry
-- project_manager/Body.tsx
+- ModelSheet.tsx
+- hacker/Body.tsx
 - PROP_COLORS
-- characterRig.tsx
-- body.tsx
+- boss/Body.tsx
 - v3
-- remotion
-- shared/presets.ts
+- PROP_OW
+- project_manager/Body.tsx
 - shared/rig.ts
 - hacker/Head.tsx
 - quality_assurance/Body.tsx
 - woman/Body.tsx
-- react
-- shared/motion.ts
-- chef/Body.tsx
+- PackageBox.tsx
+- Root.tsx
+- chef/Head.tsx
 - doctor/Body.tsx
 - CharacterRigCanvas
 - computeTorsoGeometry
 - tech_lead/Body.tsx
-- resolveFace
+- Backend Programmer: Master Character Rig (`src/assets/character/backend_programmer`)
 - PoseSpec
 - backend_programmer/Body.tsx
 - man/Body.tsx
 - PottedPlant.tsx
 - face.tsx
-- project_manager/Head.tsx
+- react
 - backend_programmer/Head.tsx
 - boss/Head.tsx
 - frontend_programmer/Head.tsx
-- man/Head.tsx
-- man/index.ts
-- CoffeeMug.tsx
-- Smartphone.tsx
+- body.tsx
+- remotion
+- Briefcase.tsx
+- property/index.ts
 - DatabaseCylinder.tsx
 - Cara Menggunakan & Memasangkan dengan Karakter
 - Trophy.tsx
 - ServerRack.tsx
-- Whiteboard.tsx
+- OfficeDesk.tsx
+- Padlock.tsx
+- PROP_INK
+- Frontend Programmer: Master Character Rig (`src/assets/character/frontend_programmer`)
+- Chef: Culinary Analogy Character Rig (`src/assets/character/chef`)
+- Doctor: Diagnostic Analogy Character Rig (`src/assets/character/doctor`)
+- Fullstack Programmer: Dual-Stack Character Rig (`src/assets/character/fullstack_programmer`)
+- Hacker: Cybersecurity & Stealth Character Rig (`src/assets/character/hacker`)
+- Project Manager: Agile Coordinator Character Rig (`src/assets/character/project_manager`)
+- Quality Assurance (QA): Bug-Hunter Character Rig (`src/assets/character/quality_assurance`)
 - TypeScript Compiler Config
-- property/index.ts
+- Mascot Character Rigs (`src/assets/character/*`)
+- Tech Lead: Senior Architect Character Rig (`src/assets/character/tech_lead`)
+- Woman: Hijabi Master Character Rig (`src/assets/character/woman`)
+- @remotion/google-fonts
+- PropertySheet.tsx
 - Graphify Claude Workflow Docs
 
 ## God Nodes (most connected - your core abstractions)
@@ -70,212 +82,252 @@
 3. `PropShadow()` - 40 edges
 4. `computeTorsoGeometry()` - 38 edges
 5. `CharacterRigCanvas()` - 36 edges
-6. `v3()` - 35 edges
-7. `smoothPath()` - 32 edges
-8. `FaceSpec` - 30 edges
-9. `P2` - 28 edges
-10. `createHeadProjection()` - 27 edges
+6. `createHeadProjection()` - 27 edges
+7. `HairHeadShell()` - 26 edges
+8. `Framing` - 25 edges
+9. `v3()` - 25 edges
+10. `FaceSpec` - 24 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Modul Bersama (`src/assets/character/shared`)` --references--> `SkullShapeParams`  [INFERRED]
   src/assets/character/README.md → src/assets/character/shared/face.tsx
 - `Isi folder` --references--> `mixFace()`  [INFERRED]
   src/assets/character/backend_programmer/README.md → src/assets/character/shared/presets.ts
+- `Isi folder` --references--> `resolveFace()`  [INFERRED]
+  src/assets/character/backend_programmer/README.md → src/assets/character/shared/presets.ts
+- `Isi folder` --references--> `resolvePose()`  [INFERRED]
+  src/assets/character/backend_programmer/README.md → src/assets/character/shared/presets.ts
 - `Isi folder` --references--> `mixFace()`  [INFERRED]
   src/assets/character/frontend_programmer/README.md → src/assets/character/shared/presets.ts
-- `Props` --references--> `FaceSpec`  [INFERRED]
-  src/assets/character/man/README.md → src/assets/character/shared/rig.ts
-- `Kustomisasi` --references--> `FaceSpec`  [INFERRED]
-  src/assets/character/man/README.md → src/assets/character/shared/rig.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (47 total, 0 thin omitted)
+## Communities (61 total, 4 thin omitted)
 
-### Community 0 - "character/index.ts"
-Cohesion: 0.12
-Nodes (31): BackendProgrammerProps, Character, Character, ChefProps, Character, DoctorProps, Character, FrontendProgrammerProps (+23 more)
+### Community 0 - "characterRig.tsx"
+Cohesion: 0.09
+Nodes (48): Isi folder, Isi folder, Kustomisasi, Props, ArmRenderProps, CharacterRigConfig, Framing, FRAMINGS (+40 more)
 
-### Community 1 - "character/README.md"
-Cohesion: 0.05
-Nodes (34): Boss / Executive: Master Character Rig (`src/assets/character/boss`), Identitas & Panduan Peran (Reusable di Berbagai Plot), Isi folder, Komposisi di Studio (`npm run dev`), Pemakaian dasar, Props khusus karakter, Chef: Culinary Analogy Character Rig (`src/assets/character/chef`), Identitas & Panduan Peran (Reusable di Berbagai Plot) (+26 more)
+### Community 1 - "Boss / Executive: Master Character Rig (`src/assets/character/boss`)"
+Cohesion: 0.29
+Nodes (6): Boss / Executive: Master Character Rig (`src/assets/character/boss`), Identitas & Panduan Peran (Reusable di Berbagai Plot), Isi folder, Komposisi di Studio (`npm run dev`), Pemakaian dasar, Props khusus karakter
 
 ### Community 2 - "P2"
-Cohesion: 0.06
-Nodes (42): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS, FACE_CFG (+34 more)
+Cohesion: 0.07
+Nodes (34): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS, FACE_CFG (+26 more)
 
 ### Community 3 - "Remotion Video Project"
 Cohesion: 0.50
 Nodes (4): Remotion CLI Workflow, Remotion Company License, Remotion Fundamentals Documentation, Remotion Video Project
 
 ### Community 4 - "PropShadow"
-Cohesion: 0.09
-Nodes (25): DesktopComputerInner(), DesktopComputerProps, SCREEN_MODES, TOWER_SIDES, TowerSide, BADGES_LIST, COLORS_LIST, LaptopBadge (+17 more)
+Cohesion: 0.11
+Nodes (20): CoffeeMugInner(), DesktopComputer, DesktopComputerInner(), DesktopComputerProps, SCREEN_MODES, TOWER_SIDES, TowerSide, BADGES_LIST (+12 more)
 
 ### Community 5 - "Project Dependencies & Tooling"
 Cohesion: 0.06
 Nodes (37): allowScripts, esbuild, dependencies, react@19.3.1, react-dom@19.3.1, react-icons@^5.7.0, remotion@4.0.543, @remotion/cli@4.0.543 (+29 more)
 
-### Community 6 - "Remotion Compositions & Entry"
+### Community 6 - "ModelSheet.tsx"
 Cohesion: 0.09
-Nodes (35): @remotion/google-fonts@4.0.543, @remotion/google-fonts, Character, ACTIONS, BACKEND_SWATCHES, BackendProgrammerModelSheet(), BOSS_SWATCHES, BossModelSheet() (+27 more)
+Nodes (10): ACTIONS, Label(), ModelSheet(), MOUTH_CHART, Section(), Sheet, SheetId, SheetLayout() (+2 more)
 
-### Community 7 - "project_manager/Body.tsx"
-Cohesion: 0.13
-Nodes (25): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+17 more)
+### Community 7 - "hacker/Body.tsx"
+Cohesion: 0.21
+Nodes (14): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Character (+6 more)
 
 ### Community 8 - "PROP_COLORS"
-Cohesion: 0.09
-Nodes (24): BugInner(), BugProps, BugState, SPOTS, STATES, LENSES, MagnifierLens, MagnifyingGlassProps (+16 more)
+Cohesion: 0.12
+Nodes (22): Bug, BugInner(), BugProps, BugState, SPOTS, STATES, LENSES, MagnifierLens (+14 more)
 
-### Community 9 - "characterRig.tsx"
-Cohesion: 0.11
-Nodes (21): Arm(), GroundShadow(), Leg(), Neck(), Torso(), BossProps, Character, CharacterInner() (+13 more)
-
-### Community 10 - "body.tsx"
-Cohesion: 0.13
-Nodes (22): BODY_PALETTE, DRESS_SHOE_SIZE, TORSO, COLORS, RIG, solveArm, solveLeg, BodyPalette (+14 more)
+### Community 10 - "boss/Body.tsx"
+Cohesion: 0.15
+Nodes (18): Arm(), BODY_PALETTE, DRESS_SHOE_SIZE, GroundShadow(), Leg(), Neck(), TORSO, Torso() (+10 more)
 
 ### Community 11 - "v3"
-Cohesion: 0.35
-Nodes (20): Head(), Head(), Head(), Head(), Head(), Head(), Head(), buildEars() (+12 more)
+Cohesion: 0.30
+Nodes (22): Head(), Head(), Head(), Head(), Head(), Head(), Head(), buildEars() (+14 more)
 
-### Community 12 - "remotion"
-Cohesion: 0.12
-Nodes (16): remotion, BriefcaseInner(), BriefcaseProps, BriefcaseVariant, PALETTES, VARIANTS, CloudServiceInner(), CloudServiceProps (+8 more)
+### Community 12 - "PROP_OW"
+Cohesion: 0.29
+Nodes (7): CloudService, CloudServiceInner(), CloudServiceProps, CloudStatus, STATUSES, SyncArrow(), PROP_OW
 
-### Community 13 - "shared/presets.ts"
-Cohesion: 0.12
-Nodes (10): BROW, EYE, mixBrow(), mixEye(), mixFace(), NEUTRAL, RELAXED, STAND (+2 more)
+### Community 13 - "project_manager/Body.tsx"
+Cohesion: 0.21
+Nodes (15): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), PM_SHOE_SIZE, TORSO, Torso() (+7 more)
 
 ### Community 14 - "shared/rig.ts"
-Cohesion: 0.24
-Nodes (18): add(), blendLimb(), capsulePath(), createLimbSolvers(), cross(), dot(), EyeShape, HandShape (+10 more)
+Cohesion: 0.18
+Nodes (24): COLORS, solveArm, solveLeg, Shoe(), add(), blendLimb(), capsulePath(), createLimbSolvers() (+16 more)
 
 ### Community 15 - "hacker/Head.tsx"
-Cohesion: 0.21
-Nodes (15): FACE_CFG, HAIRLINE, Head(), HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS (+7 more)
+Cohesion: 0.12
+Nodes (7): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS
 
 ### Community 16 - "quality_assurance/Body.tsx"
-Cohesion: 0.24
-Nodes (14): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), QA_SHOE_SIZE, TORSO, Torso() (+6 more)
+Cohesion: 0.10
+Nodes (23): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), QA_SHOE_SIZE, TORSO, Torso() (+15 more)
 
 ### Community 17 - "woman/Body.tsx"
-Cohesion: 0.24
-Nodes (14): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Tube() (+6 more)
+Cohesion: 0.13
+Nodes (15): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Tube() (+7 more)
 
-### Community 18 - "react"
-Cohesion: 0.14
-Nodes (12): react, ClipboardInner(), ClipboardProps, ClipboardVariant, VARIANTS, LightbulbProps, PackageBoxInner(), PackageBoxProps (+4 more)
+### Community 18 - "PackageBox.tsx"
+Cohesion: 0.29
+Nodes (6): PackageBox, PackageBoxInner(), PackageBoxProps, PackageVariant, PALETTES, VARIANTS
 
-### Community 19 - "shared/motion.ts"
-Cohesion: 0.15
-Nodes (5): applyMotion(), applyWave(), cycle(), swings(), VISEMES
-
-### Community 20 - "chef/Body.tsx"
-Cohesion: 0.25
-Nodes (13): Arm(), BODY_PALETTE, CLOG_SIZE, GroundShadow(), Leg(), Neck(), TORSO, Torso() (+5 more)
+### Community 20 - "chef/Head.tsx"
+Cohesion: 0.10
+Nodes (23): Arm(), BODY_PALETTE, CLOG_SIZE, GroundShadow(), Leg(), Neck(), TORSO, Torso() (+15 more)
 
 ### Community 21 - "doctor/Body.tsx"
-Cohesion: 0.26
-Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+5 more)
+Cohesion: 0.27
+Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Character (+5 more)
 
 ### Community 22 - "CharacterRigCanvas"
-Cohesion: 0.26
-Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), INNER_HEM, Leg(), Neck(), TORSO, Torso() (+5 more)
+Cohesion: 0.16
+Nodes (14): Arm(), BODY_PALETTE, GroundShadow(), INNER_HEM, Leg(), Neck(), TORSO, Torso() (+6 more)
 
 ### Community 23 - "computeTorsoGeometry"
-Cohesion: 0.27
-Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+5 more)
+Cohesion: 0.17
+Nodes (15): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Character (+7 more)
 
 ### Community 24 - "tech_lead/Body.tsx"
-Cohesion: 0.28
-Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+4 more)
+Cohesion: 0.23
+Nodes (14): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Character (+6 more)
 
-### Community 25 - "resolveFace"
-Cohesion: 0.15
-Nodes (14): Backend Programmer: Master Character Rig (`src/assets/character/backend_programmer`), Identitas & Panduan Peran (Reusable di Berbagai Plot), Isi folder, Komposisi di Studio (`npm run dev`), Pemakaian dasar, Props khusus karakter, Frontend Programmer: Master Character Rig (`src/assets/character/frontend_programmer`), Identitas & Panduan Peran (Reusable di Berbagai Plot) (+6 more)
+### Community 25 - "Backend Programmer: Master Character Rig (`src/assets/character/backend_programmer`)"
+Cohesion: 0.40
+Nodes (5): Backend Programmer: Master Character Rig (`src/assets/character/backend_programmer`), Identitas & Panduan Peran (Reusable di Berbagai Plot), Komposisi di Studio (`npm run dev`), Pemakaian dasar, Props khusus karakter
 
 ### Community 26 - "PoseSpec"
-Cohesion: 0.15
-Nodes (14): Bentuk mulut (lip sync), Berjalan dan berlari, Ekspresi (32), Identitas & Panduan Peran (Reusable di Berbagai Plot), Isi folder, Komposisi di Studio (`npm run dev`), Kustomisasi, Mascot: Master Character Rig (+6 more)
+Cohesion: 0.18
+Nodes (11): Bentuk mulut (lip sync), Berjalan dan berlari, Ekspresi (32), Identitas & Panduan Peran (Reusable di Berbagai Plot), Isi folder, Komposisi di Studio (`npm run dev`), Mascot: Master Character Rig, Pemakaian dasar (+3 more)
 
 ### Community 27 - "backend_programmer/Body.tsx"
-Cohesion: 0.35
-Nodes (10): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+2 more)
+Cohesion: 0.17
+Nodes (14): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), BackendProgrammerProps (+6 more)
 
 ### Community 28 - "man/Body.tsx"
-Cohesion: 0.33
-Nodes (11): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Tube() (+3 more)
+Cohesion: 0.15
+Nodes (17): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Tube() (+9 more)
 
 ### Community 29 - "PottedPlant.tsx"
-Cohesion: 0.19
-Nodes (12): Cactus(), MONSTERA, Monstera(), PlantVariant, POT_COLORS, PotColor, POTS, PottedPlantInner() (+4 more)
+Cohesion: 0.18
+Nodes (13): Cactus(), MONSTERA, Monstera(), PlantVariant, POT_COLORS, PotColor, POTS, PottedPlant (+5 more)
 
 ### Community 30 - "face.tsx"
-Cohesion: 0.21
-Nodes (11): buildHairCapPath(), ell(), evalHairline(), FacePalette, GlassesShape, GlassesSpec, HeadProjection, MouthDef (+3 more)
+Cohesion: 0.18
+Nodes (13): buildHairCapPath(), ell(), evalHairline(), FacePalette, GlassesShape, GlassesSpec, HeadProjection, MouthDef (+5 more)
 
-### Community 31 - "project_manager/Head.tsx"
-Cohesion: 0.22
-Nodes (8): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS, OW
+### Community 31 - "react"
+Cohesion: 0.18
+Nodes (9): react, Lightbulb, LightbulbProps, MedicalKit, MedicalKitInner(), MedicalKitProps, MedicalKitVariant, VARIANTS (+1 more)
 
 ### Community 32 - "backend_programmer/Head.tsx"
-Cohesion: 0.25
-Nodes (7): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, TUFTS, D2R
+Cohesion: 0.17
+Nodes (7): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, TUFTS, JAW
 
 ### Community 33 - "boss/Head.tsx"
-Cohesion: 0.25
+Cohesion: 0.14
 Nodes (7): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS
 
 ### Community 34 - "frontend_programmer/Head.tsx"
-Cohesion: 0.25
-Nodes (7): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, TUFTS, JAW
+Cohesion: 0.13
+Nodes (14): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, TUFTS, FACE_CFG, HAIRLINE (+6 more)
 
-### Community 35 - "man/Head.tsx"
-Cohesion: 0.25
-Nodes (7): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, TUFTS, FaceSpec
+### Community 35 - "body.tsx"
+Cohesion: 0.23
+Nodes (11): DEFAULT_SHOE_SIZE, Hand(), HandDef, HandPart, HANDS, KNUCKLES, Leg(), pts() (+3 more)
 
-### Community 36 - "man/index.ts"
+### Community 36 - "remotion"
 Cohesion: 0.29
-Nodes (5): COLORS, RIG, solveArm, solveLeg, EXPRESSIONS
+Nodes (6): remotion, Clipboard, ClipboardInner(), ClipboardProps, ClipboardVariant, VARIANTS
 
-### Community 37 - "CoffeeMug.tsx"
-Cohesion: 0.25
-Nodes (7): CoffeeMugColor, CoffeeMugInner(), CoffeeMugProps, CoffeeMugVariant, COLORS_LIST, PALETTES, VARIANTS
+### Community 37 - "Briefcase.tsx"
+Cohesion: 0.29
+Nodes (6): Briefcase, BriefcaseInner(), BriefcaseProps, BriefcaseVariant, PALETTES, VARIANTS
 
-### Community 38 - "Smartphone.tsx"
-Cohesion: 0.25
-Nodes (7): FRAME_COLORS, PALETTES, SCREENS, SmartphoneFrameColor, SmartphoneInner(), SmartphoneProps, SmartphoneScreen
+### Community 38 - "property/index.ts"
+Cohesion: 0.12
+Nodes (20): CoffeeMug, CoffeeMugColor, CoffeeMugProps, CoffeeMugVariant, COLORS_LIST, PALETTES, VARIANTS, FRAME_COLORS (+12 more)
 
 ### Community 39 - "DatabaseCylinder.tsx"
-Cohesion: 0.29
-Nodes (5): DatabaseCylinderInner(), DatabaseCylinderProps, DatabaseVariant, PALETTE, VARIANTS
+Cohesion: 0.25
+Nodes (6): DatabaseCylinder, DatabaseCylinderInner(), DatabaseCylinderProps, DatabaseVariant, PALETTE, VARIANTS
 
 ### Community 40 - "Cara Menggunakan & Memasangkan dengan Karakter"
 Cohesion: 0.29
 Nodes (6): 1. Karakter Mengetik di Meja Kerja (`pose="typing"`), 2. Analogi Tutorial: Chef Menyajikan HTML / JSON, 3. Analogi Sistem & Server Down: Doctor + Monitor ECG + ServerRack, Cara Menggunakan & Memasangkan dengan Karakter, Daftar Properti & Variannya, Reusable Character Properties (`src/assets/property/`)
 
 ### Community 41 - "Trophy.tsx"
-Cohesion: 0.33
-Nodes (6): PALETTES, star(), TrophyInner(), TrophyProps, TrophyVariant, VARIANTS
+Cohesion: 0.29
+Nodes (7): PALETTES, star(), Trophy, TrophyInner(), TrophyProps, TrophyVariant, VARIANTS
 
 ### Community 42 - "ServerRack.tsx"
-Cohesion: 0.33
-Nodes (4): ServerRackInner(), ServerRackProps, ServerStatus, STATUSES
+Cohesion: 0.29
+Nodes (5): ServerRack, ServerRackInner(), ServerRackProps, ServerStatus, STATUSES
 
-### Community 43 - "Whiteboard.tsx"
-Cohesion: 0.33
-Nodes (4): MODES, WhiteboardInner(), WhiteboardMode, WhiteboardProps
+### Community 43 - "OfficeDesk.tsx"
+Cohesion: 0.29
+Nodes (5): DeskVariant, OfficeDesk, OfficeDeskInner(), OfficeDeskProps, VARIANTS
+
+### Community 44 - "Padlock.tsx"
+Cohesion: 0.29
+Nodes (6): COLORS_LIST, Padlock, PadlockColor, PadlockInner(), PadlockProps, PALETTES
+
+### Community 45 - "PROP_INK"
+Cohesion: 0.29
+Nodes (6): ClocheDish, DISHES, ServingCloche, ServingClocheInner(), ServingClocheProps, PROP_INK
+
+### Community 47 - "Frontend Programmer: Master Character Rig (`src/assets/character/frontend_programmer`)"
+Cohesion: 0.40
+Nodes (5): Frontend Programmer: Master Character Rig (`src/assets/character/frontend_programmer`), Identitas & Panduan Peran (Reusable di Berbagai Plot), Komposisi di Studio (`npm run dev`), Pemakaian dasar, Props khusus karakter
+
+### Community 48 - "Chef: Culinary Analogy Character Rig (`src/assets/character/chef`)"
+Cohesion: 0.50
+Nodes (3): Chef: Culinary Analogy Character Rig (`src/assets/character/chef`), Identitas & Panduan Peran (Reusable di Berbagai Plot), Props khusus karakter
+
+### Community 49 - "Doctor: Diagnostic Analogy Character Rig (`src/assets/character/doctor`)"
+Cohesion: 0.50
+Nodes (3): Doctor: Diagnostic Analogy Character Rig (`src/assets/character/doctor`), Identitas & Panduan Peran (Reusable di Berbagai Plot), Props khusus karakter
+
+### Community 50 - "Fullstack Programmer: Dual-Stack Character Rig (`src/assets/character/fullstack_programmer`)"
+Cohesion: 0.50
+Nodes (3): Fullstack Programmer: Dual-Stack Character Rig (`src/assets/character/fullstack_programmer`), Identitas & Panduan Peran (Reusable di Berbagai Plot), Props khusus karakter
+
+### Community 51 - "Hacker: Cybersecurity & Stealth Character Rig (`src/assets/character/hacker`)"
+Cohesion: 0.50
+Nodes (3): Hacker: Cybersecurity & Stealth Character Rig (`src/assets/character/hacker`), Identitas & Panduan Peran (Reusable di Berbagai Plot), Props khusus karakter
+
+### Community 52 - "Project Manager: Agile Coordinator Character Rig (`src/assets/character/project_manager`)"
+Cohesion: 0.50
+Nodes (3): Identitas & Panduan Peran (Reusable di Berbagai Plot), Project Manager: Agile Coordinator Character Rig (`src/assets/character/project_manager`), Props khusus karakter
+
+### Community 53 - "Quality Assurance (QA): Bug-Hunter Character Rig (`src/assets/character/quality_assurance`)"
+Cohesion: 0.50
+Nodes (3): Identitas & Panduan Peran (Reusable di Berbagai Plot), Props khusus karakter, Quality Assurance (QA): Bug-Hunter Character Rig (`src/assets/character/quality_assurance`)
 
 ### Community 54 - "TypeScript Compiler Config"
 Cohesion: 0.14
 Nodes (13): compilerOptions, esModuleInterop, forceConsistentCasingInFileNames, jsx, lib, module, moduleResolution, noEmit (+5 more)
 
-### Community 78 - "property/index.ts"
-Cohesion: 0.21
-Nodes (25): Briefcase, Bug, Clipboard, CloudService, CoffeeMug, DatabaseCylinder, DesktopComputer, Laptop (+17 more)
+### Community 55 - "Mascot Character Rigs (`src/assets/character/*`)"
+Cohesion: 0.50
+Nodes (4): Import Gabungan dari `../character`, Mascot Character Rigs (`src/assets/character/*`), Modul Bersama (`src/assets/character/shared`), Panduan Casting Cepat (Reusable di Segala Plot)
+
+### Community 56 - "Tech Lead: Senior Architect Character Rig (`src/assets/character/tech_lead`)"
+Cohesion: 0.50
+Nodes (3): Identitas & Panduan Peran (Reusable di Berbagai Plot), Props khusus karakter, Tech Lead: Senior Architect Character Rig (`src/assets/character/tech_lead`)
+
+### Community 57 - "Woman: Hijabi Master Character Rig (`src/assets/character/woman`)"
+Cohesion: 0.67
+Nodes (3): Identitas & Panduan Peran (Reusable di Berbagai Plot), Pemakaian dasar, Woman: Hijabi Master Character Rig (`src/assets/character/woman`)
+
+### Community 78 - "PropertySheet.tsx"
+Cohesion: 0.08
+Nodes (3): PropCard(), PropertySheet(), SectionTitle()
 
 ### Community 89 - "Graphify Claude Workflow Docs"
 Cohesion: 0.50
@@ -283,22 +335,23 @@ Nodes (4): graphify-out/graph.json, Graphify Knowledge Graph, graphify-out/GRAPH
 
 ## Knowledge Gaps
 - **5 isolated node(s):** `Remotion CLI Workflow`, `Remotion Company License`, `Remotion Fundamentals Documentation`, `graphify-out/GRAPH_REPORT.md`, `graphify-out/wiki/index.md`
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 288 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 394 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `P2`, `PropShadow`, `Project Dependencies & Tooling`, `Remotion Compositions & Entry`, `project_manager/Body.tsx`, `PROP_COLORS`, `characterRig.tsx`, `body.tsx`, `remotion`, `hacker/Head.tsx`, `quality_assurance/Body.tsx`, `woman/Body.tsx`, `chef/Body.tsx`, `doctor/Body.tsx`, `CharacterRigCanvas`, `computeTorsoGeometry`, `tech_lead/Body.tsx`, `backend_programmer/Body.tsx`, `man/Body.tsx`, `PottedPlant.tsx`, `face.tsx`, `project_manager/Head.tsx`, `backend_programmer/Head.tsx`, `boss/Head.tsx`, `frontend_programmer/Head.tsx`, `man/Head.tsx`, `CoffeeMug.tsx`, `Smartphone.tsx`, `DatabaseCylinder.tsx`, `Trophy.tsx`, `ServerRack.tsx`, `Whiteboard.tsx`, `property/index.ts`?**
-  _High betweenness centrality (0.322) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `characterRig.tsx`, `P2`, `PropShadow`, `Project Dependencies & Tooling`, `ModelSheet.tsx`, `hacker/Body.tsx`, `PROP_COLORS`, `boss/Body.tsx`, `PROP_OW`, `project_manager/Body.tsx`, `hacker/Head.tsx`, `quality_assurance/Body.tsx`, `woman/Body.tsx`, `PackageBox.tsx`, `Root.tsx`, `chef/Head.tsx`, `doctor/Body.tsx`, `CharacterRigCanvas`, `computeTorsoGeometry`, `tech_lead/Body.tsx`, `backend_programmer/Body.tsx`, `man/Body.tsx`, `PottedPlant.tsx`, `face.tsx`, `backend_programmer/Head.tsx`, `boss/Head.tsx`, `frontend_programmer/Head.tsx`, `body.tsx`, `remotion`, `Briefcase.tsx`, `property/index.ts`, `DatabaseCylinder.tsx`, `Trophy.tsx`, `ServerRack.tsx`, `OfficeDesk.tsx`, `Padlock.tsx`, `PROP_INK`, `PropertySheet.tsx`?**
+  _High betweenness centrality (0.387) - this node is a cross-community bridge._
 - **What connects `Remotion CLI Workflow`, `Remotion Company License`, `Remotion Fundamentals Documentation` to the rest of the system?**
   _5 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `character/index.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.12409288824383163 - nodes in this community are weakly interconnected._
-- **Why does `remotion` connect `remotion` to `PropShadow`, `Project Dependencies & Tooling`, `Remotion Compositions & Entry`, `project_manager/Body.tsx`, `PROP_COLORS`, `characterRig.tsx`, `quality_assurance/Body.tsx`, `woman/Body.tsx`, `react`, `shared/motion.ts`, `chef/Body.tsx`, `doctor/Body.tsx`, `CharacterRigCanvas`, `computeTorsoGeometry`, `tech_lead/Body.tsx`, `backend_programmer/Body.tsx`, `man/Body.tsx`, `PottedPlant.tsx`, `CoffeeMug.tsx`, `Smartphone.tsx`, `DatabaseCylinder.tsx`, `Trophy.tsx`, `ServerRack.tsx`, `Whiteboard.tsx`, `property/index.ts`?**
-  _High betweenness centrality (0.113) - this node is a cross-community bridge._
-- **Should `character/README.md` be split into smaller, more focused modules?**
-  _Cohesion score 0.04717853839037928 - nodes in this community are weakly interconnected._
-- **Why does `SkullShapeParams` connect `P2` to `boss/Head.tsx`, `character/README.md`, `hacker/Head.tsx`, `face.tsx`, `project_manager/Head.tsx`?**
-  _High betweenness centrality (0.067) - this node is a cross-community bridge._
+- **Should `characterRig.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.08837719298245614 - nodes in this community are weakly interconnected._
+- **Why does `remotion` connect `remotion` to `characterRig.tsx`, `PropShadow`, `Project Dependencies & Tooling`, `ModelSheet.tsx`, `hacker/Body.tsx`, `PROP_COLORS`, `boss/Body.tsx`, `PROP_OW`, `project_manager/Body.tsx`, `quality_assurance/Body.tsx`, `woman/Body.tsx`, `PackageBox.tsx`, `Root.tsx`, `chef/Head.tsx`, `doctor/Body.tsx`, `CharacterRigCanvas`, `computeTorsoGeometry`, `tech_lead/Body.tsx`, `backend_programmer/Body.tsx`, `man/Body.tsx`, `PottedPlant.tsx`, `react`, `Briefcase.tsx`, `property/index.ts`, `DatabaseCylinder.tsx`, `Trophy.tsx`, `ServerRack.tsx`, `OfficeDesk.tsx`, `Padlock.tsx`, `PROP_INK`, `PropertySheet.tsx`?**
+  _High betweenness centrality (0.111) - this node is a cross-community bridge._
 - **Should `P2` be split into smaller, more focused modules?**
-  _Cohesion score 0.06475485661424607 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07396870554765292 - nodes in this community are weakly interconnected._
+- **Why does `SkullShapeParams` connect `P2` to `boss/Head.tsx`, `hacker/Head.tsx`, `quality_assurance/Body.tsx`, `chef/Head.tsx`, `Mascot Character Rigs (`src/assets/character/*`)`, `face.tsx`?**
+  _High betweenness centrality (0.061) - this node is a cross-community bridge._
+- **Should `PropShadow` be split into smaller, more focused modules?**
+  _Cohesion score 0.10507246376811594 - nodes in this community are weakly interconnected._

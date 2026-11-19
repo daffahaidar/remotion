@@ -1,21 +1,21 @@
 {
   "eslint.config.mjs": {
-    "mtime": 1793609424.0,
-    "seen": 1795075545.9967122,
-    "ast_hash": "e20d59bb6b64567da14d80c3da2c6b15",
-    "semantic_hash": "e20d59bb6b64567da14d80c3da2c6b15"
+    "mtime": 1795075934.8546088,
+    "seen": 1795076142.6453624,
+    "ast_hash": "bbba4a6ce7fa6c15eb09030f51543916",
+    "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1795073429.9684522,
-    "seen": 1795075545.9967191,
-    "ast_hash": "b903329c5e6978723b86ce57da0a2d35",
+    "mtime": 1795075907.6658244,
+    "seen": 1795076142.6453695,
+    "ast_hash": "c6dfc390ee0981e1aa7cb4fe44cbd703",
     "semantic_hash": ""
   },
   "remotion.config.ts": {
-    "mtime": 1793609424.0,
-    "seen": 1795075545.996722,
-    "ast_hash": "6338a93bfb160c9897d382735436172e",
-    "semantic_hash": "6338a93bfb160c9897d382735436172e"
+    "mtime": 1795075934.830543,
+    "seen": 1795076142.6453724,
+    "ast_hash": "56d13f3d239867d8f94288df90b2b67e",
+    "semantic_hash": ""
   },
   "skills-lock.json": {
     "mtime": 1795073429.9933052,
@@ -24,34 +24,34 @@
     "semantic_hash": ""
   },
   "src/ModelSheet.tsx": {
-    "mtime": 1795075506.572693,
-    "seen": 1795075545.9967248,
-    "ast_hash": "d3dbe86e4b628705598219435f6283db",
+    "mtime": 1795075934.7843044,
+    "seen": 1795076142.6453764,
+    "ast_hash": "488351fb4a0b9078b13b89a4bba6d993",
     "semantic_hash": ""
   },
   "src/PropertySheet.tsx": {
-    "mtime": 1795075506.5948672,
-    "seen": 1795075545.996726,
-    "ast_hash": "afcba261cc19331733ec8818602f2a44",
+    "mtime": 1795075934.799363,
+    "seen": 1795076142.6453779,
+    "ast_hash": "0c9c723b058fdaa543ca4f7a6948dec6",
     "semantic_hash": ""
   },
   "src/RigDemo.tsx": {
-    "mtime": 1795075506.6168013,
-    "seen": 1795075545.996727,
-    "ast_hash": "f54da6bb803c1dd56ca8734ffb86728b",
+    "mtime": 1795075934.816142,
+    "seen": 1795076142.645379,
+    "ast_hash": "13a0e9f82a4804c37dc51dde4befa007",
     "semantic_hash": ""
   },
   "src/Root.tsx": {
-    "mtime": 1795075506.6350567,
-    "seen": 1795075545.9967282,
-    "ast_hash": "d57604a26fda7188485cfc634f2150ca",
+    "mtime": 1795075889.4746964,
+    "seen": 1795076142.64538,
+    "ast_hash": "7ab377b5cd9da293e8db2c20367ea227",
     "semantic_hash": ""
   },
   "src/index.ts": {
-    "mtime": 1793609424.0,
-    "seen": 1795075545.9968336,
-    "ast_hash": "d92d9dee1ab16aa44a75ae7fbfb843ca",
-    "semantic_hash": "d92d9dee1ab16aa44a75ae7fbfb843ca"
+    "mtime": 1795075934.7692616,
+    "seen": 1795076142.6454942,
+    "ast_hash": "ae309a76b0191af50e6e2fb05c305667",
+    "semantic_hash": ""
   },
   "tsconfig.json": {
     "mtime": 1793609424.0,
@@ -66,327 +66,327 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1794793970.780897,
-    "seen": 1795075545.996837,
-    "ast_hash": "fcdfe1e0c3220831519fdbf617e6d7ae",
-    "semantic_hash": "fcdfe1e0c3220831519fdbf617e6d7ae"
+    "mtime": 1795075926.2485,
+    "seen": 1795076142.645498,
+    "ast_hash": "2c8ff87e717d323e9b9c3ddc1b61a5c2",
+    "semantic_hash": ""
   },
   "src/assets/character/backend_programmer/Body.tsx": {
-    "mtime": 1795073429.628297,
-    "seen": 1795075545.9967294,
-    "ast_hash": "fdac660a9454027ae3ce7cdf6dd9c992",
+    "mtime": 1795075933.6375897,
+    "seen": 1795076142.6453815,
+    "ast_hash": "5fb9a8380e33eef33d2e2920518c40f9",
     "semantic_hash": ""
   },
   "src/assets/character/backend_programmer/Character.tsx": {
-    "mtime": 1795073429.6292975,
-    "seen": 1795075545.9967306,
-    "ast_hash": "53a9f3a156d0f52bcf9246138b201040",
+    "mtime": 1795075933.6533942,
+    "seen": 1795076142.6453824,
+    "ast_hash": "806357f3e862b1321023bd27cb7d19de",
     "semantic_hash": ""
   },
   "src/assets/character/backend_programmer/Head.tsx": {
-    "mtime": 1795073429.6302984,
-    "seen": 1795075545.9967318,
-    "ast_hash": "b3b6a2eb26bc544bf4bcc79977386096",
+    "mtime": 1795075933.6942432,
+    "seen": 1795076142.6453836,
+    "ast_hash": "43ada7d2b65da0ca2b24752e5c8b7375",
     "semantic_hash": ""
   },
   "src/assets/character/backend_programmer/index.ts": {
-    "mtime": 1795073429.6312962,
-    "seen": 1795075545.996733,
-    "ast_hash": "c88c588186f46c769be5bef47fc17bd5",
+    "mtime": 1795075933.6992443,
+    "seen": 1795076142.6453846,
+    "ast_hash": "cff2e65ff48580c5dc126f796b770bcc",
     "semantic_hash": ""
   },
   "src/assets/character/backend_programmer/motion.ts": {
-    "mtime": 1795073429.6504548,
-    "seen": 1795075545.9967341,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075933.7027726,
+    "seen": 1795076142.6453855,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/backend_programmer/presets.ts": {
-    "mtime": 1795073429.6504548,
-    "seen": 1795075545.9967353,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075933.7067745,
+    "seen": 1795076142.6453865,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/backend_programmer/rig.ts": {
-    "mtime": 1795073429.6514556,
-    "seen": 1795075545.996736,
-    "ast_hash": "3a5418eb4bf1e68b6c9ffb216a5a9bea",
+    "mtime": 1795075933.713552,
+    "seen": 1795076142.645388,
+    "ast_hash": "2734a19a0c6b81abb72d9b9b28d17812",
     "semantic_hash": ""
   },
   "src/assets/character/boss/Body.tsx": {
-    "mtime": 1795073429.6524558,
-    "seen": 1795075545.996737,
-    "ast_hash": "cd63129363a12344335a12f7f1338c50",
+    "mtime": 1795075933.7424304,
+    "seen": 1795076142.6453888,
+    "ast_hash": "89f7b37041697b94d7eb895d9a6bcdf9",
     "semantic_hash": ""
   },
   "src/assets/character/boss/Character.tsx": {
-    "mtime": 1795073429.653455,
-    "seen": 1795075545.9967377,
-    "ast_hash": "8ef532163c2ad96e5042641eeee6b4b7",
+    "mtime": 1795075933.7512257,
+    "seen": 1795076142.6453898,
+    "ast_hash": "2024c5501dac9587183e72306ad9c6db",
     "semantic_hash": ""
   },
   "src/assets/character/boss/Head.tsx": {
-    "mtime": 1795073429.654456,
-    "seen": 1795075545.996739,
-    "ast_hash": "0575f6d9bdd09134d89e3ceca1c04760",
+    "mtime": 1795075933.7743096,
+    "seen": 1795076142.6453915,
+    "ast_hash": "bbc36aea8d6759e19c88ca6629048bb1",
     "semantic_hash": ""
   },
   "src/assets/character/boss/index.ts": {
-    "mtime": 1795073429.6559598,
-    "seen": 1795075545.9967406,
-    "ast_hash": "74437618966dfaf50b5ddf9967fd6a8e",
+    "mtime": 1795075933.7808187,
+    "seen": 1795076142.6453924,
+    "ast_hash": "94e420ce52e97c353a588d3e379929f0",
     "semantic_hash": ""
   },
   "src/assets/character/boss/motion.ts": {
-    "mtime": 1795073429.6725545,
-    "seen": 1795075545.9967413,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075933.7843318,
+    "seen": 1795076142.6453934,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/boss/presets.ts": {
-    "mtime": 1795073429.6735523,
-    "seen": 1795075545.9967425,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075933.7875774,
+    "seen": 1795076142.6453943,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/boss/rig.ts": {
-    "mtime": 1795073429.6745455,
-    "seen": 1795075545.9967432,
-    "ast_hash": "826327709a0933fd1c063ab46cad6666",
+    "mtime": 1795075933.7941818,
+    "seen": 1795076142.6453955,
+    "ast_hash": "eabce775330fdd74243d9cdcb31ad532",
     "semantic_hash": ""
   },
   "src/assets/character/chef/Body.tsx": {
-    "mtime": 1795073429.6760495,
-    "seen": 1795075545.9967442,
-    "ast_hash": "70c940a318452cbfb85f690472e7eb53",
+    "mtime": 1795075933.8092186,
+    "seen": 1795076142.6453965,
+    "ast_hash": "cf5d00425ac6732dc0e62b4cb895493e",
     "semantic_hash": ""
   },
   "src/assets/character/chef/Character.tsx": {
-    "mtime": 1795073429.6760495,
-    "seen": 1795075545.996745,
-    "ast_hash": "4e387c93210ae4adf935f2ad54a885ad",
+    "mtime": 1795075933.8186362,
+    "seen": 1795076142.6453972,
+    "ast_hash": "d874335944dd5b61a8382bdda018a256",
     "semantic_hash": ""
   },
   "src/assets/character/chef/Head.tsx": {
-    "mtime": 1795073429.677055,
-    "seen": 1795075545.996746,
-    "ast_hash": "8bc61e912e762352f6b5ac803a47efbd",
+    "mtime": 1795075933.8434186,
+    "seen": 1795076142.6453984,
+    "ast_hash": "74778b89d5fac89f99a0411d968648ad",
     "semantic_hash": ""
   },
   "src/assets/character/chef/index.ts": {
-    "mtime": 1795073429.679293,
-    "seen": 1795075545.9967465,
-    "ast_hash": "bede14cb43610ccfc032184e131c6a90",
+    "mtime": 1795075933.8489316,
+    "seen": 1795076142.6453993,
+    "ast_hash": "5a7308c468956ff27c016c34dfdff1fc",
     "semantic_hash": ""
   },
   "src/assets/character/chef/motion.ts": {
-    "mtime": 1795073429.6983993,
-    "seen": 1795075545.9967475,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075933.8524432,
+    "seen": 1795076142.6454003,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/chef/presets.ts": {
-    "mtime": 1795073429.6983993,
-    "seen": 1795075545.9967484,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075933.8554533,
+    "seen": 1795076142.6454012,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/chef/rig.ts": {
-    "mtime": 1795073429.6993997,
-    "seen": 1795075545.9967494,
-    "ast_hash": "41505b7bb85633d6b42c1c1ebf2507aa",
+    "mtime": 1795075933.8624535,
+    "seen": 1795076142.6454024,
+    "ast_hash": "4c09c5b0dcdbdc8fbeb93f84e2e120e9",
     "semantic_hash": ""
   },
   "src/assets/character/doctor/Body.tsx": {
-    "mtime": 1795073429.7013996,
-    "seen": 1795075545.99675,
-    "ast_hash": "5e5b51e68f3be1b2f682be52d036f754",
+    "mtime": 1795075933.8769958,
+    "seen": 1795076142.6454031,
+    "ast_hash": "cd965824f2db560de18c94fcc0640caa",
     "semantic_hash": ""
   },
   "src/assets/character/doctor/Character.tsx": {
-    "mtime": 1795073429.7013996,
-    "seen": 1795075545.996751,
-    "ast_hash": "2da1de1f476a95de0f5a1103da0c47e3",
+    "mtime": 1795075933.884507,
+    "seen": 1795076142.645404,
+    "ast_hash": "bb35e8c31e9f60699106a6e5a01ed2b5",
     "semantic_hash": ""
   },
   "src/assets/character/doctor/Head.tsx": {
-    "mtime": 1795073429.7023993,
-    "seen": 1795075545.9967518,
-    "ast_hash": "48ca006e71cede9b22d4d7489ac563cb",
+    "mtime": 1795075933.891534,
+    "seen": 1795076142.6454053,
+    "ast_hash": "85177209b444076196f15b953d0f034b",
     "semantic_hash": ""
   },
   "src/assets/character/doctor/index.ts": {
-    "mtime": 1795073429.7033992,
-    "seen": 1795075545.9967525,
-    "ast_hash": "5588e973ec369a8bf28b2906f8c0ebb6",
+    "mtime": 1795075933.8960419,
+    "seen": 1795076142.645406,
+    "ast_hash": "b1ae9e29def45bc6ffaceac63f9fe624",
     "semantic_hash": ""
   },
   "src/assets/character/doctor/motion.ts": {
-    "mtime": 1795073429.7215235,
-    "seen": 1795075545.9967535,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075933.9005523,
+    "seen": 1795076142.645407,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/doctor/presets.ts": {
-    "mtime": 1795073429.7225215,
-    "seen": 1795075545.9967542,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075933.9025548,
+    "seen": 1795076142.645408,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/doctor/rig.ts": {
-    "mtime": 1795073429.7235217,
-    "seen": 1795075545.996755,
-    "ast_hash": "b234a6dd633fe33b26efe251c1ac8a0c",
+    "mtime": 1795075933.906962,
+    "seen": 1795076142.645409,
+    "ast_hash": "6857092fe1cb2014226e690fc556a7a6",
     "semantic_hash": ""
   },
   "src/assets/character/frontend_programmer/Body.tsx": {
-    "mtime": 1795073429.7245214,
-    "seen": 1795075545.9967556,
-    "ast_hash": "0df1f5762e744f34c9f116b54d0e6ce2",
+    "mtime": 1795075933.9415264,
+    "seen": 1795076142.64541,
+    "ast_hash": "773e64b313dc27ecc9f74b0d7da5dbd3",
     "semantic_hash": ""
   },
   "src/assets/character/frontend_programmer/Character.tsx": {
-    "mtime": 1795073429.7260263,
-    "seen": 1795075545.9967568,
-    "ast_hash": "23461a76b8de938f01ea69b73e2c1804",
+    "mtime": 1795075933.9493482,
+    "seen": 1795076142.645411,
+    "ast_hash": "234e00bcaa06d76cc8ad4f487e6f8e2d",
     "semantic_hash": ""
   },
   "src/assets/character/frontend_programmer/Head.tsx": {
-    "mtime": 1795073429.72728,
-    "seen": 1795075545.9967577,
-    "ast_hash": "eb5821984af98abb3025ef8727466aea",
+    "mtime": 1795075933.9689603,
+    "seen": 1795076142.6454117,
+    "ast_hash": "bc468b0ef98f04630cf04d3272264c38",
     "semantic_hash": ""
   },
   "src/assets/character/frontend_programmer/index.ts": {
-    "mtime": 1795073429.7282853,
-    "seen": 1795075545.996759,
-    "ast_hash": "35111631de95aaacd56a9921d1c123b9",
+    "mtime": 1795075933.9709594,
+    "seen": 1795076142.6454127,
+    "ast_hash": "fde7e4608f38079de4d3bac664f55ecb",
     "semantic_hash": ""
   },
   "src/assets/character/frontend_programmer/motion.ts": {
-    "mtime": 1795073429.7458537,
-    "seen": 1795075545.99676,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075933.9746573,
+    "seen": 1795076142.6454136,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/frontend_programmer/presets.ts": {
-    "mtime": 1795073429.747383,
-    "seen": 1795075545.9967606,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075933.9796908,
+    "seen": 1795076142.6454146,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/frontend_programmer/rig.ts": {
-    "mtime": 1795073429.7483876,
-    "seen": 1795075545.9967616,
-    "ast_hash": "a4d6c0c68d578225d8c6cb322c62c633",
+    "mtime": 1795075933.9832,
+    "seen": 1795076142.6454158,
+    "ast_hash": "f222b406b1a8467d751e735d14a67c56",
     "semantic_hash": ""
   },
   "src/assets/character/fullstack_programmer/Body.tsx": {
-    "mtime": 1795073429.7493877,
-    "seen": 1795075545.9967625,
-    "ast_hash": "706993cb2c2f302132dfe50020657c94",
+    "mtime": 1795075933.9947343,
+    "seen": 1795076142.6454167,
+    "ast_hash": "f3ee0115c69d69e4b03a6670981dfc72",
     "semantic_hash": ""
   },
   "src/assets/character/fullstack_programmer/Character.tsx": {
-    "mtime": 1795073429.7493877,
-    "seen": 1795075545.9967637,
-    "ast_hash": "c1ce59365b83f68e47e22ddcaac2bd8f",
+    "mtime": 1795075934.001247,
+    "seen": 1795076142.6454177,
+    "ast_hash": "6c0d607ac06c30d644d412125b2d2d40",
     "semantic_hash": ""
   },
   "src/assets/character/fullstack_programmer/Head.tsx": {
-    "mtime": 1795073429.750388,
-    "seen": 1795075545.9967644,
-    "ast_hash": "bb4f95daab8629e13935026fefea48c6",
+    "mtime": 1795075934.012421,
+    "seen": 1795076142.6454184,
+    "ast_hash": "533c51eee29b33936935d6e3dbcb2994",
     "semantic_hash": ""
   },
   "src/assets/character/fullstack_programmer/index.ts": {
-    "mtime": 1795073429.7523885,
-    "seen": 1795075545.9967651,
-    "ast_hash": "cb5260f28fd5bed7fb5d6681ee440a06",
+    "mtime": 1795075934.021261,
+    "seen": 1795076142.6454196,
+    "ast_hash": "7b69e462137ecc8e6385e8271536af0a",
     "semantic_hash": ""
   },
   "src/assets/character/fullstack_programmer/motion.ts": {
-    "mtime": 1795073429.7685125,
-    "seen": 1795075545.9967659,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075934.0237732,
+    "seen": 1795076142.6454203,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/fullstack_programmer/presets.ts": {
-    "mtime": 1795073429.7695162,
-    "seen": 1795075545.9967668,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075934.0257752,
+    "seen": 1795076142.645421,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/fullstack_programmer/rig.ts": {
-    "mtime": 1795073429.7705162,
-    "seen": 1795075545.9967678,
-    "ast_hash": "d1c5c4b1d776834331000de7bc32d411",
+    "mtime": 1795075934.030788,
+    "seen": 1795076142.645422,
+    "ast_hash": "db832f105a2583210f772f1a92c2fb1b",
     "semantic_hash": ""
   },
   "src/assets/character/hacker/Body.tsx": {
-    "mtime": 1795073429.7725163,
-    "seen": 1795075545.9967685,
-    "ast_hash": "22c53aced856c84662df9d434531c173",
+    "mtime": 1795075934.0410552,
+    "seen": 1795076142.6454232,
+    "ast_hash": "70f8641929d90b88480ca7f372fca6f7",
     "semantic_hash": ""
   },
   "src/assets/character/hacker/Character.tsx": {
-    "mtime": 1795073429.7725163,
-    "seen": 1795075545.9967692,
-    "ast_hash": "b21400791acbaf9e4df01ad9fc2e83d1",
+    "mtime": 1795075934.0475686,
+    "seen": 1795076142.6454241,
+    "ast_hash": "2b5c5174c20acdd122a36dadc5d5c83b",
     "semantic_hash": ""
   },
   "src/assets/character/hacker/Head.tsx": {
-    "mtime": 1795073429.7735167,
-    "seen": 1795075545.9967704,
-    "ast_hash": "9573d0715527c85fa24d42762f5de2f8",
+    "mtime": 1795075934.0681376,
+    "seen": 1795076142.6454248,
+    "ast_hash": "9c31ec873b777addad5c70a0cc1fdfd8",
     "semantic_hash": ""
   },
   "src/assets/character/hacker/index.ts": {
-    "mtime": 1795073429.7745166,
-    "seen": 1795075545.996771,
-    "ast_hash": "4be5f2ff1ab17341909ebc627c446930",
+    "mtime": 1795075934.0713887,
+    "seen": 1795076142.645426,
+    "ast_hash": "640297916c4d3d704d54d1609be707e7",
     "semantic_hash": ""
   },
   "src/assets/character/hacker/motion.ts": {
-    "mtime": 1795073429.791865,
-    "seen": 1795075545.9967718,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075934.074447,
+    "seen": 1795076142.6454268,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/hacker/presets.ts": {
-    "mtime": 1795073429.791865,
-    "seen": 1795075545.9967728,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075934.0774453,
+    "seen": 1795076142.6454277,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/hacker/rig.ts": {
-    "mtime": 1795073429.7928648,
-    "seen": 1795075545.9967737,
-    "ast_hash": "8c6f94f73cb305ec5eff6af82c08b6c3",
+    "mtime": 1795075934.0819564,
+    "seen": 1795076142.6454287,
+    "ast_hash": "b5967972c145e4958ffe6a41d28c6579",
     "semantic_hash": ""
   },
   "src/assets/character/index.ts": {
-    "mtime": 1795073429.793864,
-    "seen": 1795075545.9967744,
-    "ast_hash": "87e8ee56fda79529a7ecb3e28dcef526",
+    "mtime": 1795075934.0854855,
+    "seen": 1795076142.6454298,
+    "ast_hash": "25c2227b73e166792b65d97df32cd075",
     "semantic_hash": ""
   },
   "src/assets/character/man/Body.tsx": {
-    "mtime": 1795073429.7958648,
-    "seen": 1795075545.9967754,
-    "ast_hash": "77d8c0ff7018232c74422060ab1602e1",
+    "mtime": 1795075934.1010115,
+    "seen": 1795076142.6454308,
+    "ast_hash": "5c95736ae93115737b3643ce9325065e",
     "semantic_hash": ""
   },
   "src/assets/character/man/Character.tsx": {
-    "mtime": 1795073429.7958648,
-    "seen": 1795075545.9967759,
-    "ast_hash": "a3e7d31f637f770c27f47240139a5839",
+    "mtime": 1795075934.1085293,
+    "seen": 1795076142.6454315,
+    "ast_hash": "630af2b299d722c3e7ef842f71cc8d62",
     "semantic_hash": ""
   },
   "src/assets/character/man/Head.tsx": {
-    "mtime": 1795073429.8060644,
-    "seen": 1795075545.996777,
-    "ast_hash": "070d7075b6e91f9d64f4718d4496acc7",
+    "mtime": 1795075934.1276379,
+    "seen": 1795076142.6454325,
+    "ast_hash": "a7210da9fbfc73045bbaef3b0c00efb6",
     "semantic_hash": ""
   },
   "src/assets/character/man/index.ts": {
@@ -396,201 +396,201 @@
     "semantic_hash": ""
   },
   "src/assets/character/man/motion.ts": {
-    "mtime": 1795073429.8145833,
-    "seen": 1795075545.996779,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075934.1340258,
+    "seen": 1795076142.645435,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/man/presets.ts": {
-    "mtime": 1795073429.8206284,
-    "seen": 1795075545.9967797,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075934.136032,
+    "seen": 1795076142.6454358,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/man/rig.ts": {
-    "mtime": 1795073429.8216276,
-    "seen": 1795075545.9967806,
-    "ast_hash": "e6b61b64058ae48480c2ff075bce5c76",
+    "mtime": 1795075934.1390321,
+    "seen": 1795076142.645437,
+    "ast_hash": "73952c601d50691d9685b18425035e56",
     "semantic_hash": ""
   },
   "src/assets/character/project_manager/Body.tsx": {
-    "mtime": 1795073429.8250258,
-    "seen": 1795075545.9967816,
-    "ast_hash": "e8348d8e16837f0b7a980625b76ba70c",
+    "mtime": 1795075934.1505477,
+    "seen": 1795076142.645438,
+    "ast_hash": "a4dd46ec82687b27426e066473139ca0",
     "semantic_hash": ""
   },
   "src/assets/character/project_manager/Character.tsx": {
-    "mtime": 1795073429.8250258,
-    "seen": 1795075545.9967823,
-    "ast_hash": "c2e761114b6ecd75118d83f9116018f8",
+    "mtime": 1795075934.1567826,
+    "seen": 1795076142.6454387,
+    "ast_hash": "d3b050d7ecec18961d82257876ad7212",
     "semantic_hash": ""
   },
   "src/assets/character/project_manager/Head.tsx": {
-    "mtime": 1795073429.8291223,
-    "seen": 1795075545.996783,
-    "ast_hash": "1097a3d70de914f60e54135606ede853",
+    "mtime": 1795075934.1652937,
+    "seen": 1795076142.6454394,
+    "ast_hash": "9be713ed29c309f50b0f56410220e9f5",
     "semantic_hash": ""
   },
   "src/assets/character/project_manager/index.ts": {
-    "mtime": 1795073429.8301153,
-    "seen": 1795075545.996784,
-    "ast_hash": "6145386b8d69f87b1b54d24296aa34bd",
+    "mtime": 1795075934.1682956,
+    "seen": 1795076142.6454406,
+    "ast_hash": "4d0e9bcf5b540922e756827bb8121bb5",
     "semantic_hash": ""
   },
   "src/assets/character/project_manager/motion.ts": {
-    "mtime": 1795073429.8542442,
-    "seen": 1795075545.996785,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075934.1702943,
+    "seen": 1795076142.6454413,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/project_manager/presets.ts": {
-    "mtime": 1795073429.8542442,
-    "seen": 1795075545.9967856,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075934.1763535,
+    "seen": 1795076142.645442,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/project_manager/rig.ts": {
-    "mtime": 1795073429.8557475,
-    "seen": 1795075545.9967864,
-    "ast_hash": "9e84dd59cdd20f863cb40c5b4e8edf57",
+    "mtime": 1795075934.1808536,
+    "seen": 1795076142.645443,
+    "ast_hash": "29261fbecf6bab317ffb315859ae1fad",
     "semantic_hash": ""
   },
   "src/assets/character/quality_assurance/Body.tsx": {
-    "mtime": 1795073429.8570862,
-    "seen": 1795075545.9967873,
-    "ast_hash": "63129487188c62273d6a737146032778",
+    "mtime": 1795075934.1923718,
+    "seen": 1795076142.6454442,
+    "ast_hash": "188ab9993d73fb778089d5944ee19beb",
     "semantic_hash": ""
   },
   "src/assets/character/quality_assurance/Character.tsx": {
-    "mtime": 1795073429.858091,
-    "seen": 1795075545.9967883,
-    "ast_hash": "f706ff2d95e4722e1e234d355604b1d1",
+    "mtime": 1795075934.1993778,
+    "seen": 1795076142.645445,
+    "ast_hash": "e8b44916ad1ee2b9b288dc9b562f3b9f",
     "semantic_hash": ""
   },
   "src/assets/character/quality_assurance/Head.tsx": {
-    "mtime": 1795073429.8590934,
-    "seen": 1795075545.996789,
-    "ast_hash": "1510367b10b9f179d2842256f5914483",
+    "mtime": 1795075934.20798,
+    "seen": 1795076142.645446,
+    "ast_hash": "1e1a2c14296a4b0ce69dc469a0b503d5",
     "semantic_hash": ""
   },
   "src/assets/character/quality_assurance/index.ts": {
-    "mtime": 1795073429.8600929,
-    "seen": 1795075545.99679,
-    "ast_hash": "7df5ee3a915886506f805c3f6ed3c4a9",
+    "mtime": 1795075934.2109797,
+    "seen": 1795076142.645447,
+    "ast_hash": "efba76590589810be52903c0fd328232",
     "semantic_hash": ""
   },
   "src/assets/character/quality_assurance/motion.ts": {
-    "mtime": 1795073429.8761053,
-    "seen": 1795075545.996791,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075934.2132206,
+    "seen": 1795076142.645448,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/quality_assurance/presets.ts": {
-    "mtime": 1795073429.8774061,
-    "seen": 1795075545.9967918,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075934.2162259,
+    "seen": 1795076142.6454492,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/quality_assurance/rig.ts": {
-    "mtime": 1795073429.8774061,
-    "seen": 1795075545.9967928,
-    "ast_hash": "b783cbae61989974fe6ffbc7a5956524",
+    "mtime": 1795075934.2202263,
+    "seen": 1795076142.6454506,
+    "ast_hash": "af193c814416a319440f008dd6a36992",
     "semantic_hash": ""
   },
   "src/assets/character/shared/body.tsx": {
-    "mtime": 1795073429.8794124,
-    "seen": 1795075545.9967937,
-    "ast_hash": "01a141f125035d77d03c463865fbdee0",
+    "mtime": 1795075934.2591484,
+    "seen": 1795076142.6454513,
+    "ast_hash": "d9075cd788cc545511601bceed0a6820",
     "semantic_hash": ""
   },
   "src/assets/character/shared/characterRig.tsx": {
-    "mtime": 1795073429.880411,
-    "seen": 1795075545.9967947,
-    "ast_hash": "955f81f9328d10b436c870b8d3aeb0e7",
+    "mtime": 1795075934.2864852,
+    "seen": 1795076142.6454523,
+    "ast_hash": "620fc00b13f01d343608e2c58b6533dc",
     "semantic_hash": ""
   },
   "src/assets/character/shared/face.tsx": {
-    "mtime": 1795073429.8814168,
-    "seen": 1795075545.9967957,
-    "ast_hash": "34db1cb27636cb6dc690251e257100a1",
+    "mtime": 1795075934.3588197,
+    "seen": 1795076142.6454532,
+    "ast_hash": "765d083875e8190b46fd582205c29abd",
     "semantic_hash": ""
   },
   "src/assets/character/shared/motion.ts": {
-    "mtime": 1795073429.8824115,
-    "seen": 1795075545.9967973,
-    "ast_hash": "07c9cce2fb43509092e902d3a716f4c8",
+    "mtime": 1795075934.3745792,
+    "seen": 1795076142.6454542,
+    "ast_hash": "65c157289c7f95dc1ad9c754ea0b1cec",
     "semantic_hash": ""
   },
   "src/assets/character/shared/presets.ts": {
-    "mtime": 1795073429.8834116,
-    "seen": 1795075545.9967988,
-    "ast_hash": "7a61d923f80b93232a86129c6a238bbe",
+    "mtime": 1795075934.413311,
+    "seen": 1795076142.6454551,
+    "ast_hash": "907328300a83a3b2824941eccd2465a1",
     "semantic_hash": ""
   },
   "src/assets/character/shared/rig.ts": {
-    "mtime": 1795073429.8849132,
-    "seen": 1795075545.9967995,
-    "ast_hash": "30cd960813a1c6f7fd5f3b90b6fec050",
+    "mtime": 1795075934.4495728,
+    "seen": 1795076142.6454558,
+    "ast_hash": "d19d70801b45ea7dd3fb713d30c732ce",
     "semantic_hash": ""
   },
   "src/assets/character/tech_lead/Body.tsx": {
-    "mtime": 1795073429.885917,
-    "seen": 1795075545.9968004,
-    "ast_hash": "636c35504a4ebe0322d637cb5187e798",
+    "mtime": 1795075934.4593992,
+    "seen": 1795076142.6454568,
+    "ast_hash": "040996d14cbad444ced8c2dbbced74d5",
     "semantic_hash": ""
   },
   "src/assets/character/tech_lead/Character.tsx": {
-    "mtime": 1795073429.885917,
-    "seen": 1795075545.9968014,
-    "ast_hash": "b58dd58e87977a2c2e4dc1295c5ccee8",
+    "mtime": 1795075934.4654112,
+    "seen": 1795076142.645458,
+    "ast_hash": "0d2eacd008bc7d84118110e13eb4d3c4",
     "semantic_hash": ""
   },
   "src/assets/character/tech_lead/Head.tsx": {
-    "mtime": 1795073429.8874316,
-    "seen": 1795075545.9968023,
-    "ast_hash": "eedc5890b0254cab5d88194f0f85e910",
+    "mtime": 1795075934.475434,
+    "seen": 1795076142.645459,
+    "ast_hash": "16bea6caeac140a197bbe0ca26fe1dfa",
     "semantic_hash": ""
   },
   "src/assets/character/tech_lead/index.ts": {
-    "mtime": 1795073429.8874316,
-    "seen": 1795075545.996803,
-    "ast_hash": "93e6fca6b60136429814e7de68561932",
+    "mtime": 1795075934.4804325,
+    "seen": 1795076142.64546,
+    "ast_hash": "28d65a44c106cbe3af8f51f78455e54e",
     "semantic_hash": ""
   },
   "src/assets/character/tech_lead/motion.ts": {
-    "mtime": 1795073429.9059005,
-    "seen": 1795075545.9968038,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075934.4833388,
+    "seen": 1795076142.645461,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/tech_lead/presets.ts": {
-    "mtime": 1795073429.9059005,
-    "seen": 1795075545.9968047,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075934.487341,
+    "seen": 1795076142.645462,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/tech_lead/rig.ts": {
-    "mtime": 1795073429.9059005,
-    "seen": 1795075545.9968054,
-    "ast_hash": "4adecd51c0f934c6ddb332256488d92c",
+    "mtime": 1795075934.4908428,
+    "seen": 1795076142.645463,
+    "ast_hash": "a26f66fd60b12e1999399ace1aa1bc86",
     "semantic_hash": ""
   },
   "src/assets/character/woman/Body.tsx": {
-    "mtime": 1795073429.9074595,
-    "seen": 1795075545.9968064,
-    "ast_hash": "aa74f5456b2fb8c2b9ad4e8a91962592",
+    "mtime": 1795075934.5044906,
+    "seen": 1795076142.6454644,
+    "ast_hash": "4aed2c1f2953a20990b0162d36d89280",
     "semantic_hash": ""
   },
   "src/assets/character/woman/Character.tsx": {
-    "mtime": 1795073429.908465,
-    "seen": 1795075545.9968073,
-    "ast_hash": "c18e2386957dcff9e90eed77d450c89d",
+    "mtime": 1795075934.5084968,
+    "seen": 1795076142.6454651,
+    "ast_hash": "1234abeb6807b594b7ae7d7240c137b5",
     "semantic_hash": ""
   },
   "src/assets/character/woman/Head.tsx": {
-    "mtime": 1795073429.9094653,
-    "seen": 1795075545.9968083,
-    "ast_hash": "770c922295a16f8346bc3990cff7a6be",
+    "mtime": 1795075934.519529,
+    "seen": 1795076142.645466,
+    "ast_hash": "e89039334067a19bf3e0965685740651",
     "semantic_hash": ""
   },
   "src/assets/character/woman/index.ts": {
@@ -600,165 +600,165 @@
     "semantic_hash": ""
   },
   "src/assets/character/woman/motion.ts": {
-    "mtime": 1795073429.9124649,
-    "seen": 1795075545.99681,
-    "ast_hash": "a7943371432e89fef625f52983d1e2bb",
+    "mtime": 1795075934.5246563,
+    "seen": 1795076142.6454685,
+    "ast_hash": "5c4a3e0680210d4861930ba397711a3a",
     "semantic_hash": ""
   },
   "src/assets/character/woman/presets.ts": {
-    "mtime": 1795073429.9134648,
-    "seen": 1795075545.9968107,
-    "ast_hash": "2c846384e412d4d25c076ec7c2025de4",
+    "mtime": 1795075934.5276573,
+    "seen": 1795076142.6454692,
+    "ast_hash": "a3d19511a428258690ebe5019f40fae2",
     "semantic_hash": ""
   },
   "src/assets/character/woman/rig.ts": {
-    "mtime": 1795073429.914465,
-    "seen": 1795075545.9968116,
-    "ast_hash": "9fbfa7e5763101cdd3066d03b5842067",
+    "mtime": 1795075934.5323238,
+    "seen": 1795076142.6454701,
+    "ast_hash": "dc435f01985d0c298c48828e7923b7fd",
     "semantic_hash": ""
   },
   "src/assets/property/Briefcase.tsx": {
-    "mtime": 1795073429.970456,
-    "seen": 1795075545.9968126,
-    "ast_hash": "1e08634cbf068f21692ea90b02c4180b",
+    "mtime": 1795075934.540491,
+    "seen": 1795076142.6454713,
+    "ast_hash": "3a5604c5a6a1f0ea547d453d3acfe725",
     "semantic_hash": ""
   },
   "src/assets/property/Bug.tsx": {
-    "mtime": 1795074376.9413843,
-    "seen": 1795075545.9968133,
-    "ast_hash": "b68a5983b913e69ce39f91dd1b9dc3dc",
+    "mtime": 1795075934.5521193,
+    "seen": 1795076142.6454723,
+    "ast_hash": "4154c4dc0ce5814b78d507e3dff1e80e",
     "semantic_hash": ""
   },
   "src/assets/property/Clipboard.tsx": {
-    "mtime": 1795073429.970456,
-    "seen": 1795075545.9968143,
-    "ast_hash": "2fb73b850873af7438d64ce261fe9b93",
+    "mtime": 1795075934.5621428,
+    "seen": 1795076142.6454732,
+    "ast_hash": "8b302cf9a544f7bc3b07fd5b8e9f7d0a",
     "semantic_hash": ""
   },
   "src/assets/property/CloudService.tsx": {
-    "mtime": 1795074420.243899,
-    "seen": 1795075545.9968152,
-    "ast_hash": "67e7951b6f6dba097f35ec8515b96094",
+    "mtime": 1795075934.571171,
+    "seen": 1795076142.6454747,
+    "ast_hash": "7859c704ac7422f1153cdc56a585ac87",
     "semantic_hash": ""
   },
   "src/assets/property/CoffeeMug.tsx": {
-    "mtime": 1795073429.9724557,
-    "seen": 1795075545.9968162,
-    "ast_hash": "7678b9b7b9c4f4792136cf3085ecb0c6",
+    "mtime": 1795075934.5822926,
+    "seen": 1795076142.6454756,
+    "ast_hash": "5d0390cd2a867abc3d802e8bc2adeaeb",
     "semantic_hash": ""
   },
   "src/assets/property/DatabaseCylinder.tsx": {
-    "mtime": 1795073429.9724557,
-    "seen": 1795075545.996817,
-    "ast_hash": "4e724837e1256f66141e1d50607e801b",
+    "mtime": 1795075934.5908031,
+    "seen": 1795076142.6454766,
+    "ast_hash": "c1ce1e8a30257a1ddcd61a39a27775ce",
     "semantic_hash": ""
   },
   "src/assets/property/DesktopComputer.tsx": {
-    "mtime": 1795073429.973456,
-    "seen": 1795075545.9968178,
-    "ast_hash": "7f0cacea218a86b3f775c7fff08f3307",
+    "mtime": 1795075934.6035912,
+    "seen": 1795076142.6454773,
+    "ast_hash": "4bdce11a5ba630f7f902f59be6defde8",
     "semantic_hash": ""
   },
   "src/assets/property/Laptop.tsx": {
-    "mtime": 1795073429.973456,
-    "seen": 1795075545.9968188,
-    "ast_hash": "9eb8b5c1523ecfa17e0e4282b5efb30e",
+    "mtime": 1795075934.6163805,
+    "seen": 1795076142.6454785,
+    "ast_hash": "99dfa8f3fb2bb92886f42b4680e04d2e",
     "semantic_hash": ""
   },
   "src/assets/property/Lightbulb.tsx": {
-    "mtime": 1795074475.9899056,
-    "seen": 1795075545.9968197,
-    "ast_hash": "9db5822fbdbf7c571e9d5df03730c402",
+    "mtime": 1795075934.6236267,
+    "seen": 1795076142.6454794,
+    "ast_hash": "8e3935bf6a7b4e1e4d808dfc8ddc4238",
     "semantic_hash": ""
   },
   "src/assets/property/MagnifyingGlass.tsx": {
-    "mtime": 1795074427.9395485,
-    "seen": 1795075545.9968204,
-    "ast_hash": "ce8f79f6b0769a9abfd8035a48e31589",
+    "mtime": 1795075934.6341524,
+    "seen": 1795076142.6454804,
+    "ast_hash": "3cc62d9c021f0590ebe494ee9a1328ee",
     "semantic_hash": ""
   },
   "src/assets/property/MedicalKit.tsx": {
-    "mtime": 1795073429.9744565,
-    "seen": 1795075545.9968212,
-    "ast_hash": "f8c49168b91b092b72dff77f8d702dda",
+    "mtime": 1795075934.6436775,
+    "seen": 1795076142.645481,
+    "ast_hash": "8adfa06f5da7a055e16b0c8c039cef10",
     "semantic_hash": ""
   },
   "src/assets/property/OfficeDesk.tsx": {
-    "mtime": 1795073429.9744565,
-    "seen": 1795075545.9968224,
-    "ast_hash": "614fbfdbf65bc6d43ed67ab853dc18b6",
+    "mtime": 1795075934.652274,
+    "seen": 1795076142.645482,
+    "ast_hash": "326a98139545d6bb69bc43553072ef81",
     "semantic_hash": ""
   },
   "src/assets/property/PackageBox.tsx": {
-    "mtime": 1795074653.8375726,
-    "seen": 1795075545.996823,
-    "ast_hash": "07da93971c0c09f544bc6de115b9617d",
+    "mtime": 1795075934.6599326,
+    "seen": 1795076142.645483,
+    "ast_hash": "741697e1d2b9cc1e11846c044c16909e",
     "semantic_hash": ""
   },
   "src/assets/property/Padlock.tsx": {
-    "mtime": 1795074404.3882122,
-    "seen": 1795075545.9968238,
-    "ast_hash": "64d04a7d944bad63b23d00aad69f1600",
+    "mtime": 1795075934.6679475,
+    "seen": 1795076142.6454837,
+    "ast_hash": "ae08de28c6de2599825ec0ed2e88bea3",
     "semantic_hash": ""
   },
   "src/assets/property/PottedPlant.tsx": {
-    "mtime": 1795074514.6657875,
-    "seen": 1795075545.9968247,
-    "ast_hash": "119aac03af1f2289c4337d0db68fdcb8",
+    "mtime": 1795075934.6800704,
+    "seen": 1795076142.6454847,
+    "ast_hash": "acdb333d89fe40f35b14f49f8bcabe57",
     "semantic_hash": ""
   },
   "src/assets/property/Rocket.tsx": {
-    "mtime": 1795074357.828802,
-    "seen": 1795075545.9968257,
-    "ast_hash": "61b1c0db680a05bfbc8feba4564274aa",
+    "mtime": 1795075934.6919806,
+    "seen": 1795076142.6454859,
+    "ast_hash": "145f212eaa93139b6d8c4edf047dbdb1",
     "semantic_hash": ""
   },
   "src/assets/property/ServerRack.tsx": {
-    "mtime": 1795073429.9759612,
-    "seen": 1795075545.9968266,
-    "ast_hash": "f45b011fd8d8c48b51d7ffffe5e315c4",
+    "mtime": 1795075934.7015307,
+    "seen": 1795076142.6454868,
+    "ast_hash": "3dcbbcd95b2a44cd7731892c6f2c5e5b",
     "semantic_hash": ""
   },
   "src/assets/property/ServingCloche.tsx": {
-    "mtime": 1795073429.9774904,
-    "seen": 1795075545.9968274,
-    "ast_hash": "60c0e709701badb24402c914146494cf",
+    "mtime": 1795075934.7095935,
+    "seen": 1795076142.6454875,
+    "ast_hash": "3bc1cb0fa129aa2c24734b8bda9f6ed8",
     "semantic_hash": ""
   },
   "src/assets/property/Smartphone.tsx": {
-    "mtime": 1795073429.978496,
-    "seen": 1795075545.996828,
-    "ast_hash": "00b210d569a00a41315f7f196614153b",
+    "mtime": 1795075934.7409208,
+    "seen": 1795076142.6454887,
+    "ast_hash": "49c5d976ec6ce7aabcffdab2bb1923cf",
     "semantic_hash": ""
   },
   "src/assets/property/Trophy.tsx": {
-    "mtime": 1795074491.029423,
-    "seen": 1795075545.9968293,
-    "ast_hash": "596e42a422d572e10988b5d256cd7983",
+    "mtime": 1795075934.7484686,
+    "seen": 1795076142.64549,
+    "ast_hash": "5f7cbd691f407f9395e39ccf863bab9d",
     "semantic_hash": ""
   },
   "src/assets/property/WallClock.tsx": {
-    "mtime": 1795074561.308218,
-    "seen": 1795075545.99683,
-    "ast_hash": "240625c58acfdff34e6e50ff5bcd2802",
+    "mtime": 1795075934.7566576,
+    "seen": 1795076142.6454906,
+    "ast_hash": "5f6210773591df5902dfa8d3f6a505c8",
     "semantic_hash": ""
   },
   "src/assets/property/Whiteboard.tsx": {
-    "mtime": 1795073429.9795046,
-    "seen": 1795075545.996831,
-    "ast_hash": "86d254b399c4bf2e45ce55826c9f0fc3",
+    "mtime": 1795075934.7672536,
+    "seen": 1795076142.6454916,
+    "ast_hash": "2f767833754f95f3cb65710ca56829d5",
     "semantic_hash": ""
   },
   "src/assets/property/index.ts": {
-    "mtime": 1795074522.3022006,
-    "seen": 1795075545.9968317,
-    "ast_hash": "e1f1f45b672ac8883d59b0f7cd6db912",
+    "mtime": 1795075934.6075964,
+    "seen": 1795076142.6454926,
+    "ast_hash": "0258a3c02fe35b67b3859dafcdbd38d9",
     "semantic_hash": ""
   },
   "src/assets/property/shared.tsx": {
-    "mtime": 1795074339.5051835,
-    "seen": 1795075545.9968326,
-    "ast_hash": "e9d08a7532ff27f4e9578a95e8e3dfe9",
+    "mtime": 1795075934.7293434,
+    "seen": 1795076142.6454935,
+    "ast_hash": "1a5f8d8db1578227fe50d07eaf1d0710",
     "semantic_hash": ""
   },
   "src/assets/character/README.md": {
@@ -768,74 +768,74 @@
     "semantic_hash": ""
   },
   "src/assets/character/backend_programmer/README.md": {
-    "mtime": 1795075506.7056699,
-    "seen": 1795075545.9968388,
-    "ast_hash": "98419c3d189afe6eb0272698ce55b2b1",
+    "mtime": 1795075919.6042948,
+    "seen": 1795076142.6455002,
+    "ast_hash": "bdeef532e592561e83a2e5638ead4c61",
     "semantic_hash": ""
   },
   "src/assets/character/boss/README.md": {
-    "mtime": 1795075506.7253163,
-    "seen": 1795075545.9968398,
-    "ast_hash": "43b06440335d3d1d1e089fbcb56a37e8",
+    "mtime": 1795075919.621918,
+    "seen": 1795076142.6455011,
+    "ast_hash": "0c5c23e4c30cbe85c21c6bd0c83a1978",
     "semantic_hash": ""
   },
   "src/assets/character/chef/README.md": {
-    "mtime": 1795075506.7423563,
-    "seen": 1795075545.9968407,
+    "mtime": 1795075919.640154,
+    "seen": 1795076142.645502,
     "ast_hash": "da73a798aa9a99bedbe293e06d129fe9",
     "semantic_hash": ""
   },
   "src/assets/character/doctor/README.md": {
-    "mtime": 1795075506.7560813,
-    "seen": 1795075545.9968414,
+    "mtime": 1795075919.6434848,
+    "seen": 1795076142.645503,
     "ast_hash": "1f8cf4ac4b2b90bead6fbc0afd479e3a",
     "semantic_hash": ""
   },
   "src/assets/character/frontend_programmer/README.md": {
-    "mtime": 1795075506.7691956,
-    "seen": 1795075545.9968424,
-    "ast_hash": "aa28f91299edf15971bb9ec99abc5a62",
+    "mtime": 1795075919.6464858,
+    "seen": 1795076142.645504,
+    "ast_hash": "ffc84faa8551607fbc3d756f5f420107",
     "semantic_hash": ""
   },
   "src/assets/character/fullstack_programmer/README.md": {
-    "mtime": 1795075506.7872715,
-    "seen": 1795075545.9968433,
+    "mtime": 1795075919.6593645,
+    "seen": 1795076142.645505,
     "ast_hash": "eb19dd3d8c94497e9ec91dc9ea45f392",
     "semantic_hash": ""
   },
   "src/assets/character/hacker/README.md": {
-    "mtime": 1795075506.799809,
-    "seen": 1795075545.996844,
+    "mtime": 1795075919.66289,
+    "seen": 1795076142.6455061,
     "ast_hash": "0c48660daadfaaed0778af2d271525db",
     "semantic_hash": ""
   },
   "src/assets/character/man/README.md": {
-    "mtime": 1795075506.8170767,
-    "seen": 1795075545.9968448,
-    "ast_hash": "2c63b98b30c9a879d1078b88aa3c5c20",
+    "mtime": 1795075919.7204995,
+    "seen": 1795076142.645507,
+    "ast_hash": "31c7d3ebfcaffce51c815acbf02d72fc",
     "semantic_hash": ""
   },
   "src/assets/character/project_manager/README.md": {
-    "mtime": 1795075506.834542,
-    "seen": 1795075545.9968455,
+    "mtime": 1795075919.6794236,
+    "seen": 1795076142.645508,
     "ast_hash": "7588077fc4977682f021e6dfe80bcda1",
     "semantic_hash": ""
   },
   "src/assets/character/quality_assurance/README.md": {
-    "mtime": 1795075506.8445702,
-    "seen": 1795075545.9968464,
+    "mtime": 1795075919.683133,
+    "seen": 1795076142.645509,
     "ast_hash": "9e54d4c7321877505ef5b138371df0a6",
     "semantic_hash": ""
   },
   "src/assets/character/tech_lead/README.md": {
-    "mtime": 1795075506.857664,
-    "seen": 1795075545.9968474,
+    "mtime": 1795075919.6861339,
+    "seen": 1795076142.6455104,
     "ast_hash": "724cd3c4e7762546a5151bea94493cf0",
     "semantic_hash": ""
   },
   "src/assets/character/woman/README.md": {
-    "mtime": 1795075506.8687034,
-    "seen": 1795075545.9968483,
+    "mtime": 1795075919.689133,
+    "seen": 1795076142.6455114,
     "ast_hash": "1a7925e7507d6e1d92d235e5f5e9bd2e",
     "semantic_hash": ""
   },

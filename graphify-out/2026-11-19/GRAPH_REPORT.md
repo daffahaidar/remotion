@@ -1,7 +1,7 @@
 # Graph Report - remotion  (2026-11-19)
 
 ## Corpus Check
-- 141 files · ~59,856 words
+- 141 files · ~59,779 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 5 file(s) not represented in the graph (top: (none) 5)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3b80626e`
+- Built from commit: `0e746862`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -83,9 +83,9 @@
   src/assets/character/backend_programmer/README.md → src/assets/character/shared/presets.ts
 - `Isi folder` --references--> `mixFace()`  [INFERRED]
   src/assets/character/frontend_programmer/README.md → src/assets/character/shared/presets.ts
-- `Kustomisasi` --references--> `FaceSpec`  [INFERRED]
-  src/assets/character/man/README.md → src/assets/character/shared/rig.ts
 - `Props` --references--> `FaceSpec`  [INFERRED]
+  src/assets/character/man/README.md → src/assets/character/shared/rig.ts
+- `Kustomisasi` --references--> `FaceSpec`  [INFERRED]
   src/assets/character/man/README.md → src/assets/character/shared/rig.ts
 
 ## Import Cycles
