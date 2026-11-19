@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1795088899.4364853,
-    "seen": 1795088902.153651,
-    "ast_hash": "c6dfc390ee0981e1aa7cb4fe44cbd703",
+    "mtime": 1795090751.2864687,
+    "seen": 1795092660.282392,
+    "ast_hash": "e2eb7185d305d60a99caf3600ce1cafb",
     "semantic_hash": ""
   },
   "remotion.config.ts": {
@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "src/Root.tsx": {
-    "mtime": 1795088899.4372542,
-    "seen": 1795088902.153656,
-    "ast_hash": "7ab377b5cd9da293e8db2c20367ea227",
+    "mtime": 1795091615.9545307,
+    "seen": 1795092660.282398,
+    "ast_hash": "d10ddb9ad9e7e87934609f13726c8222",
     "semantic_hash": ""
   },
   "src/index.ts": {
@@ -923,10 +923,112 @@
     "ast_hash": "e162a9db3441c092f28f0b60a84c7af9",
     "semantic_hash": ""
   },
+  "src/content/how-jwt-works/HowJwtWorks.tsx": {
+    "mtime": 1795092238.6271632,
+    "seen": 1795092660.282472,
+    "ast_hash": "cd608be5a10bc99ffc96872c17362f32",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/generate-audio.mjs": {
+    "mtime": 1795091629.7899199,
+    "seen": 1795092660.2824728,
+    "ast_hash": "4deecf4595c0c7ee3036ae9edfc610bd",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/Anatomy.tsx": {
+    "mtime": 1795092378.852765,
+    "seen": 1795092660.2824728,
+    "ast_hash": "5601255d942578d93c3cea7ac1388909",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/Expiry.tsx": {
+    "mtime": 1795092183.120532,
+    "seen": 1795092660.282474,
+    "ast_hash": "93744d4908cb7017f28a07884f2d677b",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/Flow.tsx": {
+    "mtime": 1795092086.9165852,
+    "seen": 1795092660.282475,
+    "ast_hash": "9060542c86d376ad9ba6c67138b2c30e",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/HackerFails.tsx": {
+    "mtime": 1795092157.2469664,
+    "seen": 1795092660.282475,
+    "ast_hash": "a3ee66e42dc979c45484f7180eccae16",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/Hook.tsx": {
+    "mtime": 1795092437.0187924,
+    "seen": 1795092660.282476,
+    "ast_hash": "61db6b45efdaf841142c0907f6a98618",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/NotEncrypted.tsx": {
+    "mtime": 1795092625.4314106,
+    "seen": 1795092660.282476,
+    "ast_hash": "77bcd72f15a1693d46456077231f185a",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/Recap.tsx": {
+    "mtime": 1795092378.852953,
+    "seen": 1795092660.2824771,
+    "ast_hash": "6e3b28e7f29c0367d8f9d62ba943280f",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/Session.tsx": {
+    "mtime": 1795092535.0164495,
+    "seen": 1795092660.2824771,
+    "ast_hash": "9c5c41d8d7d940da986cd7c505112f4e",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/Signature.tsx": {
+    "mtime": 1795092052.7218187,
+    "seen": 1795092660.282478,
+    "ast_hash": "6e0d9729fbe42dfeaa487cf06509740a",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/Stateless.tsx": {
+    "mtime": 1795091905.304159,
+    "seen": 1795092660.282478,
+    "ast_hash": "ca9216236d2ef3ca0adc3fab7ae5f363",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/scenes/Wristband.tsx": {
+    "mtime": 1795092625.431314,
+    "seen": 1795092660.282479,
+    "ast_hash": "852cc3bada98be190815716358c60006",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/theme.ts": {
+    "mtime": 1795091870.8975658,
+    "seen": 1795092660.2824802,
+    "ast_hash": "baa6d4f410719944cfdadf46e97b10ff",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/ui.tsx": {
+    "mtime": 1795092625.4311934,
+    "seen": 1795092660.2824802,
+    "ast_hash": "9131e938d184a4621306f05e96dd21c3",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/script_dubbing.md": {
+    "mtime": 1795092477.9918852,
+    "seen": 1795092660.282492,
+    "ast_hash": "999a2e557d06817a21d1b08c6f628a9a",
+    "semantic_hash": ""
+  },
+  "public/audio/music/how-jwt-works.mp3": {
+    "mtime": 1795091220.2572777,
+    "seen": 1795092660.282502,
+    "ast_hash": "481c5fb1a8cda7a793896311ebfec6e4",
+    "semantic_hash": ""
+  },
   "package-lock.json": {
-    "mtime": 1794835349.8810413,
-    "seen": 1795088902.1537411,
-    "ast_hash": "5d9a60ce602156f85f09bf94933d59e5",
+    "mtime": 1795090751.315493,
+    "seen": 1795092660.282503,
+    "ast_hash": "aa963577a55a430db1ae3dd6345979ad",
     "semantic_hash": ""
   }
 }

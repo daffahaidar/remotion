@@ -13,6 +13,7 @@ import {
 	TechLeadCharacter,
 	WomanCharacter,
 } from './assets/character';
+import {HowJwtWorks, TOTAL_SECONDS} from './content/how-jwt-works/HowJwtWorks';
 import {ModelSheet} from './ModelSheet';
 import {PropertySheet} from './PropertySheet';
 import {RigDemo} from './RigDemo';
@@ -22,6 +23,18 @@ import {RigDemo} from './RigDemo';
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
+			<Folder name="Content">
+				<Composition
+					id="HowJwtWorks"
+					component={HowJwtWorks}
+					width={1080}
+					height={1920}
+					fps={30}
+					durationInFrames={TOTAL_SECONDS * 30}
+					defaultProps={{musicVolume: 0.28}}
+				/>
+			</Folder>
+
 			<Folder name="Rigs">
 				<Composition
 					id="MascotRig"
