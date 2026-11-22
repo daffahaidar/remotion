@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "src/Root.tsx": {
-    "mtime": 1795367849.0918775,
-    "seen": 1795367967.634054,
-    "ast_hash": "f40d3c4d522626785ab7bb2744b198ef",
+    "mtime": 1795368061.5573246,
+    "seen": 1795368090.028512,
+    "ast_hash": "6ef7fb8e714d0415519f40b8f115b615",
     "semantic_hash": ""
   },
   "src/index.ts": {
@@ -1026,9 +1026,9 @@
     "semantic_hash": ""
   },
   "src/content/PROMPT_TECH_VIDEO.md": {
-    "mtime": 1795367932.25047,
-    "seen": 1795367967.634161,
-    "ast_hash": "ea7830a523f400fe8b437b1526983e41",
+    "mtime": 1795368183.7323515,
+    "seen": 1795368186.590952,
+    "ast_hash": "88a3edef01c5cb8cde669edbd0c7063d",
     "semantic_hash": ""
   },
   "src/assets/channel/profile.png": {
@@ -1152,15 +1152,27 @@
     "semantic_hash": ""
   },
   "src/content/how-oauth-works/Thumbnail.tsx": {
-    "mtime": 1795367884.0564742,
-    "seen": 1795367967.634138,
-    "ast_hash": "c936bb321d164a8093d001e2d5a5ec3c",
+    "mtime": 1795367972.0698993,
+    "seen": 1795368090.028594,
+    "ast_hash": "2d759f4dcd3058dd6823465edbf33592",
     "semantic_hash": ""
   },
   "src/content/how-oauth-works/thumbnail.png": {
     "mtime": 1795367887.499408,
     "seen": 1795367967.634172,
     "ast_hash": "9113b9e733b802bf42b820b80e4bcb6d",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/Thumbnail.tsx": {
+    "mtime": 1795368165.4452426,
+    "seen": 1795368186.59092,
+    "ast_hash": "0cee15fc8755afc318a35877ee93cef9",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/thumbnail.png": {
+    "mtime": 1795368168.501798,
+    "seen": 1795368186.590964,
+    "ast_hash": "3ad6e6f3914a076a01f8abefefbeacf9",
     "semantic_hash": ""
   },
   "package-lock.json": {
