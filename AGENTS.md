@@ -4,7 +4,7 @@ Instruksi untuk AI coding agent (Codex, Antigravity, Cursor, Gemini, Claude, dll
 
 - Selalu balas pengguna dalam Bahasa Indonesia. Nama variabel, fungsi, class, dan file kode memakai bahasa Inggris.
 - Repo ini berisi video motion graphic Remotion (React + TypeScript). Konten video ada di `src/content/<slug>/` dan didaftarkan di `src/Root.tsx`.
-- Untuk permintaan membuat video baru (cara kerja, tutorial, fakta unik, berita teknologi, perbandingan, mitos vs fakta, tips & tools, dll.): baca dan ikuti `src/content/PROMPT_TECH_VIDEO.md` secara lengkap, meskipun pengguna tidak menyebutnya.
+- Untuk permintaan membuat video baru (cara kerja, tutorial, fakta unik, berita teknologi, perbandingan, mitos vs fakta, tips & tools, dll.): baca dan ikuti `src/content/PROMPT_TECH_VIDEO.md` secara lengkap, meskipun pengguna tidak menyebutnya. Setiap video wajib disertai thumbnail cover 3:4 bergaya neumorphism di `src/content/<slug>/thumbnail.png` (bagian 11 playbook), tanpa perlu diminta.
 - Tulis kode seminimal mungkin: pakai ulang yang sudah ada, jangan menambah dependency atau abstraksi yang tidak perlu.
 - Perintah penting:
   - preview: `npx remotion studio`

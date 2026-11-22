@@ -1,36 +1,8 @@
 import React from 'react';
 import {FaCrown, FaEye, FaQuestion} from 'react-icons/fa6';
 import {interpolate, random, useCurrentFrame} from 'remotion';
-import {HackerCharacter, type HackerProps} from '../../../assets/character';
-import {Laptop, OfficeDesk, type ScreenMode} from '../../../assets/property';
 import {MONO, SFX, TONES} from '../theme';
-import {Actor, Card, Glow, Headline, Pill, Reveal, SceneShell, Sfx, Stamp, useLook, useRamp, useSec} from '../ui';
-
-/** Hacker at a desk (feet at y = floor). Reused by the payoff scene. */
-export const HackerDesk: React.FC<{
-	readonly x: number;
-	readonly floor: number;
-	readonly scale: number;
-	readonly screen: ScreenMode;
-	readonly hacker: HackerProps;
-}> = ({x, floor, scale, screen, hacker}) => {
-	// Desk/laptop a bit smaller than the property README pairing so the face stays visible above the screen.
-	const desk = 1.18 * scale;
-	const laptop = 0.7 * scale;
-	return (
-		<>
-			<Actor x={x} floor={floor}>
-				<HackerCharacter {...hacker} style={{scale}} />
-			</Actor>
-			<div style={{position: 'absolute', left: x - 280, top: floor - 340, scale: desk, transformOrigin: '280px 340px'}}>
-				<OfficeDesk variant="modern" showChair={false} />
-			</div>
-			<div style={{position: 'absolute', left: x - 170, top: floor - 202 * desk - 206, scale: laptop, transformOrigin: '160px 200px'}}>
-				<Laptop screen={screen} color="spaceGray" badge="terminal" />
-			</div>
-		</>
-	);
-};
+import {Card, Glow, HackerDesk, Headline, Pill, Reveal, SceneShell, Sfx, Stamp, useLook, useRamp, useSec} from '../ui';
 
 /** `"user"` gets selected at `at`, deleted, and retyped as `"admin"`; struck through at `strikeAt`. */
 export const RoleEdit: React.FC<{readonly at: number; readonly strikeAt?: number}> = ({at, strikeAt = 999}) => {

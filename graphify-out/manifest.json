@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "src/Root.tsx": {
-    "mtime": 1795091615.9545307,
-    "seen": 1795092660.282398,
-    "ast_hash": "d10ddb9ad9e7e87934609f13726c8222",
+    "mtime": 1795368061.5573246,
+    "seen": 1795368090.028512,
+    "ast_hash": "6ef7fb8e714d0415519f40b8f115b615",
     "semantic_hash": ""
   },
   "src/index.ts": {
@@ -924,117 +924,255 @@
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/HowJwtWorks.tsx": {
-    "mtime": 1795092238.6271632,
-    "seen": 1795092660.282472,
-    "ast_hash": "cd608be5a10bc99ffc96872c17362f32",
-    "semantic_hash": ""
-  },
-  "src/content/how-jwt-works/generate-audio.mjs": {
-    "mtime": 1795091629.7899199,
-    "seen": 1795092660.2824728,
-    "ast_hash": "4deecf4595c0c7ee3036ae9edfc610bd",
+    "mtime": 1795366939.5698028,
+    "seen": 1795367427.370176,
+    "ast_hash": "8ad140cf8d5c79fbce348d85d8a8bf59",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Anatomy.tsx": {
-    "mtime": 1795092378.852765,
-    "seen": 1795092660.2824728,
+    "mtime": 1795366910.2007754,
+    "seen": 1795367427.370177,
     "ast_hash": "5601255d942578d93c3cea7ac1388909",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Expiry.tsx": {
-    "mtime": 1795092183.120532,
-    "seen": 1795092660.282474,
+    "mtime": 1795366910.2009213,
+    "seen": 1795367427.370177,
     "ast_hash": "93744d4908cb7017f28a07884f2d677b",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Flow.tsx": {
-    "mtime": 1795092086.9165852,
-    "seen": 1795092660.282475,
-    "ast_hash": "9060542c86d376ad9ba6c67138b2c30e",
+    "mtime": 1795366921.3448255,
+    "seen": 1795367427.370178,
+    "ast_hash": "ac3a87c5dc3b908d1635dcb2412278c0",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/HackerFails.tsx": {
-    "mtime": 1795092157.2469664,
-    "seen": 1795092660.282475,
-    "ast_hash": "a3ee66e42dc979c45484f7180eccae16",
+    "mtime": 1795366921.344741,
+    "seen": 1795367427.370178,
+    "ast_hash": "4ad1fd73c2aa8f44db22abb23530feeb",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Hook.tsx": {
-    "mtime": 1795092437.0187924,
-    "seen": 1795092660.282476,
-    "ast_hash": "61db6b45efdaf841142c0907f6a98618",
+    "mtime": 1795366921.3446398,
+    "seen": 1795367427.3701792,
+    "ast_hash": "ca14800bfeab7dd8a4c154f1d51cbcc3",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/NotEncrypted.tsx": {
-    "mtime": 1795092625.4314106,
-    "seen": 1795092660.282476,
+    "mtime": 1795366910.2010624,
+    "seen": 1795367427.3701801,
     "ast_hash": "77bcd72f15a1693d46456077231f185a",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Recap.tsx": {
-    "mtime": 1795092378.852953,
-    "seen": 1795092660.2824771,
-    "ast_hash": "6e3b28e7f29c0367d8f9d62ba943280f",
+    "mtime": 1795366939.5387256,
+    "seen": 1795367427.3701801,
+    "ast_hash": "4379b90f4a9c58bbbe25524075e3dbaa",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Session.tsx": {
-    "mtime": 1795092535.0164495,
-    "seen": 1795092660.2824771,
+    "mtime": 1795366910.2011952,
+    "seen": 1795367427.370181,
     "ast_hash": "9c5c41d8d7d940da986cd7c505112f4e",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Signature.tsx": {
-    "mtime": 1795092052.7218187,
-    "seen": 1795092660.282478,
+    "mtime": 1795366910.2013218,
+    "seen": 1795367427.370181,
     "ast_hash": "6e0d9729fbe42dfeaa487cf06509740a",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Stateless.tsx": {
-    "mtime": 1795091905.304159,
-    "seen": 1795092660.282478,
+    "mtime": 1795366910.2014468,
+    "seen": 1795367427.3701818,
     "ast_hash": "ca9216236d2ef3ca0adc3fab7ae5f363",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Wristband.tsx": {
-    "mtime": 1795092625.431314,
-    "seen": 1795092660.282479,
+    "mtime": 1795366910.2015762,
+    "seen": 1795367427.3701818,
     "ast_hash": "852cc3bada98be190815716358c60006",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/theme.ts": {
-    "mtime": 1795091870.8975658,
-    "seen": 1795092660.2824802,
-    "ast_hash": "baa6d4f410719944cfdadf46e97b10ff",
+    "mtime": 1795367024.3635552,
+    "seen": 1795367427.370183,
+    "ast_hash": "4aad18c95911c86b7ff7111c956283b8",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/ui.tsx": {
-    "mtime": 1795092625.4311934,
-    "seen": 1795092660.2824802,
-    "ast_hash": "9131e938d184a4621306f05e96dd21c3",
+    "mtime": 1795367024.3731244,
+    "seen": 1795367427.370184,
+    "ast_hash": "079916e246d6606a626ae1ef5ef90a97",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/script_dubbing.md": {
-    "mtime": 1795092477.9918852,
-    "seen": 1795092660.282492,
-    "ast_hash": "999a2e557d06817a21d1b08c6f628a9a",
+    "mtime": 1795350519.6195786,
+    "seen": 1795350571.9959402,
+    "ast_hash": "0d48bdd5bc87c5ed7c205761eeb5ca42",
     "semantic_hash": ""
   },
   "public/audio/music/how-jwt-works.mp3": {
-    "mtime": 1795091220.2572777,
-    "seen": 1795092660.282502,
-    "ast_hash": "481c5fb1a8cda7a793896311ebfec6e4",
+    "mtime": 1795366999.5669446,
+    "seen": 1795367427.37022,
+    "ast_hash": "71e0dbf8755d2b9c491a99f83f20da8e",
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1795095119.4823337,
-    "seen": 1795095357.256383,
-    "ast_hash": "77d624fbfbc46056bbf000ee11a563a9",
+    "mtime": 1795367952.5020182,
+    "seen": 1795367967.6341498,
+    "ast_hash": "7735d0ac0d0d30d98760d3712ad09482",
     "semantic_hash": ""
   },
   "src/content/PROMPT_TECH_VIDEO.md": {
-    "mtime": 1795095119.4576423,
-    "seen": 1795095357.256395,
-    "ast_hash": "953932b25bde81be3a5daf8b7fbb35ea",
+    "mtime": 1795368183.7323515,
+    "seen": 1795368186.590952,
+    "ast_hash": "88a3edef01c5cb8cde669edbd0c7063d",
+    "semantic_hash": ""
+  },
+  "src/assets/channel/profile.png": {
+    "mtime": 1795349510.4428322,
+    "seen": 1795350571.9959412,
+    "ast_hash": "6e9155481418abad0328829e54574f99",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/HowOauthWorks.tsx": {
+    "mtime": 1795366873.3564932,
+    "seen": 1795367427.370185,
+    "ast_hash": "eae7996bf7f71712bec1092234c794f2",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/parts.tsx": {
+    "mtime": 1795366873.4066224,
+    "seen": 1795367427.370185,
+    "ast_hash": "e719c66a715ae2723418194b47f86fb1",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/Anatomy.tsx": {
+    "mtime": 1795367198.1560714,
+    "seen": 1795367427.370186,
+    "ast_hash": "e49ef4e24181627e5a155a237769eb3d",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/Flow.tsx": {
+    "mtime": 1795367198.1568975,
+    "seen": 1795367427.370186,
+    "ast_hash": "1f3e3efb7b9a8d8246164376532f3e68",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/Hook.tsx": {
+    "mtime": 1795366873.4507906,
+    "seen": 1795367427.370187,
+    "ast_hash": "63b72f302a95072c1041a86f3fea1fda",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/NotLogin.tsx": {
+    "mtime": 1795367198.156309,
+    "seen": 1795367427.370187,
+    "ast_hash": "acf506c32568d70375819766c9664830",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/OldWay.tsx": {
+    "mtime": 1795367198.1553144,
+    "seen": 1795367427.370188,
+    "ast_hash": "60742c5240c3cf05072582bcd1689894",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/Pkce.tsx": {
+    "mtime": 1795367198.1575122,
+    "seen": 1795367427.370188,
+    "ast_hash": "d6abd71b2fef9c70cf67dfbf7a782f73",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/Problem.tsx": {
+    "mtime": 1795367198.1550834,
+    "seen": 1795367427.370189,
+    "ast_hash": "a90fdfe67c46bef7b91a3d5063544395",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/Recap.tsx": {
+    "mtime": 1795367198.157638,
+    "seen": 1795367427.370189,
+    "ast_hash": "163dc90b1f7566ccf693b44b3518f02e",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/Redirect.tsx": {
+    "mtime": 1795367198.1566153,
+    "seen": 1795367427.3701901,
+    "ast_hash": "01c55df1638172b0034e6fe4bc8c5905",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/ShadyAppFails.tsx": {
+    "mtime": 1795367332.007825,
+    "seen": 1795367427.370191,
+    "ast_hash": "277172237fd623a548de1659132bfe90",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/scenes/VisitorPass.tsx": {
+    "mtime": 1795367198.1559303,
+    "seen": 1795367427.370191,
+    "ast_hash": "d390b1b96a9a79a96b413596353d6356",
+    "semantic_hash": ""
+  },
+  "src/content/shared/ChannelOutro.tsx": {
+    "mtime": 1795367810.9171097,
+    "seen": 1795367967.6341472,
+    "ast_hash": "8a1856f1e5189e540285a3ae9c73bb6f",
+    "semantic_hash": ""
+  },
+  "src/content/shared/generate-audio.mjs": {
+    "mtime": 1795366987.814139,
+    "seen": 1795367427.3701918,
+    "ast_hash": "8fce676cab49cae5b7e4ffa0baf689ef",
+    "semantic_hash": ""
+  },
+  "src/content/shared/theme.ts": {
+    "mtime": 1795367024.3634648,
+    "seen": 1795367427.370193,
+    "ast_hash": "126ebb291abd333c8dea676a8daae1a9",
+    "semantic_hash": ""
+  },
+  "src/content/shared/ui.tsx": {
+    "mtime": 1795367024.383309,
+    "seen": 1795367427.370194,
+    "ast_hash": "a912544f290edefcf333aac4ea88d177",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/script_dubbing.md": {
+    "mtime": 1795367250.563357,
+    "seen": 1795367427.37021,
+    "ast_hash": "1fb43ed85ed17d1b3ce3d1e345362f75",
+    "semantic_hash": ""
+  },
+  "public/audio/music/how-oauth-works.mp3": {
+    "mtime": 1795366293.444858,
+    "seen": 1795367427.3702211,
+    "ast_hash": "66d8f5c0e50e39d0bf95437942e89ec2",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/Thumbnail.tsx": {
+    "mtime": 1795367972.0698993,
+    "seen": 1795368090.028594,
+    "ast_hash": "2d759f4dcd3058dd6823465edbf33592",
+    "semantic_hash": ""
+  },
+  "src/content/how-oauth-works/thumbnail.png": {
+    "mtime": 1795367887.499408,
+    "seen": 1795367967.634172,
+    "ast_hash": "9113b9e733b802bf42b820b80e4bcb6d",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/Thumbnail.tsx": {
+    "mtime": 1795368165.4452426,
+    "seen": 1795368186.59092,
+    "ast_hash": "0cee15fc8755afc318a35877ee93cef9",
+    "semantic_hash": ""
+  },
+  "src/content/how-jwt-works/thumbnail.png": {
+    "mtime": 1795368168.501798,
+    "seen": 1795368186.590964,
+    "ast_hash": "3ad6e6f3914a076a01f8abefefbeacf9",
     "semantic_hash": ""
   },
   "package-lock.json": {

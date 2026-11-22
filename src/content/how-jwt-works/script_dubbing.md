@@ -1,6 +1,6 @@
 # Script Dubbing — "Cara Kerja JWT"
 
-**Durasi total:** 02:51 (171 detik) · **Format:** 9:16 (1080×1920), 30 fps · **Komposisi Remotion:** `HowJwtWorks`
+**Durasi total:** 02:56 (176 detik) · **Format:** 9:16 (1080×1920), 30 fps · **Komposisi Remotion:** `HowJwtWorks`
 
 ## Cara membaca script ini
 
@@ -228,7 +228,7 @@ Detik 02:29 - 02:34:
 "Setelah habis, aplikasi minta token baru pakai **refresh token**. Tanpa perlu login ulang."
 *(Visual: refresh token → access token baru, "Tanpa login ulang")*
 
-### Scene 11 — Rangkuman & ajakan
+### Scene 11 — Rangkuman
 
 Detik 02:34 - 02:37:
 "Kesimpulannya: JWT itu **data kamu**, ditambah **tanda tangan digital**."
@@ -242,9 +242,23 @@ Detik 02:40 - 02:46:
 "Dan ingat empat aturan aman: pakai **HTTPS**, jangan simpan **data sensitif**, jaga **secret key**, dan buat masa berlaku **pendek**."
 *(Visual: empat kartu aturan muncul satu per satu sesuai yang kamu sebut)*
 
-Detik 02:46 - 02:51:
-"**Simpan** video ini biar nggak lupa, dan **follow** buat bahas OAuth di video berikutnya!"
-*(Visual: kartu "Video berikutnya: OAuth 2.0", Budi melambai, tombol Simpan & Follow)*
+### Scene 12 — Outro channel
+
+Detik 02:46 - 02:49:
+"Kalau video ini **ngebantu**, kasih **like**..."
+*(Visual: foto profil + @daffahaidarnz, tiga tombol muncul, teks "Kalau videonya ngebantu"; jari men-tap tombol Like di 02:48, hati jadi merah)*
+
+Detik 02:49 - 02:51:
+"**simpan** biar nggak lupa..."
+*(Visual: jari men-tap tombol Simpan di 02:49, bookmark jadi emas, teks "Biar nggak lupa")*
+
+Detik 02:51 - 02:53:
+"dan **follow** atau **subscribe** daffahaidarnz..."
+*(Visual: jari men-tap tombol Follow di 02:51, foto profil berdenyut, teks "Follow / Subscribe, gratis kok!")*
+
+Detik 02:53 - 02:56:
+"biar nggak ketinggalan **OAuth** di video berikutnya!"
+*(Visual: kartu "Video berikutnya: OAuth 2.0")*
 
 ---
 

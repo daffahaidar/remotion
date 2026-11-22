@@ -1,6 +1,6 @@
-import {Audio} from '@remotion/media';
 import React from 'react';
-import {interpolate, Series, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {Series, staticFile, useVideoConfig} from 'remotion';
+import {ChannelOutro, OUTRO_SECONDS} from '../shared/ChannelOutro';
 import {Anatomy} from './scenes/Anatomy';
 import {Expiry} from './scenes/Expiry';
 import {Flow} from './scenes/Flow';
@@ -12,6 +12,7 @@ import {Session} from './scenes/Session';
 import {Signature} from './scenes/Signature';
 import {Stateless} from './scenes/Stateless';
 import {Wristband} from './scenes/Wristband';
+import {Backsound} from './ui';
 
 /**
  * Scene lengths in seconds, matching script_dubbing.md. Retime here to fit your voice-over;
@@ -28,7 +29,8 @@ export const SCENE_SECONDS = {
 	flow: 22,
 	hackerFails: 18,
 	expiry: 12,
-	recap: 17,
+	recap: 12,
+	outro: OUTRO_SECONDS,
 } as const;
 export const TOTAL_SECONDS = Object.values(SCENE_SECONDS).reduce((a: number, b) => a + b, 0);
 
@@ -38,17 +40,6 @@ const TWIST_SECONDS = SCENE_SECONDS.hook + SCENE_SECONDS.stateless + SCENE_SECON
 export type HowJwtWorksProps = {
 	/** 0 = mute the backsound (e.g. when adding a trending sound in-app). */
 	readonly musicVolume: number;
-};
-
-const Backsound: React.FC<{readonly volume: number}> = ({volume}) => {
-	const frame = useCurrentFrame();
-	const {fps, durationInFrames} = useVideoConfig();
-	const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
-	const twist = TWIST_SECONDS * fps;
-	const fadeIn = interpolate(frame, [0, 0.3 * fps], [0, 1], clamp);
-	const dropout = interpolate(frame, [twist - 2, twist, twist + 1.1 * fps, twist + 1.6 * fps], [1, 0, 0, 1], clamp);
-	const fadeOut = interpolate(frame, [durationInFrames - 3 * fps, durationInFrames], [1, 0], clamp);
-	return <Audio name="Backsound" src={staticFile('audio/music/how-jwt-works.mp3')} volume={volume * fadeIn * dropout * fadeOut} />;
 };
 
 export const HowJwtWorks: React.FC<HowJwtWorksProps> = ({musicVolume}) => {
@@ -86,11 +77,14 @@ export const HowJwtWorks: React.FC<HowJwtWorksProps> = ({musicVolume}) => {
 				<Series.Sequence name="10 Masa berlaku" durationInFrames={SCENE_SECONDS.expiry * fps}>
 					<Expiry />
 				</Series.Sequence>
-				<Series.Sequence name="11 Rangkuman & CTA" durationInFrames={SCENE_SECONDS.recap * fps}>
+				<Series.Sequence name="11 Rangkuman" durationInFrames={SCENE_SECONDS.recap * fps}>
 					<Recap />
 				</Series.Sequence>
+				<Series.Sequence name="12 Outro channel" durationInFrames={SCENE_SECONDS.outro * fps}>
+					<ChannelOutro nextTopic="OAuth 2.0" nextQuestion={'"Login pakai Google" itu kerjanya gimana?'} />
+				</Series.Sequence>
 			</Series>
-			<Backsound volume={musicVolume} />
+			<Backsound src={staticFile('audio/music/how-jwt-works.mp3')} volume={musicVolume} dropAt={TWIST_SECONDS} />
 		</>
 	);
 };

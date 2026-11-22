@@ -1,14 +1,14 @@
-// Procedural, royalty-free audio for "Cara Kerja JWT" — no samples, no licenses, no Content ID claims.
+// Procedural, royalty-free backsound for every video — no samples, no licenses, no Content ID claims.
 // Deterministic (seeded): every run produces the same files.
-//   node src/content/how-jwt-works/generate-audio.mjs
-// Writes public/audio/music/how-jwt-works.mp3 and synthesized SFX into public/audio/sfx/.
-// Music is 120 BPM (1 bar = 2 s) and its sections follow SCENE_SECONDS in HowJwtWorks.tsx.
+//   node src/content/shared/generate-audio.mjs <slug>          -> public/audio/music/<slug>.mp3
+//   node src/content/shared/generate-audio.mjs <slug> --sfx    -> also rewrites the synthesized SFX in public/audio/sfx/
+// Music is 120 BPM (1 bar = 2 s). Add a SONGS entry per video whose sections follow that video's SCENE_SECONDS.
 import {Buffer} from 'node:buffer';
 import {execFileSync} from 'node:child_process';
 import {rmSync, writeFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import {stdout} from 'node:process';
+import {argv, exit, stdout} from 'node:process';
 
 const SR = 44100;
 const TAU = Math.PI * 2;
@@ -181,8 +181,34 @@ const writeWav = (path, [L, R], peak = 0.89) => {
 	return gain;
 };
 
+// --- songs ----------------------------------------------------------------------
+// Section names: intro / pre (hook, title impact on the first pre bar), A (groove, no arpeggio),
+// Aarp, B (busier), break (no drums, riser into the next scene), tension + resolve (dark payoff), end (final chord).
+// `loop` = the groove's chord progression (the mood). The video runs `bars * 2` s; the file is 2 s longer for the final chord.
+const SONGS = {
+	// hook 0-12 s, explainer 12-124 s, hacker 124-142 s, recap 142-166 s, channel outro 166-176 s.
+	'how-jwt-works': {
+		loop: ['Am7', 'Fmaj7', 'Cmaj7', 'G6'],
+		sections: [['intro', 4], ['pre', 2], ['A', 8], ['Aarp', 8], ['B', 8], ['break', 4], ['Aarp', 8], ['B', 8], ['Aarp', 12], ['tension', 6], ['resolve', 3], ['Aarp', 6], ['B', 6], ['A', 4], ['end', 1]],
+	},
+	// hook 0-12, problem 12-22, old way 22-34 (B), analogy 34-48, anatomy 48-58 + break 58-66, twist 66-78 (music drops at 66),
+	// mechanism 78-96 (B), flow 96-116, payoff 116-128 tension + 128-134 resolve, PKCE 134-146, recap 146-158 (B), outro 158-168.
+	'how-oauth-works': {
+		loop: ['Am7', 'Fmaj7', 'Cmaj7', 'G6'],
+		sections: [['intro', 4], ['pre', 2], ['A', 5], ['B', 6], ['Aarp', 7], ['B', 5], ['break', 4], ['Aarp', 6], ['B', 9], ['Aarp', 10], ['tension', 6], ['resolve', 3], ['Aarp', 6], ['B', 6], ['A', 4], ['end', 1]],
+	},
+};
+const SLUG = argv[2];
+const SONG = SONGS[SLUG];
+if (!SONG) {
+	stdout.write(`Usage: node src/content/shared/generate-audio.mjs <${Object.keys(SONGS).join(' | ')}> [--sfx]\n`);
+	exit(1);
+}
+/** One entry per bar: section name, bar index inside the section, section length. */
+const PLAN = SONG.sections.flatMap(([sec, n]) => Array.from({length: n}, (_, k) => ({sec, k, n})));
+
 // --- music ----------------------------------------------------------------------
-const LEN = 175;
+const LEN = PLAN.length * BAR + 2;
 const N = S(LEN);
 const drums = bus(LEN);
 const claps = bus(LEN);
@@ -210,12 +236,8 @@ const CH = {
 	G: {root: 43, notes: [55, 59, 62, 67]},
 	Am9: {root: 45, notes: [57, 60, 64, 67, 71]},
 };
-const LOOP = ['Am7', 'Fmaj7', 'Cmaj7', 'G6'];
+const LOOP = SONG.loop;
 const ARP = [0, 1, 2, 3, 2, 1, 3, 2, 0, 2, 1, 3, 2, 3, 1, 2];
-
-// Bars line up with scene cuts: hook 0-12 s, explainer 12-124 s, hacker 124-142 s, outro 142-171 s.
-const section = (bar) =>
-	bar < 4 ? 'intro' : bar < 6 ? 'pre' : bar < 14 ? 'A' : bar < 22 ? 'Aarp' : bar < 30 ? 'B' : bar < 34 ? 'break' : bar < 42 ? 'Aarp' : bar < 50 ? 'B' : bar < 62 ? 'Aarp' : bar < 68 ? 'tension' : bar < 71 ? 'resolve' : bar < 77 ? 'Aarp' : bar < 85 ? 'B' : 'end';
 
 const groove = (bar, t, sec) => {
 	const ch = CH[LOOP[(bar - 6 + 400) % 4]];
@@ -243,48 +265,47 @@ const groove = (bar, t, sec) => {
 	if (bar % 8 === 5) for (let s = 0; s < 4; s++) clap(claps, t + (3 + s / 4) * BEAT, 0.12 + s * 0.06, 0);
 };
 
-for (let bar = 0; bar <= 85; bar++) {
+for (const [bar, {sec, k, n}] of PLAN.entries()) {
 	const t = bar * BAR;
-	const sec = section(bar);
 	if (sec === 'intro') {
-		if (bar === 0) for (const [i, m] of [45, 52, 57, 60].entries()) pad(pads, 0, 8, m, 0.05, i % 2 ? -0.3 : 0.3, 0.9);
+		if (k === 0) for (const [i, m] of [45, 52, 57, 60].entries()) pad(pads, 0, 8, m, 0.05, i % 2 ? -0.3 : 0.3, 0.9);
 		for (const beat of [0, 2]) {
 			kickAt(t + beat * BEAT, 0.6);
 			kickAt(t + beat * BEAT + 0.24, 0.35);
 		}
 		for (let q = 0; q < 4; q++) hat(drums, t + q * BEAT + BEAT / 2, 0.05, 90, 0.3);
-		if (bar === 3) riser(fx, t, BAR, 0.45);
+		if (k === n - 1) riser(fx, t, BAR, 0.45);
 	} else if (sec === 'pre') {
-		if (bar === 4) impact(fx, t, 0.8);
-		const ch = CH[bar === 4 ? 'Am7' : 'Fmaj7'];
+		if (k === 0) impact(fx, t, 0.8);
+		const ch = CH[k === 0 ? 'Am7' : 'Fmaj7'];
 		chordEp(keys, t, 1.9, ch.notes, 0.07);
 		for (const [i, m] of ch.notes.entries()) pad(pads, t, BAR, m - 12, 0.025, i % 2 ? -0.4 : 0.4);
 		bass(low, t, 1.5, ch.root, 0.25);
 		for (let s = 0; s < 8; s++) hat(drums, t + (s * BEAT) / 2, s % 2 ? 0.07 : 0.04, 70, 0.25);
-		if (bar === 5) riser(fx, t + BAR / 2, BAR / 2, 0.25);
+		if (k === n - 1) riser(fx, t + BAR / 2, BAR / 2, 0.25);
 	} else if (sec === 'break') {
 		const ch = CH[LOOP[(bar - 6) % 4]];
 		for (const [i, m] of ch.notes.entries()) pad(pads, t, BAR, m, 0.035, i % 2 ? -0.4 : 0.4);
 		bass(low, t, 1.8, ch.root, 0.2);
 		for (let s = 0; s < 16; s++) pluck(arp, t + (s * BEAT) / 4, ch.notes[ARP[s] % ch.notes.length] + 12, 0.055, s % 2 ? 0.5 : -0.5);
 		for (let q = 0; q < 4; q++) hat(drums, t + q * BEAT, 0.05, 80, 0);
-		if (bar === 33) riser(fx, t, BAR, 0.3);
+		if (k === n - 1) riser(fx, t, BAR, 0.3);
 	} else if (sec === 'tension') {
-		const ch = CH[['Am', 'Am', 'F', 'F', 'E', 'E'][bar - 62]];
+		const ch = CH[['Am', 'Am', 'F', 'F', 'E', 'E'][Math.floor((k * 6) / n)]];
 		for (const [i, m] of ch.notes.entries()) pad(pads, t, BAR, m - 12, 0.045, i % 2 ? -0.4 : 0.4, 0.8);
 		for (let e = 0; e < 8; e++) bass(low, t + (e * BEAT) / 2, 0.18, ch.root, e % 2 ? 0.2 : 0.28);
 		for (let q = 0; q < 4; q++) {
 			kickAt(t + q * BEAT, 0.6);
 			hat(drums, t + q * BEAT + BEAT / 2, 0.07, 70, 0.2);
 		}
-		if (bar === 66) riser(fx, t, 2 * BAR, 0.5);
+		if (k === n - 2) riser(fx, t, 2 * BAR, 0.5);
 	} else if (sec === 'resolve') {
-		if (bar === 68) impact(fx, t, 0.9);
-		const ch = CH[['Am9', 'F', 'G'][bar - 68]];
+		if (k === 0) impact(fx, t, 0.9);
+		const ch = CH[['Am9', 'F', 'G'][Math.floor((k * 3) / n)]];
 		chordEp(keys, t, 1.9, ch.notes, 0.07);
 		for (const [i, m] of ch.notes.entries()) pad(pads, t, BAR, m - 12, 0.03, i % 2 ? -0.4 : 0.4);
 		bass(low, t, 1.8, ch.root, 0.22);
-		if (bar === 70) for (let s = 0; s < 8; s++) hat(drums, t + (s * BEAT) / 2, s % 2 ? 0.07 : 0.04, 70, 0.25);
+		if (k === n - 1) for (let s = 0; s < 8; s++) hat(drums, t + (s * BEAT) / 2, s % 2 ? 0.07 : 0.04, 70, 0.25);
 	} else if (sec === 'end') {
 		kickAt(t, 0.9);
 		chordEp(keys, t, 3.5, CH.Am9.notes, 0.1);
@@ -308,12 +329,18 @@ for (let c = 0; c < 2; c++)
 		master[c][i] = Math.tanh(1.1 * (drums[c][i] + claps[c][i] + fx[c][i] + d * (low[c][i] + keys[c][i] + arp[c][i] + pads[c][i]) + 0.9 * wet[c][i])) * fade;
 	}
 
-const wav = join(tmpdir(), 'how-jwt-works-music.wav');
+const wav = join(tmpdir(), `${SLUG}-music.wav`);
 writeWav(wav, master);
-execFileSync('npx', ['remotion', 'ffmpeg', '-y', '-hide_banner', '-loglevel', 'error', '-i', wav, '-c:a', 'libmp3lame', '-b:a', '192k', 'public/audio/music/how-jwt-works.mp3'], {stdio: 'inherit'});
+execFileSync('npx', ['remotion', 'ffmpeg', '-y', '-hide_banner', '-loglevel', 'error', '-i', wav, '-c:a', 'libmp3lame', '-b:a', '192k', `public/audio/music/${SLUG}.mp3`], {stdio: 'inherit'});
 rmSync(wav);
 
+stdout.write(`Music written: public/audio/music/${SLUG}.mp3 (${LEN} s)\n`);
+if (!argv.includes('--sfx')) exit(0);
+
 // --- sound effects ------------------------------------------------------------------
+// Re-seeded so the SFX don't depend on which song ran first. (The committed SFX came from an earlier
+// revision of this file, so --sfx changes their noise slightly; only pass it when you add or change an SFX.)
+seed = 1337;
 const sfx = (name, sec, draw, withVerb = false) => {
 	const b = bus(sec);
 	draw(b);
@@ -368,4 +395,4 @@ sfx('whirr', 1.2, (b) => {
 });
 sfx('impact', 2.5, (b) => impact(b, 0, 1), true);
 
-stdout.write('Audio written: public/audio/music/how-jwt-works.mp3 + 8 SFX in public/audio/sfx/\n');
+stdout.write('SFX written: 8 files in public/audio/sfx/\n');

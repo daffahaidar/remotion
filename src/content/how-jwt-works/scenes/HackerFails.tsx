@@ -4,8 +4,8 @@ import {interpolate} from 'remotion';
 import type {PoseName} from '../../../assets/character/hacker';
 import {Padlock, ServerRack} from '../../../assets/property';
 import {JWT, MONO, SFX, TONES} from '../theme';
-import {Card, Glow, Headline, IconTile, Pill, Place, Reveal, SceneShell, Scramble, Sfx, Stamp, Travel, useLook, useSec} from '../ui';
-import {HackerDesk, RoleEdit} from './Hook';
+import {Card, Glow, HackerDesk, Headline, IconTile, Pill, Place, Reveal, SceneShell, Scramble, Sfx, Stamp, Travel, useLook, useSec} from '../ui';
+import {RoleEdit} from './Hook';
 
 const POSES: readonly {at: number; pose: PoseName}[] = [
 	{at: 0, pose: 'typing'},

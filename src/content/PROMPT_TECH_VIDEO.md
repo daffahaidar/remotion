@@ -33,10 +33,11 @@ Hanya bertanya bila JENIS KONTEN atau TOPIK kosong. Untuk hal lain, pakai defaul
 ## 2. Konteks proyek (WAJIB dibaca sebelum merancang)
 
 - **Stack:** Remotion 4, React 19, TypeScript strict. Entry `src/index.ts`; komposisi didaftarkan di `src/Root.tsx`.
-- **Video referensi yang sudah disetujui:** `src/content/how-jwt-works/` (komposisi `HowJwtWorks`, 2:51, 11 scene, tier L). Baca `HowJwtWorks.tsx`, `ui.tsx`, `theme.ts`, `scenes/Hook.tsx`, `scenes/HackerFails.tsx`, `script_dubbing.md`, dan `generate-audio.mjs`. Gaya visual, ritme, audio, dan format naskah video baru harus setara dengan video ini.
+- **Video referensi yang sudah disetujui:** `src/content/how-jwt-works/` (komposisi `HowJwtWorks`, 2:56, 12 scene, tier L). Baca `HowJwtWorks.tsx`, `scenes/Hook.tsx`, `scenes/HackerFails.tsx`, dan `script_dubbing.md`, plus kit bersama di `src/content/shared/` (`ui.tsx`, `theme.ts`, `ChannelOutro.tsx`, `generate-audio.mjs`). Gaya visual, ritme, audio, dan format naskah video baru harus setara dengan video ini. Contoh kedua yang memakai kit bersama: `src/content/how-oauth-works/` (`HowOauthWorks`).
 - **Aset:**
   - karakter di `src/assets/character/` (README-nya berisi panduan casting);
   - properti di `src/assets/property/` (lihat README-nya);
+  - logo channel di `src/assets/channel/profile.png` (dipakai `ChannelOutro`);
   - SFX di `public/audio/sfx/`;
   - musik di `public/audio/music/`.
 - **Panduan pendukung:** `.claude/skills/remotion-best-practices/SKILL.md`, `.claude/skills/ui-ux-pro-max/SKILL.md`, dan `.claude/skills/remotion-2d-cartoon/SKILL.md`. Kalau agent-mu tidak mengenal sistem "skill", baca saja sebagai dokumentasi biasa.
@@ -46,7 +47,7 @@ Hanya bertanya bila JENIS KONTEN atau TOPIK kosong. Untuk hal lain, pakai defaul
 
 - **Bahasa:** laporan, narasi, dan teks di layar memakai Bahasa Indonesia. Nama variabel, fungsi, class, dan file kode memakai bahasa Inggris.
 - **Kode seminimal mungkin:** pakai ulang yang sudah ada. Jangan menambah dependency atau abstraksi yang tidak diperlukan.
-- **Jangan commit** dan jangan render MP4 final kecuali pengguna memintanya.
+- **Jangan commit** dan jangan render MP4 final kecuali pengguna memintanya. (Render still thumbnail di bagian 11 tetap wajib.)
 - **File sementara** (still, WAV untuk analisis) disimpan di folder temp di luar repo, lalu dibersihkan.
 - **Internet:** render, Google Fonts, dan riset butuh internet. Kalau lingkungan agent tidak punya internet, kerjakan yang bisa dan laporkan langkah yang tertunda.
 
@@ -57,15 +58,15 @@ Hanya bertanya bila JENIS KONTEN atau TOPIK kosong. Untuk hal lain, pakai defaul
 3. **Batas platform** (cek ulang bila platform mengubahnya):
    - YouTube Shorts dan Instagram Reels maksimal 3 menit; TikTok menerima video yang lebih panjang.
    - Bila T > 180: tetap buat sesuai T, tetapi peringatkan di laporan bahwa video tidak lolos sebagai Shorts/Reels.
-   - Bila T < 30: peringatkan bahwa durasinya terlalu singkat, lalu buat format teaser (hook, satu inti, CTA).
-4. **Tier.** Semua angka di tabel dalam detik.
+   - Bila T < 30: peringatkan bahwa durasinya terlalu singkat, lalu buat format teaser (hook, satu inti, Outro channel).
+4. **Tier.** Semua angka di tabel dalam detik. Di semua tier, video selalu ditutup **Outro channel** berdurasi tetap 10 detik (`OUTRO_SECONDS`, bagian 5), di luar kolom Rangkuman.
 
-| Tier | T | Jumlah scene | Hook | Rangkuman + CTA | Durasi item daftar (nilai tengah) | Re-hook |
+| Tier | T | Jumlah scene (termasuk Outro) | Hook | Rangkuman | Durasi item daftar (nilai tengah) | Re-hook |
 |---|---|---|---|---|---|---|
-| S | 30–60 | 4–6 | 5–7 | 4–6 | 12–16 (14) | Tidak wajib |
-| M | 61–120 | 6–9 | 8–10 | 8–12 | 16–22 (19) | 1× di ±50% |
-| L | 121–180 | 9–12 | 10–12 | 12–17 | 22–28 (25) | 1× di 40–60% |
-| XL | > 180 | 12+ | 12 | 15–20 | 22–28 (25) | Tiap 45–60 detik |
+| S | 30–60 | 4–6 | 5–7 | 0–4 (boleh dilewati) | 12–16 (14) | Tidak wajib |
+| M | 61–120 | 6–9 | 8–10 | 6–8 | 16–22 (19) | 1× di ±50% |
+| L | 121–180 | 9–12 | 10–12 | 10–12 | 22–28 (25) | 1× di 40–60% |
+| XL | > 180 | 12+ | 12 | 12–16 | 22–28 (25) | Tiap 45–60 detik |
 
 5. **Pilih scene** dari formula jenis konten (bagian 6):
    - P1 selalu ada;
@@ -74,19 +75,19 @@ Hanya bertanya bila JENIS KONTEN atau TOPIK kosong. Untuk hal lain, pakai defaul
 
    Untuk tier XL, tambah jumlah item atau langkah, jangan memperpanjang scene.
 6. **Hitung jumlah item** untuk jenis berbasis daftar (fakta, mitos, tips, ronde, langkah, poin):
-   - N = (T − Hook − CTA − 8 × jumlah scene non-item) ÷ nilai tengah durasi item tier.
+   - N = (T − Hook − Rangkuman − Outro − 8 × jumlah scene non-item) ÷ nilai tengah durasi item tier.
    - Bulatkan ke bawah, lalu batasi ke rentang N pada formula.
    - Tutorial: kalau langkah yang dibutuhkan tidak muat, persempit cakupan (misalnya jadikan "Part 1") dan jelaskan di laporan.
 7. **Bagi waktu:**
-   - Tetapkan durasi Hook dan CTA lebih dulu (tabel tier).
+   - Tetapkan durasi Hook, Rangkuman (tabel tier), dan Outro (10) lebih dulu.
    - Bagi sisa waktu ke scene lain sesuai bobotnya; item daftar berbobot 3.
    - Bulatkan ke detik bulat. Utamakan angka genap supaya setiap cut jatuh di garis bar musik (2 detik).
    - Setiap scene minimal 4 detik dan maksimal 28 detik. Lebih dari 28 detik, pecah jadi dua scene.
    - Sesuaikan scene terbesar agar total tepat T.
 8. **Narasi:** ± 2,4 kata per detik (rentang 2,2–2,7), jadi total kata ≈ T × 2,4. Kalau narasi tidak muat, kurangi kata, jangan mempercepat bicara.
 9. **Contoh perhitungan:**
-   - Cara Kerja, T = 90 (tier M, P1 + P2): Hook 9 · Masalah 8 · Analogi 8 · Anatomi 12 · Twist 8 · Mekanisme 12 · Alur 12 · Payoff 11 · Rangkuman + CTA 10 = 90.
-   - Fakta Unik, T = 60 (tier S): Hook 6 · Fakta #3 15 · Fakta #2 15 · Fakta #1 19 · CTA 5 = 60.
+   - Cara Kerja, T = 90 (tier M, P1 + P2): Hook 9 · Masalah 8 · Analogi 8 · Anatomi 10 · Twist 8 · Mekanisme 10 · Alur 10 · Payoff 11 · Rangkuman 6 · Outro 10 = 90.
+   - Fakta Unik, T = 60 (tier S, rangkuman dilewati): N = (60 − 6 − 0 − 10) ÷ 14 = 3. Hook 6 · Fakta #3 14 · Fakta #2 14 · Fakta #1 16 · Outro 10 = 60.
 
 ## 5. Aturan retensi (WAJIB untuk semua jenis)
 
@@ -99,12 +100,15 @@ Hanya bertanya bila JENIS KONTEN atau TOPIK kosong. Untuk hal lain, pakai defaul
 - **Payoff:** jawaban open loop, diberikan menjelang akhir.
 - **Interupsi pola:** ada perubahan visual atau SFX setiap 3–5 detik.
 - **Satu ide per layar.** Teks di layar berisi kata kunci, bukan transkrip. Setiap elemen muncul tepat saat disebut narasi.
-- **CTA sesuai jenis:**
-  - "Simpan" untuk Tutorial dan Tips;
-  - "Komen" untuk Fakta, Perbandingan, dan Mitos;
-  - "Follow" untuk Berita.
-
-  Selalu tutup dengan kartu "Video berikutnya: TOPIK BERIKUTNYA".
+- **Outro channel (standar semua video):** scene terakhir selalu `<ChannelOutro nextTopic="…" nextQuestion="…" />` dari `src/content/shared/ChannelOutro.tsx`, berdurasi `OUTRO_SECONDS` (10 detik). Jangan buat CTA sendiri; ubah komponen itu bila tampilannya perlu diganti.
+  - Isinya: logo channel (`src/assets/channel/profile.png`) dan handle **@daffahaidarnz**; tombol **Like**, **Simpan**, **Follow** yang di-tap jari animasi tepat saat disebut narasi, masing-masing dengan alasan persuasif; lalu kartu "Video berikutnya: TOPIK BERIKUTNYA".
+  - Narasi baku (hanya topik berikutnya yang diganti), 22 kata:
+    - 00:00–00:03 "Kalau video ini **ngebantu**, kasih **like**..."
+    - 00:03–00:05 "**simpan** biar nggak lupa..."
+    - 00:05–00:07 "dan **follow** atau **subscribe** daffahaidarnz..."
+    - 00:07–00:10 "biar nggak ketinggalan **<TOPIK BERIKUTNYA>** di video berikutnya!"
+  - Waktu di atas relatif terhadap awal outro; tulis sebagai waktu absolut di `script_dubbing.md` (contoh: Scene 12 di naskah video referensi).
+  - Fakta Unik, Perbandingan, dan Mitos vs Fakta: tambahkan satu pertanyaan ajakan **komen** di akhir scene sebelum outro.
 - **Host:** `ManCharacter` ("Budi") sebagai host atau wakil penonton. Karakter lain dipilih sesuai panduan casting.
 
 ## 6. Formula per jenis konten
@@ -113,6 +117,7 @@ Notasi:
 - **P1/P2/P3:** prioritas scene (bagian 4 langkah 5).
 - **b:** bobot waktu scene.
 - **item:** scene berulang yang jumlahnya dihitung; rentang N tertulis di kurung.
+- Setiap formula di bawah selalu ditutup **Outro channel** (P1, 10 detik, bagian 5) setelah langkah terakhirnya.
 
 ### 6.1 Cara Kerja (explainer), sama seperti video referensi
 
@@ -126,7 +131,7 @@ Notasi:
 8. **Alur lengkap** (P2, b3): langkah bernomor.
 9. **Payoff gelap** (P1, b3): konflik pembuka diselesaikan.
 10. **Detail penting** (P3, b2): batasan, atau hal yang sering dilupakan.
-11. **Rangkuman + CTA** (P1): model "A + B = konsep", plus tips (2 di tier S/M, 4 di tier L/XL).
+11. **Rangkuman** (P1): model "A + B = konsep", plus tips (2 di tier S/M, 4 di tier L/XL).
 
 ### 6.2 Tutorial (how-to)
 
@@ -143,7 +148,7 @@ Tujuannya: penonton bisa meniru satu hasil konkret.
    - Langkah yang dijanjikan di hook menjadi re-hook.
 5. **Error umum** (P2, b2): kartu error merah, lalu perbaikannya dalam warna hijau.
 6. **Hasil akhir** (P1, b2): demo yang berjalan; ini payoff-nya.
-7. **Rangkuman checklist + CTA** (P1).
+7. **Rangkuman checklist** (P1).
 
 ### 6.3 Fakta Unik (listicle)
 
@@ -154,7 +159,7 @@ Tujuannya: penonton bisa meniru satu hasil konkret.
    - kenapa fakta ini penting;
    - kalimat jembatan ke fakta berikutnya.
 3. **Fakta #1** (P1, item berbobot 4): payoff terbesar.
-4. **Rangkuman + CTA** (P1).
+4. **Rangkuman** (P1).
 
 ### 6.4 Berita Teknologi
 
@@ -167,7 +172,7 @@ Nada serius dan netral. Opini diberi label "OPINI".
 5. **Dampak buat kamu** (P1, b3): dampak bagi pengguna dan developer di Indonesia.
 6. **Sisi lain** (P2, b2): kritik, risiko, atau hal yang belum pasti.
 7. **Yang perlu dilakukan atau dipantau** (P3, b2).
-8. **Rangkuman 3 poin + CTA** (P1).
+8. **Rangkuman 3 poin** (P1).
 
 ### 6.5 Perbandingan (X vs Y)
 
@@ -175,7 +180,7 @@ Nada serius dan netral. Opini diberi label "OPINI".
 2. **Kenalan dengan X dan Y** (P1, b2): dua kartu berdampingan (VS).
 3. **Ronde 1…N** (P1, item, N 2–6): satu kriteria per ronde, bar skor, dan stempel pemenang ronde.
 4. **"Tergantung kebutuhan"** (P2, b2): kapan memilih X, kapan memilih Y.
-5. **Skor akhir + CTA** (P1).
+5. **Skor akhir** (P1).
 
 ### 6.6 Mitos vs Fakta
 
@@ -185,14 +190,13 @@ Nada serius dan netral. Opini diberi label "OPINI".
    - kenapa orang memercayainya;
    - FAKTA (hijau, animasi flip) beserta buktinya;
    - pelajaran yang bisa dibawa pulang.
-3. **Rangkuman + CTA** (P1).
+3. **Rangkuman** (P1).
 
 ### 6.7 Tips & Tools
 
 1. **Hook** (P1): manfaat terbesar (contoh: "Tips nomor 4 hemat 2 jam sehari").
 2. **Tips 1…N** (P1, item, N 3–7): masalah → tips/tools → demo sebelum vs sesudah → hasil dalam angka.
 3. **Bonus tips** (P2, b2): payoff.
-4. **CTA** (P1).
 
 ### 6.8 Lainnya (sejarah, review, opini, karier, event, dll.)
 
@@ -201,7 +205,7 @@ Nada serius dan netral. Opini diberi label "OPINI".
 3. **Poin inti 1…N** (P1, item, N 3–5), dengan visual yang berbeda di tiap poin.
 4. **Sisi lain / twist** (P2, b2).
 5. **Payoff** (P1, b2).
-6. **Rangkuman + CTA** (P1).
+6. **Rangkuman** (P1).
 
 ## 7. Akurasi dan riset (WAJIB)
 
@@ -239,10 +243,10 @@ Nada serius dan netral. Opini diberi label "OPINI".
 
 ## 9. Audio (WAJIB)
 
-- **Backsound orisinal** dari generator `src/content/how-jwt-works/generate-audio.mjs`:
+- **Backsound orisinal** dari generator `src/content/shared/generate-audio.mjs`:
   - Tempo 120 BPM (1 bar = 2 detik), deterministik, tanpa sampel berhak cipta.
-  - Pakai ulang generatornya, jangan diduplikasi. Jadikan durasi, nama file output, peta section, dan mood sebagai parameter yang diturunkan dari rencana scene.
-  - Output: `public/audio/music/<slug>.mp3`.
+  - Pakai ulang generatornya, jangan diduplikasi. Tambahkan satu entri `SONGS['<slug>']` berisi `sections` (peta section per bar, diturunkan dari `SCENE_SECONDS`) dan `loop` (progresi akor = mood); durasi file dihitung otomatis dari jumlah bar.
+  - Jalankan `node src/content/shared/generate-audio.mjs <slug>`. Output: `public/audio/music/<slug>.mp3`. Flag `--sfx` hanya dipakai saat menambah/mengubah SFX sintetis (menulis ulang `public/audio/sfx/`).
 - **Mood per jenis:**
 
 | Jenis | Mood backsound | SFX khas |
@@ -255,6 +259,7 @@ Nada serius dan netral. Opini diberi label "OPINI".
 | Mitos vs Fakta | Penasaran, lalu lega | `denied` untuk mitos, `ding` untuk fakta |
 | Tips & Tools | Positif, energik | `pop`, `sparkle` |
 
+- **Musik di Outro channel:** groove tanpa arpeggio (section `A`) supaya ajakan terdengar jelas, lalu chord penutup (`end`) ±2 detik sebelum video selesai.
 - **SFX yang tersedia** di `public/audio/sfx/`: whoosh, pop, click, ding, sparkle, switch, vine-boom, record-scratch, page-turn, price-is-right-fail, typing, glitch, denied, riser, beep, ticking, whirr, impact.
   - Butuh yang baru: sintesis lewat generator, atau unduh dari daftar `remotion.media` ke `public/` (jangan hotlink).
   - SFX meme hanya untuk konten santai.
@@ -285,9 +290,28 @@ Detik 00:00 - 00:03:
   - `musicVolume: 0` untuk versi tanpa backsound;
   - bila relevan: "Sumber", atau "Kode lengkap" untuk Tutorial.
 
-## 11. Implementasi teknis
+## 11. Thumbnail cover 3:4 (WAJIB untuk setiap video)
 
-- **Folder:** `src/content/<slug>/` dengan slug bahasa Inggris kebab-case (misalnya `how-oauth-works`, `express-rest-api-tutorial`, `internet-fun-facts`, `news-<topik>-<yyyy-mm>`). Isinya: komposisi utama `<PascalId>.tsx`, `scenes/*.tsx`, dan `script_dubbing.md`.
+Setiap video selalu disertai satu cover thumbnail, tanpa perlu diminta.
+
+- **Format:** 3:4, 1080×1440 px, PNG di `src/content/<slug>/thumbnail.png`. Batas 2 MB (YouTube); kalau PNG lebih besar, render JPEG `--image-format=jpeg --jpeg-quality=90` ke `thumbnail.jpg`.
+- **Cara membuat:** komponen `<Still>` di `src/content/<slug>/Thumbnail.tsx` (ekspor `<PascalId>Thumbnail`), didaftarkan di `src/Root.tsx` dalam `<Folder name="Thumbnails">` dengan `width={1080} height={1440}`, lalu dirender dengan `npx remotion still <PascalId>Thumbnail src/content/<slug>/thumbnail.png`. Contoh: `src/content/how-oauth-works/Thumbnail.tsx` dan `src/content/how-jwt-works/Thumbnail.tsx`.
+- **Gaya: neumorphism semenarik mungkin**, memakai UI kit dan kode warna video yang sama:
+  - **Selalu tema putih/terang** seperti thumbnail OAuth: kanvas `SceneShell` terang (`#e8eef5`, `cut={false} whoosh={false}`, tanpa `theme="dark"`) plus 2–3 `Glow` lembut dengan warna utama video. Jangan pakai kanvas gelap, meskipun videonya bertema konflik, keamanan, atau hacker; nuansa itu cukup dibawa lewat karakter, stempel, dan warna aksen.
+  - Still dirender di frame 0, jadi semua komponen beranimasi diberi `at={-10}` supaya tampil penuh (kartu sudah timbul, teks lengkap).
+  - Hierarki, harus tetap terbaca saat diperkecil ke ±25%:
+    1. Judul topik 240–300 px dengan gradasi warna video, efek timbul neumorphism (dua `drop-shadow`: sorot putih kiri-atas, bayangan slate kanan-bawah). Di atasnya pill cekung (inset) berisi jenis konten, misalnya "CARA KERJA".
+    2. Pertanyaan/janji hook, maksimal ±6 kata, di kartu timbul; kata kunci 110–140 px dengan marker.
+    3. Visual utama: karakter dengan ekspresi kuat (`surprised`, `excited`, `scared`) yang menunjuk atau bereaksi ke objek inti topik.
+    4. Maksimal 2 objek pendukung (kartu, properti, stempel) yang juga muncul di video.
+  - `ChannelBadge` (logo + @daffahaidarnz, dari `src/content/shared/ChannelOutro.tsx`) di kiri atas.
+  - Maksimal 6–8 elemen. Jangan ada elemen penting dalam 48 px dari tepi, jangan menutupi wajah karakter, tanpa emoji, ikon dari `react-icons`, logo brand hanya untuk identifikasi.
+  - Teks Bahasa Indonesia, selaras dengan hook. Jangan menjanjikan hal yang tidak ada di video (misalnya "2 menit paham" untuk video 2:48).
+- **QA:** buka PNG hasil render dan periksa: judul terbaca, wajah karakter terlihat, tidak ada tumpang-tindih atau elemen terpotong di tepi, arah tunjuk karakter mengarah ke objek inti. Perbaiki lalu render ulang.
+
+## 12. Implementasi teknis
+
+- **Folder:** `src/content/<slug>/` dengan slug bahasa Inggris kebab-case (misalnya `how-oauth-works`, `express-rest-api-tutorial`, `internet-fun-facts`, `news-<topik>-<yyyy-mm>`). Isinya: komposisi utama `<PascalId>.tsx`, `scenes/*.tsx`, `script_dubbing.md`, `Thumbnail.tsx`, dan `thumbnail.png` (bagian 11).
 - **Registrasi** di `src/Root.tsx`, di dalam `<Folder name="Content">`:
 
 ```tsx
@@ -305,13 +329,13 @@ Detik 00:00 - 00:03:
 - **Durasi scene** hanya didefinisikan di satu tempat:
 
 ```tsx
-export const SCENE_SECONDS = {hook: 10, problem: 12 /* … */} as const;
+export const SCENE_SECONDS = {hook: 10, problem: 12 /* … */, outro: OUTRO_SECONDS} as const;
 export const TOTAL_SECONDS = Object.values(SCENE_SECONDS).reduce((a: number, b) => a + b, 0);
 ```
 
 - **Struktur:** scene dirangkai dengan `<Series>` + `<Series.Sequence name="01 Hook" durationInFrames={SCENE_SECONDS.hook * fps}>`. SFX diletakkan di dalam scene (`<Sfx at={detik}>`); backsound di komposisi utama.
-- **UI kit:** pakai ulang `src/content/how-jwt-works/ui.tsx` + `theme.ts` (`SceneShell`, `Headline`, `Reveal`, `Card`, `Pill`, `Stamp`, `TypeText`, `Scramble`, `Travel`, `Arrow`, `Glow`, `Actor`, `Sfx`, `useRamp`, dll.).
-  - Jangan copy-paste. Pindahkan bagian generik ke `src/content/shared/` dan perbarui import video JWT; video JWT harus tetap lolos tsc dan tampil sama.
+- **UI kit:** pakai ulang `src/content/shared/ui.tsx` + `theme.ts` + `ChannelOutro.tsx` (`SceneShell`, `Headline`, `Reveal`, `Card`, `Pill`, `Stamp`, `TypeText`, `Scramble`, `Travel`, `Arrow`, `Glow`, `Actor`, `Place`, `HackerDesk`, `Sfx`, `Backsound`, `Lane`/`LifeLine`/`Step`/`Note` untuk diagram alur, `Term`/`EqSymbol`/`TipCard` untuk rangkuman, `useRamp`, dll.).
+  - Jangan copy-paste. Kalau butuh bagian generik baru dari video lain, pindahkan ke `src/content/shared/` dan perbarui import video asalnya; video lama harus tetap lolos tsc dan tampil sama.
   - Data dan warna khusus topik tetap di folder topik.
 - **Animasi:** semua digerakkan oleh `useCurrentFrame()`, `interpolate()`, dan `spring()` dari `remotion`. Jangan pakai CSS transition/animation. Nilai acak harus deterministik (`random(seed)` dari `remotion`).
 - **Jebakan yang sudah diketahui:**
@@ -323,7 +347,7 @@ export const TOTAL_SECONDS = Object.values(SCENE_SECONDS).reduce((a: number, b) 
   - ffmpeg bawaan Remotion (`npx remotion ffmpeg`) tidak punya filter `volumedetect`. Ukur level audio dengan skrip Node dari WAV.
   - Skrip Node yang meng-import paket repo (`@remotion/bundler`, `@remotion/renderer`) harus dijalankan dari dalam repo (misalnya file sementara di root repo yang dihapus setelah selesai), supaya import-nya bisa di-resolve.
 
-## 12. Alur kerja
+## 13. Alur kerja
 
 1. Baca playbook ini dan video referensi (bagian 2).
 2. Parse input (bagian 1) dan hitung rencana durasi (bagian 4).
@@ -337,25 +361,28 @@ export const TOTAL_SECONDS = Object.values(SCENE_SECONDS).reduce((a: number, b) 
    - Lihat gambarnya dan periksa: frame pertama tiap scene tidak kosong, tidak ada tumpang-tindih, safe zone terpenuhi, wajah tidak tertutup, teks terbaca.
    - Perbaiki semua temuan.
 9. QA audio: jalankan `npx remotion render <id> <temp>/mix.wav --codec=wav`, lalu pastikan durasinya = TOTAL_SECONDS dan puncaknya ≤ −1 dBFS.
-10. Jalankan `npx tsc --noEmit`, `npx eslint src`, dan `npx -y react-doctor@latest --no-telemetry` (perbaiki temuan di file baru), lalu `graphify update .` bila tersedia.
+10. Buat thumbnail cover 3:4 (bagian 11), render ke `src/content/<slug>/thumbnail.png`, lalu QA dan perbaiki.
+11. Jalankan `npx tsc --noEmit`, `npx eslint src`, dan `npx -y react-doctor@latest --no-telemetry` (perbaiki temuan di file baru), lalu `graphify update .` bila tersedia.
 
-## 13. Definition of Done (WAJIB, centang semua)
+## 14. Definition of Done (WAJIB, centang semua)
 
 - [ ] Komposisi baru terdaftar dan terbuka di Remotion Studio.
 - [ ] Durasi akhir = T ± 2 detik, dan ≤ 180 detik bila T ≤ 180.
-- [ ] Struktur cerita sesuai formula jenis konten dan aturan retensi (hook, open loop, re-hook sesuai tier, payoff, CTA + teaser).
+- [ ] Struktur cerita sesuai formula jenis konten dan aturan retensi (hook, open loop, re-hook sesuai tier, payoff).
+- [ ] Scene terakhir = `ChannelOutro` (logo + @daffahaidarnz, Like/Simpan/Follow-Subscribe, kartu video berikutnya) dengan narasi baku.
 - [ ] `script_dubbing.md` sesuai format, timing cocok dengan animasi, kepadatan narasi 2,2–2,7 kata/detik.
 - [ ] QA visual lolos untuk semua scene.
 - [ ] Backsound orisinal, SFX terpasang, puncak audio ≤ −1 dBFS.
 - [ ] Fakta bersumber, bila jenis kontennya membutuhkan.
+- [ ] Thumbnail 3:4 (1080×1440, neumorphism) ada di `src/content/<slug>/thumbnail.png` (atau `.jpg`), ≤ 2 MB, dan lolos QA.
 - [ ] `tsc` dan ESLint lolos; React Doctor tanpa temuan baru di folder konten baru.
 - [ ] Tidak ada commit dan tidak ada render MP4 final tanpa permintaan.
 
-## 14. Laporan akhir (Bahasa Indonesia)
+## 15. Laporan akhir (Bahasa Indonesia)
 
 Laporan berisi:
 - link Studio;
-- daftar file;
+- daftar file, termasuk path thumbnail;
 - tabel rencana scene beserta durasinya;
 - strategi hook dan open loop;
 - hasil semua pengecekan;

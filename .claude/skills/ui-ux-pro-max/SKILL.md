@@ -18,6 +18,7 @@ Reference repository: [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.co
 > **MANDATORY USER PREFERENCE — ALWAYS APPLY**:
 > 1. **Always follow this `ui-ux-pro-max` skill** whenever designing or building any visual display, screen layout, card, overlay, infographic, or video scene in Remotion.
 > 2. **Default Video & Animation Style = Neuromorphism (Soft UI / Neuromorphic Motion)**: Unless the user explicitly requests a different aesthetic, every video composition and animated UI in this project should use **Neumorphism** as its primary visual and motion language.
+> 3. **Every video ships with a 3:4 neumorphic cover thumbnail** (`src/content/<slug>/thumbnail.png`, 1080×1440), made automatically without being asked. See section D below.
 
 ---
 
@@ -90,6 +91,18 @@ Reference repository: [`nextlevelbuilder/ui-ux-pro-max-skill`](https://github.co
 - **Remotion Rendering Rule**:
   - Always render Unsplash URLs using `<Img>` or `<CanvasImage>` from `remotion` (never plain `<img>` or un-preloaded CSS backgrounds) so Remotion automatically tracks image loading via `delayRender()` and prevents blank/flickering frames during rendering.
   - Pair Unsplash photos with clean framing (recessed/extruded neuromorphic frames, rounded corners, subtle gradient overlays when placing text on top, and `objectFit: 'cover'`).
+
+### D. Video Thumbnail Cover 3:4 — Mandatory for Every Video
+
+- **Rule**: Whenever you build a video in `src/content/<slug>/`, also build its cover thumbnail in the same task, even if the user did not ask for it. Full spec and QA checklist: section 11 of `src/content/PROMPT_TECH_VIDEO.md`; reference implementations: `src/content/how-oauth-works/Thumbnail.tsx`, `src/content/how-jwt-works/Thumbnail.tsx`.
+- **Output**: 1080×1440 (3:4) PNG at `src/content/<slug>/thumbnail.png` (JPEG `thumbnail.jpg` if the PNG exceeds 2 MB).
+- **Build**: a Remotion `<Still id="<PascalId>Thumbnail">` in `src/content/<slug>/Thumbnail.tsx`, registered in `src/Root.tsx` under `<Folder name="Thumbnails">`, rendered with `npx remotion still <PascalId>Thumbnail src/content/<slug>/thumbnail.png`. Pass `at={-10}` to animated kit components so the still shows them fully settled.
+- **Design (as eye-catching as possible, Neumorphism)**:
+  - **Always the white/light theme, like the OAuth thumbnail** (user preference): light neumorphic canvas `#e8eef5` (`SceneShell`, `cut={false} whoosh={false}`, never `theme="dark"`) with 2–3 soft colored `Glow`s from the video's color code. Never use a dark canvas for a thumbnail, even for security/hacker/conflict topics — carry that mood with the character, stamps and accent colors instead.
+  - Huge embossed gradient topic title (240–300 px; two `drop-shadow`s: white highlight top-left + slate shadow bottom-right) under an inset "CARA KERJA"-style pill.
+  - Hook question/promise in a raised card, keyword 110–140 px with a marker band.
+  - One hero character with a strong expression pointing at / reacting to the topic's core object, plus at most 2 supporting objects from the video.
+  - `ChannelBadge` top-left; 6–8 elements max; nothing important within 48 px of the edges; never cover faces; no emoji.
 
 ---
 

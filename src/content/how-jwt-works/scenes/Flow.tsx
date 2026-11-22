@@ -1,52 +1,10 @@
 import React from 'react';
-import type {IconType} from 'react-icons';
 import {FaBolt, FaCircleCheck, FaFloppyDisk, FaLink, FaMobileScreen, FaServer, FaShieldHalved} from 'react-icons/fa6';
-import {JWT, MONO, SFX, TONES, type Tone} from '../theme';
-import {Arrow, Card, Headline, IconTile, Pill, Reveal, SceneShell, Sfx, TokenText, useLook, useRamp} from '../ui';
+import {JWT, SFX} from '../theme';
+import {Arrow, Headline, Lane, LifeLine, Note, Pill, Reveal, SceneShell, Sfx, Step, TokenText} from '../ui';
 
 const CLIENT_X = 290;
 const SERVER_X = 790;
-
-const Lane: React.FC<{readonly x: number; readonly icon: IconType; readonly label: string}> = ({x, icon, label}) => (
-	<Reveal at={0.7} kind="drop" style={{left: x - 180, top: 470, width: 360}}>
-		<Card at={0.7} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16, padding: '18px 0'}}>
-			<IconTile icon={icon} size={66} />
-			<span style={{fontSize: 36, fontWeight: 800, letterSpacing: '0.06em'}}>{label}</span>
-		</Card>
-	</Reveal>
-);
-
-const LifeLine: React.FC<{readonly x: number}> = ({x}) => {
-	const look = useLook();
-	const p = useRamp(1, 1.2);
-	return <div style={{position: 'absolute', left: x - 3, top: 590, width: 6, height: 860 * p, borderRadius: 3, backgroundImage: `repeating-linear-gradient(${look.dim}66 0 14px, transparent 14px 28px)`}} />;
-};
-
-/** Step number badge + label, centered on (x, y). */
-const Step: React.FC<{readonly n: number; readonly at: number; readonly x: number; readonly y: number; readonly tone?: Tone; readonly children: React.ReactNode}> = ({
-	n,
-	at,
-	x,
-	y,
-	tone = 'primary',
-	children,
-}) => (
-	<Reveal at={at} damping={12} style={{left: x - 400, top: y - 36, width: 800, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 12}}>
-		<div style={{width: 56, height: 56, borderRadius: 28, backgroundColor: TONES[tone].fill, color: '#ffffff', fontSize: 32, fontWeight: 800, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
-			{n}
-		</div>
-		{children}
-	</Reveal>
-);
-
-const Note: React.FC<{readonly at: number; readonly y: number; readonly children: React.ReactNode}> = ({at, y, children}) => {
-	const look = useLook();
-	return (
-		<Reveal at={at} kind="fade" style={{left: 0, width: 1080, top: y, display: 'flex', justifyContent: 'center', fontFamily: MONO, fontSize: 30, fontWeight: 700, color: look.dim}}>
-			{children}
-		</Reveal>
-	);
-};
 
 export const Flow: React.FC = () => (
 	<SceneShell chapter="Alur lengkap" chapterIcon={FaLink}>

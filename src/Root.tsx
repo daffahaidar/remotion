@@ -14,6 +14,9 @@ import {
 	WomanCharacter,
 } from './assets/character';
 import {HowJwtWorks, TOTAL_SECONDS} from './content/how-jwt-works/HowJwtWorks';
+import {HowJwtWorksThumbnail} from './content/how-jwt-works/Thumbnail';
+import {HowOauthWorks, TOTAL_SECONDS as OAUTH_TOTAL_SECONDS} from './content/how-oauth-works/HowOauthWorks';
+import {HowOauthWorksThumbnail} from './content/how-oauth-works/Thumbnail';
 import {ModelSheet} from './ModelSheet';
 import {PropertySheet} from './PropertySheet';
 import {RigDemo} from './RigDemo';
@@ -33,6 +36,21 @@ export const RemotionRoot: React.FC = () => {
 					durationInFrames={TOTAL_SECONDS * 30}
 					defaultProps={{musicVolume: 0.28}}
 				/>
+				<Composition
+					id="HowOauthWorks"
+					component={HowOauthWorks}
+					width={1080}
+					height={1920}
+					fps={30}
+					durationInFrames={OAUTH_TOTAL_SECONDS * 30}
+					defaultProps={{musicVolume: 0.28}}
+				/>
+			</Folder>
+
+			{/* 3:4 covers, rendered to src/content/<slug>/thumbnail.png with `npx remotion still <id> <path>`. */}
+			<Folder name="Thumbnails">
+				<Still id="HowJwtWorksThumbnail" component={HowJwtWorksThumbnail} width={1080} height={1440} />
+				<Still id="HowOauthWorksThumbnail" component={HowOauthWorksThumbnail} width={1080} height={1440} />
 			</Folder>
 
 			<Folder name="Rigs">
