@@ -6,6 +6,7 @@ import {Padlock, ServerRack} from '../../../assets/property';
 import {MONO, SFX, TONES} from '../../shared/theme';
 import {
 	Card,
+	current,
 	Glow,
 	HackerDesk,
 	Headline,
@@ -51,10 +52,6 @@ const EXPRESSIONS = [
 	{at: REVOKE_AT, e: 'sad'},
 	{at: DEAD_AT, e: 'furious'},
 ] as const;
-
-/** Index of the last step that has started (steps are sorted by `at`). */
-const current = (steps: readonly {at: number}[], t: number) =>
-	steps.reduce((acc, s, idx) => (t >= s.at ? idx : acc), 0);
 
 const Hacker: React.FC = () => {
 	const t = useSec();

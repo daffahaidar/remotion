@@ -10,5 +10,6 @@ Instruksi untuk AI coding agent (Codex, Antigravity, Cursor, Gemini, Claude, dll
   - preview: `npx remotion studio`
   - cek kode: `npx tsc --noEmit`, `npx eslint src`
   - cek React: `npx -y react-doctor@latest --no-telemetry`
+  - cek naskah dubbing (setiap baris harus muat diucapkan di rentang waktunya): `node src/content/shared/check-dubbing.mjs src/content/<slug>/script_dubbing.md`
 - Kalau CLI `graphify` tersedia: pakai `graphify query "<pertanyaan>"` sebelum menjelajah kode, dan jalankan `graphify update .` setelah mengubah kode.
 - Jangan commit dan jangan render MP4 final kecuali diminta.

@@ -139,13 +139,13 @@ const Finger: React.FC = () => {
 	);
 };
 
-const NextUp: React.FC<{readonly topic: string; readonly question: string}> = ({topic, question}) => {
+const NextUp: React.FC<{readonly topic: string; readonly question?: string}> = ({topic, question}) => {
 	const look = useLook();
 	return (
 		<Card at={NEXT_AT} style={{padding: '28px 36px', display: 'flex', flexDirection: 'column', gap: 6}}>
 			<span style={{fontSize: 28, fontWeight: 800, letterSpacing: '0.16em', color: look.dim}}>VIDEO BERIKUTNYA</span>
 			<span style={{fontSize: 76, fontWeight: 800, color: look.tone('primary')}}>{topic}</span>
-			<span style={{fontSize: 34, fontWeight: 700, color: look.dim}}>{question}</span>
+			{question ? <span style={{fontSize: 34, fontWeight: 700, color: look.dim}}>{question}</span> : null}
 		</Card>
 	);
 };
@@ -164,8 +164,11 @@ export const ChannelBadge: React.FC = () => {
 	);
 };
 
-/** Standard closing scene for every video: channel card, Like / Simpan / Follow taps, next-video teaser. */
-export const ChannelOutro: React.FC<{readonly nextTopic: string; readonly nextQuestion: string}> = ({nextTopic, nextQuestion}) => {
+/**
+ * Standard closing scene for every video: channel card, Like / Simpan / Follow taps, next-video teaser.
+ * Leave out `nextTopic` while the next video is undecided: the next-video card (and its whoosh) is then not rendered.
+ */
+export const ChannelOutro: React.FC<{readonly nextTopic?: string; readonly nextQuestion?: string}> = ({nextTopic, nextQuestion}) => {
 	const look = useLook();
 	return (
 		<SceneShell chapter="Sampai jumpa" chapterIcon={FaHandSparkles}>
@@ -195,14 +198,18 @@ export const ChannelOutro: React.FC<{readonly nextTopic: string; readonly nextQu
 				</Reveal>
 			))}
 			<Finger />
-			<Reveal at={NEXT_AT} kind="rise" style={{left: 120, top: 1190, width: 840}}>
-				<NextUp topic={nextTopic} question={nextQuestion} />
-			</Reveal>
+			{nextTopic ? (
+				<>
+					<Reveal at={NEXT_AT} kind="rise" style={{left: 120, top: 1190, width: 840}}>
+						<NextUp topic={nextTopic} question={nextQuestion} />
+					</Reveal>
+					<Sfx name="Next video" src={SFX.whoosh} at={NEXT_AT} volume={0.3} />
+				</>
+			) : null}
 
 			{ACTIONS.map((a) => (
 				<Sfx key={a.label} name={a.label} src={a.sfx} at={a.at} volume={0.5} />
 			))}
-			<Sfx name="Next video" src={SFX.whoosh} at={NEXT_AT} volume={0.3} />
 		</SceneShell>
 	);
 };

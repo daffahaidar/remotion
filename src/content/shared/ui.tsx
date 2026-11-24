@@ -1,6 +1,7 @@
 import {Audio} from '@remotion/media';
 import React, {createContext, useContext} from 'react';
 import type {IconType} from 'react-icons';
+import {FaLock} from 'react-icons/fa6';
 import {HackerCharacter, type HackerProps} from '../../assets/character';
 import {Laptop, OfficeDesk, type ScreenMode} from '../../assets/property';
 import {AbsoluteFill, Easing, interpolate, random, spring, useCurrentFrame, useVideoConfig} from 'remotion';
@@ -20,6 +21,9 @@ export const raised = (look: Look, d = 10) =>
 
 /** Seconds since the scene started. */
 export const useSec = () => useCurrentFrame() / useVideoConfig().fps;
+
+/** Index of the last step that has started (steps are sorted by `at`). Drives pose/expression timelines. */
+export const current = (steps: readonly {at: number}[], t: number) => steps.reduce((acc, s, idx) => (t >= s.at ? idx : acc), 0);
 
 /** Spring 0 → 1 starting `at` seconds into the scene. */
 export const useIn = (at: number, damping = 14) => {
@@ -310,6 +314,74 @@ export const IconTile: React.FC<{readonly icon: IconType; readonly tone?: Tone; 
 		>
 			<Icon size={size * 0.48} color={look.tone(tone)} />
 		</div>
+	);
+};
+
+/** Icon tile + bold name + dim caption, the building block for "who is who" cards. */
+export const Entity: React.FC<{
+	readonly icon: IconType;
+	readonly tone: Tone;
+	readonly name: React.ReactNode;
+	readonly sub?: React.ReactNode;
+	readonly size?: number;
+}> = ({icon, tone, name, sub, size = 80}) => {
+	const look = useLook();
+	return (
+		<div style={{display: 'flex', alignItems: 'center', gap: 20}}>
+			<IconTile icon={icon} tone={tone} size={size} />
+			<div>
+				<div style={{fontSize: 40, fontWeight: 800, lineHeight: 1.15}}>{name}</div>
+				{sub ? <div style={{fontSize: 30, fontWeight: 700, color: look.dim}}>{sub}</div> : null}
+			</div>
+		</div>
+	);
+};
+
+/** Browser / app window: traffic lights + address bar with a lock. */
+export const Window: React.FC<{
+	readonly at?: number;
+	readonly url: React.ReactNode;
+	readonly width: number;
+	readonly children: React.ReactNode;
+}> = ({at = 0, url, width, children}) => {
+	const look = useLook();
+	return (
+		<Card at={at} style={{width, overflow: 'hidden'}}>
+			<div
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+					gap: 12,
+					padding: '18px 26px',
+					borderBottom: `1px solid ${look.edge}`,
+				}}
+			>
+				{['#f87171', '#facc15', '#4ade80'].map((c) => (
+					<div key={c} style={{width: 18, height: 18, borderRadius: 9, backgroundColor: c}} />
+				))}
+				<div
+					style={{
+						marginLeft: 12,
+						flex: 1,
+						display: 'flex',
+						alignItems: 'center',
+						gap: 12,
+						padding: '8px 20px',
+						borderRadius: 999,
+						boxShadow: look.inset,
+						fontFamily: MONO,
+						fontSize: 30,
+						fontWeight: 700,
+						whiteSpace: 'nowrap',
+						overflow: 'hidden',
+					}}
+				>
+					<FaLock size={24} color={look.tone('success')} />
+					{url}
+				</div>
+			</div>
+			{children}
+		</Card>
 	);
 };
 
@@ -667,6 +739,19 @@ export const Note: React.FC<{readonly at: number; readonly y: number; readonly x
 		<Reveal at={at} kind="fade" style={{left: x - 400, width: 800, top: y, display: 'flex', justifyContent: 'center', fontFamily: MONO, fontSize: 30, fontWeight: 700, color: look.dim}}>
 			{children}
 		</Reveal>
+	);
+};
+
+/** Note with a canvas-colored backing, so lane lifelines don't run through the text. */
+export const Caption: React.FC<{readonly at: number; readonly y: number; readonly x?: number; readonly children: React.ReactNode}> = ({
+	children,
+	...note
+}) => {
+	const look = useLook();
+	return (
+		<Note {...note}>
+			<span style={{backgroundColor: look.bg, padding: '2px 12px', borderRadius: 10}}>{children}</span>
+		</Note>
 	);
 };
 

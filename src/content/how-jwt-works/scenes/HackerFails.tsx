@@ -4,7 +4,7 @@ import {interpolate} from 'remotion';
 import type {PoseName} from '../../../assets/character/hacker';
 import {Padlock, ServerRack} from '../../../assets/property';
 import {JWT, MONO, SFX, TONES} from '../theme';
-import {Card, Glow, HackerDesk, Headline, IconTile, Pill, Place, Reveal, SceneShell, Scramble, Sfx, Stamp, Travel, useLook, useSec} from '../ui';
+import {Card, current, Glow, HackerDesk, Headline, IconTile, Pill, Place, Reveal, SceneShell, Scramble, Sfx, Stamp, Travel, useLook, useSec} from '../ui';
 import {RoleEdit} from './Hook';
 
 const POSES: readonly {at: number; pose: PoseName}[] = [
@@ -24,9 +24,6 @@ const EXPRESSIONS = [
 	{at: 12, e: 'crying'},
 	{at: 13.6, e: 'sad'},
 ] as const;
-
-/** Index of the last step that has started (steps are sorted by `at`). */
-const current = (steps: readonly {at: number}[], t: number) => steps.reduce((acc, s, idx) => (t >= s.at ? idx : acc), 0);
 
 const Hacker: React.FC = () => {
 	const t = useSec();

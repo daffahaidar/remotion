@@ -1,7 +1,7 @@
 import React from 'react';
 import {FaCalendarCheck, FaCalendarDays, FaCircleCheck, FaGoogle, FaLink, FaServer} from 'react-icons/fa6';
 import {SFX} from '../../shared/theme';
-import {Arrow, Headline, Lane, LifeLine, Note, Pill, Reveal, SceneShell, Sfx, Step, useLook} from '../../shared/ui';
+import {Arrow, Caption, Headline, Lane, LifeLine, Pill, Reveal, SceneShell, Sfx, Step} from '../../shared/ui';
 import {OAUTH, ROLE} from '../parts';
 
 const APP_X = 200;
@@ -21,21 +21,6 @@ const S = {
 	api: {at: 17, y: 1260},
 } as const;
 const OK_AT = 19.2;
-
-/** Note with a canvas-colored backing so the lane lifelines don't run through the text. */
-const Caption: React.FC<{
-	readonly at: number;
-	readonly y: number;
-	readonly x?: number;
-	readonly children: React.ReactNode;
-}> = ({children, ...note}) => {
-	const look = useLook();
-	return (
-		<Note {...note}>
-			<span style={{backgroundColor: look.bg, padding: '2px 12px', borderRadius: 10}}>{children}</span>
-		</Note>
-	);
-};
 
 export const Flow: React.FC = () => (
 	<SceneShell chapter="Alur lengkap" chapterIcon={FaLink}>

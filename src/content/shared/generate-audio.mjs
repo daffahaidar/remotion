@@ -197,6 +197,13 @@ const SONGS = {
 		loop: ['Am7', 'Fmaj7', 'Cmaj7', 'G6'],
 		sections: [['intro', 4], ['pre', 2], ['A', 5], ['B', 6], ['Aarp', 7], ['B', 5], ['break', 4], ['Aarp', 6], ['B', 9], ['Aarp', 10], ['tension', 6], ['resolve', 3], ['Aarp', 6], ['B', 6], ['A', 4], ['end', 1]],
 	},
+	// hook 0-12, problem 12-26, old way 26-38 (B), phone analogy 38-52, anatomy 52-66 (B) + break 66-74, twist 74-86 (music drops at 74),
+	// DNS lookup 86-104 (B), flow 104-124, payoff 124-136 tension + 136-142 resolve, packets 142-154, recap 154-166 (B), outro 166-176.
+	// Brighter I-vi-IV-V loop: curiosity rather than the security videos' minor groove.
+	'how-internet-works': {
+		loop: ['Cmaj7', 'Am7', 'Fmaj7', 'G6'],
+		sections: [['intro', 4], ['pre', 2], ['A', 7], ['B', 6], ['Aarp', 7], ['B', 7], ['break', 4], ['Aarp', 6], ['B', 9], ['Aarp', 10], ['tension', 6], ['resolve', 3], ['Aarp', 6], ['B', 6], ['A', 4], ['end', 1]],
+	},
 };
 const SLUG = argv[2];
 const SONG = SONGS[SLUG];

@@ -12,19 +12,19 @@ Baca seluruh file src/content/PROMPT_TECH_VIDEO.md, lalu buatkan video sesuai pl
 JENIS KONTEN     : <Cara Kerja | Tutorial | Fakta Unik | Berita Teknologi | Perbandingan | Mitos vs Fakta | Tips & Tools | Lainnya: ...>
 TOPIK            : <topik video>
 DURASI           : <contoh: 1:30, 90 detik, atau 2 menit>
-TOPIK BERIKUTNYA : <teaser video berikutnya>
+TOPIK BERIKUTNYA : <teaser video berikutnya; boleh dikosongkan>
 BAHAN / SUMBER   : <link atau poin penting; tulis "-" jika tidak ada>
 ```
 
 ## 1. Input
 
-| Kolom | Wajib | Format | Jika kosong |
-|---|---|---|---|
-| JENIS KONTEN | Ya | Salah satu jenis di bagian 6 | Tanya pengguna |
-| TOPIK | Ya | Teks bebas | Tanya pengguna |
-| DURASI | Ya | `mm:ss`, `N detik`, atau `N menit` | Pakai 2:30 dan catat asumsinya |
-| TOPIK BERIKUTNYA | Tidak | Teks bebas | Usulkan topik lanjutan yang relevan |
-| BAHAN / SUMBER | Tidak (sangat disarankan untuk Berita) | Link, teks, atau poin | Riset sendiri (bagian 7) |
+| Kolom            | Wajib                                  | Format                             | Jika kosong                                                           |
+| ---------------- | -------------------------------------- | ---------------------------------- | --------------------------------------------------------------------- |
+| JENIS KONTEN     | Ya                                     | Salah satu jenis di bagian 6       | Tanya pengguna                                                        |
+| TOPIK            | Ya                                     | Teks bebas                         | Tanya pengguna                                                        |
+| DURASI           | Ya                                     | `mm:ss`, `N detik`, atau `N menit` | Pakai 2:30 dan catat asumsinya                                        |
+| TOPIK BERIKUTNYA | Tidak                                  | Teks bebas                         | Outro tanpa kartu video berikutnya (bagian 5). Jangan mengarang topik |
+| BAHAN / SUMBER   | Tidak (sangat disarankan untuk Berita) | Link, teks, atau poin              | Riset sendiri (bagian 7)                                              |
 
 Kolom tambahan opsional: TARGET PENONTON (default: pemula dan developer junior Indonesia) dan NADA (default: mengikuti jenis konten).
 
@@ -40,7 +40,7 @@ Hanya bertanya bila JENIS KONTEN atau TOPIK kosong. Untuk hal lain, pakai defaul
   - logo channel di `src/assets/channel/profile.png` (dipakai `ChannelOutro`);
   - SFX di `public/audio/sfx/`;
   - musik di `public/audio/music/`.
-- **Panduan pendukung:** `.claude/skills/remotion-best-practices/SKILL.md`, `.claude/skills/ui-ux-pro-max/SKILL.md`, dan `.claude/skills/remotion-2d-cartoon/SKILL.md`. Kalau agent-mu tidak mengenal sistem "skill", baca saja sebagai dokumentasi biasa.
+- **Panduan pendukung:** `.claude/skills/remotion-best-practices/SKILL.md`, `.claude/skills/ui-ux-pro-max/SKILL.md`, `.claude/skills/remotion-2d-cartoon/SKILL.md`, dan `.claude/skills/script-dubbing/SKILL.md` (aturan waktu narasi). Kalau agent-mu tidak mengenal sistem "skill", baca saja sebagai dokumentasi biasa.
 - **graphify:** kalau CLI `graphify` tersedia, pakai `graphify query "<pertanyaan>"` untuk menjelajah kode, dan jalankan `graphify update .` setelah mengubah kode.
 
 ## 3. Aturan kerja umum (WAJIB)
@@ -61,32 +61,39 @@ Hanya bertanya bila JENIS KONTEN atau TOPIK kosong. Untuk hal lain, pakai defaul
    - Bila T < 30: peringatkan bahwa durasinya terlalu singkat, lalu buat format teaser (hook, satu inti, Outro channel).
 4. **Tier.** Semua angka di tabel dalam detik. Di semua tier, video selalu ditutup **Outro channel** berdurasi tetap 10 detik (`OUTRO_SECONDS`, bagian 5), di luar kolom Rangkuman.
 
-| Tier | T | Jumlah scene (termasuk Outro) | Hook | Rangkuman | Durasi item daftar (nilai tengah) | Re-hook |
-|---|---|---|---|---|---|---|
-| S | 30–60 | 4–6 | 5–7 | 0–4 (boleh dilewati) | 12–16 (14) | Tidak wajib |
-| M | 61–120 | 6–9 | 8–10 | 6–8 | 16–22 (19) | 1× di ±50% |
-| L | 121–180 | 9–12 | 10–12 | 10–12 | 22–28 (25) | 1× di 40–60% |
-| XL | > 180 | 12+ | 12 | 12–16 | 22–28 (25) | Tiap 45–60 detik |
+| Tier | T       | Jumlah scene (termasuk Outro) | Hook  | Rangkuman            | Durasi item daftar (nilai tengah) | Re-hook          |
+| ---- | ------- | ----------------------------- | ----- | -------------------- | --------------------------------- | ---------------- |
+| S    | 30–60   | 4–6                           | 5–7   | 0–4 (boleh dilewati) | 12–16 (14)                        | Tidak wajib      |
+| M    | 61–120  | 6–9                           | 8–10  | 6–8                  | 16–22 (19)                        | 1× di ±50%       |
+| L    | 121–180 | 9–12                          | 10–12 | 10–12                | 22–28 (25)                        | 1× di 40–60%     |
+| XL   | > 180   | 12+                           | 12    | 12–16                | 22–28 (25)                        | Tiap 45–60 detik |
 
-5. **Pilih scene** dari formula jenis konten (bagian 6):
-   - P1 selalu ada;
-   - P2 dimasukkan bila T ≥ 75;
-   - P3 dimasukkan bila T ≥ 120.
+5. **Susun scene sesuai topik.** Formula jenis konten (bagian 6) hanya acuan awal, bukan pola wajib:
+   - Ambil beat yang benar-benar relevan dengan topik. Beat yang tidak cocok dilewati atau diganti bahasan lain (aturannya di awal bagian 6).
+   - Bila waktu sempit, prioritas membantu memutuskan apa yang dipangkas lebih dulu: P3, lalu P2. Biasanya P2 muat bila T ≥ 75 dan P3 bila T ≥ 120.
+   - Yang tetap wajib di semua video: aturan retensi (bagian 5), penutup isi sesuai tabel tier, dan Outro channel.
 
-   Untuk tier XL, tambah jumlah item atau langkah, jangan memperpanjang scene.
+   Untuk tier XL, tambah jumlah item, langkah, atau bahasan, jangan memperpanjang scene.
+
 6. **Hitung jumlah item** untuk jenis berbasis daftar (fakta, mitos, tips, ronde, langkah, poin):
    - N = (T − Hook − Rangkuman − Outro − 8 × jumlah scene non-item) ÷ nilai tengah durasi item tier.
    - Bulatkan ke bawah, lalu batasi ke rentang N pada formula.
    - Tutorial: kalau langkah yang dibutuhkan tidak muat, persempit cakupan (misalnya jadikan "Part 1") dan jelaskan di laporan.
 7. **Bagi waktu:**
    - Tetapkan durasi Hook, Rangkuman (tabel tier), dan Outro (10) lebih dulu.
-   - Bagi sisa waktu ke scene lain sesuai bobotnya; item daftar berbobot 3.
+   - Bagi sisa waktu ke scene lain sesuai bobotnya; item daftar berbobot 3. Beat pengganti diberi bobot sesuai isinya (default b2; b3 bila berisi demo atau penjelasan utama).
    - Bulatkan ke detik bulat. Utamakan angka genap supaya setiap cut jatuh di garis bar musik (2 detik).
    - Setiap scene minimal 4 detik dan maksimal 28 detik. Lebih dari 28 detik, pecah jadi dua scene.
    - Sesuaikan scene terbesar agar total tepat T.
-8. **Narasi:** ± 2,4 kata per detik (rentang 2,2–2,7), jadi total kata ≈ T × 2,4. Kalau narasi tidak muat, kurangi kata, jangan mempercepat bicara.
+8. **Narasi harus muat diucapkan (WAJIB).** Setiap baris di `script_dubbing.md` harus bisa diucapkan dengan tempo tenang di dalam rentang waktunya. Contoh yang tidak boleh: rentang 00:36–00:38 berisi "Tahun 1983, lahirlah solusinya: DNS." (butuh ±4 detik).
+   - Patokan: maksimal **5,5 suku kata per detik**, ditambah jeda: `...` di tengah baris = 0,5 detik; koma, titik dua, tanda tanya, atau akhir kalimat di tengah baris = 0,2 detik. Akronim dieja (DNS = 3 suku kata, HTTP = 4).
+   - Kira-kira: 2 detik ≈ 10 suku kata, 3 detik ≈ 15, 4 detik ≈ 21 (kurangi ±1 suku kata per koma).
+   - Tulis angka sebagai kata, persis cara diucapkan ("dua ratus", bukan "200"). Jangan menyuruh dubber membaca IP, hash, atau angka panjang; cukup tampilkan di layar.
+   - Kalau tidak muat: pendekkan kalimat (detail biarkan tampil di layar), pindahkan batas segmen lalu geser animasinya, atau tambah durasi scene. Jangan pernah mengandalkan bicara cepat.
+   - Hasilnya biasanya ±1,8–2,1 kata per detik dan suara mengisi ±80% durasi. Sisa waktunya jeda alami, jangan diisi kata tambahan.
+   - Cek otomatis: `node src/content/shared/check-dubbing.mjs src/content/<slug>/script_dubbing.md` harus lolos (0 baris terlalu padat).
 9. **Contoh perhitungan:**
-   - Cara Kerja, T = 90 (tier M, P1 + P2): Hook 9 · Masalah 8 · Analogi 8 · Anatomi 10 · Twist 8 · Mekanisme 10 · Alur 10 · Payoff 11 · Rangkuman 6 · Outro 10 = 90.
+   - Cara Kerja, T = 90 (tier M, bila semua beat P1 + P2 relevan): Hook 9 · Masalah 8 · Analogi 8 · Anatomi 10 · Twist 8 · Mekanisme 10 · Alur 10 · Payoff 11 · Rangkuman 6 · Outro 10 = 90.
    - Fakta Unik, T = 60 (tier S, rangkuman dilewati): N = (60 − 6 − 0 − 10) ÷ 14 = 3. Hook 6 · Fakta #3 14 · Fakta #2 14 · Fakta #1 16 · Outro 10 = 60.
 
 ## 5. Aturan retensi (WAJIB untuk semua jenis)
@@ -100,33 +107,44 @@ Hanya bertanya bila JENIS KONTEN atau TOPIK kosong. Untuk hal lain, pakai defaul
 - **Payoff:** jawaban open loop, diberikan menjelang akhir.
 - **Interupsi pola:** ada perubahan visual atau SFX setiap 3–5 detik.
 - **Satu ide per layar.** Teks di layar berisi kata kunci, bukan transkrip. Setiap elemen muncul tepat saat disebut narasi.
-- **Outro channel (standar semua video):** scene terakhir selalu `<ChannelOutro nextTopic="…" nextQuestion="…" />` dari `src/content/shared/ChannelOutro.tsx`, berdurasi `OUTRO_SECONDS` (10 detik). Jangan buat CTA sendiri; ubah komponen itu bila tampilannya perlu diganti.
+- **Outro channel (standar semua video):** scene terakhir selalu `ChannelOutro` dari `src/content/shared/ChannelOutro.tsx`, berdurasi `OUTRO_SECONDS` (10 detik): `<ChannelOutro nextTopic="…" nextQuestion="…" />` bila TOPIK BERIKUTNYA diisi, atau `<ChannelOutro />` bila kosong. Jangan buat CTA sendiri; ubah komponen itu bila tampilannya perlu diganti.
   - Isinya: logo channel (`src/assets/channel/profile.png`) dan handle **@daffahaidarnz**; tombol **Like**, **Simpan**, **Follow** yang di-tap jari animasi tepat saat disebut narasi, masing-masing dengan alasan persuasif; lalu kartu "Video berikutnya: TOPIK BERIKUTNYA".
-  - Narasi baku (hanya topik berikutnya yang diganti), 22 kata:
+  - Kartu "Video berikutnya" hanya dirender bila TOPIK BERIKUTNYA disebutkan. Bila kosong, kartu itu tidak ditampilkan sama sekali (tanpa teks pengganti seperti "Segera tayang"), dan agent tidak boleh mengarang topik.
+  - Narasi baku (hanya topik berikutnya yang diganti), sudah dicek muat diucapkan di rentangnya:
     - 00:00–00:03 "Kalau video ini **ngebantu**, kasih **like**..."
     - 00:03–00:05 "**simpan** biar nggak lupa..."
-    - 00:05–00:07 "dan **follow** atau **subscribe** daffahaidarnz..."
-    - 00:07–00:10 "biar nggak ketinggalan **<TOPIK BERIKUTNYA>** di video berikutnya!"
+    - 00:05–00:07 "**follow** atau **subscribe** daffahaidarnz..."
+    - 00:07–00:10 "biar nggak ketinggalan **<TOPIK BERIKUTNYA>**!" (ucapkan nama topik yang pendek, maksimal ±9 suku kata; kartu di layar sudah bertuliskan "Video berikutnya")
+    - Bila TOPIK BERIKUTNYA kosong, baris terakhir menjadi "biar nggak ketinggalan **video berikutnya**!"
   - Waktu di atas relatif terhadap awal outro; tulis sebagai waktu absolut di `script_dubbing.md` (contoh: Scene 12 di naskah video referensi).
   - Fakta Unik, Perbandingan, dan Mitos vs Fakta: tambahkan satu pertanyaan ajakan **komen** di akhir scene sebelum outro.
 - **Host:** `ManCharacter` ("Budi") sebagai host atau wakil penonton. Karakter lain dipilih sesuai panduan casting.
 
 ## 6. Formula per jenis konten
 
+Formula di bawah adalah **acuan, bukan template wajib**. Pakai sebagai titik awal kalau bingung harus mulai dari mana, lalu sesuaikan dengan topiknya:
+
+- **Lewati** beat yang tidak relevan. Contoh: topik Cara Kerja yang tidak punya "cara lama" tidak perlu scene cara lama. Jangan memaksakan atau mengarang isi hanya supaya pola formula terisi.
+- **Ganti** dengan bahasan lain yang lebih bernilai untuk topik itu, misalnya sejarah singkat, perbandingan dengan konsep yang mirip, contoh nyata atau studi kasus, angka kunci, miskonsepsi, kesalahan umum, demo, dampak bagi penonton, atau tips praktis.
+- **Ubah urutan atau gabungkan** beat bila alur ceritanya jadi lebih masuk akal (misalnya analogi digabung dengan anatomi).
+- **Tetap wajib** di semua video: aturan retensi bagian 5 (hook dengan open loop, re-hook sesuai tier, payoff menjelang akhir, interupsi pola), penutup isi (rangkuman, checklist, skor akhir, atau takeaway) sesuai tabel tier, dan Outro channel.
+- Tulis di laporan akhir beat mana yang dilewati atau diganti, beserta alasannya.
+
 Notasi:
-- **P1/P2/P3:** prioritas scene (bagian 4 langkah 5).
+
+- **P1/P2/P3:** prioritas scene bila waktu sempit (bagian 4 langkah 5).
 - **b:** bobot waktu scene.
 - **item:** scene berulang yang jumlahnya dihitung; rentang N tertulis di kurung.
 - Setiap formula di bawah selalu ditutup **Outro channel** (P1, 10 detik, bagian 5) setelah langkah terakhirnya.
 
-### 6.1 Cara Kerja (explainer), sama seperti video referensi
+### 6.1 Cara Kerja (explainer), contoh susunan video referensi
 
 1. **Hook gelap** (P1): cold open berupa konflik atau kegagalan, pertanyaan menggantung, judul besar.
 2. **Masalah dasar** (P1, b2): kenapa konsep ini perlu ada.
-3. **Cara lama / alternatif** (P3, b2): kelemahannya, ditutup stempel vonis.
+3. **Cara lama / alternatif** (P3, b2): kelemahannya, ditutup stempel vonis. Hanya bila topiknya memang punya pendahulu atau alternatif nyata.
 4. **Analogi sehari-hari** (P2, b2): analogi yang akrab di Indonesia, plus label "X = Y".
-5. **Anatomi** (P1, b3): bagian-bagian konsep dengan kode warna konsisten, plus stiker re-hook.
-6. **Plot twist "TAPI…"** (P2, b2): miskonsepsi dan daftar "JANGAN"; musik berhenti sebentar.
+5. **Anatomi/ Cara kerja** (P1, b3): bagian-bagian konsep dengan kode warna konsisten, plus stiker re-hook.
+6. **Plot twist** (P2, b2): miskonsepsi dan daftar "JANGAN"; musik berhenti sebentar.
 7. **Mekanisme inti** (P1, b3): demo sebab-akibat.
 8. **Alur lengkap** (P2, b3): langkah bernomor.
 9. **Payoff gelap** (P1, b3): konflik pembuka diselesaikan.
@@ -143,7 +161,7 @@ Tujuannya: penonton bisa meniru satu hasil konkret.
 4. **Langkah 1…N** (P1, item, N 3–8):
    - Pill "LANGKAH n/N" plus progress bar.
    - Kode diketik di layar: maksimal ±8 baris per layar, mono minimal 34 px, baris yang dibahas disorot.
-   - Narasi menjelaskan *kenapa*, bukan membaca kode huruf per huruf.
+   - Narasi menjelaskan _kenapa_, bukan membaca kode huruf per huruf.
    - Tunjukkan hasil kecil di setiap langkah.
    - Langkah yang dijanjikan di hook menjadi re-hook.
 5. **Error umum** (P2, b2): kartu error merah, lalu perbaikannya dalam warna hijau.
@@ -249,15 +267,15 @@ Nada serius dan netral. Opini diberi label "OPINI".
   - Jalankan `node src/content/shared/generate-audio.mjs <slug>`. Output: `public/audio/music/<slug>.mp3`. Flag `--sfx` hanya dipakai saat menambah/mengubah SFX sintetis (menulis ulang `public/audio/sfx/`).
 - **Mood per jenis:**
 
-| Jenis | Mood backsound | SFX khas |
-|---|---|---|
-| Cara Kerja | Groove lo-fi, tegang di adegan konflik | Stempel, glitch, ding |
-| Tutorial | Lo-fi tenang, drum dikurangi saat menjelaskan kode | `typing`, `ding` tiap langkah selesai |
-| Fakta Unik | Ceria (kunci mayor) | `pop`/`whoosh` tiap fakta, `riser` sebelum fakta #1 |
-| Berita | Pulse mendesak (kunci minor) | Minim, tanpa SFX meme |
-| Perbandingan | Kompetitif | `ding` pemenang ronde |
-| Mitos vs Fakta | Penasaran, lalu lega | `denied` untuk mitos, `ding` untuk fakta |
-| Tips & Tools | Positif, energik | `pop`, `sparkle` |
+| Jenis          | Mood backsound                                     | SFX khas                                            |
+| -------------- | -------------------------------------------------- | --------------------------------------------------- |
+| Cara Kerja     | Groove lo-fi, tegang di adegan konflik             | Stempel, glitch, ding                               |
+| Tutorial       | Lo-fi tenang, drum dikurangi saat menjelaskan kode | `typing`, `ding` tiap langkah selesai               |
+| Fakta Unik     | Ceria (kunci mayor)                                | `pop`/`whoosh` tiap fakta, `riser` sebelum fakta #1 |
+| Berita         | Pulse mendesak (kunci minor)                       | Minim, tanpa SFX meme                               |
+| Perbandingan   | Kompetitif                                         | `ding` pemenang ronde                               |
+| Mitos vs Fakta | Penasaran, lalu lega                               | `denied` untuk mitos, `ding` untuk fakta            |
+| Tips & Tools   | Positif, energik                                   | `pop`, `sparkle`                                    |
 
 - **Musik di Outro channel:** groove tanpa arpeggio (section `A`) supaya ajakan terdengar jelas, lalu chord penutup (`end`) ±2 detik sebelum video selesai.
 - **SFX yang tersedia** di `public/audio/sfx/`: whoosh, pop, click, ding, sparkle, switch, vine-boom, record-scratch, page-turn, price-is-right-fail, typing, glitch, denied, riser, beep, ticking, whirr, impact.
@@ -272,7 +290,7 @@ Nada serius dan netral. Opini diberi label "OPINI".
 
 ## 10. Format `script_dubbing.md` (WAJIB persis)
 
-- **Header:** jenis konten, durasi total, format (1080×1920, 30 fps), id komposisi, cara membaca (**tebal** = tekanan suara, `...` = jeda, 🔊 = SFX keras), dan gaya bicara (sesuai nada, ± 150 kata/menit, menyapa penonton dengan "kamu").
+- **Header:** jenis konten, durasi total, format (1080×1920, 30 fps), id komposisi, cara membaca (**tebal** = tekanan suara, `...` = jeda, 🔊 = SFX keras), dan gaya bicara (sesuai nada, tempo tenang ± 120 kata/menit, menyapa penonton dengan "kamu").
 - **Setiap scene** ditulis seperti ini:
 
 ```
@@ -284,6 +302,7 @@ Detik 00:00 - 00:03:
 ```
 
 - **Waktu** ditulis sebagai waktu absolut di video (mm:ss) dan harus cocok persis dengan animasi.
+- **Setiap baris harus muat** diucapkan dengan tenang di rentangnya (bagian 4 langkah 8). Angka ditulis sebagai kata.
 - **Penutup** berisi:
   - bagian "Memasang dubbing" (Opsi A: editor video; Opsi B: satu baris `<Audio>` di komposisi utama);
   - cara mengubah durasi lewat `SCENE_SECONDS`;
@@ -352,7 +371,7 @@ export const TOTAL_SECONDS = Object.values(SCENE_SECONDS).reduce((a: number, b) 
 1. Baca playbook ini dan video referensi (bagian 2).
 2. Parse input (bagian 1) dan hitung rencana durasi (bagian 4).
 3. Riset dan verifikasi fakta bila diperlukan (bagian 7).
-4. Tulis konsep, tabel scene (nama, durasi, isi visual, SFX), dan naskah. Timing narasi menentukan timing animasi.
+4. Tulis konsep, tabel scene (nama, durasi, isi visual, SFX), dan naskah. Timing narasi menentukan timing animasi. Jalankan `node src/content/shared/check-dubbing.mjs src/content/<slug>/script_dubbing.md` dan perbaiki semua baris yang terlalu padat sebelum membangun scene.
 5. Jalankan Remotion Studio (`npx remotion studio`) dan biarkan menyala. Komposisi bisa dibuka di `http://localhost:3000/<id>`.
 6. Bangun Scene 1 dulu, render still, periksa, baru lanjut ke scene lain.
 7. Buat backsound sesuai rencana scene, lalu pasang SFX.
@@ -362,15 +381,15 @@ export const TOTAL_SECONDS = Object.values(SCENE_SECONDS).reduce((a: number, b) 
    - Perbaiki semua temuan.
 9. QA audio: jalankan `npx remotion render <id> <temp>/mix.wav --codec=wav`, lalu pastikan durasinya = TOTAL_SECONDS dan puncaknya ≤ −1 dBFS.
 10. Buat thumbnail cover 3:4 (bagian 11), render ke `src/content/<slug>/thumbnail.png`, lalu QA dan perbaiki.
-11. Jalankan `npx tsc --noEmit`, `npx eslint src`, dan `npx -y react-doctor@latest --no-telemetry` (perbaiki temuan di file baru), lalu `graphify update .` bila tersedia.
+11. Jalankan `node src/content/shared/check-dubbing.mjs src/content/<slug>/script_dubbing.md` sekali lagi untuk naskah final, lalu `npx tsc --noEmit`, `npx eslint src`, dan `npx -y react-doctor@latest --no-telemetry` (perbaiki temuan di file baru), lalu `graphify update .` bila tersedia.
 
 ## 14. Definition of Done (WAJIB, centang semua)
 
 - [ ] Komposisi baru terdaftar dan terbuka di Remotion Studio.
 - [ ] Durasi akhir = T ± 2 detik, dan ≤ 180 detik bila T ≤ 180.
-- [ ] Struktur cerita sesuai formula jenis konten dan aturan retensi (hook, open loop, re-hook sesuai tier, payoff).
-- [ ] Scene terakhir = `ChannelOutro` (logo + @daffahaidarnz, Like/Simpan/Follow-Subscribe, kartu video berikutnya) dengan narasi baku.
-- [ ] `script_dubbing.md` sesuai format, timing cocok dengan animasi, kepadatan narasi 2,2–2,7 kata/detik.
+- [ ] Struktur cerita relevan dengan topik (formula bagian 6 sebagai acuan; beat yang tidak cocok dilewati atau diganti) dan memenuhi aturan retensi (hook, open loop, re-hook sesuai tier, payoff).
+- [ ] Scene terakhir = `ChannelOutro` (logo + @daffahaidarnz, Like/Simpan/Follow-Subscribe, plus kartu video berikutnya hanya bila TOPIK BERIKUTNYA diisi) dengan narasi baku.
+- [ ] `script_dubbing.md` sesuai format, timing cocok dengan animasi, dan setiap baris muat diucapkan dengan tenang di rentangnya (`check-dubbing.mjs` lolos).
 - [ ] QA visual lolos untuk semua scene.
 - [ ] Backsound orisinal, SFX terpasang, puncak audio ≤ −1 dBFS.
 - [ ] Fakta bersumber, bila jenis kontennya membutuhkan.
@@ -381,9 +400,11 @@ export const TOTAL_SECONDS = Object.values(SCENE_SECONDS).reduce((a: number, b) 
 ## 15. Laporan akhir (Bahasa Indonesia)
 
 Laporan berisi:
+
 - link Studio;
 - daftar file, termasuk path thumbnail;
 - tabel rencana scene beserta durasinya;
+- beat formula yang dilewati atau diganti, beserta alasannya;
 - strategi hook dan open loop;
 - hasil semua pengecekan;
 - daftar sumber (bila ada) dan klaim yang masih meragukan;

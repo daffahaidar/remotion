@@ -42,9 +42,9 @@
     "semantic_hash": ""
   },
   "src/Root.tsx": {
-    "mtime": 1795368061.5573246,
-    "seen": 1795368090.028512,
-    "ast_hash": "6ef7fb8e714d0415519f40b8f115b615",
+    "mtime": 1795533389.5316153,
+    "seen": 1795533610.0426009,
+    "ast_hash": "469fc62ef7454bc96bdc7bb53502ba9c",
     "semantic_hash": ""
   },
   "src/index.ts": {
@@ -948,9 +948,9 @@
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/HackerFails.tsx": {
-    "mtime": 1795366921.344741,
-    "seen": 1795367427.370178,
-    "ast_hash": "4ad1fd73c2aa8f44db22abb23530feeb",
+    "mtime": 1795532486.5741413,
+    "seen": 1795533610.042691,
+    "ast_hash": "59303199293d75a8d2d16b1b8c304b1e",
     "semantic_hash": ""
   },
   "src/content/how-jwt-works/scenes/Hook.tsx": {
@@ -1020,15 +1020,15 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1795367952.5020182,
-    "seen": 1795367967.6341498,
-    "ast_hash": "7735d0ac0d0d30d98760d3712ad09482",
+    "mtime": 1795535625.6461458,
+    "seen": 1795535638.636856,
+    "ast_hash": "9949dca3dc0a969bbe02e93b2d83a5c7",
     "semantic_hash": ""
   },
   "src/content/PROMPT_TECH_VIDEO.md": {
-    "mtime": 1795368183.7323515,
-    "seen": 1795368186.590952,
-    "ast_hash": "88a3edef01c5cb8cde669edbd0c7063d",
+    "mtime": 1795535587.3119228,
+    "seen": 1795535638.636867,
+    "ast_hash": "b1479cbe01fe6e6b21d5415f0a78b015",
     "semantic_hash": ""
   },
   "src/assets/channel/profile.png": {
@@ -1044,9 +1044,9 @@
     "semantic_hash": ""
   },
   "src/content/how-oauth-works/parts.tsx": {
-    "mtime": 1795366873.4066224,
-    "seen": 1795367427.370185,
-    "ast_hash": "e719c66a715ae2723418194b47f86fb1",
+    "mtime": 1795532486.4836617,
+    "seen": 1795533610.042699,
+    "ast_hash": "7caae66c5309dea54d8bed54c05dac8e",
     "semantic_hash": ""
   },
   "src/content/how-oauth-works/scenes/Anatomy.tsx": {
@@ -1056,9 +1056,9 @@
     "semantic_hash": ""
   },
   "src/content/how-oauth-works/scenes/Flow.tsx": {
-    "mtime": 1795367198.1568975,
-    "seen": 1795367427.370186,
-    "ast_hash": "1f3e3efb7b9a8d8246164376532f3e68",
+    "mtime": 1795532486.5219886,
+    "seen": 1795533610.0427,
+    "ast_hash": "92fb7abef342c6831fc47e9153dfe315",
     "semantic_hash": ""
   },
   "src/content/how-oauth-works/scenes/Hook.tsx": {
@@ -1104,9 +1104,9 @@
     "semantic_hash": ""
   },
   "src/content/how-oauth-works/scenes/ShadyAppFails.tsx": {
-    "mtime": 1795367332.007825,
-    "seen": 1795367427.370191,
-    "ast_hash": "277172237fd623a548de1659132bfe90",
+    "mtime": 1795532486.54587,
+    "seen": 1795533610.0427048,
+    "ast_hash": "d15590aa983504874fce8beba13289b4",
     "semantic_hash": ""
   },
   "src/content/how-oauth-works/scenes/VisitorPass.tsx": {
@@ -1116,15 +1116,15 @@
     "semantic_hash": ""
   },
   "src/content/shared/ChannelOutro.tsx": {
-    "mtime": 1795367810.9171097,
-    "seen": 1795367967.6341472,
-    "ast_hash": "8a1856f1e5189e540285a3ae9c73bb6f",
+    "mtime": 1795533786.8533423,
+    "seen": 1795533836.1008651,
+    "ast_hash": "5e11b83d528a17117557cfe32e49ce6e",
     "semantic_hash": ""
   },
   "src/content/shared/generate-audio.mjs": {
-    "mtime": 1795366987.814139,
-    "seen": 1795367427.3701918,
-    "ast_hash": "8fce676cab49cae5b7e4ffa0baf689ef",
+    "mtime": 1795533148.0488904,
+    "seen": 1795533610.042707,
+    "ast_hash": "d7dd04b602a57e2a5b592c1e50aa22f8",
     "semantic_hash": ""
   },
   "src/content/shared/theme.ts": {
@@ -1134,9 +1134,9 @@
     "semantic_hash": ""
   },
   "src/content/shared/ui.tsx": {
-    "mtime": 1795367024.383309,
-    "seen": 1795367427.370194,
-    "ast_hash": "a912544f290edefcf333aac4ea88d177",
+    "mtime": 1795532463.384044,
+    "seen": 1795533610.0427089,
+    "ast_hash": "979624b659a677d5df00ab689c17e8a0",
     "semantic_hash": ""
   },
   "src/content/how-oauth-works/script_dubbing.md": {
@@ -1173,6 +1173,114 @@
     "mtime": 1795368168.501798,
     "seen": 1795368186.590964,
     "ast_hash": "3ad6e6f3914a076a01f8abefefbeacf9",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/HowInternetWorks.tsx": {
+    "mtime": 1795533786.8723702,
+    "seen": 1795533836.1008372,
+    "ast_hash": "533efb3c39c91acaffb2d95b393e1ab0",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/Thumbnail.tsx": {
+    "mtime": 1795533403.2575796,
+    "seen": 1795533610.04268,
+    "ast_hash": "14b7097be1a5e60509c2a81efbffb605",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/parts.tsx": {
+    "mtime": 1795532801.1092055,
+    "seen": 1795533610.042681,
+    "ast_hash": "76a17558d892e7ddab5f1c0d7cf8befa",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/Anatomy.tsx": {
+    "mtime": 1795532886.6671531,
+    "seen": 1795533610.0426822,
+    "ast_hash": "746dace8d1e56449f6d9368777bdeab9",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/DnsLookup.tsx": {
+    "mtime": 1795532973.7970366,
+    "seen": 1795533610.0426822,
+    "ast_hash": "45cd08f3640a273480eb756679fc68c5",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/Flow.tsx": {
+    "mtime": 1795533014.9245498,
+    "seen": 1795533610.042683,
+    "ast_hash": "6befbb4e2a13eeb80d8925e2f9f7e849",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/Hook.tsx": {
+    "mtime": 1795536020.2597451,
+    "seen": 1795536097.096287,
+    "ast_hash": "96c7a90c3c08a18060f951cb64dee241",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/LockTwist.tsx": {
+    "mtime": 1795535493.659736,
+    "seen": 1795535638.636828,
+    "ast_hash": "38f700080983ce0ad58323bbfc5c11ab",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/OldWay.tsx": {
+    "mtime": 1795533320.0279815,
+    "seen": 1795533610.0426838,
+    "ast_hash": "d29eabe413f9a2e852aaed02de2341a5",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/Packets.tsx": {
+    "mtime": 1795533314.3761146,
+    "seen": 1795533610.042685,
+    "ast_hash": "3d98debe5a4c509bd8f7fb2f52ef73f6",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/PhoneCall.tsx": {
+    "mtime": 1795532845.546861,
+    "seen": 1795533610.042685,
+    "ast_hash": "9224f589189f67c1fe6e103ed16dcfa9",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/Problem.tsx": {
+    "mtime": 1795536008.2765229,
+    "seen": 1795536097.096291,
+    "ast_hash": "9670dd6e5d6ae9af804eaae5f8ed35a6",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/Recap.tsx": {
+    "mtime": 1795536008.3855574,
+    "seen": 1795536097.096292,
+    "ast_hash": "38350ad7bb80f11c4c9abc4113e88c7b",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/scenes/SnifferFails.tsx": {
+    "mtime": 1795536151.4848661,
+    "seen": 1795536184.208894,
+    "ast_hash": "2bea90b374731ac4e391cd27a1b20a64",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/script_dubbing.md": {
+    "mtime": 1795536020.3259578,
+    "seen": 1795536097.0963311,
+    "ast_hash": "0c0d151acda33366469e5c88986ba1c5",
+    "semantic_hash": ""
+  },
+  "src/content/how-internet-works/thumbnail.png": {
+    "mtime": 1795533404.8006911,
+    "seen": 1795533610.042733,
+    "ast_hash": "9abc99d1e3cd5b897e39992fbccf3985",
+    "semantic_hash": ""
+  },
+  "public/audio/music/how-internet-works.mp3": {
+    "mtime": 1795533160.2546773,
+    "seen": 1795533610.042735,
+    "ast_hash": "70f9ac1e1b4f2ea7fc5ef9c1ff597851",
+    "semantic_hash": ""
+  },
+  "src/content/shared/check-dubbing.mjs": {
+    "mtime": 1795535475.5601852,
+    "seen": 1795535638.636852,
+    "ast_hash": "9674da6629c2e612d0a643dcbbd11f11",
     "semantic_hash": ""
   },
   "package-lock.json": {
