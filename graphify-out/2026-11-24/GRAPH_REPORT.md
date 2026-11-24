@@ -1,12 +1,12 @@
 # Graph Report - remotion  (2026-11-24)
 
 ## Corpus Check
-- 194 files · ~101,413 words
+- 194 files · ~101,468 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 5 file(s) not represented in the graph (top: (none) 5)
 
 ## Summary
-- 1312 nodes · 4570 edges · 78 communities (74 shown, 4 thin omitted)
+- 1313 nodes · 4571 edges · 77 communities (74 shown, 3 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 79 edges (avg confidence: 0.91)
 - Token cost: 0 input · 0 output
 
@@ -31,11 +31,11 @@
 - remotion
 - project_manager/Body.tsx
 - SceneShell
-- Headline
+- SceneShell
 - quality_assurance/Body.tsx
-- woman/Body.tsx
+- body.tsx
 - react
-- HowJwtWorks.tsx
+- how-jwt-works/theme.ts
 - HandShape
 - doctor/Body.tsx
 - CharacterRigCanvas
@@ -73,20 +73,19 @@
 - TypeScript Compiler Config
 - Cara membaca script ini
 - Root.tsx
-- doctor/index.ts
+- shared/motion.ts
 - characterRig.tsx
 - frontend_programmer/Head.tsx
 - how-jwt-works/theme.ts
 - ServerRack.tsx
 - Redirect.tsx
-- Stateless.tsx
+- Card
 - NotEncrypted.tsx
 - Session.tsx
 - face.tsx
 - dependencies
 - boss/Head.tsx
 - check-dubbing.mjs
-- frontend_programmer/index.ts
 - RigDemo.tsx
 - scripts
 - allowScripts
@@ -107,25 +106,25 @@
 10. `IconTile()` - 46 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `5. Aturan retensi (WAJIB untuk semua jenis)` --references--> `ChannelOutro()`  [INFERRED]
-  src/content/PROMPT_TECH_VIDEO.md → src/content/shared/ChannelOutro.tsx
-- `11. Thumbnail cover 3:4 (WAJIB untuk setiap video)` --references--> `ChannelBadge()`  [INFERRED]
-  src/content/PROMPT_TECH_VIDEO.md → src/content/shared/ChannelOutro.tsx
 - `Memasang dubbing` --references--> `HowInternetWorks()`  [INFERRED]
   src/content/how-internet-works/script_dubbing.md → src/content/how-internet-works/HowInternetWorks.tsx
 - `Modul Bersama (`src/assets/character/shared`)` --references--> `SkullShapeParams`  [INFERRED]
   src/assets/character/README.md → src/assets/character/shared/face.tsx
 - `Memasang dubbing` --references--> `HowOauthWorks()`  [INFERRED]
   src/content/how-oauth-works/script_dubbing.md → src/content/how-oauth-works/HowOauthWorks.tsx
+- `5. Aturan retensi (WAJIB untuk semua jenis)` --references--> `ChannelOutro()`  [INFERRED]
+  src/content/PROMPT_TECH_VIDEO.md → src/content/shared/ChannelOutro.tsx
+- `Memasang dubbing` --references--> `HowJwtWorks()`  [INFERRED]
+  src/content/how-jwt-works/script_dubbing.md → src/content/how-jwt-works/HowJwtWorks.tsx
 
 ## Import Cycles
 - None detected.
 
-## Communities (78 total, 4 thin omitted)
+## Communities (77 total, 3 thin omitted)
 
 ### Community 0 - "hacker/index.ts"
-Cohesion: 0.12
-Nodes (22): Character, HackerProps, ProjectManagerProps, QualityAssuranceProps, applyMotion(), applyWave(), blinkAt(), cycle() (+14 more)
+Cohesion: 0.15
+Nodes (24): BackendProgrammerProps, ChefProps, DoctorProps, FrontendProgrammerProps, FullstackProgrammerProps, HackerProps, ProjectManagerProps, QualityAssuranceProps (+16 more)
 
 ### Community 1 - "character/README.md"
 Cohesion: 0.05
@@ -149,7 +148,7 @@ Nodes (19): description, devDependencies, eslint@10.12.0, prettier@3.8.1, @remot
 
 ### Community 6 - "ShadyAppFails.tsx"
 Cohesion: 0.10
-Nodes (40): CafeHacker(), clamp, NET, STAGES, clamp, EXPRESSIONS, POSES, Sniffer() (+32 more)
+Nodes (36): CafeHacker(), clamp, NET, STAGES, clamp, EXPRESSIONS, POSES, Sniffer() (+28 more)
 
 ### Community 7 - "Expiry.tsx"
 Cohesion: 0.53
@@ -160,8 +159,8 @@ Cohesion: 0.09
 Nodes (24): BugInner(), BugProps, BugState, SPOTS, STATES, LENSES, MagnifierLens, MagnifyingGlassProps (+16 more)
 
 ### Community 9 - "shared/ui.tsx"
-Cohesion: 0.10
-Nodes (32): RFC-6749, RFC-7636, react-icons, Equation(), Recap(), TIPS, Equation(), Recap() (+24 more)
+Cohesion: 0.11
+Nodes (27): RFC-6749, RFC-7636, react-icons, clamp, OAUTH, ROLE, ROLES, SIDES (+19 more)
 
 ### Community 10 - "boss/Body.tsx"
 Cohesion: 0.21
@@ -180,51 +179,51 @@ Cohesion: 0.25
 Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), PM_SHOE_SIZE, TORSO, Torso() (+5 more)
 
 ### Community 14 - "SceneShell"
-Cohesion: 0.15
-Nodes (30): HowOauthWorks(), HowOauthWorksProps, SCENE_SECONDS, Anatomy(), Hook(), NotLogin(), OldWay(), Pkce() (+22 more)
+Cohesion: 0.11
+Nodes (24): HowJwtWorks(), HowJwtWorksProps, SCENE_SECONDS, HackerFails(), BUBBLES, LoginCard(), REQUESTS, Stage() (+16 more)
 
-### Community 15 - "Headline"
-Cohesion: 0.19
-Nodes (21): Badge(), Budi(), Keycap(), Kind(), Problem(), Hook(), HookStage(), RoleEdit() (+13 more)
+### Community 15 - "SceneShell"
+Cohesion: 0.36
+Nodes (15): HowOauthWorks(), HowOauthWorksProps, SCENE_SECONDS, Anatomy(), Hook(), NotLogin(), OldWay(), Pkce() (+7 more)
 
 ### Community 16 - "quality_assurance/Body.tsx"
 Cohesion: 0.25
 Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), QA_SHOE_SIZE, TORSO, Torso() (+5 more)
 
-### Community 17 - "woman/Body.tsx"
-Cohesion: 0.24
-Nodes (14): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Tube() (+6 more)
+### Community 17 - "body.tsx"
+Cohesion: 0.15
+Nodes (22): DEFAULT_SHOE_SIZE, Hand(), HandDef, HandPart, HANDS, KNUCKLES, Leg(), pts() (+14 more)
 
 ### Community 18 - "react"
 Cohesion: 0.14
 Nodes (12): react, ClipboardInner(), ClipboardProps, ClipboardVariant, VARIANTS, LightbulbProps, PackageBoxInner(), PackageBoxProps (+4 more)
 
-### Community 19 - "HowJwtWorks.tsx"
-Cohesion: 0.27
-Nodes (9): HowJwtWorks(), HowJwtWorksProps, SCENE_SECONDS, Anatomy(), PART_AT, PartCard(), HackerFails(), clamp (+1 more)
+### Community 19 - "how-jwt-works/theme.ts"
+Cohesion: 0.43
+Nodes (5): Anatomy(), PART_AT, PartCard(), JWT, TokenText()
 
 ### Community 20 - "HandShape"
-Cohesion: 0.27
-Nodes (12): Arm(), BODY_PALETTE, CLOG_SIZE, GroundShadow(), Leg(), Neck(), TORSO, Torso() (+4 more)
+Cohesion: 0.25
+Nodes (13): Arm(), BODY_PALETTE, CLOG_SIZE, GroundShadow(), Leg(), Neck(), TORSO, Torso() (+5 more)
 
 ### Community 21 - "doctor/Body.tsx"
 Cohesion: 0.26
 Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+5 more)
 
 ### Community 22 - "CharacterRigCanvas"
-Cohesion: 0.25
-Nodes (14): Arm(), BODY_PALETTE, GroundShadow(), INNER_HEM, Leg(), Neck(), TORSO, Torso() (+6 more)
+Cohesion: 0.31
+Nodes (11): Arm(), BODY_PALETTE, GroundShadow(), INNER_HEM, Leg(), Neck(), TORSO, Torso() (+3 more)
 
 ### Community 23 - "computeTorsoGeometry"
-Cohesion: 0.28
-Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+4 more)
+Cohesion: 0.27
+Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+5 more)
 
 ### Community 24 - "IconTile"
-Cohesion: 0.12
-Nodes (28): RFC-2606, HowInternetWorks(), HowInternetWorksProps, SCENE_SECONDS, SourceNote(), STAGE, Anatomy(), CARDS (+20 more)
+Cohesion: 0.14
+Nodes (24): RFC-2606, HowInternetWorks(), HowInternetWorksProps, SCENE_SECONDS, SourceNote(), BrowserCard(), DnsLookup(), NodeCard() (+16 more)
 
 ### Community 25 - "hacker/Body.tsx"
-Cohesion: 0.27
+Cohesion: 0.26
 Nodes (13): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+5 more)
 
 ### Community 26 - "PoseSpec"
@@ -236,8 +235,8 @@ Cohesion: 0.24
 Nodes (14): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+6 more)
 
 ### Community 28 - "man/Body.tsx"
-Cohesion: 0.16
-Nodes (21): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Tube() (+13 more)
+Cohesion: 0.31
+Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), Tube() (+4 more)
 
 ### Community 29 - "PottedPlant.tsx"
 Cohesion: 0.19
@@ -264,8 +263,8 @@ Cohesion: 0.12
 Nodes (15): Cara membaca script ini, Memasang dubbing, Scene 10 — Masa berlaku, Scene 11 — Rangkuman, Scene 12 — Outro channel, Scene 1 — Hook, Scene 2 — Server itu pelupa, Scene 3 — Cara lama: session (+7 more)
 
 ### Community 35 - "Reveal"
-Cohesion: 0.35
-Nodes (15): Flow(), HANDSHAKE, Hop(), S, Flow(), Flow(), S, 12. Implementasi teknis (+7 more)
+Cohesion: 0.18
+Nodes (30): STAGE, Anatomy(), CARDS, Stack(), StageCard(), Flow(), HANDSHAKE, Hop() (+22 more)
 
 ### Community 36 - "CoffeeMug.tsx"
 Cohesion: 0.25
@@ -292,20 +291,20 @@ Cohesion: 0.33
 Nodes (6): PALETTES, star(), TrophyInner(), TrophyProps, TrophyVariant, VARIANTS
 
 ### Community 42 - "tech_lead/Body.tsx"
-Cohesion: 0.26
-Nodes (13): SleeveArm(), Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso() (+5 more)
+Cohesion: 0.28
+Nodes (12): Arm(), BODY_PALETTE, GroundShadow(), Leg(), Neck(), TORSO, Torso(), CharacterInner() (+4 more)
 
 ### Community 43 - "Playbook Video Motion Graphic Teknologi (Remotion)"
 Cohesion: 0.14
 Nodes (13): 0. Cara pakai (untuk manusia), 10. Format `script_dubbing.md` (WAJIB persis), 11. Thumbnail cover 3:4 (WAJIB untuk setiap video), 13. Alur kerja, 14. Definition of Done (WAJIB, centang semua), 15. Laporan akhir (Bahasa Indonesia), 1. Input, 3. Aturan kerja umum (WAJIB) (+5 more)
 
 ### Community 44 - "useLook"
-Cohesion: 0.18
-Nodes (28): StageStrip(), BrowserCard(), DnsLookup(), NodeCard(), SERVERS, Browser(), Cover(), HowInternetWorksThumbnail() (+20 more)
+Cohesion: 0.19
+Nodes (24): StageStrip(), Browser(), Cover(), HowInternetWorksThumbnail(), Question(), Title(), Cover(), HowJwtWorksThumbnail() (+16 more)
 
 ### Community 45 - "character/index.ts"
 Cohesion: 0.11
-Nodes (23): BackendProgrammerProps, Character, Character, Character, ChefProps, COLORS, DoctorProps, Character (+15 more)
+Nodes (25): Character, Character, Character, Character, Character, Character, Character, Character (+17 more)
 
 ### Community 46 - "add"
 Cohesion: 0.20
@@ -328,8 +327,8 @@ Cohesion: 0.09
 Nodes (6): Compare(), EXPRESSIONS, Hacker(), POSES, Recompute(), Stage()
 
 ### Community 51 - "Pill"
-Cohesion: 0.21
-Nodes (19): Beat(), Calling(), Cipher(), ContactNumber(), PhoneCall(), RING, RoleCard(), TokenCard() (+11 more)
+Cohesion: 0.17
+Nodes (24): Beat(), Calling(), Cipher(), ContactNumber(), PhoneCall(), RING, Badge(), Budi() (+16 more)
 
 ### Community 52 - "Wristband.tsx"
 Cohesion: 0.53
@@ -351,36 +350,40 @@ Nodes (16): Cara membaca script ini, Memasang dubbing, Scene 10 — Detail penti
 Cohesion: 0.12
 Nodes (4): TOTAL_SECONDS, TOTAL_SECONDS, TOTAL_SECONDS, RemotionRoot()
 
+### Community 57 - "shared/motion.ts"
+Cohesion: 0.16
+Nodes (5): applyMotion(), applyWave(), cycle(), swings(), VISEMES
+
 ### Community 58 - "characterRig.tsx"
-Cohesion: 0.15
-Nodes (10): ArmRenderProps, CharacterProps, CharacterRigConfig, FRAMINGS, HeadRenderProps, LegRenderProps, TorsoRenderProps, VIEWBOX (+2 more)
+Cohesion: 0.17
+Nodes (9): ArmRenderProps, CharacterRigConfig, FRAMINGS, HeadRenderProps, LegRenderProps, TorsoRenderProps, VIEWBOX, ArmLayer (+1 more)
 
 ### Community 59 - "frontend_programmer/Head.tsx"
 Cohesion: 0.12
 Nodes (15): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, TUFTS, FACE_CFG, HAIRLINE (+7 more)
 
 ### Community 60 - "how-jwt-works/theme.ts"
-Cohesion: 0.39
-Nodes (6): Machine(), Signature(), SPINS, Stage(), SubValue(), JWT
+Cohesion: 0.53
+Nodes (5): Machine(), Signature(), SPINS, Stage(), SubValue()
 
 ### Community 61 - "ServerRack.tsx"
 Cohesion: 0.33
 Nodes (4): ServerRackInner(), ServerRackProps, ServerStatus, STATUSES
 
 ### Community 62 - "Redirect.tsx"
-Cohesion: 0.16
-Nodes (14): Field(), LoginWindow(), Request(), AppScreen(), BackWithCode(), Budi(), Button(), clamp (+6 more)
+Cohesion: 0.13
+Nodes (22): AppEntity(), Field(), clamp, Hacker(), Inbox(), LoginWindow(), MAILS, POSES (+14 more)
 
-### Community 63 - "Stateless.tsx"
-Cohesion: 0.38
-Nodes (5): BUBBLES, LoginCard(), REQUESTS, Stage(), Stateless()
+### Community 63 - "Card"
+Cohesion: 0.33
+Nodes (12): EQ, Equation(), Recap(), TIPS, Equation(), Recap(), TIPS, Equation() (+4 more)
 
 ### Community 64 - "NotEncrypted.tsx"
-Cohesion: 0.38
+Cohesion: 0.47
 Nodes (5): DECODED, Decoded(), NEVER, NeverRow(), NotEncrypted()
 
 ### Community 66 - "Session.tsx"
-Cohesion: 0.43
+Cohesion: 0.36
 Nodes (6): Row(), ROWS, SERVERS, Session(), SessionTable(), Stage()
 
 ### Community 67 - "face.tsx"
@@ -398,10 +401,6 @@ Nodes (8): FACE_CFG, HAIRLINE, HeadProps, PUFFS, SHINES, SKULL_SHAPE, TUFTS, R
 ### Community 70 - "check-dubbing.mjs"
 Cohesion: 0.36
 Nodes (4): count(), lines, measure(), syllables()
-
-### Community 71 - "frontend_programmer/index.ts"
-Cohesion: 0.33
-Nodes (3): Character, FrontendProgrammerProps, LegPose
 
 ### Community 72 - "RigDemo.tsx"
 Cohesion: 0.40
@@ -421,23 +420,23 @@ Nodes (4): graphify-out/graph.json, Graphify Knowledge Graph, graphify-out/GRAPH
 
 ## Knowledge Gaps
 - **8 isolated node(s):** `RFC-2606`, `RFC-6749`, `RFC-7636`, `Remotion CLI Workflow`, `Remotion Company License` (+3 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 468 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 469 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `P2`, `PropShadow`, `package.json`, `ShadyAppFails.tsx`, `Expiry.tsx`, `PROP_COLORS`, `shared/ui.tsx`, `boss/Body.tsx`, `face.tsx`, `remotion`, `project_manager/Body.tsx`, `SceneShell`, `Headline`, `quality_assurance/Body.tsx`, `woman/Body.tsx`, `HowJwtWorks.tsx`, `HandShape`, `doctor/Body.tsx`, `CharacterRigCanvas`, `computeTorsoGeometry`, `IconTile`, `hacker/Body.tsx`, `body.tsx`, `man/Body.tsx`, `PottedPlant.tsx`, `Reveal`, `CoffeeMug.tsx`, `Whiteboard.tsx`, `Smartphone.tsx`, `DatabaseCylinder.tsx`, `Trophy.tsx`, `tech_lead/Body.tsx`, `useLook`, `character/index.ts`, `createHeadProjection`, `man/Head.tsx`, `HackerFails.tsx`, `Pill`, `Wristband.tsx`, `characterRig.tsx`, `frontend_programmer/Head.tsx`, `how-jwt-works/theme.ts`, `ServerRack.tsx`, `Redirect.tsx`, `Stateless.tsx`, `NotEncrypted.tsx`, `Session.tsx`, `face.tsx`, `dependencies`, `boss/Head.tsx`, `RigDemo.tsx`, `property/index.ts`?**
-  _High betweenness centrality (0.387) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `P2`, `PropShadow`, `package.json`, `ShadyAppFails.tsx`, `Expiry.tsx`, `PROP_COLORS`, `shared/ui.tsx`, `boss/Body.tsx`, `face.tsx`, `remotion`, `project_manager/Body.tsx`, `SceneShell`, `SceneShell`, `quality_assurance/Body.tsx`, `body.tsx`, `how-jwt-works/theme.ts`, `HandShape`, `doctor/Body.tsx`, `CharacterRigCanvas`, `computeTorsoGeometry`, `IconTile`, `hacker/Body.tsx`, `body.tsx`, `man/Body.tsx`, `PottedPlant.tsx`, `Reveal`, `CoffeeMug.tsx`, `Whiteboard.tsx`, `Smartphone.tsx`, `DatabaseCylinder.tsx`, `Trophy.tsx`, `tech_lead/Body.tsx`, `useLook`, `character/index.ts`, `createHeadProjection`, `man/Head.tsx`, `HackerFails.tsx`, `Pill`, `Wristband.tsx`, `characterRig.tsx`, `frontend_programmer/Head.tsx`, `how-jwt-works/theme.ts`, `ServerRack.tsx`, `Redirect.tsx`, `Card`, `NotEncrypted.tsx`, `Session.tsx`, `face.tsx`, `dependencies`, `boss/Head.tsx`, `RigDemo.tsx`, `property/index.ts`?**
+  _High betweenness centrality (0.404) - this node is a cross-community bridge._
 - **What connects `RFC-2606`, `RFC-6749`, `RFC-7636` to the rest of the system?**
   _8 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `hacker/index.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.125 - nodes in this community are weakly interconnected._
-- **Why does `remotion` connect `remotion` to `hacker/index.ts`, `PropShadow`, `package.json`, `ShadyAppFails.tsx`, `Expiry.tsx`, `PROP_COLORS`, `shared/ui.tsx`, `boss/Body.tsx`, `project_manager/Body.tsx`, `SceneShell`, `Headline`, `quality_assurance/Body.tsx`, `woman/Body.tsx`, `react`, `HowJwtWorks.tsx`, `HandShape`, `doctor/Body.tsx`, `CharacterRigCanvas`, `computeTorsoGeometry`, `IconTile`, `hacker/Body.tsx`, `body.tsx`, `man/Body.tsx`, `PottedPlant.tsx`, `CoffeeMug.tsx`, `Whiteboard.tsx`, `Smartphone.tsx`, `DatabaseCylinder.tsx`, `Trophy.tsx`, `tech_lead/Body.tsx`, `character/index.ts`, `HackerFails.tsx`, `Wristband.tsx`, `Root.tsx`, `characterRig.tsx`, `how-jwt-works/theme.ts`, `ServerRack.tsx`, `Redirect.tsx`, `Session.tsx`, `dependencies`, `RigDemo.tsx`, `property/index.ts`?**
-  _High betweenness centrality (0.120) - this node is a cross-community bridge._
 - **Should `character/README.md` be split into smaller, more focused modules?**
   _Cohesion score 0.04717853839037928 - nodes in this community are weakly interconnected._
 - **Why does `Playbook Video Motion Graphic Teknologi (Remotion)` connect `Playbook Video Motion Graphic Teknologi (Remotion)` to `add`, `Reveal`, `SceneShell`, `6. Formula per jenis konten`?**
-  _High betweenness centrality (0.089) - this node is a cross-community bridge._
+  _High betweenness centrality (0.125) - this node is a cross-community bridge._
 - **Should `P2` be split into smaller, more focused modules?**
   _Cohesion score 0.06086956521739131 - nodes in this community are weakly interconnected._
+- **Why does `12. Implementasi teknis` connect `Reveal` to `ShadyAppFails.tsx`, `Playbook Video Motion Graphic Teknologi (Remotion)`, `useLook`, `SceneShell`, `Pill`, `IconTile`, `Redirect.tsx`, `Card`?**
+  _High betweenness centrality (0.106) - this node is a cross-community bridge._
+- **Should `PropShadow` be split into smaller, more focused modules?**
+  _Cohesion score 0.0946969696969697 - nodes in this community are weakly interconnected._
